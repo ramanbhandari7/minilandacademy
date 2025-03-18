@@ -1,104 +1,68 @@
-<style>
-    .card {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miniland Academy English School</title>
+    <meta name="description" content="Miniland Academy English School - Quality education in Kerabari, Morang">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/logo.jpg" alt="Miniland Academy Logo" class="logo">
+                <span class="brand-text">Miniland Academy</span>
+            </a>
+            <ul class="navbar-nav">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="programmes.html">Programmes</a></li>
+                <li><a href="teachers.html">Teachers</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-{% extends "base.html" %}
-{% block content %}
-<!-- Hero Section -->
-<section class="hero-section" style="background-image: url('{{ url_for('static', filename='assets/WhatsApp Image 2025-02-24 at 8.30.51 AM.jpeg') }}')">
-    <div class="hero-overlay d-flex align-items-center">
-        <div class="container text-white">
-            <div class="row">
-                <div class="col-lg-8">
-                    <h1 class="display-4 fw-bold">Welcome to Miniland Academy</h1>
-                    <p class="lead">Nurturing minds, building futures in Kerabari, Morang</p>
-                    <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg">Enroll Now</a>
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <h1>Welcome to Miniland Academy</h1>
+            <p>Providing quality education in Kerabari, Morang.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h5>Miniland Academy</h5>
+                    <p>Kerabari 7 Dangi<br>Morang, Nepal</p>
                 </div>
+                <div class="footer-section">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programmes.html">Programmes</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Connect With Us</h5>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook">Facebook</a>
+                        <a href="#" aria-label="Twitter">Twitter</a>
+                        <a href="#" aria-label="Instagram">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Miniland Academy. All rights reserved.</p>
             </div>
         </div>
-    </div>
-</section>
-
-<!-- Features Section -->
-<section class="py-5">
-    <div class="container">
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <i class="fas fa-graduation-cap fa-2x mb-3 text-primary"></i>
-                        <h3>Quality Education</h3>
-                        <p>Providing excellence in education through experienced faculty and modern facilities.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <i class="fas fa-users fa-2x mb-3 text-primary"></i>
-                        <h3>Skilled Teachers</h3>
-                        <p>Our dedicated teachers ensure personalized attention and comprehensive learning.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <i class="fas fa-book-reader fa-2x mb-3 text-primary"></i>
-                        <h3>Modern Facilities</h3>
-                        <p>State-of-the-art infrastructure supporting holistic development.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Latest News Section -->
-<section class="py-5 bg-light">
-    <div class="container">
-        <h2 class="text-center mb-4">Latest News</h2>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card h-100">
-                    <div class="card-img-wrapper">
-                        <img src="{{ url_for('static', filename='assets/WhatsApp Image 2025-02-24 at 6.32.40 AM.jpeg') }}" class="card-img-top" alt="School Event">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Annual Sports Day</h5>
-                        <p class="card-text">Join us for our upcoming annual sports day celebration.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100">
-                    <div class="card-img-wrapper">
-                        <img src="{{ url_for('static', filename='assets/WhatsApp Image 2025-02-24 at 9.30.08 AM.jpeg') }}" class="card-img-top" alt="Classroom">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">New STEM Lab</h5>
-                        <p class="card-text">Introducing our new state-of-the-art STEM laboratory.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100">
-                    <div class="card-img-wrapper">
-                        <img src="{{ url_for('static', filename='assets/WhatsApp Image 2025-02-24 at 8.33.02 AM.jpeg') }}" class="card-img-top" alt="Student Achievement">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Academic Excellence</h5>
-                        <p class="card-text">Our students achieve outstanding results in national examinations.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-{% endblock %}
+    </footer>
+</body>
+</html>
