@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Miniland Academy English School - Kerabari 7, Dangi, Morang</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* CSS Reset */
         * {
@@ -18,12 +19,36 @@
             line-height: 1.6;
             color: #333;
             background-color: #f9f9f9;
+            overflow-x: hidden;
         }
 
         .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
+        }
+
+        section {
+            padding: 40px 0;
+        }
+
+        h2 {
+            color: #1a5276;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+            font-size: 28px;
+        }
+
+        h3 {
+            color: #2980b9;
+            margin: 15px 0;
+            font-size: 22px;
+        }
+
+        p {
+            margin-bottom: 15px;
         }
 
         /* Header Styles */
@@ -33,6 +58,8 @@
             padding: 20px 0;
             text-align: center;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 100;
         }
 
         .logo {
@@ -41,13 +68,16 @@
 
         .logo img {
             height: 100px;
+            width: 100px;
+            object-fit: contain;
             border-radius: 50%;
             border: 3px solid white;
         }
 
         .school-name h1 {
-            font-size: 28px;
+            font-size: 24px;
             margin-bottom: 5px;
+            line-height: 1.3;
         }
 
         .school-name p {
@@ -59,6 +89,9 @@
         nav {
             background-color: #2980b9;
             padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 99;
         }
 
         nav ul {
@@ -66,45 +99,61 @@
             justify-content: center;
             list-style: none;
             flex-wrap: wrap;
+            gap: 10px;
         }
 
         nav ul li {
-            margin: 5px 15px;
+            margin: 0 5px;
         }
 
         nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: 500;
-            padding: 5px 10px;
+            padding: 8px 12px;
             border-radius: 4px;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
+            font-size: 15px;
+            display: inline-block;
         }
 
         nav ul li a:hover {
             background-color: #3498db;
+            transform: translateY(-2px);
         }
 
         /* Hero Section */
         .hero {
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('school-building.jpg');
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('school-building.jpg');
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             color: white;
             text-align: center;
             padding: 100px 20px;
-            margin-bottom: 30px;
+            margin-bottom: 0;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .hero h2 {
-            font-size: 36px;
+            font-size: 32px;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            color: white;
+            border-bottom: none;
         }
 
         .hero p {
             font-size: 18px;
-            max-width: 800px;
             margin: 0 auto 30px;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
@@ -117,60 +166,50 @@
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
         }
 
         .btn:hover {
             background-color: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
         /* Main Content */
         .main-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin: 30px 0;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin: 40px 0;
         }
 
-        .about, .programs, .contact {
-            flex-basis: 100%;
-            margin-bottom: 30px;
+        .about, .programs, .contact, .admission {
             background: white;
             padding: 30px;
-            border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
         }
 
-        @media (min-width: 768px) {
-            .about {
-                flex-basis: 100%;
-            }
-            .programs, .contact {
-                flex-basis: calc(50% - 15px);
-            }
-        }
-
-        h2 {
-            color: #1a5276;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #eee;
-        }
-
-        h3 {
-            color: #2980b9;
-            margin: 15px 0;
+        .about:hover, .programs:hover, .contact:hover, .admission:hover {
+            transform: translateY(-5px);
         }
 
         /* Programs List */
         .program-list {
             list-style: none;
+            margin-left: 0;
+            padding-left: 0;
         }
 
         .program-list li {
-            margin-bottom: 10px;
-            padding-left: 20px;
+            margin-bottom: 15px;
+            padding-left: 25px;
             position: relative;
+            line-height: 1.5;
         }
 
         .program-list li:before {
@@ -178,6 +217,7 @@
             color: #e74c3c;
             position: absolute;
             left: 0;
+            font-weight: bold;
         }
 
         /* Contact Info */
@@ -186,46 +226,186 @@
         }
 
         .contact-item {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             display: flex;
             align-items: flex-start;
+            gap: 15px;
         }
 
         .contact-icon {
-            margin-right: 10px;
             color: #2980b9;
-            font-size: 20px;
+            font-size: 22px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .contact-text {
+            flex-grow: 1;
+        }
+
+        .contact-text strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 40px 0;
+            background-color: #f0f4f8;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            height: 200px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
         }
 
         /* Footer */
         footer {
             background-color: #1a5276;
             color: white;
-            text-align: center;
-            padding: 30px 0;
-            margin-top: 30px;
+            padding: 50px 0 20px;
+            margin-top: 40px;
         }
 
-        .footer-info {
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .footer-column h3 {
+            color: white;
             margin-bottom: 20px;
+            font-size: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 10px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
         }
 
         .social-links a {
             color: white;
-            margin: 0 10px;
-            font-size: 20px;
-            text-decoration: none;
-            transition: color 0.3s;
+            background-color: rgba(255,255,255,0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
         }
 
         .social-links a:hover {
-            color: #3498db;
+            background-color: #3498db;
+            transform: translateY(-3px);
         }
 
         .copyright {
-            margin-top: 20px;
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
             font-size: 14px;
             opacity: 0.8;
+        }
+
+        /* Responsive Adjustments */
+        @media (min-width: 576px) {
+            .school-name h1 {
+                font-size: 28px;
+            }
+            
+            nav ul li a {
+                font-size: 16px;
+                padding: 8px 15px;
+            }
+            
+            .hero h2 {
+                font-size: 36px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .main-content {
+                grid-template-columns: 2fr 1fr;
+            }
+            
+            .about {
+                grid-column: 1 / span 2;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 992px) {
+            .hero h2 {
+                font-size: 42px;
+            }
+            
+            .hero p {
+                font-size: 20px;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        section {
+            animation: fadeIn 0.8s ease-out;
         }
     </style>
 </head>
@@ -233,7 +413,6 @@
     <header>
         <div class="container">
             <div class="logo">
-                <!-- Replace 'school-logo.png' with your actual logo file -->
                 <img src="school-logo.png" alt="Miniland Academy Logo">
             </div>
             <div class="school-name">
@@ -249,6 +428,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#programs">Programs</a></li>
+                <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#admission">Admission</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -256,63 +436,109 @@
     </nav>
 
     <section class="hero" id="home">
-        <div class="container">
+        <div class="hero-content">
             <h2>Quality Education for Bright Futures</h2>
             <p>Miniland Academy English School provides excellent education from Play Group to Class 9 in a nurturing environment that fosters academic excellence and character development.</p>
             <a href="#admission" class="btn">Enroll Now</a>
         </div>
     </section>
 
-    <div class="container main-content">
+    <div class="container">
         <section class="about" id="about">
             <h2>About Our School</h2>
             <p>Miniland Academy English School, located in Kerabari 7, Dangi, Morang, is committed to providing quality education to students from Play Group to Class 9. Our school was established with the vision of creating a learning environment that nurtures young minds and prepares them for future challenges.</p>
             <p>We believe in holistic education that focuses on academic excellence as well as character building. Our experienced faculty members are dedicated to helping each student reach their full potential.</p>
             <h3>Our Mission</h3>
             <p>To provide a stimulating learning environment that promotes academic excellence, creativity, and moral values, preparing students to become responsible citizens and future leaders.</p>
+            <h3>Our Vision</h3>
+            <p>To be recognized as a premier educational institution that transforms students into competent, compassionate, and confident individuals ready to face global challenges.</p>
         </section>
 
-        <section class="programs" id="programs">
-            <h2>Our Programs</h2>
-            <p>We offer comprehensive educational programs for different age groups:</p>
-            <ul class="program-list">
-                <li><strong>Early Childhood:</strong> Play Group and Nursery programs focusing on foundational learning through play</li>
-                <li><strong>Primary Level:</strong> Classes 1-5 with balanced curriculum covering all core subjects</li>
-                <li><strong>Lower Secondary:</strong> Classes 6-8 with more specialized subject teachers</li>
-                <li><strong>Secondary:</strong> Class 9 preparing students for SEE in the future</li>
-                <li><strong>Co-curricular Activities:</strong> Sports, arts, music, and various clubs</li>
-            </ul>
-        </section>
+        <div class="main-content">
+            <section class="programs" id="programs">
+                <h2>Our Programs</h2>
+                <p>We offer comprehensive educational programs for different age groups:</p>
+                <ul class="program-list">
+                    <li><strong>Early Childhood:</strong> Play Group and Nursery programs focusing on foundational learning through play, social development, and basic literacy</li>
+                    <li><strong>Primary Level (Classes 1-5):</strong> Balanced curriculum covering English, Mathematics, Science, Social Studies, Nepali, and Computer Basics</li>
+                    <li><strong>Lower Secondary (Classes 6-8):</strong> Specialized subject teachers with emphasis on critical thinking and problem-solving skills</li>
+                    <li><strong>Secondary (Class 9):</strong> Preparation for SEE with rigorous academic standards and career guidance</li>
+                    <li><strong>Co-curricular Activities:</strong> Sports, arts, music, dance, public speaking, and various clubs to nurture all-round development</li>
+                </ul>
+            </section>
 
-        <section class="contact" id="contact">
-            <h2>Contact Us</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <span class="contact-icon">📍</span>
-                    <div>
-                        <strong>Address:</strong><br>
-                        Kerabari 7, Dangi, Morang, Nepal
+            <section class="contact" id="contact">
+                <h2>Contact Us</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <strong>Address</strong>
+                            Kerabari 7, Dangi, Morang, Nepal
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <strong>Principal Dip Rai</strong>
+                            +977 981-6302747
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <strong>Email</strong>
+                            info@minilandacademy.edu.np
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <strong>School Hours</strong>
+                            Sunday-Friday: 10:00 AM - 4:00 PM
+                        </div>
                     </div>
                 </div>
-                <div class="contact-item">
-                    <span class="contact-icon">📞</span>
-                    <div>
-                        <strong>Principal Dip Rai:</strong><br>
-                        +977 981-6302747
+            </section>
+
+            <section class="admission" id="admission">
+                <h2>Admission Process</h2>
+                <p>We welcome students throughout the year based on availability. Our admission process is simple and transparent:</p>
+                <ul class="program-list">
+                    <li>Visit our school for a campus tour</li>
+                    <li>Submit the completed application form</li>
+                    <li>Provide previous school reports (if applicable)</li>
+                    <li>Participate in a simple assessment (for grade 2 and above)</li>
+                    <li>Complete the enrollment formalities</li>
+                </ul>
+                <p>For more information about fees structure and admission requirements, please contact the school office.</p>
+            </section>
+        </div>
+
+        <section class="gallery" id="gallery">
+            <div class="container">
+                <h2>School Gallery</h2>
+                <p>Take a glimpse of our school environment and activities</p>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="gallery1.jpg" alt="School Building">
                     </div>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">✉️</span>
-                    <div>
-                        <strong>Email:</strong><br>
-                        info@minilandacademy.edu.np
+                    <div class="gallery-item">
+                        <img src="gallery2.jpg" alt="Classroom">
                     </div>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">⏰</span>
-                    <div>
-                        <strong>School Hours:</strong><br>
-                        Sunday-Friday: 10:00 AM - 4:00 PM
+                    <div class="gallery-item">
+                        <img src="gallery3.jpg" alt="Students Activity">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="gallery4.jpg" alt="Sports Day">
                     </div>
                 </div>
             </div>
@@ -321,22 +547,42 @@
 
     <footer>
         <div class="container">
-            <div class="footer-info">
-                <h3>Miniland Academy English School</h3>
-                <p>Providing quality education since establishment</p>
-            </div>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
-                <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
-                <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Miniland Academy</h3>
+                    <p>Providing quality education from Play Group to Class 9 in a nurturing environment that fosters academic excellence and character development.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#programs">Programs</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#admission">Admission</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Kerabari 7, Dangi, Morang</li>
+                        <li><i class="fas fa-phone-alt"></i> +977 981-6302747</li>
+                        <li><i class="fas fa-envelope"></i> info@minilandacademy.edu.np</li>
+                        <li><i class="fas fa-clock"></i> Sun-Fri: 10AM - 4PM</li>
+                    </ul>
+                </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Miniland Academy English School. All Rights Reserved.</p>
+                <p>&copy; 2023 Miniland Academy English School. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
-
-    <!-- Font Awesome for icons (you need internet connection for this to work) -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
