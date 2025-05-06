@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Miniland Academy English School - Kerabari 7, Dangi, Morang</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Khalti Payment SDK -->
     <script src="https://khalti.s3.ap-south-1.amazonaws.com/KPG/dist/2020.12.17.0.0.0/khalti-checkout.iffe.js"></script>
+    <!-- eSewa Payment SDK -->
+    <script src="https://esewa.com.np/ui/esewa.js"></script>
     <style>
         /* CSS Reset */
         * {
@@ -275,8 +281,7 @@
             margin-top: 20px;
         }
 
-        .khalti-button {
-            background-color: #5C2D91;
+        .payment-button {
             color: white;
             border: none;
             padding: 12px 25px;
@@ -289,13 +294,28 @@
             gap: 10px;
         }
 
-        .khalti-button:hover {
-            background-color: #4a2475;
+        .khalti-button {
+            background-color: #5C2D91;
+        }
+
+        .esewa-button {
+            background-color: #55A74E;
+        }
+
+        .payment-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        .khalti-button i {
+        .khalti-button:hover {
+            background-color: #4a2475;
+        }
+
+        .esewa-button:hover {
+            background-color: #489142;
+        }
+
+        .payment-button i {
             font-size: 18px;
         }
 
@@ -537,13 +557,16 @@
                 <h2>Online Fee Payment</h2>
                 <div class="payment-section">
                     <h3>Pay School Fees Online</h3>
-                    <p>Secure and convenient payment through Khalti</p>
+                    <p>Secure and convenient payment options available</p>
                     <div class="payment-options">
-                        <button id="payment-button" class="khalti-button">
+                        <button id="khalti-button" class="payment-button khalti-button">
                             <i class="fas fa-wallet"></i> Pay Via Khalti
                         </button>
+                        <button id="esewa-button" class="payment-button esewa-button">
+                            <i class="fas fa-mobile-alt"></i> Pay Via eSewa
+                        </button>
                     </div>
-                    <p class="payment-note"><small>You'll be redirected to Khalti's secure payment gateway</small></p>
+                    <p class="payment-note"><small>You'll be redirected to a secure payment gateway</small></p>
                 </div>
             </section>
         </div>
@@ -579,7 +602,7 @@
                         <li><i class="fas fa-phone-alt"></i> +977 981-6302747</li>
                         <li><i class="fas fa-envelope"></i> info@minilandacademy.edu.np</li>
                         <li><i class="fas fa-clock"></i> Sun-Fri: 10AM - 4PM</li>
-                                      </ul>
+                    </ul>
                 </div>
             </div>
 
@@ -594,13 +617,10 @@
             </div>
         </div>
     </footer>
-</body>
-</html>
-    </footer>
 
     <script>
         // Khalti payment configuration
-        var config = {
+        var khaltiConfig = {
             "publicKey": "test_public_key_XXXXXXXXXXXXXXXXXXXX", // Replace with your actual public key
             "productIdentity": "School Fees",
             "productName": "Miniland Academy Fees",
@@ -638,21 +658,68 @@
         };
 
         // Initialize Khalti Checkout
-        var checkout = new KhaltiCheckout(config);
+        var khaltiCheckout = new KhaltiCheckout(khaltiConfig);
         
-        // Button click handler
-        var btn = document.getElementById("payment-button");
-        btn.onclick = function () {
+        // Khalti Button click handler
+        document.getElementById("khalti-button").onclick = function () {
             // For demo purposes, using 1000 NPR (100000 paisa)
             // In real implementation, you might get this from a form or database
-            checkout.show({amount: 100000});
+            khaltiCheckout.show({amount: 100000});
         }
+
+        // eSewa Payment Configuration
+        function payWithEsewa() {
+            var path = "https://uat.esewa.com.np/epay/main";
+            var params = {
+                amt: 1000, // Amount in NPR
+                psc: 0,    // Service charge
+                pdc: 0,    // Delivery charge
+                txAmt: 0,  // Tax amount
+                tAmt: 1000, // Total amount
+                pid: "school_fee_" + new Date().getTime(), // Product ID
+                scd: "EPAYTEST", // Merchant code (use your actual code in production)
+                su: window.location.href + "?payment=success", // Success URL
+                fu: window.location.href + "?payment=failed"   // Failure URL
+            };
+
+            // Submit form to eSewa
+            var form = document.createElement("form");
+            form.setAttribute("method", "POST");
+            form.setAttribute("action", path);
+            
+            for(var key in params) {
+                var hiddenField = document.createElement("input");
+                hiddenField.setAttribute("type", "hidden");
+                hiddenField.setAttribute("name", key);
+                hiddenField.setAttribute("value", params[key]);
+                form.appendChild(hiddenField);
+            }
+            
+            document.body.appendChild(form);
+            form.submit();
+        }
+
+        // eSewa Button click handler
+        document.getElementById("esewa-button").onclick = payWithEsewa;
+
+        // Check for payment success/failure in URL parameters
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const paymentStatus = urlParams.get('payment');
+            
+            if(paymentStatus === 'success') {
+                alert('eSewa Payment Successful!');
+            } else if(paymentStatus === 'failed') {
+                alert('eSewa Payment Failed. Please try again.');
+            }
+        };
 
         // Optional: Dynamic amount selection
         // You could add a dropdown to select different fee amounts
         // document.getElementById('fee-amount').addEventListener('change', function() {
-        //     var amount = this.value * 100; // Convert to paisa
-        //     checkout.show({amount: amount});
+        //     var amount = this.value * 100; // Convert to paisa for Khalti
+        //     khaltiCheckout.show({amount: amount});
+        //     // For eSewa, you would update the params.amt value
         // });
     </script>
 </body>
