@@ -141,7 +141,7 @@
 
         /* Hero Section */
         .hero {
-            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/school-building.jpg');
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -153,11 +153,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
         }
 
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
 
         .hero h2 {
@@ -320,52 +323,53 @@
         }
 
         .footer-content {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 30px;
-}
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
 
-.footer-column {
-    flex: 1;
-    min-width: 250px;
-}
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
 
-.footer-links {
-    list-style: none;
-    padding: 0;
-}
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
 
-.footer-links li {
-    margin-bottom: 10px;
-}
+        .footer-links li {
+            margin-bottom: 10px;
+        }
 
-.social-links {
-    display: flex;
-    gap: 15px;
-    margin-top: 15px;
-}
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
 
-.footer-bottom {
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid #ddd;
-}
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
 
-.footer-bottom-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
 
-@media (max-width: 768px) {
-    .footer-bottom-content {
-        flex-direction: column;
-        text-align: center;
-    }
-}
+        @media (max-width: 768px) {
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
         /* Responsive Adjustments */
         @media (min-width: 576px) {
             .school-name h1 {
@@ -548,51 +552,52 @@
     </div>
 
     <footer>
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-column">
-                <h3>Miniland Academy</h3>
-                <p>Providing quality education from Play Group to Class 9 in a nurturing environment that fosters academic excellence and character development.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Miniland Academy</h3>
+                    <p>Providing quality education from Play Group to Class 9 in a nurturing environment that fosters academic excellence and character development.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#programs">Programs</a></li>
+                        <li><a href="#admission">Admission</a></li>
+                        <li><a href="#payment">Pay Fees</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Kerabari 7, Dangi, Morang</li>
+                        <li><i class="fas fa-phone-alt"></i> +977 981-6302747</li>
+                        <li><i class="fas fa-envelope"></i> info@minilandacademy.edu.np</li>
+                        <li><i class="fas fa-clock"></i> Sun-Fri: 10AM - 4PM</li>
+                    </ul>
                 </div>
             </div>
-            <div class="footer-column">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#programs">Programs</a></li>
-                    <li><a href="#admission">Admission</a></li>
-                    <li><a href="#payment">Pay Fees</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Contact Info</h3>
-                <ul class="footer-links">
-                    <li><i class="fas fa-map-marker-alt"></i> Kerabari 7, Dangi, Morang</li>
-                    <li><i class="fas fa-phone-alt"></i> +977 981-6302747</li>
-                    <li><i class="fas fa-envelope"></i> info@minilandacademy.edu.np</li>
-                    <li><i class="fas fa-clock"></i> Sun-Fri: 10AM - 4PM</li>
-                </ul>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>&copy; 2025 Miniland Academy English School. All Rights Reserved.</p>
+                    </div>
+                    <div class="developer">
+                        <p>Designed & Developed By <a href="https://ramanbhandari.com.np/" target="_blank" rel="noopener noreferrer">Raman Bhandari</a> - Former Student</p>
+                    </div>
+                </div>
             </div>
         </div>
-        
-        <div class="footer-bottom">
-            <div class="footer-bottom-content">
-                <div class="copyright">
-                    <p>&copy; 2025 Miniland Academy English School. All Rights Reserved.</p>
-                </div>
-                <div class="developer">
-                    <p>Designed & Developed By <a href="https://ramanbhandari.com.np/" target="_blank" rel="noopener noreferrer">Raman Bhandari</a> - Former Student</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
+    </footer>
+
     <script>
         // Khalti payment configuration
         var khaltiConfig = {
@@ -688,14 +693,6 @@
                 alert('eSewa Payment Failed. Please try again.');
             }
         };
-
-        // Optional: Dynamic amount selection
-        // You could add a dropdown to select different fee amounts
-        // document.getElementById('fee-amount').addEventListener('change', function() {
-        //     var amount = this.value * 100; // Convert to paisa for Khalti
-        //     khaltiCheckout.show({amount: amount});
-        //     // For eSewa, you would update the params.amt value
-        // });
     </script>
 </body>
 </html>
