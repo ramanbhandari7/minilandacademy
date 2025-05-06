@@ -319,80 +319,53 @@
             font-size: 18px;
         }
 
-        /* Footer */
-        footer {
-            background-color: #1a5276;
-            color: white;
-            padding: 50px 0 20px;
-            margin-top: 40px;
-        }
-
         .footer-content {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-        }
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
 
-        .footer-column h3 {
-            color: white;
-            margin-bottom: 20px;
-            font-size: 20px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 10px;
-        }
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+}
 
-        .footer-links {
-            list-style: none;
-        }
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
 
-        .footer-links li {
-            margin-bottom: 10px;
-        }
+.footer-links li {
+    margin-bottom: 10px;
+}
 
-        .footer-links a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            transition: color 0.3s;
-            display: inline-block;
-        }
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
 
-        .footer-links a:hover {
-            color: white;
-            transform: translateX(5px);
-        }
+.footer-bottom {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
 
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
+.footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 
-        .social-links a {
-            color: white;
-            background-color: rgba(255,255,255,0.1);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-        }
-
-        .social-links a:hover {
-            background-color: #3498db;
-            transform: translateY(-3px);
-        }
-
-        .copyright {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 14px;
-            opacity: 0.8;
-        }
-
+@media (max-width: 768px) {
+    .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
         /* Responsive Adjustments */
         @media (min-width: 576px) {
             .school-name h1 {
@@ -575,46 +548,51 @@
     </div>
 
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Miniland Academy</h3>
-                    <p>Providing quality education from Play Group to Class 9 in a nurturing environment that fosters academic excellence and character development.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Miniland Academy</h3>
+                <p>Providing quality education from Play Group to Class 9 in a nurturing environment that fosters academic excellence and character development.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
                 </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#programs">Programs</a></li>
-                        <li><a href="#admission">Admission</a></li>
-                        <li><a href="#payment">Pay Fees</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Contact Info</h3>
-                    <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> Kerabari 7, Dangi, Morang</li>
-                        <li><i class="fas fa-phone-alt"></i> +977 981-6302747</li>
-                        <li><i class="fas fa-envelope"></i> info@minilandacademy.edu.np</li>
-                        <li><i class="fas fa-clock"></i> Sun-Fri: 10AM - 4PM</li>
-               <div class="footer-content" style="text-align: center;">
-    <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
-        <div class="copyright">
-            <p>&copy; 2025 Miniland Academy English School. All Rights Reserved.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#admission">Admission</a></li>
+                    <li><a href="#payment">Pay Fees</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Info</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt"></i> Kerabari 7, Dangi, Morang</li>
+                    <li><i class="fas fa-phone-alt"></i> +977 981-6302747</li>
+                    <li><i class="fas fa-envelope"></i> info@minilandacademy.edu.np</li>
+                    <li><i class="fas fa-clock"></i> Sun-Fri: 10AM - 4PM</li>
+                </ul>
+            </div>
         </div>
-        <div class="developer">
-            <p>Designed & Developed By <a href="https://ramanbhandari.com.np/" target="_blank" rel="noopener noreferrer">Raman Bhandari</a> - Former Student</p>
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <div class="copyright">
+                    <p>&copy; 2025 Miniland Academy English School. All Rights Reserved.</p>
+                </div>
+                <div class="developer">
+                    <p>Designed & Developed By <a href="https://ramanbhandari.com.np/" target="_blank" rel="noopener noreferrer">Raman Bhandari</a> - Former Student</p>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-
+</footer>
     <script>
         // Khalti payment configuration
         var khaltiConfig = {
