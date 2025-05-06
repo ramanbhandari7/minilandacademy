@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Miniland Academy English School - Kerabari 7, Dangi, Morang</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://khalti.s3.ap-south-1.amazonaws.com/KPG/dist/2020.12.17.0.0.0/khalti-checkout.iffe.js"></script>
     <style>
         /* CSS Reset */
         * {
@@ -55,40 +56,50 @@
         header {
             background-color: #1a5276;
             color: white;
-            padding: 20px 0;
+            padding: 10px 0;
             text-align: center;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             position: relative;
             z-index: 100;
         }
 
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 1200px;
+            width: 100%;
+            padding: 0 15px;
+        }
+
         .logo {
-            margin-bottom: 15px;
+            margin-right: 15px;
         }
 
         .logo img {
-            height: 100px;
-            width: 100px;
+            height: 50px;
+            width: 50px;
             object-fit: contain;
             border-radius: 50%;
-            border: 3px solid white;
+            border: 2px solid white;
         }
 
         .school-name h1 {
-            font-size: 24px;
-            margin-bottom: 5px;
-            line-height: 1.3;
+            font-size: 20px;
+            margin-bottom: 0;
+            line-height: 1.2;
         }
 
         .school-name p {
-            font-size: 16px;
+            font-size: 14px;
             opacity: 0.9;
+            margin-bottom: 0;
         }
 
         /* Navigation */
         nav {
             background-color: #2980b9;
-            padding: 10px 0;
+            padding: 8px 0;
             position: sticky;
             top: 0;
             z-index: 99;
@@ -124,11 +135,10 @@
 
         /* Hero Section */
         .hero {
-            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('school-building.jpg');
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/school-building.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-attachment: fixed;
             color: white;
             text-align: center;
             padding: 100px 20px;
@@ -186,7 +196,7 @@
             margin: 40px 0;
         }
 
-        .about, .programs, .contact, .admission {
+        .about, .programs, .contact, .admission, .payment {
             background: white;
             padding: 30px;
             border-radius: 8px;
@@ -194,7 +204,7 @@
             transition: transform 0.3s;
         }
 
-        .about:hover, .programs:hover, .contact:hover, .admission:hover {
+        .about:hover, .programs:hover, .contact:hover, .admission:hover, .payment:hover {
             transform: translateY(-5px);
         }
 
@@ -248,36 +258,45 @@
             margin-bottom: 5px;
         }
 
-        /* Gallery Section */
-        .gallery {
-            padding: 40px 0;
-            background-color: #f0f4f8;
+        /* Payment Section */
+        .payment-section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
         }
 
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        .payment-options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 15px;
             margin-top: 20px;
         }
 
-        .gallery-item {
-            height: 200px;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            position: relative;
+        .khalti-button {
+            background-color: #5C2D91;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
+        .khalti-button:hover {
+            background-color: #4a2475;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        .gallery-item:hover img {
-            transform: scale(1.05);
+        .khalti-button i {
+            font-size: 18px;
         }
 
         /* Footer */
@@ -353,19 +372,11 @@
             font-size: 14px;
             opacity: 0.8;
         }
-<style>
-    .footer-content {
-        text-align: center;
-        width: 100%;
-    }
-    .copyright, .developer {
-        margin: 5px 0;
-    }
-</style>
+
         /* Responsive Adjustments */
         @media (min-width: 576px) {
             .school-name h1 {
-                font-size: 28px;
+                font-size: 24px;
             }
             
             nav ul li a {
@@ -393,6 +404,15 @@
         }
 
         @media (min-width: 992px) {
+            .logo img {
+                height: 60px;
+                width: 60px;
+            }
+            
+            .school-name h1 {
+                font-size: 28px;
+            }
+            
             .hero h2 {
                 font-size: 42px;
             }
@@ -400,43 +420,30 @@
             .hero p {
                 font-size: 20px;
             }
-            
-            .gallery-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            }
-        }
-
-        /* Animation */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        section {
-            animation: fadeIn 0.8s ease-out;
         }
     </style>
 </head>
 <body>
-   <header>
-    <div class="header-container">
-        <div class="logo">
-            <img src="images/school-logo.png" alt="Miniland Academy Logo">
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/school-logo.png" alt="Miniland Academy Logo">
+            </div>
+            <div class="school-name">
+                <h1>Miniland Academy English School</h1>
+                <p>Kerabari 7, Dangi, Morang | PG to Class 9</p>
+            </div>
         </div>
-        <div class="school-name">
-            <h1>Miniland Academy English School</h1>
-            <p>Kerabari 7, Dangi, Morang | PG to Class 9</p>
-        </div>
-    </div>
-</header>
+    </header>
+
     <nav>
         <div class="container">
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#programs">Programs</a></li>
-                <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#admission">Admission</a></li>
+                <li><a href="#payment">Pay Fees</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -457,8 +464,6 @@
             <p>We believe in holistic education that focuses on academic excellence as well as character building. Our experienced faculty members are dedicated to helping each student reach their full potential.</p>
             <h3>Our Mission</h3>
             <p>To provide a stimulating learning environment that promotes academic excellence, creativity, and moral values, preparing students to become responsible citizens and future leaders.</p>
-            <h3>Our Vision</h3>
-            <p>To be recognized as a premier educational institution that transforms students into competent, compassionate, and confident individuals ready to face global challenges.</p>
         </section>
 
         <div class="main-content">
@@ -466,13 +471,14 @@
                 <h2>Our Programs</h2>
                 <p>We offer comprehensive educational programs for different age groups:</p>
                 <ul class="program-list">
-                    <li><strong>Early Childhood:</strong> Play Group and Nursery programs focusing on foundational learning through play, social development, and basic literacy</li>
-                    <li><strong>Primary Level (Classes 1-5):</strong> Balanced curriculum covering English, Mathematics, Science, Social Studies, Nepali, and Computer Basics</li>
-                    <li><strong>Lower Secondary (Classes 6-8):</strong> Specialized subject teachers with emphasis on critical thinking and problem-solving skills</li>
-                    <li><strong>Secondary (Class 9):</strong> Preparation for SEE with rigorous academic standards and career guidance</li>
-                    <li><strong>Co-curricular Activities:</strong> Sports, arts, music, dance, public speaking, and various clubs to nurture all-round development</li>
+                    <li><strong>Early Childhood:</strong> Play Group and Nursery programs focusing on foundational learning through play</li>
+                    <li><strong>Primary Level:</strong> Classes 1-5 with balanced curriculum covering all core subjects</li>
+                    <li><strong>Lower Secondary:</strong> Classes 6-8 with more specialized subject teachers</li>
+                    <li><strong>Secondary:</strong> Class 9 preparing students for SEE in the future</li>
+                    <li><strong>Co-curricular Activities:</strong> Sports, arts, music, and various clubs</li>
                 </ul>
             </section>
+
             <section class="contact" id="contact">
                 <h2>Contact Us</h2>
                 <div class="contact-info">
@@ -525,30 +531,22 @@
                     <li>Participate in a simple assessment (for grade 2 and above)</li>
                     <li>Complete the enrollment formalities</li>
                 </ul>
-                <p>For more information about fees structure and admission requirements, please contact the school office.</p>
+            </section>
+
+            <section class="payment" id="payment">
+                <h2>Online Fee Payment</h2>
+                <div class="payment-section">
+                    <h3>Pay School Fees Online</h3>
+                    <p>Secure and convenient payment through Khalti</p>
+                    <div class="payment-options">
+                        <button id="payment-button" class="khalti-button">
+                            <i class="fas fa-wallet"></i> Pay Via Khalti
+                        </button>
+                    </div>
+                    <p class="payment-note"><small>You'll be redirected to Khalti's secure payment gateway</small></p>
+                </div>
             </section>
         </div>
-
-        <section class="gallery" id="gallery">
-            <div class="container">
-                <h2>School Gallery</h2>
-                <p>Take a glimpse of our school environment and activities</p>
-                <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <img src="gallery1.jpg" alt="School Building">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="gallery2.jpg" alt="Classroom">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="gallery3.jpg" alt="Students Activity">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="gallery4.jpg" alt="Sports Day">
-                    </div>
-                </div>
-            </div>
-        </section>
     </div>
 
     <footer>
@@ -561,7 +559,6 @@
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -570,8 +567,8 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#programs">Programs</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
                         <li><a href="#admission">Admission</a></li>
+                        <li><a href="#payment">Pay Fees</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -582,20 +579,71 @@
                         <li><i class="fas fa-phone-alt"></i> +977 981-6302747</li>
                         <li><i class="fas fa-envelope"></i> info@minilandacademy.edu.np</li>
                         <li><i class="fas fa-clock"></i> Sun-Fri: 10AM - 4PM</li>
-                        </ul>
+                    </ul>
                 </div>
             </div>
-
-            <div class="footer-content" style="text-align: center;">
-                <div class="copyright">
-                    <p>&copy; 2025 Miniland Academy English School. All Rights Reserved.</p>
-                </div>
-
-                <div class="developer">
-                    <p>Designed & Developed By <a href="https://ramanbhandari.com.np/" target="_blank" rel="noopener noreferrer">Raman Bhandari</a> - Former Student</p>
-                </div>
+            <div class="copyright">
+                <p>&copy; 2023 Miniland Academy English School. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Khalti payment configuration
+        var config = {
+            "publicKey": "test_public_key_XXXXXXXXXXXXXXXXXXXX", // Replace with your actual public key
+            "productIdentity": "School Fees",
+            "productName": "Miniland Academy Fees",
+            "productUrl": window.location.href,
+            "paymentPreference": [
+                "KHALTI",
+                "EBANKING",
+                "MOBILE_BANKING",
+                "CONNECT_IPS",
+                "SCT"
+            ],
+            "eventHandler": {
+                onSuccess (payload) {
+                    console.log(payload);
+                    // Here you can redirect to success page or show message
+                    alert("Payment successful! Transaction ID: " + payload.idx);
+                    
+                    // In a real implementation, you would verify this payment with your backend
+                    // fetch('/verify-payment', {
+                    //     method: 'POST',
+                    //     headers: {
+                    //         'Content-Type': 'application/json',
+                    //     },
+                    //     body: JSON.stringify(payload)
+                    // })
+                },
+                onError (error) {
+                    console.log(error);
+                    alert("Payment failed: " + error.message);
+                },
+                onClose () {
+                    console.log('Payment window closed');
+                }
+            }
+        };
+
+        // Initialize Khalti Checkout
+        var checkout = new KhaltiCheckout(config);
+        
+        // Button click handler
+        var btn = document.getElementById("payment-button");
+        btn.onclick = function () {
+            // For demo purposes, using 1000 NPR (100000 paisa)
+            // In real implementation, you might get this from a form or database
+            checkout.show({amount: 100000});
+        }
+
+        // Optional: Dynamic amount selection
+        // You could add a dropdown to select different fee amounts
+        // document.getElementById('fee-amount').addEventListener('change', function() {
+        //     var amount = this.value * 100; // Convert to paisa
+        //     checkout.show({amount: amount});
+        // });
+    </script>
 </body>
 </html>
