@@ -4,14 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Miniland Academy English School - Kerabari 7, Dangi, Morang</title>
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Khalti Payment SDK -->
     <script src="https://khalti.s3.ap-south-1.amazonaws.com/KPG/dist/2020.12.17.0.0.0/khalti-checkout.iffe.js"></script>
-    <!-- eSewa Payment SDK -->
-    <script src="https://esewa.com.np/ui/esewa.js"></script>
     <style>
         /* CSS Reset */
         * {
@@ -141,7 +135,7 @@
 
         /* Hero Section */
         .hero {
-            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero.jpg');
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/school-building.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -153,14 +147,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
         }
 
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
-            position: relative;
-            z-index: 2;
         }
 
         .hero h2 {
@@ -284,7 +275,8 @@
             margin-top: 20px;
         }
 
-        .payment-button {
+        .khalti-button {
+            background-color: #5C2D91;
             color: white;
             border: none;
             padding: 12px 25px;
@@ -297,77 +289,88 @@
             gap: 10px;
         }
 
-        .khalti-button {
-            background-color: #5C2D91;
-        }
-
-        .esewa-button {
-            background-color: #55A74E;
-        }
-
-        .payment-button:hover {
+        .khalti-button:hover {
+            background-color: #4a2475;
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        .khalti-button:hover {
-            background-color: #4a2475;
-        }
-
-        .esewa-button:hover {
-            background-color: #489142;
-        }
-
-        .payment-button i {
+        .khalti-button i {
             font-size: 18px;
         }
 
+        /* Footer */
+        footer {
+            background-color: #1a5276;
+            color: white;
+            padding: 50px 0 20px;
+            margin-top: 40px;
+        }
+
         .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: 1fr;
             gap: 30px;
         }
 
-        .footer-column {
-            flex: 1;
-            min-width: 250px;
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 10px;
         }
 
         .footer-links {
             list-style: none;
-            padding: 0;
         }
 
         .footer-links li {
             margin-bottom: 10px;
         }
 
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
         .social-links {
             display: flex;
             gap: 15px;
-            margin-top: 15px;
+            margin-top: 20px;
         }
 
-        .footer-bottom {
+        .social-links a {
+            color: white;
+            background-color: rgba(255,255,255,0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: #3498db;
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
             margin-top: 40px;
             padding-top: 20px;
-            border-top: 1px solid #ddd;
-        }
-
-        .footer-bottom-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .footer-bottom-content {
-                flex-direction: column;
-                text-align: center;
-            }
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+            opacity: 0.8;
         }
 
         /* Responsive Adjustments */
@@ -512,9 +515,7 @@
                         </div>
                         <div class="contact-text">
                             <strong>School Hours</strong>
-                            Sunday- Thursday: 10:00 AM - 4:00 PM
-                            Friday:10:00 AM - 1:00 PM
-                            Saturday: Off
+                            Sunday-Friday: 10:00 AM - 4:00 PM
                         </div>
                     </div>
                 </div>
@@ -524,9 +525,9 @@
                 <h2>Admission Process</h2>
                 <p>We welcome students throughout the year based on availability. Our admission process is simple and transparent:</p>
                 <ul class="program-list">
-                    <li>Visit our school</li>
+                    <li>Visit our school for a campus tour</li>
                     <li>Submit the completed application form</li>
-                    <li>Provide previous school reports</li>
+                    <li>Provide previous school reports (if applicable)</li>
                     <li>Participate in a simple assessment (for grade 2 and above)</li>
                     <li>Complete the enrollment formalities</li>
                 </ul>
@@ -536,16 +537,13 @@
                 <h2>Online Fee Payment</h2>
                 <div class="payment-section">
                     <h3>Pay School Fees Online</h3>
-                    <p>Secure and convenient payment options available</p>
+                    <p>Secure and convenient payment through Khalti</p>
                     <div class="payment-options">
-                        <button id="khalti-button" class="payment-button khalti-button">
+                        <button id="payment-button" class="khalti-button">
                             <i class="fas fa-wallet"></i> Pay Via Khalti
                         </button>
-                        <button id="esewa-button" class="payment-button esewa-button">
-                            <i class="fas fa-mobile-alt"></i> Pay Via eSewa
-                        </button>
                     </div>
-                    <p class="payment-note"><small>You'll be redirected to a secure payment gateway</small></p>
+                    <p class="payment-note"><small>You'll be redirected to Khalti's secure payment gateway</small></p>
                 </div>
             </section>
         </div>
@@ -584,23 +582,15 @@
                     </ul>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <div class="footer-bottom-content">
-                    <div class="copyright">
-                        <p>&copy; 2025 Miniland Academy English School. All Rights Reserved.</p>
-                    </div>
-                    <div class="developer">
-                        <p>Designed & Developed By <a href="https://ramanbhandari.com.np/" target="_blank" rel="noopener noreferrer">Raman Bhandari</a> - Former Student</p>
-                    </div>
-                </div>
+            <div class="copyright">
+                <p>&copy; 2023 Miniland Academy English School. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
         // Khalti payment configuration
-        var khaltiConfig = {
+        var config = {
             "publicKey": "test_public_key_XXXXXXXXXXXXXXXXXXXX", // Replace with your actual public key
             "productIdentity": "School Fees",
             "productName": "Miniland Academy Fees",
@@ -638,61 +628,22 @@
         };
 
         // Initialize Khalti Checkout
-        var khaltiCheckout = new KhaltiCheckout(khaltiConfig);
+        var checkout = new KhaltiCheckout(config);
         
-        // Khalti Button click handler
-        document.getElementById("khalti-button").onclick = function () {
+        // Button click handler
+        var btn = document.getElementById("payment-button");
+        btn.onclick = function () {
             // For demo purposes, using 1000 NPR (100000 paisa)
             // In real implementation, you might get this from a form or database
-            khaltiCheckout.show({amount: 100000});
+            checkout.show({amount: 100000});
         }
 
-        // eSewa Payment Configuration
-        function payWithEsewa() {
-            var path = "https://uat.esewa.com.np/epay/main";
-            var params = {
-                amt: 1000, // Amount in NPR
-                psc: 0,    // Service charge
-                pdc: 0,    // Delivery charge
-                txAmt: 0,  // Tax amount
-                tAmt: 1000, // Total amount
-                pid: "school_fee_" + new Date().getTime(), // Product ID
-                scd: "EPAYTEST", // Merchant code (use your actual code in production)
-                su: window.location.href + "?payment=success", // Success URL
-                fu: window.location.href + "?payment=failed"   // Failure URL
-            };
-
-            // Submit form to eSewa
-            var form = document.createElement("form");
-            form.setAttribute("method", "POST");
-            form.setAttribute("action", path);
-            
-            for(var key in params) {
-                var hiddenField = document.createElement("input");
-                hiddenField.setAttribute("type", "hidden");
-                hiddenField.setAttribute("name", key);
-                hiddenField.setAttribute("value", params[key]);
-                form.appendChild(hiddenField);
-            }
-            
-            document.body.appendChild(form);
-            form.submit();
-        }
-
-        // eSewa Button click handler
-        document.getElementById("esewa-button").onclick = payWithEsewa;
-
-        // Check for payment success/failure in URL parameters
-        window.onload = function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const paymentStatus = urlParams.get('payment');
-            
-            if(paymentStatus === 'success') {
-                alert('eSewa Payment Successful!');
-            } else if(paymentStatus === 'failed') {
-                alert('eSewa Payment Failed. Please try again.');
-            }
-        };
+        // Optional: Dynamic amount selection
+        // You could add a dropdown to select different fee amounts
+        // document.getElementById('fee-amount').addEventListener('change', function() {
+        //     var amount = this.value * 100; // Convert to paisa
+        //     checkout.show({amount: amount});
+        // });
     </script>
 </body>
 </html>
