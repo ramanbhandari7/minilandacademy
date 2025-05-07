@@ -35,45 +35,7 @@
             margin: 0 auto;
             padding: 0 15px;
         }
-.admission-notice {
-        background-color: #e74c3c;
-        color: white;
-        padding: 10px 0;
-        text-align: center;
-        position: relative;
-        animation: slideIn 0.5s ease-out;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-    }
-    
-    .notice-content {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-    }
-    
-    .nepali {
-        font-size: 0.9em;
-    }
-    
-    .close-notice {
-        font-size: 20px;
-        font-weight: bold;
-        padding: 0 10px;
-    }
-    
-    .close-notice:hover {
-        color: #f1c40f;
-    }
-    
-    @keyframes slideIn {
-        from { transform: translateY(-100%); }
-        to { transform: translateY(0); }
-    }
-</style>
+
         section {
             padding: 40px 0;
         }
@@ -483,20 +445,15 @@
             </ul>
         </div>
     </nav>
-<div class="admission-notice">
-    <div class="notice-content">
-        <span class="english">Admission Open for PG, Nursery to Class 9. Click Enroll Button Now for Inquiry!</span>
-        <span class="nepali">पीजी, नर्सरी देखि कक्षा ९ सम्म भर्ना खुल्ला छ। जानकारीको लागि अहिले नै भर्ना बटनमा क्लिक गर्नुहोस्!</span>
-    </div>
-    <span class="close-notice">&times;</span>
-</div>
-    <<section class="hero" id="home">
-    <div class="hero-content">
-        <h2>Quality Education for Bright Futures</h2>
-        <p>Miniland Academy English School provides excellent education from Play Group to Class 9 in a nurturing environment that fosters academic excellence and character development.</p>
-        <a href="http://wa.me/9779816302747" class="btn" target="_blank">Enroll Now</a>
-    </div>
-</section>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Quality Education for Bright Futures</h2>
+            <p>Miniland Academy English School provides excellent education from Play Group to Class 9 in a nurturing environment that fosters academic excellence and character development.</p>
+            <a href="#admission" class="btn">Enroll Now</a>
+        </div>
+    </section>
+
     <div class="container">
         <section class="about" id="about">
             <h2>About Our School</h2>
@@ -736,21 +693,6 @@
                 alert('eSewa Payment Failed. Please try again.');
             }
         };
-    document.querySelector('.admission-notice').addEventListener('click', function(e) {
-        if(e.target.classList.contains('close-notice')) {
-            this.style.display = 'none';
-            // Optional: Store in localStorage to remember user preference
-            localStorage.setItem('admissionNoticeClosed', 'true');
-        }
-    });
-    
-    // Optional: Check localStorage on page load
-    window.addEventListener('DOMContentLoaded', function() {
-        if(localStorage.getItem('admissionNoticeClosed') === 'true') {
-            document.querySelector('.admission-notice').style.display = 'none';
-        }
-    });
-</script>
     </script>
 </body>
 </html>
