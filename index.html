@@ -3,15 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Miniland Academy English School in Kerabari 7, Dangi, Morang offers quality education from Play Group to Class 9">
     <title>Miniland Academy English School - Kerabari 7, Dangi, Morang</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="icon" type="image/png" href="images/favicon.png" alt="Miniland Academy logo">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Khalti Payment SDK -->
-    <script src="https://khalti.s3.ap-south-1.amazonaws.com/KPG/dist/2020.12.17.0.0.0/khalti-checkout.iffe.js"></script>
-    <!-- eSewa Payment SDK -->
-    <script src="https://esewa.com.np/ui/esewa.js"></script>
     <style>
         /* CSS Reset */
         * {
@@ -134,7 +131,8 @@
             display: inline-block;
         }
 
-        nav ul li a:hover {
+        nav ul li a:hover,
+        nav ul li a:focus {
             background-color: #3498db;
             transform: translateY(-2px);
         }
@@ -188,7 +186,8 @@
             font-size: 16px;
         }
 
-        .btn:hover {
+        .btn:hover,
+        .btn:focus {
             background-color: #c0392b;
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
@@ -228,7 +227,7 @@
             line-height: 1.5;
         }
 
-        .program-list li:before {
+        .program-list li::before {
             content: "→";
             color: #e74c3c;
             position: absolute;
@@ -302,16 +301,19 @@
             background-color: #55A74E;
         }
 
-        .payment-button:hover {
+        .payment-button:hover,
+        .payment-button:focus {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        .khalti-button:hover {
+        .khalti-button:hover,
+        .khalti-button:focus {
             background-color: #4a2475;
         }
 
-        .esewa-button:hover {
+        .esewa-button:hover,
+        .esewa-button:focus {
             background-color: #489142;
         }
 
@@ -356,7 +358,8 @@
             display: inline-block;
         }
 
-        .footer-links a:hover {
+        .footer-links a:hover,
+        .footer-links a:focus {
             color: white;
             transform: translateX(5px);
         }
@@ -379,7 +382,8 @@
             transition: all 0.3s;
         }
 
-        .social-links a:hover {
+        .social-links a:hover,
+        .social-links a:focus {
             background-color: #3498db;
             transform: translateY(-3px);
         }
@@ -441,9 +445,27 @@
                 font-size: 20px;
             }
         }
+
+        /* Skip to content link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #1a5276;
+            color: white;
+            padding: 8px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <header>
         <div class="header-container">
             <div class="logo">
@@ -469,108 +491,110 @@
         </div>
     </nav>
 
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h2>Quality Education for Bright Futures</h2>
-            <p>Miniland Academy English School provides excellent education from Play Group to Class 9 in a nurturing environment that fosters academic excellence and character development.</p>
-            <a href="#admission" class="btn">Enroll Now</a>
-        </div>
-    </section>
-
-    <div class="container">
-        <section class="about" id="about">
-            <h2>About Our School</h2>
-            <p>Miniland Academy English School, located in Kerabari 7, Dangi, Morang, is committed to providing quality education to students from Play Group to Class 9. Our school was established with the vision of creating a learning environment that nurtures young minds and prepares them for future challenges.</p>
-            <p>We believe in holistic education that focuses on academic excellence as well as character building. Our experienced faculty members are dedicated to helping each student reach their full potential.</p>
-            <h3>Our Mission</h3>
-            <p>To provide a stimulating learning environment that promotes academic excellence, creativity, and moral values, preparing students to become responsible citizens and future leaders.</p>
+    <main id="main-content">
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h2>Quality Education for Bright Futures</h2>
+                <p>Miniland Academy English School provides excellent education from Play Group to Class 9 in a nurturing environment that fosters academic excellence and character development.</p>
+                <a href="#admission" class="btn">Enroll Now</a>
+            </div>
         </section>
 
-        <div class="main-content">
-            <section class="programs" id="programs">
-                <h2>Our Programs</h2>
-                <p>We offer comprehensive educational programs for different age groups:</p>
-                <ul class="program-list">
-                    <li><strong>Early Childhood:</strong> Play Group and Nursery programs focusing on foundational learning through play</li>
-                    <li><strong>Primary Level:</strong> Classes 1-5 with balanced curriculum covering all core subjects</li>
-                    <li><strong>Lower Secondary:</strong> Classes 6-8 with more specialized subject teachers</li>
-                    <li><strong>Secondary:</strong> Class 9 preparing students for SEE in the future</li>
-                    <li><strong>Co-curricular Activities:</strong> Sports, arts, music, and various clubs</li>
-                </ul>
+        <div class="container">
+            <section class="about" id="about">
+                <h2>About Our School</h2>
+                <p>Miniland Academy English School, located in Kerabari 7, Dangi, Morang, is committed to providing quality education to students from Play Group to Class 9. Our school was established with the vision of creating a learning environment that nurtures young minds and prepares them for future challenges.</p>
+                <p>We believe in holistic education that focuses on academic excellence as well as character building. Our experienced faculty members are dedicated to helping each student reach their full potential.</p>
+                <h3>Our Mission</h3>
+                <p>To provide a stimulating learning environment that promotes academic excellence, creativity, and moral values, preparing students to become responsible citizens and future leaders.</p>
             </section>
 
-            <section class="contact" id="contact">
-                <h2>Contact Us</h2>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-text">
-                            <strong>Address</strong>
-                            Kerabari 7, Dangi, Morang, Nepal
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <div class="contact-text">
-                            <strong>Principal Dip Rai</strong>
-                            +977 981-6302747
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-text">
-                            <strong>Email</strong>
-                            info@minilandacademy.edu.np
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="contact-text">
-                            <strong>School Hours</strong>
-                            Sunday-Friday: 10:00 AM - 4:00 PM
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <div class="main-content">
+                <section class="programs" id="programs">
+                    <h2>Our Programs</h2>
+                    <p>We offer comprehensive educational programs for different age groups:</p>
+                    <ul class="program-list">
+                        <li><strong>Early Childhood:</strong> Play Group and Nursery programs focusing on foundational learning through play</li>
+                        <li><strong>Primary Level:</strong> Classes 1-5 with balanced curriculum covering all core subjects</li>
+                        <li><strong>Lower Secondary:</strong> Classes 6-8 with more specialized subject teachers</li>
+                        <li><strong>Secondary:</strong> Class 9 preparing students for SEE in the future</li>
+                        <li><strong>Co-curricular Activities:</strong> Sports, arts, music, and various clubs</li>
+                    </ul>
+                </section>
 
-            <section class="admission" id="admission">
-                <h2>Admission Process</h2>
-                <p>We welcome students throughout the year based on availability. Our admission process is simple and transparent:</p>
-                <ul class="program-list">
-                    <li>Visit our school for a campus tour</li>
-                    <li>Submit the completed application form</li>
-                    <li>Provide previous school reports (if applicable)</li>
-                    <li>Participate in a simple assessment (for grade 2 and above)</li>
-                    <li>Complete the enrollment formalities</li>
-                </ul>
-            </section>
-
-            <section class="payment" id="payment">
-                <h2>Online Fee Payment</h2>
-                <div class="payment-section">
-                    <h3>Pay School Fees Online</h3>
-                    <p>Secure and convenient payment options available</p>
-                    <div class="payment-options">
-                        <button id="khalti-button" class="payment-button khalti-button">
-                            <i class="fas fa-wallet"></i> Pay Via Khalti
-                        </button>
-                        <button id="esewa-button" class="payment-button esewa-button">
-                            <i class="fas fa-mobile-alt"></i> Pay Via eSewa
-                        </button>
+                <section class="contact" id="contact">
+                    <h2>Contact Us</h2>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            </div>
+                            <div class="contact-text">
+                                <strong>Address</strong>
+                                Kerabari 7, Dangi, Morang, Nepal
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                            </div>
+                            <div class="contact-text">
+                                <strong>Principal Dip Rai</strong>
+                                <a href="tel:+9779816302747">+977 981-6302747</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                            </div>
+                            <div class="contact-text">
+                                <strong>Email</strong>
+                                <a href="mailto:info@minilandacademy.edu.np">info@minilandacademy.edu.np</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock" aria-hidden="true"></i>
+                            </div>
+                            <div class="contact-text">
+                                <strong>School Hours</strong>
+                                Sunday-Friday: 10:00 AM - 4:00 PM
+                            </div>
+                        </div>
                     </div>
-                    <p class="payment-note"><small>You'll be redirected to a secure payment gateway</small></p>
-                </div>
-            </section>
+                </section>
+
+                <section class="admission" id="admission">
+                    <h2>Admission Process</h2>
+                    <p>We welcome students throughout the year based on availability. Our admission process is simple and transparent:</p>
+                    <ul class="program-list">
+                        <li>Visit our school for a campus tour</li>
+                        <li>Submit the completed application form</li>
+                        <li>Provide previous school reports (if applicable)</li>
+                        <li>Participate in a simple assessment (for grade 2 and above)</li>
+                        <li>Complete the enrollment formalities</li>
+                    </ul>
+                </section>
+
+                <section class="payment" id="payment">
+                    <h2>Online Fee Payment</h2>
+                    <div class="payment-section">
+                        <h3>Pay School Fees Online</h3>
+                        <p>Secure and convenient payment options available</p>
+                        <div class="payment-options">
+                            <button id="khalti-button" class="payment-button khalti-button">
+                                <i class="fas fa-wallet" aria-hidden="true"></i> Pay Via Khalti
+                            </button>
+                            <button id="esewa-button" class="payment-button esewa-button">
+                                <i class="fas fa-mobile-alt" aria-hidden="true"></i> Pay Via eSewa
+                            </button>
+                        </div>
+                        <p class="payment-note"><small>You'll be redirected to a secure payment gateway</small></p>
+                    </div>
+                </section>
+            </div>
         </div>
-    </div>
+    </main>
 
     <footer>
         <div class="container">
@@ -579,9 +603,9 @@
                     <h3>Miniland Academy</h3>
                     <p>Providing quality education from Play Group to Class 9 in a nurturing environment that fosters academic excellence and character development.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -598,10 +622,10 @@
                 <div class="footer-column">
                     <h3>Contact Info</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> Kerabari 7, Dangi, Morang</li>
-                        <li><i class="fas fa-phone-alt"></i> +977 981-6302747</li>
-                        <li><i class="fas fa-envelope"></i> info@minilandacademy.edu.np</li>
-                        <li><i class="fas fa-clock"></i> Sun-Fri: 10AM - 4PM</li>
+                        <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Kerabari 7, Dangi, Morang</li>
+                        <li><i class="fas fa-phone-alt" aria-hidden="true"></i> <a href="tel:+9779816302747">+977 981-6302747</a></li>
+                        <li><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:info@minilandacademy.edu.np">info@minilandacademy.edu.np</a></li>
+                        <li><i class="fas fa-clock" aria-hidden="true"></i> Sun-Fri: 10AM - 4PM</li>
                     </ul>
                 </div>
             </div>
@@ -618,92 +642,99 @@
         </div>
     </footer>
 
+    <!-- Loading scripts at the end for better performance -->
+    <!-- Khalti Payment SDK -->
+    <script src="https://khalti.s3.ap-south-1.amazonaws.com/KPG/dist/2020.12.17.0.0.0/khalti-checkout.iffe.js" defer></script>
+    <!-- eSewa Payment SDK -->
+    <script src="https://esewa.com.np/ui/esewa.js" defer></script>
+    
     <script>
-        // Khalti payment configuration
-        var khaltiConfig = {
-            "publicKey": "test_public_key_XXXXXXXXXXXXXXXXXXXX", // Replace with your actual public key
-            "productIdentity": "School Fees",
-            "productName": "Miniland Academy Fees",
-            "productUrl": window.location.href,
-            "paymentPreference": [
-                "KHALTI",
-                "EBANKING",
-                "MOBILE_BANKING",
-                "CONNECT_IPS",
-                "SCT"
-            ],
-            "eventHandler": {
-                onSuccess (payload) {
-                    console.log(payload);
-                    // Here you can redirect to success page or show message
-                    alert("Payment successful! Transaction ID: " + payload.idx);
-                    
-                    // In a real implementation, you would verify this payment with your backend
-                    // fetch('/verify-payment', {
-                    //     method: 'POST',
-                    //     headers: {
-                    //         'Content-Type': 'application/json',
-                    //     },
-                    //     body: JSON.stringify(payload)
-                    // })
-                },
-                onError (error) {
-                    console.log(error);
-                    alert("Payment failed: " + error.message);
-                },
-                onClose () {
-                    console.log('Payment window closed');
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Khalti payment configuration
+            var khaltiConfig = {
+                "publicKey": "test_public_key_XXXXXXXXXXXXXXXXXXXX", // Replace with your actual public key
+                "productIdentity": "School Fees",
+                "productName": "Miniland Academy Fees",
+                "productUrl": window.location.href,
+                "paymentPreference": [
+                    "KHALTI",
+                    "EBANKING",
+                    "MOBILE_BANKING",
+                    "CONNECT_IPS",
+                    "SCT"
+                ],
+                "eventHandler": {
+                    onSuccess (payload) {
+                        console.log(payload);
+                        // Here you can redirect to success page or show message
+                        alert("Payment successful! Transaction ID: " + payload.idx);
+                        
+                        // In a real implementation, you would verify this payment with your backend
+                        // fetch('/verify-payment', {
+                        //     method: 'POST',
+                        //     headers: {
+                        //         'Content-Type': 'application/json',
+                        //     },
+                        //     body: JSON.stringify(payload)
+                        // })
+                    },
+                    onError (error) {
+                        console.log(error);
+                        alert("Payment failed: " + error.message);
+                    },
+                    onClose () {
+                        console.log('Payment window closed');
+                    }
                 }
-            }
-        };
-
-        // Initialize Khalti Checkout
-        var khaltiCheckout = new KhaltiCheckout(khaltiConfig);
-        
-        // Khalti Button click handler
-        document.getElementById("khalti-button").onclick = function () {
-            // For demo purposes, using 1000 NPR (100000 paisa)
-            // In real implementation, you might get this from a form or database
-            khaltiCheckout.show({amount: 100000});
-        }
-
-        // eSewa Payment Configuration
-        function payWithEsewa() {
-            var path = "https://uat.esewa.com.np/epay/main";
-            var params = {
-                amt: 1000, // Amount in NPR
-                psc: 0,    // Service charge
-                pdc: 0,    // Delivery charge
-                txAmt: 0,  // Tax amount
-                tAmt: 1000, // Total amount
-                pid: "school_fee_" + new Date().getTime(), // Product ID
-                scd: "EPAYTEST", // Merchant code (use your actual code in production)
-                su: window.location.href + "?payment=success", // Success URL
-                fu: window.location.href + "?payment=failed"   // Failure URL
             };
 
-            // Submit form to eSewa
-            var form = document.createElement("form");
-            form.setAttribute("method", "POST");
-            form.setAttribute("action", path);
+            // Initialize Khalti Checkout
+            var khaltiCheckout = new KhaltiCheckout(khaltiConfig);
             
-            for(var key in params) {
-                var hiddenField = document.createElement("input");
-                hiddenField.setAttribute("type", "hidden");
-                hiddenField.setAttribute("name", key);
-                hiddenField.setAttribute("value", params[key]);
-                form.appendChild(hiddenField);
+            // Khalti Button click handler
+            document.getElementById("khalti-button").addEventListener("click", function() {
+                // For demo purposes, using 1000 NPR (100000 paisa)
+                // In real implementation, you might get this from a form or database
+                khaltiCheckout.show({amount: 100000});
+            });
+
+            // eSewa Payment Configuration
+            function payWithEsewa() {
+                var path = "https://uat.esewa.com.np/epay/main";
+                var params = {
+                    amt: 1000, // Amount in NPR
+                    psc: 0,    // Service charge
+                    pdc: 0,    // Delivery charge
+                    txAmt: 0,  // Tax amount
+                    tAmt: 1000, // Total amount
+                    pid: "school_fee_" + new Date().getTime(), // Product ID
+                    scd: "EPAYTEST", // Merchant code (use your actual code in production)
+                    su: window.location.href + "?payment=success", // Success URL
+                    fu: window.location.href + "?payment=failed"   // Failure URL
+                };
+
+                // Submit form to eSewa
+                var form = document.createElement("form");
+                form.setAttribute("method", "POST");
+                form.setAttribute("action", path);
+                
+                for(var key in params) {
+                    var hiddenField = document.createElement("input");
+                    hiddenField.setAttribute("type", "hidden");
+                    hiddenField.setAttribute("name", key);
+                    hiddenField.setAttribute("value", params[key]);
+                    form.appendChild(hiddenField);
+                }
+                
+                document.body.appendChild(form);
+                form.submit();
             }
-            
-            document.body.appendChild(form);
-            form.submit();
-        }
 
-        // eSewa Button click handler
-        document.getElementById("esewa-button").onclick = payWithEsewa;
+            // eSewa Button click handler
+            document.getElementById("esewa-button").addEventListener("click", payWithEsewa);
 
-        // Check for payment success/failure in URL parameters
-        window.onload = function() {
+            // Check for payment success/failure in URL parameters
             const urlParams = new URLSearchParams(window.location.search);
             const paymentStatus = urlParams.get('payment');
             
@@ -712,15 +743,15 @@
             } else if(paymentStatus === 'failed') {
                 alert('eSewa Payment Failed. Please try again.');
             }
-        };
 
-        // Optional: Dynamic amount selection
-        // You could add a dropdown to select different fee amounts
-        // document.getElementById('fee-amount').addEventListener('change', function() {
-        //     var amount = this.value * 100; // Convert to paisa for Khalti
-        //     khaltiCheckout.show({amount: amount});
-        //     // For eSewa, you would update the params.amt value
-        // });
+            // Optional: Dynamic amount selection
+            // You could add a dropdown to select different fee amounts
+            // document.getElementById('fee-amount').addEventListener('change', function() {
+            //     var amount = this.value * 100; // Convert to paisa for Khalti
+            //     khaltiCheckout.show({amount: amount});
+            //     // For eSewa, you would update the params.amt value
+            // });
+        });
     </script>
 </body>
 </html>
