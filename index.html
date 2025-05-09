@@ -434,24 +434,75 @@
             margin-top: 20px;
         }
 
-        .social-links a {
-            color: white;
-            background-color: rgba(255,255,255,0.1);
+         .social-links {
+        display: flex;
+        gap: 18px;
+        margin-top: 25px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .social-icon {
+        color: white;
+        background-color: rgba(255, 255, 255, 0.15);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        font-size: 18px;
+        position: relative;
+    }
+    
+    .social-icon:hover {
+        transform: translateY(-3px) scale(1.1);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    /* Platform-specific colors */
+    .facebook:hover { background-color: #3b5998; }
+    .tiktok:hover { background-color: #000000; }
+    .youtube:hover { background-color: #ff0000; }
+    .whatsapp:hover { background-color: #25D366; }
+    
+    /* Tooltip effect */
+    .social-icon::after {
+        content: attr(aria-label);
+        position: absolute;
+        bottom: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #1a5276;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-size: 12px;
+        opacity: 0;
+        transition: opacity 0.3s;
+        pointer-events: none;
+        white-space: nowrap;
+    }
+    
+    .social-icon:hover::after {
+        opacity: 1;
+    }
+    
+    @media (max-width: 768px) {
+        .social-links {
+            gap: 15px;
+        }
+        .social-icon {
             width: 40px;
             height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
+            font-size: 16px;
         }
-
-        .social-links a:hover,
-        .social-links a:focus {
-            background-color: #3498db;
-            transform: translateY(-3px);
+        .social-icon::after {
+            font-size: 10px;
+            bottom: -35px;
         }
-
+    }
         /* Updated Footer Bottom Section */
         .footer-bottom {
             display: flex;
@@ -468,7 +519,6 @@
             opacity: 0.8;
             margin-bottom: 10px;
         }
-
         .developer {
             font-size: 14px;
             opacity: 0.8;
@@ -477,11 +527,10 @@
         .developer a {
             color: rgba(255,255,255,0.8);
             text-decoration: none;
-            transition: color 0.3s;
+            transition: color 0.8s;
         }
-
         .developer a:hover {
-            color: white;
+            color: blue;
         }
 
         /* Responsive Adjustments */
@@ -489,7 +538,6 @@
             .school-name h1 {
                 font-size: 24px;
             }
-            
             nav ul li a {
                 font-size: 16px;
                 padding: 8px 15px;
@@ -650,7 +698,7 @@
                             </div>
                             <div class="contact-text">
                                 <strong>Email</strong>
-                                <a href="mailto:info@minilandacademy.edu.np">info@minilandacademy.edu.np</a>
+                                <a href="mailto:info.minilandacademy@gmail.com">info.minilandacademy@gmail.com</a>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -706,11 +754,42 @@
                     <h3>Miniland Academy</h3>
                     <p>Providing quality education from Play Group to Class 9 in a nurturing environment that fosters academic excellence and character development.</p>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+    <!-- Facebook -->
+    <a href="https://www.facebook.com/people/Miniland-Academy-English-School/61573570560067/" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Facebook Page"
+       class="social-icon facebook">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+    
+    <!-- TikTok -->
+    <a href="https://www.tiktok.com/@minilandacademy" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="TikTok Profile"
+       class="social-icon tiktok">
+        <i class="fab fa-tiktok"></i>
+    </a>
+    
+    <!-- YouTube -->
+    <a href="https://www.youtube.com/@minilandacademy" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="YouTube Channel"
+       class="social-icon youtube">
+        <i class="fab fa-youtube"></i>
+    </a>
+    
+    <!-- WhatsApp -->
+    <a href="https://wa.me/9779816302747" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Contact via WhatsApp"
+       class="social-icon whatsapp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
                     </div>
-                </div>
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
@@ -727,7 +806,7 @@
                     <ul class="footer-links">
                         <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Kerabari 7, Dangi, Morang</li>
                         <li><i class="fas fa-phone-alt" aria-hidden="true"></i> <a href="tel:+9779816302747">+977 981-6302747</a></li>
-                        <li><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:info@minilandacademy.edu.np">info.minilandacademy@gmail.com</a></li>
+                        <li><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:info.minilandacademy@gmail.com">info.minilandacademy@gmail.com</a></li>
                         <li><i class="fas fa-clock" aria-hidden="true"></i> Sun-Thur: 10AM - 4PM, Friday : 10AM - 1PM</li>
                     </ul>
                 </div>
