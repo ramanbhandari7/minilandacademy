@@ -138,50 +138,73 @@
         }
 
         /* Hero Section with Reflection */
-        .hero {
-            position: relative;
-            color: white;
-            text-align: center;
-            min-height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            margin-bottom: 0;
-            padding: 0;
-        }
+        ..hero {
+        position: relative;
+        color: white;
+        text-align: center;
+        min-height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        margin-bottom: 0;
+        padding: 0;
+        isolation: isolate;
+    }
 
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/school-building.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            z-index: -2;
-        }
+    .hero-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('images/hero.jpg');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        z-index: -2;
+    }
 
-        .hero-reflection {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 30%;
-            background: linear-gradient(
-                to bottom, 
-                rgba(255, 255, 255, 0.2) 0%, 
-                rgba(255, 255, 255, 0) 100%
-            ), url('images/school-building.jpg');
-            background-size: cover;
-            background-position: center;
-            transform: scaleY(-1);
-            opacity: 0.7;
-            filter: blur(1px);
-            z-index: -1;
-        }
+    .hero-reflection {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 30%;
+        background: linear-gradient(
+            to bottom, 
+            rgba(255, 255, 255, 0.2) 0%, 
+            rgba(255, 255, 255, 0) 100%
+        ), url('images/hero.jpg');
+        background-size: cover;
+        background-position: center bottom;
+        transform: scaleY(-1);
+        opacity: 0.7;
+        filter: blur(1px);
+        z-index: -1;
+        mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+    }
+
+    .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        position: relative;
+        z-index: 1;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .hero h1 {
+        font-size: clamp(32px, 5vw, 48px);
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: clamp(16px, 2.5vw, 20px);
+        margin: 0 auto 30px;
+        max-width: 600px;
+    }
 
         .hero-content {
             max-width: 800px;
@@ -562,15 +585,14 @@
 
     <main id="main-content">
         <section class="hero" id="home">
-            <div class="hero-bg"></div>
-            <div class="hero-reflection"></div>
-            <div class="hero-content">
-                <h2>Quality Education for Bright Futures</h2>
-                <p>Miniland Academy English School provides excellent education from Play Group to Class 9 in a nurturing environment that fosters academic excellence and character development.</p>
-                <a href="#admission" class="btn">Enroll Now</a>
-            </div>
-        </section>
-
+    <div class="hero-bg"></div>
+    <div class="hero-reflection"></div>
+    <div class="hero-content">
+        <h1>Quality Education for Bright Futures</h1>
+        <p>Miniland Academy English School provides excellent education from Play Group to Class 9 in a nurturing environment that fosters academic excellence and character development.</p>
+        <a href="#contact" class="btn">Contact Us</a>
+    </div>
+</section>
         <div class="container">
             <section class="about" id="about">
                 <h2>About Our School</h2>
