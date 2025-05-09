@@ -4,42 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Miniland Academy English School in Kerabari 7, Dangi, Morang offers quality education from Play Group to Class 9. Morality, Discipline & Quality Education is Our Supreme Ambition.">
-    <title>Miniland Academy English School</title> 
-    
-    <link rel="icon" href="images/favicon.png" type="image/png"> 
-    
+    <title>Miniland Academy English School</title>
+
+    <link rel="icon" href="images/favicon.png" type="image/png">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* --- CSS Reset --- */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        
-        html { 
-            scroll-behavior: smooth; 
-            scroll-padding-top: 85px; 
-        } 
 
-        body { 
-            line-height: 1.7; 
-            color: #343a40; 
-            background-color: #f4f7f6; 
-            overflow-x: hidden; 
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 85px;
+        }
+
+        body {
+            line-height: 1.7;
+            color: #343a40;
+            background-color: #f4f7f6;
+            overflow-x: hidden;
         }
 
         /* --- Layout Container --- */
-        .container { 
-            width: 100%; 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            padding: 0 20px; 
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            /* General container rule, z-index will be added specifically where needed for stacking context */
         }
-        
+
         /* --- Typography & General Elements --- */
-        h2.section-title { 
-            color: #1a5276; 
-            margin-bottom: 50px; 
-            padding-bottom: 15px; 
-            border-bottom: 2px solid #2980b9; 
-            font-size: clamp(24px, 5vw, 36px); 
+        h2.section-title {
+            color: #1a5276;
+            margin-bottom: 50px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #2980b9;
+            font-size: clamp(24px, 5vw, 36px);
             font-weight: 600;
             text-align: center;
             position: relative;
@@ -51,190 +52,189 @@
         h2.section-title::after {
             content: '';
             display: block;
-            width: 70px; 
+            width: 70px;
             height: 4px;
-            background-color: #e74c3c; 
-            margin: 10px auto 0; 
+            background-color: #e74c3c;
+            margin: 10px auto 0;
         }
 
         h3 { color: #1a5276; margin: 25px 0 15px; font-size: clamp(20px, 4vw, 26px); font-weight: 500;}
-        p { margin-bottom: 20px; color: #495057; font-size: clamp(15px, 3vw, 17px); line-height: 1.8;} 
+        p { margin-bottom: 20px; color: #495057; font-size: clamp(15px, 3vw, 17px); line-height: 1.8;}
 
         /* --- Header --- */
-        header { 
-            background-color: #1a5276; 
-            color: white; 
-            padding: 15px 0; 
-            box-shadow: 0 3px 8px rgba(0,0,0,0.15); 
-            position: relative; 
-            z-index: 100; 
+        header {
+            background-color: #1a5276;
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+            position: relative;
+            z-index: 100;
         }
-        .header-container { 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            max-width: 1200px; 
-            width: 100%; 
-            padding: 0 15px; 
-            margin: 0 auto; 
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 1200px;
+            width: 100%;
+            padding: 0 15px;
+            margin: 0 auto;
         }
-        .logo { 
-            margin-right: 25px; 
-            flex-shrink: 0; 
+        .logo {
+            margin-right: 25px;
+            flex-shrink: 0;
         }
-        .logo img { 
-            height: 60px; width: 60px; 
-            object-fit: contain; 
-            border-radius: 50%; 
-            border: 3px solid #ffffff; 
-            box-shadow: 0 0 12px rgba(255,255,255,0.4); 
+        .logo img {
+            height: 60px; width: 60px;
+            object-fit: contain;
+            border-radius: 50%;
+            border: 3px solid #ffffff;
+            box-shadow: 0 0 12px rgba(255,255,255,0.4);
         }
         .school-name { text-align: center; flex-grow: 1;}
-        .school-name h1 { 
-            font-size: clamp(18px, 4vw, 24px); 
-            margin-bottom: 5px; 
-            line-height: 1.2; 
-            font-weight: 700; 
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.2); 
+        .school-name h1 {
+            font-size: clamp(18px, 4vw, 24px);
+            margin-bottom: 5px;
+            line-height: 1.2;
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
         }
-        .school-name p { 
-            font-size: clamp(12px, 2.5vw, 15px); 
-            opacity: 0.9; 
-            margin-bottom: 0; 
-            color: #e9ecef; 
+        .school-name p {
+            font-size: clamp(12px, 2.5vw, 15px);
+            opacity: 0.9;
+            margin-bottom: 0;
+            color: #e9ecef;
         }
 
         /* --- Navigation --- */
-        nav { 
-            background-color: #2980b9; 
-            padding: 12px 0; 
-            position: sticky; 
-            top: 0; 
-            z-index: 99; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+        nav {
+            background-color: #2980b9;
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 99;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
-        nav .container ul { 
-            display: flex; 
-            justify-content: center; 
-            list-style: none; 
-            flex-wrap: wrap; 
-            gap: 10px; 
-            margin: 0; 
-            padding: 0; 
+        nav .container ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 0;
+            padding: 0;
         }
-        nav ul li a { 
-            color: white; 
-            text-decoration: none; 
-            font-weight: 500; 
-            padding: 10px 20px; 
-            border-radius: 25px; 
-            transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s; 
-            font-size: clamp(13px, 2.5vw, 15px); 
-            display: inline-block; 
-            text-align: center; 
-            border: 1px solid transparent; 
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+            font-size: clamp(13px, 2.5vw, 15px);
+            display: inline-block;
+            text-align: center;
+            border: 1px solid transparent;
         }
-        nav ul li a:hover, nav ul li a:focus, nav ul li a.active { 
-            background-color: #1c6ca7; 
-            transform: translateY(-2px); 
-            box-shadow: 0 3px 8px rgba(0,0,0,0.2); 
+        nav ul li a:hover, nav ul li a:focus, nav ul li a.active {
+            background-color: #1c6ca7;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
             border-color: rgba(255,255,255,0.3);
         }
 
         /* --- Notice Bar --- */
-        .notice-bar { 
-            background: linear-gradient(90deg, #e74c3c 0%, #c0392b 100%); 
-            color: white; 
-            padding: 10px 0; 
-            overflow: hidden; 
-            position: relative; 
-            z-index: 98; 
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15); 
-            font-size: 15px; 
+        .notice-bar {
+            background: linear-gradient(90deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            padding: 10px 0;
+            overflow: hidden;
+            position: relative;
+            z-index: 98;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            font-size: 15px;
             font-weight: 500;
-            line-height: 1.5; 
+            line-height: 1.5;
         }
-        .notice-bar .container { 
-             display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; 
-             gap: 15px; 
+        .notice-bar .container {
+             display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
+             gap: 15px;
         }
-        .notice-content { 
-            display: flex; 
-            width: 100%; 
-            justify-content: center; 
-            flex-wrap: wrap; 
-            gap: 15px 30px; 
-            animation: scrollTextDesktop 40s linear infinite; 
+        .notice-content {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px 30px;
+            animation: scrollTextDesktop 40s linear infinite;
         }
-         .notice-text { 
-             margin-right: 0; 
-             font-weight: 600; 
-             text-shadow: 1px 1px 2px rgba(0,0,0,0.2); 
+         .notice-text {
+             margin-right: 0;
+             font-weight: 600;
+             text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
          }
          .notice-actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
-        .notice-btn { 
-            color: white; 
-            padding: 8px 18px; 
-            border-radius: 5px; 
-            font-size: 14px; 
-            font-weight: 500; 
-            display: inline-flex; 
-            align-items: center; 
-            gap: 8px; 
-            text-decoration: none; 
-            transition: all 0.3s; 
-            white-space: nowrap; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
-            border: 1px solid rgba(255,255,255,0.3); 
+        .notice-btn {
+            color: white;
+            padding: 8px 18px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            transition: all 0.3s;
+            white-space: nowrap;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
         }
-        .whatsapp-btn { background-color: #25D366; } 
-        .call-btn { background-color: #3498db; } 
-        .ad-btn { background-color: #f39c12; } 
+        .whatsapp-btn { background-color: #25D366; }
+        .call-btn { background-color: #3498db; }
+        .ad-btn { background-color: #f39c12; }
         .notice-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.3); border-color: rgba(255,255,255,0.6);}
-        .notice-close { 
-            position: static; 
-            margin-left: auto; 
-            background: rgba(255,255,255,0.25); 
-            border: none; 
-            color: white; 
-            width: 30px; 
-            height: 30px; 
-            border-radius: 50%; 
-            cursor: pointer; 
-            font-size: 16px; 
-            transition: all 0.3s; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            flex-shrink: 0; 
+        .notice-close {
+            position: static;
+            margin-left: auto;
+            background: rgba(255,255,255,0.25);
+            border: none;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
         }
         .notice-close:hover { background: rgba(255,255,255,0.4); transform: rotate(90deg); }
 
         @media (max-width: 767px) {
              .notice-content { animation: none !important; text-align: center; justify-content: center; }
              .notice-bar .container { flex-direction: column; align-items: center; }
-             .notice-close { margin-left: 0; margin-top: 10px; position: static; } 
+             .notice-close { margin-left: 0; margin-top: 10px; position: static; }
              .notice-section, .ad-section { flex-direction: column; align-items: center; gap: 15px; text-align: center; padding: 0;}
              .notice-text, .ad-text { margin-right: 0;}
         }
-        
-        @keyframes scrollTextDesktop { 
-            0% { transform: translateX(100%); } 
-            100% { transform: translateX(calc(-100% - 30px)); } 
-        } 
+
+        @keyframes scrollTextDesktop {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(calc(-100% - 30px)); }
+        }
 
         /* --- Main Page Section Styling --- */
-      /* ... (keep all existing styles the same until the About section) ... */
-
-        /* --- About Section with Fixed Background --- */
-        .page-section#about {
+        .page-section { /* Base style for all sections (padding, bg color, relative positioning for ::before) */
             position: relative;
-            padding: 60px 0;
-            background-color: #f9f9f9;
-            isolation: isolate; /* This prevents the pseudo-element from affecting other sections */
+            padding: 60px 0; /* Default padding, can be overridden by more specific .page-section rule below */
+            background-color: #f9f9f9; /* Fallback background color */
+            isolation: isolate; /* Create a new stacking context for each section */
         }
-        
-        .page-section#about::before {
+
+        /* Default background image for page sections (e.g., teachers.jpg) */
+        /* Applied to all .page-section elements EXCEPT .hero */
+        .page-section:not(.hero)::before {
             content: '';
             position: absolute;
             top: 0;
@@ -245,282 +245,230 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            opacity: 0.15;
-            z-index: -1; /* This places it behind the content */
+            opacity: 0.15; /* Adjust opacity as needed */
+            z-index: -1;   /* Placed behind the section's content */
+            pointer-events: none;
         }
-        
-        /* Make sure the container is positioned relative to contain the z-index */
-        .page-section#about .container {
+
+        /* Styling for the container within sections to sit above the ::before pseudo-element */
+        .page-section .container { /* This ensures .container content is above the section's ::before */
             position: relative;
             z-index: 1;
         }
+        
+        /* Specific styling for #about if needed (e.g., different padding or bg, though bg is now handled generically) */
+        .page-section#about {
+            /* isolation: isolate; is inherited from .page-section */
+            /* background-image via .page-section:not(.hero)::before */
+            /* padding: 60px 0; is from the base .page-section rule above, if not overridden by the flex one below */
+        }
+        /* The .page-section#about::before rule is removed as it's now handled by .page-section:not(.hero)::before */
+        /* The .page-section#about .container rule for z-index is also handled by .page-section .container */
 
-        /* ... (keep all other existing styles the same) ... */
-    .page-section {
-        position: relative;
-        padding: 60px 0;
-        background-color: #f9f9f9;
-    }
-    
-    .page-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url('images/teachers.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        opacity: 0.15; /* Adjust opacity as needed */
-        z-index: 0;
-    }
-    
-    .container {
-        position: relative;
-        z-index: 1;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-    
-    .section-title {
-        text-align: center;
-        color: #1a5276;
-        font-size: 2.5rem;
-        margin-bottom: 30px;
-        padding-bottom: 15px;
-        border-bottom: 2px solid #eee;
-    }
-    
-    .section-card {
-        background-color: rgba(255, 255, 255, 0.9);
-        border-radius: 10px;
-        padding: 30px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
-    
-    .about-content h3 {
-        color: #2980b9;
-        margin: 20px 0 15px;
-        font-size: 1.5rem;
-    }
-    
-    .about-content p {
-        margin-bottom: 15px;
-        line-height: 1.6;
-        font-size: 1.1rem;
-    }
-    
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-        .page-section {
-            padding: 40px 0;
-        }
-        
-        .section-title {
-            font-size: 2rem;
-        }
-        
-        .section-card {
-            padding: 20px;
-        }
-    }
-    
-    @media (max-width: 480px) {
-        .section-title {
-            font-size: 1.8rem;
-        }
-        
-        .about-content p {
-            font-size: 1rem;
-        }
-    }
+
+        /* More specific .page-section rule for layout (flex, different padding) */
+        /* This rule will combine with or override parts of the .page-section rule at line ~207 */
         .page-section {
             display: flex;
             flex-direction: column;
-            align-items: center;   
-            padding: 80px 20px; 
+            align-items: center;
+            padding: 80px 20px; /* This padding will likely override the 60px 0 from the earlier .page-section rule */
             width: 100%;
-            overflow-x: hidden; 
+            overflow-x: hidden;
+            /* position: relative; and isolation: isolate; are already set by the earlier .page-section rule */
+            /* background-color: #f9f9f9; is also set by the earlier .page-section rule */
         }
-        
-        .page-section.hero { 
-            min-height: calc(100vh - 80px); 
-            padding: 0; 
-            background-color: #1a5276; 
+
+        .page-section.hero {
+            min-height: calc(100vh - 80px);
+            padding: 0; /* Hero has specific padding */
+            background-color: #1a5276; /* Hero has specific bg color */
             color: white;
-            isolation: isolate; 
-            position: relative; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
+            isolation: isolate; /* Already has this, good */
+            position: relative; /* Already has this, good */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
+        /* .page-section.hero::before is NOT created due to :not(.hero) selector on the generic rule */
+
         .hero .hero-content-wrapper {
             display: flex; flex-direction: column; align-items: center; justify-content: center;
-            min-height: calc(100vh - 80px); 
-            width:100%; padding: 40px 20px; position: relative; z-index: 1; 
+            min-height: calc(100vh - 80px);
+            width:100%; padding: 40px 20px; position: relative; z-index: 1; /* Content above hero-bg */
         }
-        .hero-bg { 
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-            background-image: linear-gradient(rgba(26, 82, 118, 0.85), rgba(10, 34, 50, 0.98)), url('images/hero.jpg'); 
-            background-size: cover; 
-            background-position: center 40%; 
-            background-repeat: no-repeat; 
-            z-index: -1; 
-            transition: transform 0.6s ease-out; 
+        .hero-bg {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: linear-gradient(rgba(26, 82, 118, 0.85), rgba(10, 34, 50, 0.98)), url('images/hero.jpg');
+            background-size: cover;
+            background-position: center 40%;
+            background-repeat: no-repeat;
+            z-index: -1; /* Behind hero content */
+            transition: transform 0.6s ease-out;
         }
-        .hero:hover .hero-bg { transform: scale(1.05); } 
-        .hero .hero-content { 
-            max-width: 900px; 
-            text-align: center; 
-            text-shadow: 0 3px 15px rgba(0,0,0,0.7); 
-            animation: fadeInUp 0.9s ease-out; 
+        .hero:hover .hero-bg { transform: scale(1.05); }
+        .hero .hero-content {
+            max-width: 900px;
+            text-align: center;
+            text-shadow: 0 3px 15px rgba(0,0,0,0.7);
+            animation: fadeInUp 0.9s ease-out;
         }
-        
-        .hero h1.section-title { 
-            font-size: clamp(38px, 7vw, 60px); 
-            margin-bottom: 30px; 
-            line-height: 1.2; 
-            font-weight: 800; 
-            color: white; 
-            border-bottom: none; 
-            text-align: center; 
-            width: 100%; 
+
+        .hero h1.section-title {
+            font-size: clamp(38px, 7vw, 60px);
+            margin-bottom: 30px;
+            line-height: 1.2;
+            font-weight: 800;
+            color: white;
+            border-bottom: none;
+            text-align: center;
+            width: 100%;
         }
         .hero h1.section-title::after { display:none; }
-        .hero p { 
-            font-size: clamp(17px, 3.5vw, 22px); 
-            margin: 0 auto 45px; 
-            max-width: 750px; 
-            line-height: 1.8; 
-            color: rgba(248,248,248,0.98); 
+        .hero p {
+            font-size: clamp(17px, 3.5vw, 22px);
+            margin: 0 auto 45px;
+            max-width: 750px;
+            line-height: 1.8;
+            color: rgba(248,248,248,0.98);
         }
-        .btn { 
-            display: inline-flex; 
-            align-items: center; 
-            justify-content:center; 
-            gap: 12px; 
-            padding: 18px 45px; 
-            font-size: 18px; 
-            font-weight:600; 
-            border-radius: 50px; 
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
-            text-decoration: none; 
-            color: white; 
-            letter-spacing: 0.8px; 
-            border: none; 
-            cursor: pointer; 
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content:center;
+            gap: 12px;
+            padding: 18px 45px;
+            font-size: 18px;
+            font-weight:600;
+            border-radius: 50px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            text-decoration: none;
+            color: white;
+            letter-spacing: 0.8px;
+            border: none;
+            cursor: pointer;
         }
-        .hero .whatsapp-btn { 
-            background-color: #25D366; 
-            box-shadow: 0 6px 22px rgba(37, 211, 102, 0.4); 
+        .hero .whatsapp-btn {
+            background-color: #25D366;
+            box-shadow: 0 6px 22px rgba(37, 211, 102, 0.4);
         }
-        .hero .whatsapp-btn i { font-size: 24px; } 
-        .hero .whatsapp-btn:hover { 
-            background-color: #1ea952; 
-            transform: translateY(-5px) scale(1.03); 
-            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.55); 
+        .hero .whatsapp-btn i { font-size: 24px; }
+        .hero .whatsapp-btn:hover {
+            background-color: #1ea952;
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.55);
         }
 
         /* --- Content Card Styling --- */
+        /* This .section-card is inside a .container, which is z-index: 1 relative to its .page-section */
         .section-card {
-            background: #ffffff;
-            padding: 40px 50px; 
-            border-radius: 12px; 
-            box-shadow: 0 12px 40px rgba(40, 50, 70, 0.12); 
+            background: rgba(255, 255, 255, 0.9); /* Slightly transparent to show a hint of the ::before background */
+            padding: 40px 50px;
+            border-radius: 12px;
+            box-shadow: 0 12px 40px rgba(40, 50, 70, 0.12);
             width: 100%;
             transition: transform 0.35s ease-out, box-shadow 0.35s ease-out;
+            /* position: relative; z-index: 1; /* Not strictly needed if parent .container has z-index:1 and section has isolation */
         }
         .page-section:not(.hero) .section-card:hover {
-            transform: translateY(-12px); 
-            box-shadow: 0 20px 60px rgba(40, 50, 70, 0.18); 
+            transform: translateY(-12px);
+            box-shadow: 0 20px 60px rgba(40, 50, 70, 0.18);
         }
+        
+        .about-content h3 { /* These styles were previously under a .section-card specific to about */
+            color: #2980b9; /* Was #2980b9 */
+            margin: 20px 0 15px;
+            font-size: 1.5rem; /* Was clamp(20px, 4vw, 26px) for generic h3 */
+        }
+
+        .about-content p { /* These styles were previously under a .section-card specific to about */
+            margin-bottom: 15px;
+            line-height: 1.6; /* Was 1.8 for generic p */
+            font-size: 1.1rem; /* Was clamp(15px, 3vw, 17px) for generic p */
+        }
+
 
         .program-list { list-style: none; margin-left: 0; padding-left: 0; margin-top: 15px;}
         .program-list li { margin-bottom: 18px; padding-left: 35px; position: relative; line-height: 1.7; font-size: clamp(15px, 3vw, 17px); color:#495057;}
-        .program-list li::before { content: "✓"; color: #228B22; position: absolute; left: 5px; top:2px; font-weight: bold; font-size:20px; } 
-        .program-list li strong {color: #1a5276; font-weight: 600;} 
-        
-        .contact-info { margin-top: 30px; } 
-        .contact-item { margin-bottom: 25px; display: flex; align-items: flex-start; gap: 20px; } 
+        .program-list li::before { content: "✓"; color: #228B22; position: absolute; left: 5px; top:2px; font-weight: bold; font-size:20px; }
+        .program-list li strong {color: #1a5276; font-weight: 600;}
+
+        .contact-info { margin-top: 30px; }
+        .contact-item { margin-bottom: 25px; display: flex; align-items: flex-start; gap: 20px; }
         .contact-icon { color: #2980b9; font-size: 26px; flex-shrink: 0; width: 30px; text-align: center; padding-top: 3px; }
-        .contact-text { flex-grow: 1; font-size: clamp(15px, 3vw, 17px); line-height:1.6;} 
-        .contact-text strong { display: block; margin-bottom: 8px; color:#1a5276; font-weight:600;} 
-        .contact-text a { color: #2980b9; text-decoration: none; word-break: break-word; transition: color 0.3s;} 
+        .contact-text { flex-grow: 1; font-size: clamp(15px, 3vw, 17px); line-height:1.6;}
+        .contact-text strong { display: block; margin-bottom: 8px; color:#1a5276; font-weight:600;}
+        .contact-text a { color: #2980b9; text-decoration: none; word-break: break-word; transition: color 0.3s;}
         .contact-text a:hover { text-decoration: underline; color: #1c6ca7;}
-        
-        .payment-section-inner { 
-            background: #eef2f5; 
-            padding: 35px; 
-            border-radius: 10px; 
-            margin-top: 25px; 
-            text-align: center; 
-            border: 1px solid #d0d9e6; 
-            box-shadow: inset 0 2px 8px rgba(0,0,0,0.05); 
+
+        .payment-section-inner {
+            background: #eef2f5;
+            padding: 35px;
+            border-radius: 10px;
+            margin-top: 25px;
+            text-align: center;
+            border: 1px solid #d0d9e6;
+            box-shadow: inset 0 2px 8px rgba(0,0,0,0.05);
         }
-        .payment-options { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; margin-top: 30px; } 
-        .payment-button { 
-            color: white; 
-            border: none; 
-            padding: 15px 30px; 
-            font-size: 17px; 
-            border-radius: 8px; 
-            cursor: pointer; 
-            transition: all 0.3s; 
-            display: inline-flex; 
-            align-items: center; 
-            gap: 12px; 
-            font-weight:600; 
+        .payment-options { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; margin-top: 30px; }
+        .payment-button {
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 17px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-weight:600;
             letter-spacing:0.5px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-        .khalti-button { background-color: #5C2D91; } 
+        .khalti-button { background-color: #5C2D91; }
         .esewa-button { background-color: #55A74E; }
         .payment-button:hover, .payment-button:focus { transform: translateY(-4px) scale(1.04); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
         .khalti-button:hover, .khalti-button:focus { background-color: #4a2475; }
         .esewa-button:hover, .esewa-button:focus { background-color: #489142; }
-        .payment-button i { font-size: 20px; } 
-        .payment-note { margin-top: 25px; font-size:14px; color:#666; } 
+        .payment-button i { font-size: 20px; }
+        .payment-note { margin-top: 25px; font-size:14px; color:#666; }
 
-        .teachers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; margin-top: 30px; } 
+        .teachers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; margin-top: 30px; }
         .teacher-card { background-color: #fff; border: 1px solid #e8ebee; border-radius: 10px; padding: 30px; text-align: center; box-shadow: 0 8px 25px rgba(0,0,0,0.09); transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; justify-content: flex-start; }
         .teacher-card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.12); }
-        .teacher-card img { 
-            width: 130px; 
-            height: 130px; 
-            border-radius: 50%; 
+        .teacher-card img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
             object-fit: cover; /* Ensure image covers the circle */
-            margin-bottom: 20px; 
-            border: 5px solid #2980b9; 
-            align-self: center; 
+            margin-bottom: 20px;
+            border: 5px solid #2980b9;
+            align-self: center;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            /* IMPORTANT: Ensure these image files exist in an 'images' folder relative to this HTML file */
-            /* e.g., images/dip.jpg, images/gunu.jpg, etc. */
         }
         .teacher-card h3 { font-size: 20px; color: #1a5276; margin-bottom: 8px; font-weight: 600; }
         .teacher-card .qualification { font-size: 14.5px; color: #555; margin-bottom: 10px; line-height: 1.5; font-style: italic; min-height: 2.8em; }
-        .teacher-card .role { font-size: 15.5px; color: #2980b9; margin-bottom: 0; font-weight: 600; margin-top: auto; padding-top:15px; border-top: 1px dashed #e1e5eb; } 
+        .teacher-card .role { font-size: 15.5px; color: #2980b9; margin-bottom: 0; font-weight: 600; margin-top: auto; padding-top:15px; border-top: 1px dashed #e1e5eb; }
 
         /* Gallery Grid and Items (Already designed for equal alignment) */
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 15px; margin-top: 30px; } 
-        .gallery-item { 
-             border-radius: 8px; 
-             overflow: hidden; 
-             cursor: pointer; 
-             position: relative; 
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 15px; margin-top: 30px; }
+        .gallery-item {
+             border-radius: 8px;
+             overflow: hidden;
+             cursor: pointer;
+             position: relative;
              aspect-ratio: 1 / 1; /* Makes the container a perfect square */
-             box-shadow: 0 6px 18px rgba(0,0,0,0.09); 
-             transition: transform 0.35s, box-shadow 0.35s, opacity 0.35s; 
+             box-shadow: 0 6px 18px rgba(0,0,0,0.09);
+             transition: transform 0.35s, box-shadow 0.35s, opacity 0.35s;
              opacity: 0.95;
          }
         .gallery-item:hover { transform: scale(1.06) rotate(1deg); box-shadow: 0 14px 30px rgba(0,0,0,0.18); opacity: 1;}
-        .gallery-item img { 
-            width: 100%; 
-            height: 100%; 
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
             object-fit: cover; /* Ensures image fills the square container without distortion */
-            display: block; 
+            display: block;
         }
 
         /* --- Gallery Modal --- */
@@ -528,13 +476,13 @@
         .gallery-modal.active { display: flex; animation: fadeInModal 0.4s ease-out; }
         @keyframes fadeInModal { from { opacity: 0; } to { opacity: 1; } }
         .modal-content-wrapper { position: relative; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; }
-        .modal-image { display: block; max-width: 90vw; max-height: 90vh; animation: zoomInImage 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); object-fit: contain; border-radius:8px; box-shadow: 0 0 50px rgba(0,0,0,0.6);} 
-        .modal-close { position: absolute; top: 25px; right: 40px; color: #f0f0f0; font-size: 48px; font-weight: 300; transition: color 0.3s, transform 0.3s; cursor: pointer; z-index: 1002; text-shadow: 0 2px 4px rgba(0,0,0,0.4); } 
+        .modal-image { display: block; max-width: 90vw; max-height: 90vh; animation: zoomInImage 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); object-fit: contain; border-radius:8px; box-shadow: 0 0 50px rgba(0,0,0,0.6);}
+        .modal-close { position: absolute; top: 25px; right: 40px; color: #f0f0f0; font-size: 48px; font-weight: 300; transition: color 0.3s, transform 0.3s; cursor: pointer; z-index: 1002; text-shadow: 0 2px 4px rgba(0,0,0,0.4); }
         .modal-close:hover, .modal-close:focus { color: #ffffff; transform: scale(1.1); }
-        .modal-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 55px; height: 55px; background-color: rgba(0,0,0,0.5); color: white; font-size: 32px; border: none; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background-color 0.3s, transform 0.2s; z-index: 1001; user-select: none; } 
-        .modal-nav:hover { background-color: rgba(0,0,0,0.8); transform: scale(1.1); } 
+        .modal-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 55px; height: 55px; background-color: rgba(0,0,0,0.5); color: white; font-size: 32px; border: none; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background-color 0.3s, transform 0.2s; z-index: 1001; user-select: none; }
+        .modal-nav:hover { background-color: rgba(0,0,0,0.8); transform: translateY(-2px) scale(1.1); } /* Corrected transform */
         .modal-prev { left: 30px; } .modal-next { right: 30px; }
-        @media (max-width: 767px) { 
+        @media (max-width: 767px) {
             .modal-nav { width: 45px; height: 45px; font-size: 24px; }
             .modal-prev { left: 15px; } .modal-next { right: 15px; }
             .modal-close { top: 15px; right: 20px; font-size: 38px; }
@@ -542,127 +490,126 @@
         @keyframes zoomInImage { from {transform: scale(0.6) rotate(-2deg); opacity: 0;} to {transform: scale(1) rotate(0deg); opacity: 1;} }
 
         /* --- Footer --- */
-        footer { 
-            background-color: #1a5276; 
-            color: #e9ecef; 
-            padding: 60px 0 30px; 
-            border-top: 6px solid #2980b9; 
+        footer {
+            background-color: #1a5276;
+            color: #e9ecef;
+            padding: 60px 0 30px;
+            border-top: 6px solid #2980b9;
         }
-        .footer-content { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
-            gap: 35px; 
-            max-width:1200px; 
-            margin:0 auto; 
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 35px;
+            max-width:1200px;
+            margin:0 auto;
             padding:0 20px;
-            text-align: left; 
+            text-align: left;
         }
          .footer-column p {color: #ced4da; line-height: 1.7;}
-        .footer-column h3 { 
-            color: white; 
-            margin-bottom: 20px; 
-            font-size: 21px; 
-            border-bottom: 1px solid rgba(255,255,255,0.3); 
-            padding-bottom: 10px; 
-            font-weight:600; 
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 21px;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            padding-bottom: 10px;
+            font-weight:600;
             letter-spacing:0.5px;
         }
-        .footer-column h3::after { display: none; }
+        .footer-column h3::after { display: none; } /* This was already here, ensuring it does not conflict with section-title's ::after */
         .footer-links { list-style: none; padding-left: 0; }
-        .footer-links li { margin-bottom: 14px; display: flex; align-items: flex-start; gap: 12px; font-size:15px; line-height: 1.6;} 
-        .footer-links a { color: #ced4da; text-decoration: none; transition: color 0.3s, transform 0.2s; display: inline-block; word-break: break-word;} 
+        .footer-links li { margin-bottom: 14px; display: flex; align-items: flex-start; gap: 12px; font-size:15px; line-height: 1.6;}
+        .footer-links a { color: #ced4da; text-decoration: none; transition: color 0.3s, transform 0.2s; display: inline-block; word-break: break-word;}
         .footer-links a:hover, .footer-links a:focus { color: white; transform: translateX(5px); }
-        .footer-links i { flex-shrink: 0; width: 20px; text-align: center; color: #8ab4f8; padding-top: 3px; } 
+        .footer-links i { flex-shrink: 0; width: 20px; text-align: center; color: #8ab4f8; padding-top: 3px; }
         .social-links { display: flex; gap: 20px; margin-top: 25px; justify-content: flex-start; flex-wrap: wrap; }
-        .social-icon { 
-            color: white; 
-            background-color: rgba(255, 255, 255, 0.15); 
-            width: 44px; 
-            height: 44px; 
-            border-radius: 50%; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
-            font-size: 18px; 
-            position: relative; 
-            text-decoration: none; 
-            border: 1px solid rgba(255,255,255,0.3); 
+        .social-icon {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.15);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-size: 18px;
+            position: relative;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.3);
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         .social-icon:hover { transform: translateY(-5px) scale(1.1); box-shadow: 0 8px 20px rgba(0,0,0,0.2); border-color: white; }
         .facebook:hover { background-color: #3b5998; } .tiktok:hover { background-color: #000000; }
         .youtube:hover { background-color: #ff0000; } .whatsapp:hover { background-color: #25D366; }
-        .social-icon::after { 
-            content: attr(aria-label); 
-            position: absolute; 
-            bottom: 100%; 
-            left: 50%; 
-            transform: translateX(-50%) translateY(8px); 
-            background: #124263; 
-            color: white; 
-            padding: 8px 15px; 
-            border-radius: 6px; 
-            font-size: 13px; 
-            opacity: 0; 
-            visibility: hidden; 
-            transition: opacity 0.3s ease-out, transform 0.3s ease-out; 
-            pointer-events: none; 
-            white-space: nowrap; 
-            z-index: 10; 
+        .social-icon::after {
+            content: attr(aria-label);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(8px);
+            background: #124263;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-size: 13px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+            pointer-events: none;
+            white-space: nowrap;
+            z-index: 10;
         }
-        .social-icon:hover::after { 
-            opacity: 1; 
-            visibility: visible; 
-            transform: translateX(-50%) translateY(-5px); 
+        .social-icon:hover::after {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(-5px);
         }
         .footer-bottom { display: flex; flex-direction: column; align-items: center; text-align: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.25); max-width:1200px; margin-left:auto; margin-right:auto; }
-        
-        /* --- Footer Bottom Text Color to White --- */
-        .copyright p { 
-            font-size: 14.5px; 
-            opacity: 1; 
-            margin-bottom: 10px; 
-            color: white; 
+
+        .copyright p {
+            font-size: 14.5px;
+            opacity: 1;
+            margin-bottom: 10px;
+            color: white;
         }
-        .developer p { 
-            font-size: 14.5px; 
-            opacity: 1; 
-            color: white; 
+        .developer p {
+            font-size: 14.5px;
+            opacity: 1;
+            color: white;
         }
-        .developer a { 
-            color: #a3c6ff; 
-            text-decoration: none; 
-            transition: color 0.3s; 
-            font-weight:600; 
+        .developer a {
+            color: #a3c6ff;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight:600;
         }
-        .developer a:hover { 
-            color: white; 
+        .developer a:hover {
+            color: white;
             text-decoration: underline;
         }
 
         /* --- Accessibility --- */
-        .skip-link { 
-            position: absolute; 
-            top: -999px; 
-            left: 0; 
-            background: #e74c3c; 
-            color: white; 
-            padding: 10px 15px; 
-            z-index: 1001; 
-            transition: top 0.3s ease-in-out; 
-            border-radius: 0 0 5px 0; 
+        .skip-link {
+            position: absolute;
+            top: -999px;
+            left: 0;
+            background: #e74c3c;
+            color: white;
+            padding: 10px 15px;
+            z-index: 1001;
+            transition: top 0.3s ease-in-out;
+            border-radius: 0 0 5px 0;
             text-decoration: none;
         }
         .skip-link:focus { top: 0; }
-        
+
         /* --- Responsive Adjustments --- */
-        @media (max-width: 991.98px) { 
-            .page-section { padding: 70px 15px; }
+        @media (max-width: 991.98px) {
+             /* .page-section padding adjusted by the more specific .page-section rule if it applies */
             .section-card { padding: 35px 30px; }
-            .footer-content { 
-                grid-template-columns: 1fr; 
-                text-align: center; 
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
                 gap: 30px;
             }
              .footer-column h3 { border-bottom: none; padding-bottom: 5px; margin-bottom: 15px;}
@@ -670,20 +617,22 @@
              .social-links { justify-content: center; }
         }
 
-        @media (max-width: 767.98px) { 
-            html { scroll-padding-top: 75px; } 
-            .page-section { padding: 50px 15px; min-height: auto; }
-            
-            .header-container { flex-direction: column; gap: 10px; } 
-            .logo { margin-right: 0; margin-bottom: 5px; } 
+        @media (max-width: 767.98px) {
+            html { scroll-padding-top: 75px; }
+            /* .page-section padding adjusted by the more specific .page-section rule if it applies, ensure this is not too small */
+            /* .page-section { padding: 50px 15px; min-height: auto; } */ /* This might conflict, check effective padding */
+
+
+            .header-container { flex-direction: column; gap: 10px; }
+            .logo { margin-right: 0; margin-bottom: 5px; }
             .logo img { height: 55px; width: 55px; }
             .school-name { text-align: center; }
 
-            nav .container ul { gap: 8px; justify-content: center; } 
-            nav ul li a { font-size: 13px; padding: 8px 12px; } 
+            nav .container ul { gap: 8px; justify-content: center; }
+            nav ul li a { font-size: 13px; padding: 8px 12px; }
 
             .hero .hero-content-wrapper { min-height: calc(100vh - 75px); }
-            .hero .btn { padding: 15px 35px; font-size: 16px; gap: 10px; } 
+            .hero .btn { padding: 15px 35px; font-size: 16px; gap: 10px; }
             .hero .whatsapp-btn i { font-size: 20px;}
             .hero h1.section-title { font-size: clamp(30px, 8vw, 40px); margin-bottom: 20px;}
             .hero p { font-size: clamp(15px, 4vw, 18px); margin-bottom: 30px;}
@@ -695,14 +644,14 @@
             .contact-item { margin-bottom: 20px; gap: 15px;}
             .contact-icon { font-size: 22px; width: 25px;}
 
-            .teachers-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;} 
+            .teachers-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;}
             .teacher-card img { width: 110px; height: 110px; margin-bottom: 15px;}
             .teacher-card h3 { font-size: 18px; margin-bottom: 5px;}
             .teacher-card .qualification { font-size: 13.5px; margin-bottom: 8px;}
             .teacher-card .role { font-size: 14px; padding-top: 10px;}
 
-            .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px;} 
-            
+            .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px;}
+
             .payment-section-inner { padding: 30px;}
             .payment-options { gap: 20px; margin-top: 20px;}
             .payment-button { padding: 12px 25px; font-size: 15px; gap: 8px;}
@@ -711,20 +660,20 @@
             .footer-content { text-align: center; gap: 25px; }
             .footer-column h3 { font-size: 20px; margin-bottom: 15px;}
             .footer-links li { justify-content: center; gap: 8px;}
-            .footer-links i { width: auto;} 
+            .footer-links i { width: auto;}
             .social-links { justify-content: center; gap: 15px; margin-top: 20px;}
             .social-icon { width: 40px; height: 40px; font-size: 16px;}
-            .social-icon::after { display: none !important; } 
+            .social-icon::after { display: none !important; }
             .footer-bottom { margin-top: 30px; padding-top: 20px;}
             .copyright p, .developer p { font-size: 13.5px; color: white; opacity: 1;}
             .developer a { color: #a3c6ff;}
         }
 
-        @media (max-width: 480px) { 
+        @media (max-width: 480px) {
             html { scroll-padding-top: 70px;}
-            .page-section { padding: 40px 10px; }
-            .container { padding: 0 10px; }
-            
+            /* .page-section { padding: 40px 10px; } */ /* This might conflict, check effective padding */
+            .container { padding: 0 10px; } /* This padding is for the inner container, not the section itself */
+
             header { padding: 10px 0;}
             .header-container { gap: 5px; }
             .logo img { height: 50px; width: 50px;}
@@ -734,7 +683,7 @@
             nav { padding: 8px 0;}
             nav .container ul { gap: 4px;}
             nav ul li a { font-size: 11px; padding: 6px 8px;}
-            
+
             .hero .hero-content-wrapper { min-height: calc(100vh - 70px); }
             .hero h1.section-title { font-size: clamp(24px, 10vw, 30px); margin-bottom: 15px;}
             .hero p { font-size: clamp(14px, 5vw, 16px); margin-bottom: 25px;}
@@ -751,14 +700,14 @@
             .contact-item { margin-bottom: 18px; gap: 12px;}
             .contact-icon { font-size: 20px; width: 20px;}
 
-            .teachers-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px;} 
+            .teachers-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px;}
             .teacher-card img { width: 90px; height: 90px; margin-bottom: 12px;}
             .teacher-card h3 { font-size: 17px; margin-bottom: 4px;}
             .teacher-card .qualification { font-size: 13px; margin-bottom: 6px;}
             .teacher-card .role { font-size: 13px; padding-top: 8px;}
 
-            .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 6px;} 
-            
+            .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 6px;}
+
             .payment-section-inner { padding: 25px;}
             .payment-options { gap: 15px; margin-top: 15px;}
             .payment-button { padding: 10px 20px; font-size: 14px; gap: 6px;}
@@ -774,12 +723,28 @@
             .copyright p, .developer p { font-size: 13px; color: white; opacity: 1;}
             .developer a { color: #a3c6ff;}
         }
-        
+        /* Responsive adjustments for .page-section padding conflicts. */
+        /* The rule for .page-section around line ~242 sets padding: 80px 20px; */
+        /* This should be the primary padding for sections. */
+        /* We need to ensure responsive overrides target this effectively or are consistent. */
+
+        @media (max-width: 991.98px) {
+            .page-section { padding: 70px 15px; } /* This will override the 80px 20px */
+        }
+        @media (max-width: 767.98px) {
+            .page-section { padding: 50px 15px; min-height: auto; } /* This will override the 70px 15px */
+        }
+        @media (max-width: 480px) {
+            .page-section { padding: 40px 10px; } /* This will override the 50px 15px */
+        }
+        /* Hero section has its own padding: 0; so it's not affected by the above responsive .page-section paddings. */
+
     </style>
 </head>
 <body>
+    <!-- Your HTML body content remains the same -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    
+
     <header>
          <div class="header-container">
             <div class="logo">
@@ -792,7 +757,7 @@
         </div>
     </header>
     <nav>
-        <div class="container"> 
+        <div class="container">
             <ul>
                 <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#about" class="nav-link">About Us</a></li>
@@ -806,10 +771,10 @@
         </div>
     </nav>
     <div class="notice-bar" id="noticeBar">
-        <div class="container"> 
+        <div class="container">
             <div class="notice-content">
                 <div class="notice-section">
-                    <span class="notice-text">🔥 भर्ना खुल्यो! भर्ना खुल्यो!! भर्ना खुल्यो!!!🔥</span> 
+                    <span class="notice-text">🔥 भर्ना खुल्यो! भर्ना खुल्यो!! भर्ना खुल्यो!!!🔥</span>
                     <span class="notice-actions">
                         <a href="https://wa.me/9779816302747" class="notice-btn whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Send WhatsApp Message for Admission">
                             <i class="fab fa-whatsapp"></i> Send WhatsApp Now
@@ -831,10 +796,10 @@
             </button>
         </div>
     </div>
-    
+
     <main id="main-content" role="main">
         <section class="page-section hero" id="home">
-            <div class="hero-bg"></div> 
+            <div class="hero-bg"></div>
             <div class="hero-content-wrapper">
                 <div class="hero-content">
                     <h1 class="section-title">Quality Education for Bright Futures</h1>
@@ -846,17 +811,17 @@
             </div>
         </section>
         <section class="page-section" id="about">
-    <div class="container">
-        <h2 class="section-title">About Our School</h2>
-        <div class="section-card">
-            <div class="about-content">
-                <p>Miniland Academy English School, located in Kerabari 7, Dangi, Morang, is committed to providing quality education to students from Play Group to Class 9. Our school was established with the vision of creating a learning environment that nurtures young minds and prepares them for future challenges.</p>
-                <p>We believe in holistic education that focuses on academic excellence as well as character building. Our experienced faculty members are dedicated to helping each student reach their full potential.</p>
-                <h3>Our Mission</h3>
-                <p>To provide a stimulating learning environment that promotes academic excellence, creativity, and moral values, preparing students to become responsible citizens and future leaders.</p>
+            <div class="container">
+                <h2 class="section-title">About Our School</h2>
+                <div class="section-card">
+                    <div class="about-content">
+                        <p>Miniland Academy English School, located in Kerabari 7, Dangi, Morang, is committed to providing quality education to students from Play Group to Class 9. Our school was established with the vision of creating a learning environment that nurtures young minds and prepares them for future challenges.</p>
+                        <p>We believe in holistic education that focuses on academic excellence as well as character building. Our experienced faculty members are dedicated to helping each student reach their full potential.</p>
+                        <h3>Our Mission</h3>
+                        <p>To provide a stimulating learning environment that promotes academic excellence, creativity, and moral values, preparing students to become responsible citizens and future leaders.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
         </section>
 
         <section class="page-section" id="programs">
@@ -881,13 +846,13 @@
                 <div class="section-card">
                     <div class="teachers-grid">
                         <div class="teacher-card">
-                            <img src="images/dip.jpg" alt="Photo of Principal Dip Bahadur Rai"> 
+                            <img src="images/dip.jpg" alt="Photo of Principal Dip Bahadur Rai">
                             <h3>Mr. Dip Bahadur Rai</h3>
                             <p class="qualification">Master of Arts</p>
                             <p class="role">Principal</p>
                         </div>
                         <div class="teacher-card">
-                            <img src="images/gunu.jpg" alt="Photo of Teacher Gun Jatala Rai"> 
+                            <img src="images/gunu.jpg" alt="Photo of Teacher Gun Jatala Rai">
                             <h3>Ms. Gun Jatala Rai</h3>
                             <p class="qualification">Master in English</p>
                             <p class="role">English Teacher</p>
@@ -905,7 +870,7 @@
                             <p class="role">Computer Teacher</p>
                         </div>
                         <div class="teacher-card">
-                            <img src="images/sanjay.jpg" alt="Photo of Teacher Sanjaya Rai"> 
+                            <img src="images/sanjay.jpg" alt="Photo of Teacher Sanjaya Rai">
                             <h3>Mr. Sanjaya Rai</h3>
                             <p class="qualification">Bachelor of Science</p>
                             <p class="role">Science Teacher</p>
@@ -914,7 +879,7 @@
                             <img src="images/livi.jpg" alt="Photo of Teacher Livi Sunar">
                             <h3>Ms. Livi Sunar</h3>
                             <p class="qualification">M. Arts</p>
-                            <p class="role">Arts / Social Studies Teacher</p> 
+                            <p class="role">Arts / Social Studies Teacher</p>
                         </div>
                     </div>
                 </div>
@@ -939,7 +904,7 @@
                 </div>
             </div>
         </section>
-        
+
         <section class="page-section" id="admission">
             <div class="container">
                 <h2 class="section-title">Admission Process</h2>
@@ -1071,9 +1036,9 @@
             </div>
         </div>
     </footer>
-    
+
     <script src="https://khalti.s3.ap-south-1.amazonaws.com/KPG/dist/2020.12.17.0.0.0/khalti-checkout.iffe.js" defer></script>
-    
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
 
@@ -1092,8 +1057,6 @@
                      sections.forEach(section => {
                          const sectionTop = section.offsetTop - navHeight - 20; // Adjust offset slightly
                          const sectionHeight = section.offsetHeight;
-                         // Check if the top of the section is visible in the viewport
-                         // Or if the user is scrolling within the section
                          if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
                              current = section.getAttribute('id');
                          }
@@ -1104,21 +1067,17 @@
                          if (link.getAttribute('href').substring(1) === current) {
                              link.classList.add('active');
                          } else if (current === '' && link.getAttribute('href') === '#home' && scrollY < (sections[0] ? sections[0].offsetTop - navHeight : 0)) {
-                             // Handle case where user scrolls above the first section
                               link.classList.add('active');
                          }
                      });
-                 }, 50); // Debounce scroll updates
+                 }, 50); 
             });
 
-            // Trigger initial scroll check on load
-            // Use a timeout to ensure elements are rendered and offsetTop is correct
             setTimeout(() => {
                  window.dispatchEvent(new Event('scroll'));
             }, 200);
 
 
-            // Smooth scroll for internal links
              navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     const href = this.getAttribute('href');
@@ -1128,32 +1087,26 @@
                         const targetElement = document.getElementById(targetId);
                         if (targetElement) {
                             const navHeight = nav ? nav.offsetHeight : 80;
-                            const targetPosition = targetElement.offsetTop - navHeight + 1; // +1 to avoid triggering scrollspy on section above
+                            const targetPosition = targetElement.offsetTop - navHeight + 1; 
 
                              window.scrollTo({
                                  top: targetPosition,
                                  behavior: 'smooth'
                              });
 
-                            // Manually update active class immediately on click
-                            navLinks.forEach(nav => nav.classList.remove('active'));
+                            navLinks.forEach(navLink => navLink.classList.remove('active')); // Use a different variable name
                             this.classList.add('active');
-
-                            // Update URL hash after scroll finishes (optional, can be annoying)
-                            // window.history.pushState(null, null, href); 
                         }
                     }
                 });
             });
-             // Set initial active link based on URL hash or first section on load
             const initialHash = window.location.hash;
             if (initialHash) {
                  const initialTarget = document.querySelector(`nav ul li a[href="${initialHash}"]`);
                  if (initialTarget) {
-                     navLinks.forEach(nav => nav.classList.remove('active'));
+                     navLinks.forEach(navLink => navLink.classList.remove('active')); // Use a different variable name
                      initialTarget.classList.add('active');
-                     // Smooth scroll to hash on load
-                     setTimeout(() => { 
+                     setTimeout(() => {
                          const targetElement = document.getElementById(initialHash.substring(1));
                          if (targetElement) {
                             const navHeight = nav ? nav.offsetHeight : 80;
@@ -1163,76 +1116,62 @@
                                  behavior: 'smooth'
                              });
                          }
-                     }, 200); // Small delay
+                     }, 200); 
                  }
             } else {
-                 // Set 'Home' as active if no hash
                  const homeLink = document.querySelector('nav ul li a[href="#home"]');
                  if(homeLink) homeLink.classList.add('active');
             }
 
 
-            // --- Khalti Payment Configuration ---
-            // IMPORTANT: REPLACE "test_public_key_XXXXXXXXXXXXXXXXXXXX" with your LIVE Khalti Public Key
-            // The 'amount' here is in Paisa (100000 Paisa = 1000 NPR). This should be dynamic.
             var khaltiConfig = {
-                "publicKey": "test_public_key_XXXXXXXXXXXXXXXXXXXX", // === ACTION REQUIRED: REPLACE WITH LIVE KHALTI PUBLIC KEY ===
-                "productIdentity": "Miniland_Academy_School_Fees", 
+                "publicKey": "test_public_key_XXXXXXXXXXXXXXXXXXXX", 
+                "productIdentity": "Miniland_Academy_School_Fees",
                 "productName": "Miniland Academy School Fees",
-                "productUrl": window.location.href, 
+                "productUrl": window.location.href,
                 "paymentPreference": ["KHALTI", "EBANKING", "MOBILE_BANKING", "CONNECT_IPS", "SCT"],
                 "eventHandler": {
-                    onSuccess (payload) { 
-                        console.log("Khalti Success:", payload); 
-                        alert("Khalti payment successful! Transaction ID: " + payload.idx); 
-                        // === ACTION REQUIRED: Implement server-side verification using payload.idx ===
+                    onSuccess (payload) {
+                        console.log("Khalti Success:", payload);
+                        alert("Khalti payment successful! Transaction ID: " + payload.idx);
                     },
-                    onError (error) { 
-                        console.error("Khalti Error:", error); 
-                        alert("Khalti payment failed: " + (error.message || "Unknown error")); 
+                    onError (error) {
+                        console.error("Khalti Error:", error);
+                        alert("Khalti payment failed: " + (error.message || "Unknown error"));
                     },
                     onClose () { console.log('Khalti closed.'); }
                 }
             };
-            // Ensure KhaltiCheckout is defined before using it (comes from the script)
             if (typeof KhaltiCheckout !== 'undefined') {
                  var khaltiCheckout = new KhaltiCheckout(khaltiConfig);
                  const khaltiButton = document.getElementById("khalti-button");
                  if (khaltiButton) {
-                     khaltiButton.addEventListener("click", function() { 
-                          // === ACTION REQUIRED: Set the actual dynamic amount in Paisa ===
-                          // This is a placeholder amount (1000 NPR)
-                          khaltiCheckout.show({amount: 100000}); 
+                     khaltiButton.addEventListener("click", function() {
+                          khaltiCheckout.show({amount: 100000});
                      });
                  }
             } else {
                 console.error("Khalti script not loaded or KhaltiCheckout is not available.");
-                 // Optionally disable Khalti button if script fails to load
                  const khaltiButton = document.getElementById("khalti-button");
                  if (khaltiButton) khaltiButton.disabled = true;
             }
 
 
-            // --- eSewa Payment Trigger ---
-            // IMPORTANT: REPLACE "EPAYTEST" with your LIVE eSewa Merchant Code
-            // IMPORTANT: REPLACE 'amt', 'tAmt' with actual dynamic amounts.
             function payWithEsewa() {
                  var esewaParams = {
-                     amt: 1000,          // Item Amount (should be dynamic) - Placeholder
-                     psc: 0,             // Service Charge
-                     pdc: 0,             // Delivery Charge
-                     txAmt: 0,           // Tax Amount
-                     tAmt: 1000,         // Total Amount (amt + psc + pdc + txAmt - should be dynamic) - Placeholder
-                     pid: "miniland_fee_" + new Date().getTime(), // Unique Product ID
-                     scd: "EPAYTEST",    // === ACTION REQUIRED: REPLACE WITH YOUR LIVE ESEWA MERCHANT CODE ===
-                     su: window.location.origin + window.location.pathname + "?payment_status=esewa_success", // Success URL
-                     fu: window.location.origin + window.location.pathname + "?payment_status=esewa_failure"     // Failure URL
+                     amt: 1000,          
+                     psc: 0,            
+                     pdc: 0,            
+                     txAmt: 0,          
+                     tAmt: 1000,         
+                     pid: "miniland_fee_" + new Date().getTime(), 
+                     scd: "EPAYTEST",    
+                     su: window.location.origin + window.location.pathname + "?payment_status=esewa_success", 
+                     fu: window.location.origin + window.location.pathname + "?payment_status=esewa_failure"     
                  };
                  var form = document.createElement("form");
                  form.setAttribute("method", "POST");
-                 // === ACTION REQUIRED: Use LIVE eSewa URL for production ===
-                 form.setAttribute("action", "https://uat.esewa.com.np/epay/main"); // Sandbox URL
-                 // form.setAttribute("action", "https://epay.esewa.com.np/epay/main"); // LIVE URL
+                 form.setAttribute("action", "https://uat.esewa.com.np/epay/main"); 
 
                  for(var key in esewaParams) {
                      var hiddenField = document.createElement("input");
@@ -1247,25 +1186,21 @@
             const esewaButton = document.getElementById("esewa-button");
             if(esewaButton) { esewaButton.addEventListener("click", payWithEsewa); }
 
-            // --- eSewa Payment Status Check on Page Load ---
             const urlParams = new URLSearchParams(window.location.search);
-            const paymentStatus = urlParams.get('payment_status'); 
+            const paymentStatus = urlParams.get('payment_status');
             const refId = urlParams.get('refId');
-            if (paymentStatus === 'esewa_success') { 
+            if (paymentStatus === 'esewa_success') {
                 alert('eSewa Payment Successful! Reference ID: ' + refId + '\n\n=== ACTION REQUIRED: Verify this payment on your server using refId before confirming the transaction. ===');
-                 // Clean the URL without refreshing
                  if (history.replaceState) { history.replaceState(null, '', window.location.pathname); }
             }
-            else if (paymentStatus === 'esewa_failure') { 
-                alert('eSewa Payment Failed.'); 
-                // Clean the URL without refreshing
+            else if (paymentStatus === 'esewa_failure') {
+                alert('eSewa Payment Failed.');
                 if (history.replaceState) { history.replaceState(null, '', window.location.pathname); }
             }
-            
-            // --- Notice Bar Functionality ---
+
             const noticeBar = document.getElementById('noticeBar');
             const closeNoticeBtn = noticeBar ? noticeBar.querySelector('.notice-close') : null;
-            
+
             if (closeNoticeBtn) {
                 closeNoticeBtn.addEventListener('click', function() {
                     if (noticeBar) {
@@ -1274,30 +1209,29 @@
                 });
             }
 
-            // --- Gallery Modal Slideshow JavaScript ---
             const modal = document.getElementById('galleryModal');
             const modalImg = document.getElementById('modalImage');
-            const galleryThumbnails = document.querySelectorAll('.gallery-item img'); 
+            const galleryThumbnails = document.querySelectorAll('.gallery-item img');
             const closeModalBtn = document.getElementById('modalClose');
             const prevBtn = document.getElementById('modalPrev');
             const nextBtn = document.getElementById('modalNext');
             let currentImageIndex = 0;
-            let galleryImageSources = []; // Store { src, alt } objects
+            let galleryImageSources = []; 
 
             if (galleryThumbnails.length > 0) {
                  galleryThumbnails.forEach((thumbnail, index) => {
                      galleryImageSources.push({ src: thumbnail.src, alt: thumbnail.alt });
-                     thumbnail.setAttribute('data-index', index); 
+                     thumbnail.setAttribute('data-index', index);
                      thumbnail.addEventListener('click', function() {
                          currentImageIndex = parseInt(this.getAttribute('data-index'));
                          updateModalImage();
                          if(modal) modal.classList.add('active');
-                         document.body.style.overflow = 'hidden'; 
+                         document.body.style.overflow = 'hidden';
                      });
                  });
             } else {
-                console.warn("No gallery images found."); 
-                 if(modal) { 
+                console.warn("No gallery images found.");
+                 if(modal) {
                      if(prevBtn) prevBtn.style.display = 'none';
                      if(nextBtn) nextBtn.style.display = 'none';
                  }
@@ -1319,21 +1253,21 @@
                 currentImageIndex = (currentImageIndex - 1 + galleryImageSources.length) % galleryImageSources.length;
                 updateModalImage();
             }
-             
+
             if (nextBtn) nextBtn.addEventListener('click', showNextImage);
             if (prevBtn) prevBtn.addEventListener('click', showPrevImage);
 
             if (closeModalBtn) {
                 closeModalBtn.addEventListener('click', function() {
                     if(modal) modal.classList.remove('active');
-                    document.body.style.overflow = 'auto'; 
+                    document.body.style.overflow = 'auto';
                 });
             }
             if (modal) {
                 modal.addEventListener('click', function(e) {
-                    if (e.target === modal || e.target.classList.contains('modal-content-wrapper')) { 
+                    if (e.target === modal || e.target.classList.contains('modal-content-wrapper')) {
                          modal.classList.remove('active');
-                         document.body.style.overflow = 'auto'; 
+                         document.body.style.overflow = 'auto';
                     }
                 });
             }
