@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Miniland Academy English School in Kerabari 7, Dangi, Morang offers quality education from Play Group to Class 9. Morality, Discipline & Quality Education is Our Supreme Ambition.">
@@ -13,69 +12,6 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-       /* Consolidated CSS styles */
-        body {
-            background-image: url('images/background-image.jpg');
-            background-size: cover;
-            background-position: center center;
-            background-attachment: fixed;
-            font-family: Arial, sans-serif;
-            color: #333; /* Changed from white for better readability */
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            background-image: url('background-image.jpg'); /* Replace with your image path */
-            background-size: cover;  /* Cover the whole page */
-            background-position: center center;  /* Center the background */
-            background-attachment: fixed;  /* Keep background fixed while scrolling */
-            font-family: Arial, sans-serif;
-            color: white;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Style for the header */
-        header {
-            text-align: center;
-            padding: 50px;
-            background-image: url('images/teacher.jpg'); /* Background image for header */
-            background-size: cover;  /* Make the background cover the entire header */
-            background-position: center center;  /* Center the background */
-            background-attachment: fixed;  /* Keeps the background fixed */
-            color: white; /* Text color */
-            margin-bottom: 30px;
-        }
-logo {
-    margin-right: 15px;
-}
-
-.logo img {
-    height: 50px;
-    width: 50px;
-    object-fit: contain;
-    border-radius: 50%;
-    border: 2px solid white;
-}
-        /* Style for the title */
-        h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-        }
-
-        /* Style for the slogan */
-        p {
-            font-size: 1.5em;
-            font-weight: bold;
-        }
-
-        /* Style for the image */
-        img {
-            display: block;
-            margin: 0 auto;
-            max-width: 100%;
-            height: auto;
-        }
         /* CSS Reset */
         * {
             margin: 0;
@@ -126,7 +62,6 @@ logo {
             background-color: #1a5276;
             color: white;
             padding: 10px 0;
-            text-align: center;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             position: relative;
             z-index: 100;
@@ -139,6 +74,7 @@ logo {
             max-width: 1200px;
             width: 100%;
             padding: 0 15px;
+            margin: 0 auto;
         }
 
         .logo {
@@ -153,9 +89,13 @@ logo {
             border: 2px solid white;
         }
 
+        .school-name {
+            text-align: center;
+        }
+
         .school-name h1 {
             font-size: 20px;
-            margin-bottom: 0;
+            margin-bottom: 5px;
             line-height: 1.2;
         }
 
@@ -180,6 +120,8 @@ logo {
             list-style: none;
             flex-wrap: wrap;
             gap: 10px;
+            margin: 0;
+            padding: 0;
         }
 
         nav ul li {
@@ -202,269 +144,205 @@ logo {
             background-color: #3498db;
             transform: translateY(-2px);
         }
-* Notice Bar Styles */
-  .notice-bar {
-    background: linear-gradient(90deg, #e74c3c 0%, #c0392b 100%);
-    color: white;
-    padding: 12px 0;
-    overflow: hidden;
-    position: relative;
-    z-index: 98;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  }
-  
-  .notice-content {
-    display: flex;
-    width: max-content;
-    animation: scrollText 40s linear infinite;
-    padding-right: 100vw; /* Ensure space for scrolling */
-  }
-  
-  .notice-section, .ad-section {
-    display: flex;
-    align-items: center;
-    padding: 0 40px;
-    white-space: nowrap;
-  }
-  
-  .notice-text, .ad-text {
-    margin-right: 20px;
-    font-weight: 600;
-    font-size: 15px;
-  }
-  
-  .notice-actions, .ad-actions {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .notice-btn {
-    color: white;
-    padding: 6px 14px;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    text-decoration: none;
-    transition: all 0.3s;
-    white-space: nowrap;
-  }
-  
-  .whatsapp-btn {
-    background-color: #25D366;
-  }
-  
-  .call-btn {
-    background-color: #2ecc71;
-  }
-  
-  .ad-btn {
-    background-color: #f39c12;
-  }
-  
-  .notice-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-  }
-  
-  .notice-close {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255,255,255,0.2);
-    border: none;
-    color: white;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 14px;
-    transition: all 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-  }
-  
-  .notice-close:hover {
-    background: rgba(255,255,255,0.3);
-    transform: translateY(-50%) rotate(90deg);
-  }
-  
-  @keyframes scrollText {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-50% - 20px)); }
-  }
-  
-  /* Paused state */
-  .notice-bar.paused .notice-content {
-    animation-play-state: paused;
-  }
-  
-  /* Responsive Styles */
-  @media (max-width: 992px) {
-    .notice-content {
-      animation-duration: 60s;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .notice-bar {
-      padding: 10px 40px 10px 20px;
-    }
-    
-    .notice-content {
-      animation: none;
-      width: 100%;
-      flex-direction: column;
-      padding-right: 0;
-    }
-    
-    .notice-section, .ad-section {
-      padding: 5px 0;
-      width: 100%;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    
-    .notice-text, .ad-text {
-      margin-right: 10px;
-      margin-bottom: 8px;
-      text-align: center;
-      white-space: normal;
-    }
-    
-    .notice-actions, .ad-actions {
-      justify-content: center;
-    }
-    
-    .notice-btn {
-      padding: 5px 12px;
-    }
-  }
-        /* Hero Section with Reflection */
-        .hero {
-        position: relative;
-        color: white;
-        text-align: center;
-        min-height: 85vh; /* Slightly taller for better impact */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        padding: 40px 20px; /* Better spacing */
-        isolation: isolate;
-        background-color: #1a5276; /* Fallback color */
-    }
 
-    .hero-bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: linear-gradient(rgba(26, 82, 118, 0.7), rgba(26, 82, 118, 0.9)), url('images/hero.jpg');
-        background-size: cover;
-        background-position: center 35%; /* Perfect face positioning */
-        background-repeat: no-repeat;
-        z-index: -1;
-        transition: transform 0.5s ease; /* Smooth zoom effect */
-    }
-
-    .hero:hover .hero-bg {
-        transform: scale(1.02); /* Subtle hover effect */
-    }
-
-    .hero-content {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 30px;
-        position: relative;
-        z-index: 1;
-        text-shadow: 0 2px 10px rgba(0,0,0,0.4);
-        animation: fadeInUp 0.8s ease;
-    }
-
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
+        /* Notice Bar Styles */
+        .notice-bar {
+            background: linear-gradient(90deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            padding: 12px 0;
+            overflow: hidden;
+            position: relative;
+            z-index: 98;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        to {
-            opacity: 1;
-            transform: translateY(0);
+        
+        .notice-content {
+            display: flex;
+            width: max-content;
+            animation: scrollText 40s linear infinite;
+            padding-right: 100vw;
         }
-    }
-
-    .hero h1 {
-        font-size: clamp(36px, 6vw, 52px);
-        margin-bottom: 25px;
-        line-height: 1.3;
-        font-weight: 700;
-    }
-
-    .hero p {
-        font-size: clamp(18px, 3vw, 22px);
-        margin: 0 auto 35px;
-        max-width: 700px;
-        line-height: 1.6;
-    }
-
-    /* Perfect WhatsApp Button */
-    .whatsapp-btn {
-        background-color: #25D366;
-        display: inline-flex;
-        align-items: center;
-        gap: 12px;
-        padding: 15px 35px;
-        font-size: 18px;
-        border-radius: 50px;
-        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-    }
-
-    .whatsapp-btn i {
-        font-size: 24px;
-    }
-
-    .whatsapp-btn:hover {
-        background-color: #128C7E;
-        transform: translateY(-3px) scale(1.02);
-        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-    }
-
-    /* Perfect Face Protection */
-    @media (max-width: 992px) {
-        .hero-bg {
-            background-position: center 40%;
+        
+        .notice-section, .ad-section {
+            display: flex;
+            align-items: center;
+            padding: 0 40px;
+            white-space: nowrap;
         }
-    }
-
-    @media (max-width: 768px) {
-        .hero {
-            min-height: 75vh;
+        
+        .notice-text, .ad-text {
+            margin-right: 20px;
+            font-weight: 600;
+            font-size: 15px;
         }
-        .hero-bg {
-            background-position: center 45%;
+        
+        .notice-actions, .ad-actions {
+            display: flex;
+            gap: 10px;
         }
-    }
-
-    @media (max-width: 576px) {
-        .hero {
-            min-height: 70vh;
-            padding: 30px 15px;
+        
+        .notice-btn {
+            color: white;
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            transition: all 0.3s;
+            white-space: nowrap;
         }
-        .hero-content {
-            padding: 20px;
-        }
+        
         .whatsapp-btn {
-            padding: 12px 25px;
-            font-size: 16px;
+            background-color: #25D366;
         }
-    }
+        
+        .call-btn {
+            background-color: #2ecc71;
+        }
+        
+        .ad-btn {
+            background-color: #f39c12;
+        }
+        
+        .notice-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+        }
+        
+        .notice-close {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+        
+        .notice-close:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-50%) rotate(90deg);
+        }
+        
+        @keyframes scrollText {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-50% - 20px)); }
+        }
+        
+        /* Paused state */
+        .notice-bar.paused .notice-content {
+            animation-play-state: paused;
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            color: white;
+            text-align: center;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 40px 20px;
+            isolation: isolate;
+            background-color: #1a5276;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(26, 82, 118, 0.7), rgba(26, 82, 118, 0.9)), url('images/hero.jpg');
+            background-size: cover;
+            background-position: center 35%;
+            background-repeat: no-repeat;
+            z-index: -1;
+            transition: transform 0.5s ease;
+        }
+
+        .hero:hover .hero-bg {
+            transform: scale(1.02);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+            animation: fadeInUp 0.8s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 6vw, 52px);
+            margin-bottom: 25px;
+            line-height: 1.3;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: clamp(18px, 3vw, 22px);
+            margin: 0 auto 35px;
+            max-width: 700px;
+            line-height: 1.6;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px 35px;
+            font-size: 18px;
+            border-radius: 50px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            text-decoration: none;
+            color: white;
+        }
+
+        .whatsapp-btn {
+            background-color: #25D366;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-btn i {
+            font-size: 24px;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+
         /* Main Content */
         .main-content {
             display: grid;
@@ -621,6 +499,9 @@ logo {
 
         .footer-links li {
             margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .footer-links a {
@@ -638,80 +519,60 @@ logo {
 
         .social-links {
             display: flex;
-            gap: 15px;
-            margin-top: 20px;
+            gap: 18px;
+            margin-top: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .social-icon {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.15);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-size: 18px;
+            position: relative;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Platform-specific colors */
+        .facebook:hover { background-color: #3b5998; }
+        .tiktok:hover { background-color: #000000; }
+        .youtube:hover { background-color: #ff0000; }
+        .whatsapp:hover { background-color: #25D366; }
+        
+        /* Tooltip effect */
+        .social-icon::after {
+            content: attr(aria-label);
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1a5276;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+        
+        .social-icon:hover::after {
+            opacity: 1;
         }
 
-         .social-links {
-        display: flex;
-        gap: 18px;
-        margin-top: 25px;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    
-    .social-icon {
-        color: white;
-        background-color: rgba(255, 255, 255, 0.15);
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        font-size: 18px;
-        position: relative;
-    }
-    
-    .social-icon:hover {
-        transform: translateY(-3px) scale(1.1);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-    
-    /* Platform-specific colors */
-    .facebook:hover { background-color: #3b5998; }
-    .tiktok:hover { background-color: #000000; }
-    .youtube:hover { background-color: #ff0000; }
-    .whatsapp:hover { background-color: #25D366; }
-    
-    /* Tooltip effect */
-    .social-icon::after {
-        content: attr(aria-label);
-        position: absolute;
-        bottom: -40px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: #1a5276;
-        color: white;
-        padding: 5px 10px;
-        border-radius: 4px;
-        font-size: 12px;
-        opacity: 0;
-        transition: opacity 0.3s;
-        pointer-events: none;
-        white-space: nowrap;
-    }
-    
-    .social-icon:hover::after {
-        opacity: 1;
-    }
-    
-    @media (max-width: 768px) {
-        .social-links {
-            gap: 15px;
-        }
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            font-size: 16px;
-        }
-        .social-icon::after {
-            font-size: 10px;
-            bottom: -35px;
-        }
-    }
-        /* Updated Footer Bottom Section */
+        /* Footer Bottom */
         .footer-bottom {
             display: flex;
             flex-direction: column;
@@ -739,6 +600,22 @@ logo {
         }
         .developer a:hover {
             color: blue;
+        }
+
+        /* Skip to content link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #1a5276;
+            color: white;
+            padding: 8px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+
+        .skip-link:focus {
+            top: 0;
         }
 
         /* Responsive Adjustments */
@@ -788,53 +665,62 @@ logo {
             }
         }
 
-        /* Responsive adjustments for the reflection */
+        /* Responsive adjustments for notice bar */
         @media (max-width: 768px) {
-            .hero-reflection {
-                height: 20%;
-                opacity: 0.5;
+            .notice-content {
+                animation-duration: 60s;
             }
-        }
-
-        @media (max-width: 480px) {
-            .hero-reflection {
-                height: 15%;
+            
+            .notice-bar {
+                padding: 10px 40px 10px 20px;
             }
-        }
-
-        /* Skip to content link for accessibility */
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: #1a5276;
-            color: white;
-            padding: 8px;
-            z-index: 100;
-            transition: top 0.3s;
-        }
-
-        .skip-link:focus {
-            top: 0;
+            
+            .notice-content {
+                animation: none;
+                width: 100%;
+                flex-direction: column;
+                padding-right: 0;
+            }
+            
+            .notice-section, .ad-section {
+                padding: 5px 0;
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .notice-text, .ad-text {
+                margin-right: 10px;
+                margin-bottom: 8px;
+                text-align: center;
+                white-space: normal;
+            }
+            
+            .notice-actions, .ad-actions {
+                justify-content: center;
+            }
+            
+            .notice-btn {
+                padding: 5px 12px;
+            }
         }
     </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-</head>
-<body><div class="header-container">
-        <div class="logo">
-            <!-- Add logo image here -->
-        </div>
-        <div class="school-name">
-            <h1>Miniland Academy English School</h1>
-            <p>Morality, Discipline & Quality Education is Our Supreme Ambition</p>
-        </div>
-    </div>
+    
     <header>
-        <h1>Welcome to Miniland Academy English School</h1>
-        <p><strong>Morality, Discipline & Quality Education is Our Supreme Ambition</strong></p>
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Miniland Academy Logo">
+            </div>
+            <div class="school-name">
+                <h1>Miniland Academy English School</h1>
+                <p>Morality, Discipline & Quality Education is Our Supreme Ambition</p>
+            </div>
+        </div>
     </header>
+    
     <nav>
         <div class="container">
             <ul>
@@ -847,45 +733,48 @@ logo {
             </ul>
         </div>
     </nav>
+    
     <div class="notice-bar" id="noticeBar">
-  <div class="notice-content">
-    <!-- Notice Section -->
-    <div class="notice-section">
-      <span class="notice-text">भर्ना खुल्यो! भर्ना खुल्यो!! भर्ना खुल्यो!!!</span>
-      <span class="notice-actions">
-        <a href="https://wa.me/9779816302747" class="notice-btn whatsapp-btn" target="_blank">
-          <i class="fab fa-whatsapp"></i> Send WhatsApp Now
-        </a>
-        <a href="tel:+9779816302747" class="notice-btn call-btn">
-          <i class="fas fa-phone"></i> Call Now
-        </a>
-      </span>
+        <div class="notice-content">
+            <!-- Notice Section -->
+            <div class="notice-section">
+                <span class="notice-text">भर्ना खुल्यो! भर्ना खुल्यो!! भर्ना खुल्यो!!!</span>
+                <span class="notice-actions">
+                    <a href="https://wa.me/9779816302747" class="notice-btn whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Send WhatsApp Now
+                    </a>
+                    <a href="tel:+9779816302747" class="notice-btn call-btn">
+                        <i class="fas fa-phone"></i> Call Now
+                    </a>
+                </span>
+            </div>
+            
+            <!-- Advertisement Section -->
+            <div class="ad-section">
+                <span class="ad-text">केरावारी–७,Dangi, मोरङ स्थित Miniland English Boarding School मा नयाँ शैक्षिक सत्रका लागि भर्ना सुरु, अङ्ग्रेजी माध्यम, अनुभवी शिक्षक, बालमैत्री र सुरक्षित वातावरण, कम्प्युटर र अतिरिक्त क्रियाकलापहरू, बैशाख महिनाभित्र भर्ना गर्दा वार्षिक शुल्कमा विशेष छुट, सिट सीमित — आजै Call वा WhatsApp गर्नुहोस्!
+                </span>
+                <a href="#admission" class="notice-btn ad-btn">
+                    <i class="fas fa-gift"></i> Learn More
+                </a>
+            </div>
+        </div>
+        <button class="notice-close" aria-label="Close notice">
+            <i class="fas fa-times"></i>
+        </button>
     </div>
     
-    <!-- Advertisement Section -->
-    <div class="ad-section">
-      <span class="ad-text">केरावारी–७,Dangi, मोरङ स्थित Miniland English Boarding School मा नयाँ शैक्षिक सत्रका लागि भर्ना सुरु, अङ्ग्रेजी माध्यम, अनुभवी शिक्षक, बालमैत्री र सुरक्षित वातावरण, कम्प्युटर र अतिरिक्त क्रियाकलापहरू, बैशाख महिनाभित्र भर्ना गर्दा वार्षिक शुल्कमा विशेष छुट, सिट सीमित — आजै Call वा WhatsApp गर्नुहोस्!
-</span>
-      <a href="#admission" class="notice-btn ad-btn">
-        <i class="fas fa-gift"></i> Learn More
-      </a>
-    </div>
-  </div>
-  <button class="notice-close" aria-label="Close notice">
-    <i class="fas fa-times"></i>
-  </button>
-</div>
     <main id="main-content">
-       <section class="hero" id="home">
-    <div class="hero-bg"></div>
-    <div class="hero-content">
-        <h1>Quality Education for Bright Futures</h1>
-        <p>Miniland Academy provides excellent education from Play Group to Class 9 in a nurturing environment that fosters academic excellence and character development.</p>
-        <a href="https://wa.me/9779816302747" class="btn whatsapp-btn" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-whatsapp"></i> Send WhatsApp Message Now
-        </a>
-    </div>
-</section>
+        <section class="hero" id="home">
+            <div class="hero-bg"></div>
+            <div class="hero-content">
+                <h1>Quality Education for Bright Futures</h1>
+                <p>Miniland Academy provides excellent education from Play Group to Class 9 in a nurturing environment that fosters academic excellence and character development.</p>
+                <a href="https://wa.me/9779816302747" class="btn whatsapp-btn" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp"></i> Send WhatsApp Message Now
+                </a>
+            </div>
+        </section>
+        
         <div class="container">
             <section class="about" id="about">
                 <h2>About Our School</h2>
@@ -944,8 +833,8 @@ logo {
                             </div>
                             <div class="contact-text">
                                 <strong>School Hours</strong>
-                                Sunday-Thursday: 10:00 AM - 4:00 PM
-                                 Friday: 10:00 AM - 1:00 PM (Half-Day)
+                                Sunday-Thursday: 10:00 AM - 4:00 PM<br>
+                                Friday: 10:00 AM - 1:00 PM (Half-Day)<br>
                                 Saturday: Off (Holiday)
                             </div>
                         </div>
@@ -983,7 +872,6 @@ logo {
             </div>
         </div>
     </main>
-
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -991,42 +879,43 @@ logo {
                     <h3>Miniland Academy</h3>
                     <p>Providing quality education from Play Group to Class 9 in a nurturing environment that fosters academic excellence and character development.</p>
                     <div class="social-links">
-    <!-- Facebook -->
-    <a href="https://www.facebook.com/people/Miniland-Academy-English-School/61573570560067/" 
-       target="_blank" 
-       rel="noopener noreferrer"
-       aria-label="Facebook Page"
-       class="social-icon facebook">
-        <i class="fab fa-facebook-f"></i>
-    </a>
-    
-    <!-- TikTok -->
-    <a href="https://www.tiktok.com/@minilandacademy" 
-       target="_blank" 
-       rel="noopener noreferrer"
-       aria-label="TikTok Profile"
-       class="social-icon tiktok">
-        <i class="fab fa-tiktok"></i>
-    </a>
-    
-    <!-- YouTube -->
-    <a href="https://www.youtube.com/@minilandacademy" 
-       target="_blank" 
-       rel="noopener noreferrer"
-       aria-label="YouTube Channel"
-       class="social-icon youtube">
-        <i class="fab fa-youtube"></i>
-    </a>
-    
-    <!-- WhatsApp -->
-    <a href="https://wa.me/9779816302747" 
-       target="_blank" 
-       rel="noopener noreferrer"
-       aria-label="Contact via WhatsApp"
-       class="social-icon whatsapp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+                        <!-- Facebook -->
+                        <a href="https://www.facebook.com/people/Miniland-Academy-English-School/61573570560067/" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           aria-label="Facebook Page"
+                           class="social-icon facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        
+                        <!-- TikTok -->
+                        <a href="https://www.tiktok.com/@minilandacademy" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           aria-label="TikTok Profile"
+                           class="social-icon tiktok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        
+                        <!-- YouTube -->
+                        <a href="https://www.youtube.com/@minilandacademy" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           aria-label="YouTube Channel"
+                           class="social-icon youtube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        
+                        <!-- WhatsApp -->
+                        <a href="https://wa.me/9779816302747" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           aria-label="Contact via WhatsApp"
+                           class="social-icon whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
                     </div>
+                </div>
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
@@ -1044,7 +933,7 @@ logo {
                         <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Kerabari 7, Dangi, Morang</li>
                         <li><i class="fas fa-phone-alt" aria-hidden="true"></i> <a href="tel:+9779816302747">+977 981-6302747</a></li>
                         <li><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:info.minilandacademy@gmail.com">info.minilandacademy@gmail.com</a></li>
-                        <li><i class="fas fa-clock" aria-hidden="true"></i> Sun-Thur: 10AM - 4PM, Friday : 10AM - 1PM</li>
+                        <li><i class="fas fa-clock" aria-hidden="true"></i> Sun-Thur: 10AM - 4PM, Friday: 10AM - 1PM</li>
                     </ul>
                 </div>
             </div>
@@ -1059,6 +948,7 @@ logo {
             </div>
         </div>
     </footer>
+    
     <!-- Loading scripts at the end for better performance -->
     <!-- Khalti Payment SDK -->
     <script src="https://khalti.s3.ap-south-1.amazonaws.com/KPG/dist/2020.12.17.0.0.0/khalti-checkout.iffe.js" defer></script>
@@ -1159,62 +1049,62 @@ logo {
             } else if(paymentStatus === 'failed') {
                 alert('eSewa Payment Failed. Please try again.');
             }
+            
+            // Notice bar functionality
+            const noticeBar = document.getElementById('noticeBar');
+            const closeBtn = noticeBar.querySelector('.notice-close');
+            const noticeContent = noticeBar.querySelector('.notice-content');
+            
+            // Pause on hover/click
+            noticeBar.addEventListener('mouseenter', pauseAnimation);
+            noticeBar.addEventListener('mouseleave', resumeAnimation);
+            noticeBar.addEventListener('click', function(e) {
+                if (!e.target.closest('a')) {
+                    if (noticeContent.style.animationPlayState === 'paused') {
+                        resumeAnimation();
+                    } else {
+                        pauseAnimation();
+                    }
+                }
+            });
+            
+            // Close functionality
+            closeBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                noticeBar.style.display = 'none';
+                // Optional: Set cookie to remember closed state
+                document.cookie = "noticeClosed=true; max-age=86400"; // 1 day
+            });
+            
+            // Check if previously closed
+            if (document.cookie.includes('noticeClosed=true')) {
+                noticeBar.style.display = 'none';
+            }
+            
+            // Mobile detection
+            function checkMobile() {
+                if (window.innerWidth <= 768) {
+                    noticeContent.style.animation = 'none';
+                } else {
+                    noticeContent.style.animation = 'scrollText 40s linear infinite';
+                }
+            }
+            
+            window.addEventListener('resize', checkMobile);
+            checkMobile();
+            
+            function pauseAnimation() {
+                if (window.innerWidth > 768) {
+                    noticeContent.style.animationPlayState = 'paused';
+                }
+            }
+            
+            function resumeAnimation() {
+                if (window.innerWidth > 768) {
+                    noticeContent.style.animationPlayState = 'running';
+                }
+            }
         });
-        document.addEventListener('DOMContentLoaded', function() {
-    const noticeBar = document.getElementById('noticeBar');
-    const closeBtn = noticeBar.querySelector('.notice-close');
-    const noticeContent = noticeBar.querySelector('.notice-content');
-    
-    // Pause on hover/click
-    noticeBar.addEventListener('mouseenter', pauseAnimation);
-    noticeBar.addEventListener('mouseleave', resumeAnimation);
-    noticeBar.addEventListener('click', function(e) {
-      if (!e.target.closest('a')) {
-        if (noticeContent.style.animationPlayState === 'paused') {
-          resumeAnimation();
-        } else {
-          pauseAnimation();
-        }
-      }
-    });
-    
-    // Close functionality
-    closeBtn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      noticeBar.style.display = 'none';
-      // Optional: Set cookie to remember closed state
-      document.cookie = "noticeClosed=true; max-age=86400"; // 1 day
-    });
-    
-    // Check if previously closed
-    if (document.cookie.includes('noticeClosed=true')) {
-      noticeBar.style.display = 'none';
-    }
-    
-    // Mobile detection
-    function checkMobile() {
-      if (window.innerWidth <= 768) {
-        noticeContent.style.animation = 'none';
-      } else {
-        noticeContent.style.animation = 'scrollText 40s linear infinite';
-      }
-    }
-    
-    window.addEventListener('resize', checkMobile);
-    checkMobile();
-    
-    function pauseAnimation() {
-      if (window.innerWidth > 768) {
-        noticeContent.style.animationPlayState = 'paused';
-      }
-    }
-    
-    function resumeAnimation() {
-      if (window.innerWidth > 768) {
-        noticeContent.style.animationPlayState = 'running';
-      }
-    }
-  });
     </script>
 </body>
 </html>
