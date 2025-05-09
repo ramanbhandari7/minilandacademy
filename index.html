@@ -224,7 +224,38 @@
         } 
 
         /* --- Main Page Section Styling --- */
-        /* About Section Styles */
+      /* ... (keep all existing styles the same until the About section) ... */
+
+        /* --- About Section with Fixed Background --- */
+        .page-section#about {
+            position: relative;
+            padding: 60px 0;
+            background-color: #f9f9f9;
+            isolation: isolate; /* This prevents the pseudo-element from affecting other sections */
+        }
+        
+        .page-section#about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('images/teachers.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.15;
+            z-index: -1; /* This places it behind the content */
+        }
+        
+        /* Make sure the container is positioned relative to contain the z-index */
+        .page-section#about .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ... (keep all other existing styles the same) ... */
     .page-section {
         position: relative;
         padding: 60px 0;
