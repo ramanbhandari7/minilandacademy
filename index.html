@@ -137,29 +137,62 @@
             transform: translateY(-2px);
         }
 
-        /* Hero Section */
+        /* Hero Section with Reflection */
         .hero {
-            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/school-building.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            position: relative;
             color: white;
             text-align: center;
-            padding: 100px 20px;
-            margin-bottom: 0;
             min-height: 60vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
+            margin-bottom: 0;
+            padding: 0;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/school-building.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -2;
+        }
+
+        .hero-reflection {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30%;
+            background: linear-gradient(
+                to bottom, 
+                rgba(255, 255, 255, 0.2) 0%, 
+                rgba(255, 255, 255, 0) 100%
+            ), url('images/school-building.jpg');
+            background-size: cover;
+            background-position: center;
+            transform: scaleY(-1);
+            opacity: 0.7;
+            filter: blur(1px);
+            z-index: -1;
         }
 
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
         }
 
         .hero h2 {
-            font-size: 32px;
+            font-size: clamp(28px, 5vw, 42px);
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
             color: white;
@@ -167,7 +200,7 @@
         }
 
         .hero p {
-            font-size: 18px;
+            font-size: clamp(16px, 2.5vw, 20px);
             margin: 0 auto 30px;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
@@ -388,13 +421,36 @@
             transform: translateY(-3px);
         }
 
-        .copyright {
+        /* Updated Footer Bottom Section */
+        .footer-bottom {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
             margin-top: 40px;
             padding-top: 20px;
             border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .copyright {
             font-size: 14px;
             opacity: 0.8;
+            margin-bottom: 10px;
+        }
+
+        .developer {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .developer a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .developer a:hover {
+            color: white;
         }
 
         /* Responsive Adjustments */
@@ -406,10 +462,6 @@
             nav ul li a {
                 font-size: 16px;
                 padding: 8px 15px;
-            }
-            
-            .hero h2 {
-                font-size: 36px;
             }
         }
 
@@ -425,6 +477,17 @@
             .footer-content {
                 grid-template-columns: repeat(3, 1fr);
             }
+
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                text-align: left;
+            }
+
+            .copyright {
+                margin-bottom: 0;
+            }
         }
 
         @media (min-width: 992px) {
@@ -436,13 +499,19 @@
             .school-name h1 {
                 font-size: 28px;
             }
-            
-            .hero h2 {
-                font-size: 42px;
+        }
+
+        /* Responsive adjustments for the reflection */
+        @media (max-width: 768px) {
+            .hero-reflection {
+                height: 20%;
+                opacity: 0.5;
             }
-            
-            .hero p {
-                font-size: 20px;
+        }
+
+        @media (max-width: 480px) {
+            .hero-reflection {
+                height: 15%;
             }
         }
 
@@ -493,6 +562,8 @@
 
     <main id="main-content">
         <section class="hero" id="home">
+            <div class="hero-bg"></div>
+            <div class="hero-reflection"></div>
             <div class="hero-content">
                 <h2>Quality Education for Bright Futures</h2>
                 <p>Miniland Academy English School provides excellent education from Play Group to Class 9 in a nurturing environment that fosters academic excellence and character development.</p>
@@ -630,11 +701,10 @@
                 </div>
             </div>
 
-            <div class="footer-content" style="text-align: center;">
+            <div class="footer-bottom">
                 <div class="copyright">
                     <p>&copy; 2025 Miniland Academy English School. All Rights Reserved.</p>
                 </div>
-
                 <div class="developer">
                     <p>Designed & Developed By <a href="https://ramanbhandari.com.np/" target="_blank" rel="noopener noreferrer">Raman Bhandari</a> - Former Student</p>
                 </div>
@@ -743,14 +813,6 @@
             } else if(paymentStatus === 'failed') {
                 alert('eSewa Payment Failed. Please try again.');
             }
-
-            // Optional: Dynamic amount selection
-            // You could add a dropdown to select different fee amounts
-            // document.getElementById('fee-amount').addEventListener('change', function() {
-            //     var amount = this.value * 100; // Convert to paisa for Khalti
-            //     khaltiCheckout.show({amount: amount});
-            //     // For eSewa, you would update the params.amt value
-            // });
         });
     </script>
 </body>
