@@ -136,7 +136,149 @@
             background-color: #3498db;
             transform: translateY(-2px);
         }
-
+* Notice Bar Styles */
+  .notice-bar {
+    background: linear-gradient(90deg, #e74c3c 0%, #c0392b 100%);
+    color: white;
+    padding: 12px 0;
+    overflow: hidden;
+    position: relative;
+    z-index: 98;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  
+  .notice-content {
+    display: flex;
+    width: max-content;
+    animation: scrollText 40s linear infinite;
+    padding-right: 100vw; /* Ensure space for scrolling */
+  }
+  
+  .notice-section, .ad-section {
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    white-space: nowrap;
+  }
+  
+  .notice-text, .ad-text {
+    margin-right: 20px;
+    font-weight: 600;
+    font-size: 15px;
+  }
+  
+  .notice-actions, .ad-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .notice-btn {
+    color: white;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    transition: all 0.3s;
+    white-space: nowrap;
+  }
+  
+  .whatsapp-btn {
+    background-color: #25D366;
+  }
+  
+  .call-btn {
+    background-color: #2ecc71;
+  }
+  
+  .ad-btn {
+    background-color: #f39c12;
+  }
+  
+  .notice-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  }
+  
+  .notice-close {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+  
+  .notice-close:hover {
+    background: rgba(255,255,255,0.3);
+    transform: translateY(-50%) rotate(90deg);
+  }
+  
+  @keyframes scrollText {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 20px)); }
+  }
+  
+  /* Paused state */
+  .notice-bar.paused .notice-content {
+    animation-play-state: paused;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 992px) {
+    .notice-content {
+      animation-duration: 60s;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .notice-bar {
+      padding: 10px 40px 10px 20px;
+    }
+    
+    .notice-content {
+      animation: none;
+      width: 100%;
+      flex-direction: column;
+      padding-right: 0;
+    }
+    
+    .notice-section, .ad-section {
+      padding: 5px 0;
+      width: 100%;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .notice-text, .ad-text {
+      margin-right: 10px;
+      margin-bottom: 8px;
+      text-align: center;
+      white-space: normal;
+    }
+    
+    .notice-actions, .ad-actions {
+      justify-content: center;
+    }
+    
+    .notice-btn {
+      padding: 5px 12px;
+    }
+  }
         /* Hero Section with Reflection */
         .hero {
         position: relative;
@@ -950,6 +1092,61 @@
                 alert('eSewa Payment Failed. Please try again.');
             }
         });
+        document.addEventListener('DOMContentLoaded', function() {
+    const noticeBar = document.getElementById('noticeBar');
+    const closeBtn = noticeBar.querySelector('.notice-close');
+    const noticeContent = noticeBar.querySelector('.notice-content');
+    
+    // Pause on hover/click
+    noticeBar.addEventListener('mouseenter', pauseAnimation);
+    noticeBar.addEventListener('mouseleave', resumeAnimation);
+    noticeBar.addEventListener('click', function(e) {
+      if (!e.target.closest('a')) {
+        if (noticeContent.style.animationPlayState === 'paused') {
+          resumeAnimation();
+        } else {
+          pauseAnimation();
+        }
+      }
+    });
+    
+    // Close functionality
+    closeBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      noticeBar.style.display = 'none';
+      // Optional: Set cookie to remember closed state
+      document.cookie = "noticeClosed=true; max-age=86400"; // 1 day
+    });
+    
+    // Check if previously closed
+    if (document.cookie.includes('noticeClosed=true')) {
+      noticeBar.style.display = 'none';
+    }
+    
+    // Mobile detection
+    function checkMobile() {
+      if (window.innerWidth <= 768) {
+        noticeContent.style.animation = 'none';
+      } else {
+        noticeContent.style.animation = 'scrollText 40s linear infinite';
+      }
+    }
+    
+    window.addEventListener('resize', checkMobile);
+    checkMobile();
+    
+    function pauseAnimation() {
+      if (window.innerWidth > 768) {
+        noticeContent.style.animationPlayState = 'paused';
+      }
+    }
+    
+    function resumeAnimation() {
+      if (window.innerWidth > 768) {
+        noticeContent.style.animationPlayState = 'running';
+      }
+    }
+  });
     </script>
 </body>
 </html>
