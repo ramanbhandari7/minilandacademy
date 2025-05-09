@@ -2,13 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=2.0">
+    <!-- CRITICAL FIX: Changed initial-scale from 2.0 to 1.0 for proper responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Miniland Academy English School in Kerabari 7, Dangi, Morang offers quality education from Play Group to Class 9. Morality, Discipline & Quality Education is Our Supreme Ambition.">
     <title>Miniland Academy English School - Kerabari 7, Dangi, Morang | Morality, Discipline & Quality Education is Our Supreme Ambition</title>
     
     <!-- Favicon -->
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="icon" type="image/png" href="images/favicon.png" alt="Miniland Academy logo">
+    <!-- FIX: Removed incorrect alt attribute from link tag -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -25,7 +27,7 @@
             line-height: 1.6;
             color: #333;
             background-color: #f9f9f9;
-            overflow-x: hidden;
+            /* overflow-x: hidden; /* Best to find the cause of overflow, but kept for now */
         }
 
         .container {
@@ -70,7 +72,7 @@
         .header-container {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: center; /* Default: center logo and name */
             max-width: 1200px;
             width: 100%;
             padding: 0 15px;
@@ -79,6 +81,7 @@
 
         .logo {
             margin-right: 15px;
+            flex-shrink: 0; /* Prevent logo from shrinking */
         }
 
         .logo img {
@@ -125,7 +128,7 @@
         }
 
         nav ul li {
-            margin: 0 5px;
+            margin: 0 5px; /* Provides some space if gap is not supported or items are too close */
         }
 
         nav ul li a {
@@ -137,6 +140,7 @@
             transition: all 0.3s;
             font-size: 15px;
             display: inline-block;
+            text-align: center; /* Ensures text is centered if it wraps */
         }
 
         nav ul li a:hover,
@@ -158,16 +162,17 @@
         
         .notice-content {
             display: flex;
-            width: max-content;
-            animation: scrollText 40s linear infinite;
-            padding-right: 100vw;
+            width: max-content; /* Allows content to determine width for scrolling */
+            animation: scrollTextDesktop 40s linear infinite; /* Renamed for clarity */
+            padding-right: 100vw; /* To prevent blank space during scroll loop with current animation logic */
         }
         
         .notice-section, .ad-section {
             display: flex;
             align-items: center;
-            padding: 0 40px;
+            padding: 0 40px; /* Horizontal padding for each section */
             white-space: nowrap;
+            min-width: 50%; /* Helps with the 50% scroll logic if content is variable */
         }
         
         .notice-text, .ad-text {
@@ -195,7 +200,7 @@
             white-space: nowrap;
         }
         
-        .whatsapp-btn {
+        .whatsapp-btn { /* This class is used for both hero and notice bar */
             background-color: #25D366;
         }
         
@@ -214,22 +219,22 @@
         
         .notice-close {
             position: absolute;
-            right: 10px;
+            right: 15px; /* Increased slightly for better touch target */
             top: 50%;
             transform: translateY(-50%);
             background: rgba(255,255,255,0.2);
             border: none;
             color: white;
-            width: 28px;
-            height: 28px;
+            width: 30px; /* Increased slightly */
+            height: 30px; /* Increased slightly */
             border-radius: 50%;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 15px; /* Increased slightly */
             transition: all 0.3s;
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 2;
+            z-index: 2; /* Ensure it's above notice content */
         }
         
         .notice-close:hover {
@@ -237,16 +242,11 @@
             transform: translateY(-50%) rotate(90deg);
         }
         
-        @keyframes scrollText {
+        @keyframes scrollTextDesktop {
             0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-50% - 20px)); }
+            100% { transform: translateX(calc(-50% - 20px)); } /* Scrolls half the content width + a small offset */
         }
-        
-        /* Paused state */
-        .notice-bar.paused .notice-content {
-            animation-play-state: paused;
-        }
-        
+                
         /* Hero Section */
         .hero {
             position: relative;
@@ -257,9 +257,9 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            padding: 40px 20px;
+            padding: 40px 20px; /* Vertical padding, horizontal padding for content */
             isolation: isolate;
-            background-color: #1a5276;
+            background-color: #1a5276; /* Fallback background */
         }
 
         .hero-bg {
@@ -270,7 +270,7 @@
             height: 100%;
             background-image: linear-gradient(rgba(26, 82, 118, 0.7), rgba(26, 82, 118, 0.9)), url('images/hero.jpg');
             background-size: cover;
-            background-position: center 35%;
+            background-position: center 35%; /* Adjust as needed for focal point */
             background-repeat: no-repeat;
             z-index: -1;
             transition: transform 0.5s ease;
@@ -302,21 +302,21 @@
         }
 
         .hero h1 {
-            font-size: clamp(36px, 6vw, 52px);
+            font-size: clamp(32px, 6vw, 52px); /* Slightly reduced min for very small screens */
             margin-bottom: 25px;
             line-height: 1.3;
             font-weight: 700;
         }
 
         .hero p {
-            font-size: clamp(18px, 3vw, 22px);
+            font-size: clamp(16px, 3vw, 22px); /* Slightly reduced min */
             margin: 0 auto 35px;
             max-width: 700px;
             line-height: 1.6;
         }
 
-        /* Button Styles */
-        .btn {
+        /* Button Styles (used in Hero) */
+        .btn { /* Generic button, specific styling for hero's whatsapp button */
             display: inline-flex;
             align-items: center;
             gap: 12px;
@@ -328,30 +328,30 @@
             color: white;
         }
 
-        .whatsapp-btn {
+        .hero .whatsapp-btn { /* Specific to hero, notice bar has its own .whatsapp-btn */
             background-color: #25D366;
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
         }
 
-        .whatsapp-btn i {
+        .hero .whatsapp-btn i {
             font-size: 24px;
         }
 
-        .whatsapp-btn:hover {
+        .hero .whatsapp-btn:hover {
             background-color: #128C7E;
             transform: translateY(-3px) scale(1.02);
             box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
         }
 
-        /* Main Content */
-        .main-content {
+        /* Main Content Grid System (for sections like programs, contact, etc.) */
+        .main-content-grid { /* Renamed to avoid conflict with #main-content ID if used as a wrapper */
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr; /* Default single column */
             gap: 30px;
-            margin: 40px 0;
+            margin: 40px 0; /* This margin is within the .container */
         }
 
-        .about, .programs, .contact, .admission, .payment {
+        .about, .programs, .contact, .admission, .payment { /* Card styles */
             background: white;
             padding: 30px;
             border-radius: 8px;
@@ -412,13 +412,20 @@
             display: block;
             margin-bottom: 5px;
         }
+        .contact-text a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+        .contact-text a:hover {
+            text-decoration: underline;
+        }
 
         /* Payment Section */
-        .payment-section {
+        .payment-section { /* This is inside .payment card */
             background: #f8f9fa;
             padding: 25px;
             border-radius: 8px;
-            margin: 20px 0;
+            margin: 20px 0 0; /* Adjust margin if needed */
             text-align: center;
         }
 
@@ -457,19 +464,12 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        .khalti-button:hover,
-        .khalti-button:focus {
-            background-color: #4a2475;
-        }
+        .khalti-button:hover, .khalti-button:focus { background-color: #4a2475; }
+        .esewa-button:hover, .esewa-button:focus { background-color: #489142; }
 
-        .esewa-button:hover,
-        .esewa-button:focus {
-            background-color: #489142;
-        }
+        .payment-button i { font-size: 18px; }
+        .payment-note { margin-top: 15px; }
 
-        .payment-button i {
-            font-size: 18px;
-        }
 
         /* Footer */
         footer {
@@ -481,7 +481,7 @@
 
         .footer-content {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr; /* Mobile default */
             gap: 30px;
         }
 
@@ -495,6 +495,7 @@
 
         .footer-links {
             list-style: none;
+            padding-left: 0; /* Ensure no default padding */
         }
 
         .footer-links li {
@@ -507,7 +508,7 @@
         .footer-links a {
             color: rgba(255,255,255,0.8);
             text-decoration: none;
-            transition: color 0.3s;
+            transition: color 0.3s, transform 0.3s;
             display: inline-block;
         }
 
@@ -516,12 +517,15 @@
             color: white;
             transform: translateX(5px);
         }
+        .footer-links i { /* For icons in contact info */
+            flex-shrink: 0;
+        }
 
         .social-links {
             display: flex;
             gap: 18px;
             margin-top: 25px;
-            justify-content: center;
+            justify-content: center; /* Center on mobile if .footer-column is text-center */
             flex-wrap: wrap;
         }
         
@@ -537,6 +541,7 @@
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             font-size: 18px;
             position: relative;
+            text-decoration: none; /* Ensure no underline */
         }
         
         .social-icon:hover {
@@ -544,20 +549,18 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
-        /* Platform-specific colors */
         .facebook:hover { background-color: #3b5998; }
         .tiktok:hover { background-color: #000000; }
         .youtube:hover { background-color: #ff0000; }
-        .whatsapp:hover { background-color: #25D366; }
+        .whatsapp:hover { background-color: #25D366; } /* This is a brand class used in footer social links */
         
-        /* Tooltip effect */
-        .social-icon::after {
+        .social-icon::after { /* Tooltip */
             content: attr(aria-label);
             position: absolute;
             bottom: -40px;
             left: 50%;
             transform: translateX(-50%);
-            background: #1a5276;
+            background: #1a5276; /* Match footer bg or contrast */
             color: white;
             padding: 5px 10px;
             border-radius: 4px;
@@ -566,6 +569,7 @@
             transition: opacity 0.3s;
             pointer-events: none;
             white-space: nowrap;
+            z-index: 10; /* Ensure tooltip is above other elements */
         }
         
         .social-icon:hover::after {
@@ -596,22 +600,22 @@
         .developer a {
             color: rgba(255,255,255,0.8);
             text-decoration: none;
-            transition: color 0.8s;
+            transition: color 0.3s; /* Smoother transition */
         }
         .developer a:hover {
-            color: blue;
+            color: #3498db; /* Brighter blue for hover */
         }
 
         /* Skip to content link for accessibility */
         .skip-link {
             position: absolute;
-            top: -40px;
+            top: -50px; /* Further off-screen initially */
             left: 0;
             background: #1a5276;
             color: white;
-            padding: 8px;
-            z-index: 100;
-            transition: top 0.3s;
+            padding: 10px 15px; /* More visible padding */
+            z-index: 200; /* Highest z-index */
+            transition: top 0.3s ease-in-out;
         }
 
         .skip-link:focus {
@@ -619,27 +623,106 @@
         }
 
         /* Responsive Adjustments */
+
+        /* Small devices (landscape phones, < 576px) */
+        @media (max-width: 575.98px) {
+            .header-container {
+                flex-direction: column; /* Stack logo and name */
+                gap: 5px;
+            }
+            .logo {
+                margin-right: 0;
+                margin-bottom: 5px;
+            }
+            .logo img {
+                height: 45px;
+                width: 45px;
+            }
+            .school-name h1 {
+                font-size: 18px;
+            }
+            .school-name p {
+                font-size: 12px;
+            }
+
+            nav ul li a {
+                font-size: 14px;
+                padding: 7px 10px;
+            }
+            nav ul {
+                gap: 5px; /* Reduce gap for smaller screens */
+            }
+
+            .hero .btn {
+                padding: 12px 25px;
+                font-size: 16px;
+            }
+            .hero h1 {
+                font-size: clamp(28px, 6vw, 40px); /* Adjust clamp for smaller hero title */
+            }
+             .hero p {
+                font-size: clamp(15px, 3vw, 18px); /* Adjust clamp for smaller hero text */
+            }
+
+
+            h2 { font-size: 24px; }
+            h3 { font-size: 20px; }
+
+            .about, .programs, .contact, .admission, .payment {
+                padding: 20px;
+            }
+            .payment-button {
+                padding: 10px 20px;
+                font-size: 15px;
+            }
+            .footer-column {
+                text-align: center; /* Center footer column content on small screens */
+            }
+            .footer-column .social-links { /* Ensure social links are centered if parent is */
+                justify-content: center;
+            }
+            .footer-links li {
+                justify-content: center; /* Center list items if text-align center on parent */
+            }
+
+        }
+        
+        /* Medium devices (tablets, 576px and up) */
         @media (min-width: 576px) {
             .school-name h1 {
-                font-size: 24px;
+                font-size: 24px; /* Existing */
             }
             nav ul li a {
-                font-size: 16px;
-                padding: 8px 15px;
+                font-size: 16px; /* Existing */
+                padding: 8px 15px; /* Existing */
             }
         }
 
+        /* Large devices (desktops, 768px and up) */
         @media (min-width: 768px) {
-            .main-content {
+            .main-content-grid { /* Use the renamed class here */
                 grid-template-columns: 2fr 1fr;
             }
             
-            .about {
-                grid-column: 1 / span 2;
-            }
+            /* The .about section is a direct child of .container, not .main-content-grid.
+               It will naturally be full-width within .container.
+               If .about was meant to be part of this grid, its HTML position would need to change.
+               The rule below is only effective if .about is a direct child of a grid container.
+            */
+            /* .about { grid-column: 1 / span 2; } */ /* This rule is currently not effective as desired */
             
             .footer-content {
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* More flexible footer columns */
+                gap: 35px;
+            }
+            .footer-column {
+                 text-align: left; /* Align left on larger screens */
+            }
+            .footer-column .social-links {
+                justify-content: flex-start; /* Align social links to start */
+            }
+             .footer-links li {
+                justify-content: flex-start;
             }
 
             .footer-bottom {
@@ -654,6 +737,7 @@
             }
         }
 
+        /* Extra large devices (large desktops, 992px and up) */
         @media (min-width: 992px) {
             .logo img {
                 height: 60px;
@@ -663,47 +747,55 @@
             .school-name h1 {
                 font-size: 28px;
             }
+             .footer-content { /* For larger screens, ensure 3 columns if space allows */
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
 
-        /* Responsive adjustments for notice bar */
-        @media (max-width: 768px) {
-            .notice-content {
-                animation-duration: 60s;
-            }
-            
+        /* Responsive adjustments for notice bar (already well handled by original CSS) */
+        @media (max-width: 768px) { /* This breakpoint might overlap a bit with 767.98px if not careful */
             .notice-bar {
-                padding: 10px 40px 10px 20px;
+                padding: 10px 40px 10px 20px; /* Existing padding */
             }
-            
             .notice-content {
-                animation: none;
+                animation: none !important; /* Ensure JS-added animation is overridden */
                 width: 100%;
                 flex-direction: column;
-                padding-right: 0;
+                padding-right: 0; /* Remove padding used for desktop scroll */
+                gap: 10px; /* Add some gap between stacked sections */
             }
             
             .notice-section, .ad-section {
                 padding: 5px 0;
                 width: 100%;
                 justify-content: center;
-                flex-wrap: wrap;
+                flex-wrap: wrap; /* Allow items to wrap within each section */
+                text-align: center; /* Center text content */
+                white-space: normal; /* Allow text to wrap */
             }
             
             .notice-text, .ad-text {
-                margin-right: 10px;
+                margin-right: 0; /* Remove right margin */
                 margin-bottom: 8px;
-                text-align: center;
-                white-space: normal;
+                width: 100%; /* Take full width for better centering */
             }
             
             .notice-actions, .ad-actions {
                 justify-content: center;
+                width: 100%; /* Take full width for better centering */
             }
             
             .notice-btn {
-                padding: 5px 12px;
+                padding: 6px 12px; /* Adjusted padding slightly */
+                font-size: 13px; /* Adjusted font size slightly */
+            }
+            .notice-close { /* Ensure close button is well-positioned on mobile */
+                right: 10px;
+                top: 10px; /* Position from top instead of vertical center */
+                transform: none; /* Remove translateY if top is fixed */
             }
         }
+
     </style>
 </head>
 <body>
@@ -711,14 +803,14 @@
     
     <header>
          <div class="header-container">
-        <div class="logo">
-            <img src="images/school-logo.png" alt="Miniland Academy Logo">
+            <div class="logo">
+                <img src="images/school-logo.png" alt="Miniland Academy Logo">
+            </div>
+            <div class="school-name">
+                <h1>Miniland Academy English School</h1>
+                <p>Kerabari- 7 Dangi Morang (Morality, Discipline & Quality Education is Our Supreme Ambition)</p>
+            </div>
         </div>
-        <div class="school-name">
-            <h1>Miniland Academy English School</h1>
-            <p>Morality, Discipline & Quality Education is Our Supreme Ambition</p>
-        </div>
-    </div>
     </header>
     
     <nav>
@@ -740,7 +832,7 @@
             <div class="notice-section">
                 <span class="notice-text">भर्ना खुल्यो! भर्ना खुल्यो!! भर्ना खुल्यो!!!</span>
                 <span class="notice-actions">
-                    <a href="https://wa.me/9779816302747" class="notice-btn whatsapp-btn" target="_blank">
+                    <a href="https://wa.me/9779816302747" class="notice-btn whatsapp-btn" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-whatsapp"></i> Send WhatsApp Now
                     </a>
                     <a href="tel:+9779816302747" class="notice-btn call-btn">
@@ -784,7 +876,8 @@
                 <p>To provide a stimulating learning environment that promotes academic excellence, creativity, and moral values, preparing students to become responsible citizens and future leaders.</p>
             </section>
 
-            <div class="main-content">
+            <!-- Renamed class to .main-content-grid to avoid conflict with #main-content ID -->
+            <div class="main-content-grid"> 
                 <section class="programs" id="programs">
                     <h2>Our Programs</h2>
                     <p>We offer comprehensive educational programs for different age groups:</p>
@@ -879,39 +972,16 @@
                     <h3>Miniland Academy</h3>
                     <p>Providing quality education from Play Group to Class 9 in a nurturing environment that fosters academic excellence and character development.</p>
                     <div class="social-links">
-                        <!-- Facebook -->
-                        <a href="https://www.facebook.com/people/Miniland-Academy-English-School/61573570560067/" 
-                           target="_blank" 
-                           rel="noopener noreferrer"
-                           aria-label="Facebook Page"
-                           class="social-icon facebook">
+                        <a href="https://www.facebook.com/people/Miniland-Academy-English-School/61573570560067/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page" class="social-icon facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        
-                        <!-- TikTok -->
-                        <a href="https://www.tiktok.com/@minilandacademy" 
-                           target="_blank" 
-                           rel="noopener noreferrer"
-                           aria-label="TikTok Profile"
-                           class="social-icon tiktok">
+                        <a href="https://www.tiktok.com/@minilandacademy" target="_blank" rel="noopener noreferrer" aria-label="TikTok Profile" class="social-icon tiktok">
                             <i class="fab fa-tiktok"></i>
                         </a>
-                        
-                        <!-- YouTube -->
-                        <a href="https://www.youtube.com/@minilandacademy" 
-                           target="_blank" 
-                           rel="noopener noreferrer"
-                           aria-label="YouTube Channel"
-                           class="social-icon youtube">
+                        <a href="https://www.youtube.com/@minilandacademy" target="_blank" rel="noopener noreferrer" aria-label="YouTube Channel" class="social-icon youtube">
                             <i class="fab fa-youtube"></i>
                         </a>
-                        
-                        <!-- WhatsApp -->
-                        <a href="https://wa.me/9779816302747" 
-                           target="_blank" 
-                           rel="noopener noreferrer"
-                           aria-label="Contact via WhatsApp"
-                           class="social-icon whatsapp">
+                        <a href="https://wa.me/9779816302747" target="_blank" rel="noopener noreferrer" aria-label="Contact via WhatsApp" class="social-icon whatsapp">
                             <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
@@ -919,12 +989,12 @@
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#programs">Programs</a></li>
-                        <li><a href="#admission">Admission</a></li>
-                        <li><a href="#payment">Pay Fees</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#home"><i class="fas fa-angle-right" aria-hidden="true"></i> Home</a></li>
+                        <li><a href="#about"><i class="fas fa-angle-right" aria-hidden="true"></i> About Us</a></li>
+                        <li><a href="#programs"><i class="fas fa-angle-right" aria-hidden="true"></i> Programs</a></li>
+                        <li><a href="#admission"><i class="fas fa-angle-right" aria-hidden="true"></i> Admission</a></li>
+                        <li><a href="#payment"><i class="fas fa-angle-right" aria-hidden="true"></i> Pay Fees</a></li>
+                        <li><a href="#contact"><i class="fas fa-angle-right" aria-hidden="true"></i> Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -933,14 +1003,14 @@
                         <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Kerabari 7, Dangi, Morang</li>
                         <li><i class="fas fa-phone-alt" aria-hidden="true"></i> <a href="tel:+9779816302747">+977 981-6302747</a></li>
                         <li><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:info.minilandacademy@gmail.com">info.minilandacademy@gmail.com</a></li>
-                        <li><i class="fas fa-clock" aria-hidden="true"></i> Sun-Thur: 10AM - 4PM, Friday: 10AM - 1PM</li>
+                        <li><i class="fas fa-clock" aria-hidden="true"></i> Sun-Thur: 10AM - 4PM, Fri: 10AM - 1PM</li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
                 <div class="copyright">
-                    <p>&copy; 2025 Miniland Academy English School. All Rights Reserved.</p>
+                    <p>© 2025 Miniland Academy English School. All Rights Reserved.</p>
                 </div>
                 <div class="developer">
                     <p>Designed & Developed By <a href="https://ramanbhandari.com.np/" target="_blank" rel="noopener noreferrer">Raman Bhandari</a> - Former Student</p>
@@ -950,86 +1020,72 @@
     </footer>
     
     <!-- Loading scripts at the end for better performance -->
-    <!-- Khalti Payment SDK -->
     <script src="https://khalti.s3.ap-south-1.amazonaws.com/KPG/dist/2020.12.17.0.0.0/khalti-checkout.iffe.js" defer></script>
-    <!-- eSewa Payment SDK -->
     <script src="https://esewa.com.np/ui/esewa.js" defer></script>
     <script>
-        // Wait for DOM to be fully loaded
         document.addEventListener('DOMContentLoaded', function() {
             // Khalti payment configuration
             var khaltiConfig = {
-                "publicKey": "test_public_key_XXXXXXXXXXXXXXXXXXXX", // Replace with your actual public key
-                "productIdentity": "School Fees",
-                "productName": "Miniland Academy Fees",
-                "productUrl": window.location.href,
+                // IMPORTANT: Replace "test_public_key_XXXXXXXXXXXXXXXXXXXX" with your LIVE Khalti public key for production
+                "publicKey": "test_public_key_XXXXXXXXXXXXXXXXXXXX", 
+                "productIdentity": "School_Fees_Miniland_Academy", // More specific ID
+                "productName": "Miniland Academy School Fees",
+                "productUrl": window.location.origin, // Use base URL or specific product page
                 "paymentPreference": [
-                    "KHALTI",
-                    "EBANKING",
-                    "MOBILE_BANKING",
-                    "CONNECT_IPS",
-                    "SCT"
+                    "KHALTI", "EBANKING", "MOBILE_BANKING", "CONNECT_IPS", "SCT"
                 ],
                 "eventHandler": {
                     onSuccess (payload) {
-                        console.log(payload);
-                        // Here you can redirect to success page or show message
-                        alert("Payment successful! Transaction ID: " + payload.idx);
-                        
-                        // In a real implementation, you would verify this payment with your backend
-                        // fetch('/verify-payment', {
-                        //     method: 'POST',
-                        //     headers: {
-                        //         'Content-Type': 'application/json',
-                        //     },
-                        //     body: JSON.stringify(payload)
-                        // })
+                        console.log("Khalti Payment Success:", payload);
+                        alert("Payment successful! Transaction ID: " + payload.idx + ". Amount: NPR " + (payload.amount / 100));
+                        // TODO: Verify payment with your backend:
+                        // fetch('/your-backend/verify-khalti-payment', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(payload) })
+                        // .then(response => response.json()).then(data => console.log(data)).catch(error => console.error(error));
                     },
                     onError (error) {
-                        console.log(error);
-                        alert("Payment failed: " + error.message);
+                        console.error("Khalti Payment Error:", error);
+                        alert("Payment failed: " + (error.message || "Unknown error. Please try again."));
                     },
                     onClose () {
-                        console.log('Payment window closed');
+                        console.log('Khalti payment window closed by user.');
                     }
                 }
             };
 
-            // Initialize Khalti Checkout
             var khaltiCheckout = new KhaltiCheckout(khaltiConfig);
             
-            // Khalti Button click handler
             document.getElementById("khalti-button").addEventListener("click", function() {
-                // For demo purposes, using 1000 NPR (100000 paisa)
-                // In real implementation, you might get this from a form or database
-                khaltiCheckout.show({amount: 100000});
+                // Example amount: 1000 NPR (100000 paisa). 
+                // TODO: Dynamically set this amount based on student's dues.
+                khaltiCheckout.show({amount: 100000}); 
             });
 
             // eSewa Payment Configuration
             function payWithEsewa() {
-                var path = "https://uat.esewa.com.np/epay/main";
-                var params = {
-                    amt: 1000, // Amount in NPR
+                // IMPORTANT: Replace "EPAYTEST" with your LIVE eSewa merchant code for production.
+                // IMPORTANT: Update success (su) and failure (fu) URLs to your actual backend/frontend routes.
+                var esewaParams = {
+                    amt: 1000, // Amount in NPR. TODO: Dynamically set this.
                     psc: 0,    // Service charge
                     pdc: 0,    // Delivery charge
                     txAmt: 0,  // Tax amount
-                    tAmt: 1000, // Total amount
-                    pid: "school_fee_" + new Date().getTime(), // Product ID
-                    scd: "EPAYTEST", // Merchant code (use your actual code in production)
-                    su: window.location.href + "?payment=success", // Success URL
-                    fu: window.location.href + "?payment=failed"   // Failure URL
+                    tAmt: 1000, // Total amount (amt + psc + pdc + txAmt). TODO: Calculate this.
+                    pid: "miniland_fee_" + new Date().getTime(), // Unique Product ID
+                    scd: "EPAYTEST", // Merchant code 
+                    su: window.location.origin + "/payment-success?gateway=esewa", // Example Success URL
+                    fu: window.location.origin + "/payment-failure?gateway=esewa"   // Example Failure URL
                 };
 
-                // Submit form to eSewa
                 var form = document.createElement("form");
                 form.setAttribute("method", "POST");
-                form.setAttribute("action", path);
+                // Use live eSewa URL for production: https://epay.esewa.com.np/epay/main
+                form.setAttribute("action", "https://uat.esewa.com.np/epay/main"); // UAT URL for testing
                 
-                for(var key in params) {
+                for(var key in esewaParams) {
                     var hiddenField = document.createElement("input");
                     hiddenField.setAttribute("type", "hidden");
                     hiddenField.setAttribute("name", key);
-                    hiddenField.setAttribute("value", params[key]);
+                    hiddenField.setAttribute("value", esewaParams[key]);
                     form.appendChild(hiddenField);
                 }
                 
@@ -1037,72 +1093,87 @@
                 form.submit();
             }
 
-            // eSewa Button click handler
             document.getElementById("esewa-button").addEventListener("click", payWithEsewa);
 
-            // Check for payment success/failure in URL parameters
+            // Check for eSewa payment status in URL (basic example)
             const urlParams = new URLSearchParams(window.location.search);
-            const paymentStatus = urlParams.get('payment');
-            
-            if(paymentStatus === 'success') {
-                alert('eSewa Payment Successful!');
-            } else if(paymentStatus === 'failed') {
-                alert('eSewa Payment Failed. Please try again.');
+            const paymentGateway = urlParams.get('gateway');
+            const esewaStatus = urlParams.get('q'); // eSewa often uses 'q' for status
+
+            if (paymentGateway === 'esewa') {
+                if (esewaStatus === 'su') { // 'su' typically means success
+                    alert('eSewa Payment Successful! Ref ID: ' + urlParams.get('refId'));
+                    // TODO: Verify transaction with your backend using refId
+                } else if (esewaStatus === 'fu') { // 'fu' typically means failure
+                    alert('eSewa Payment Failed. Please try again.');
+                }
+                // Clean URL params after checking
+                // window.history.replaceState({}, document.title, window.location.pathname);
             }
             
             // Notice bar functionality
             const noticeBar = document.getElementById('noticeBar');
-            const closeBtn = noticeBar.querySelector('.notice-close');
             const noticeContent = noticeBar.querySelector('.notice-content');
-            
-            // Pause on hover/click
-            noticeBar.addEventListener('mouseenter', pauseAnimation);
-            noticeBar.addEventListener('mouseleave', resumeAnimation);
-            noticeBar.addEventListener('click', function(e) {
-                if (!e.target.closest('a')) {
-                    if (noticeContent.style.animationPlayState === 'paused') {
-                        resumeAnimation();
-                    } else {
-                        pauseAnimation();
+            const closeBtn = noticeBar.querySelector('.notice-close');
+            let isDesktopAnimationActive = window.innerWidth > 768;
+
+            function setNoticeAnimationState() {
+                if (window.innerWidth > 768) {
+                    if (!isDesktopAnimationActive) {
+                        noticeContent.style.animation = 'scrollTextDesktop 40s linear infinite';
+                        isDesktopAnimationActive = true;
+                    }
+                } else {
+                    if (isDesktopAnimationActive) {
+                        noticeContent.style.animation = 'none';
+                        isDesktopAnimationActive = false;
                     }
                 }
-            });
-            
-            // Close functionality
-            closeBtn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                noticeBar.style.display = 'none';
-                // Optional: Set cookie to remember closed state
-                document.cookie = "noticeClosed=true; max-age=86400"; // 1 day
-            });
-            
-            // Check if previously closed
-            if (document.cookie.includes('noticeClosed=true')) {
-                noticeBar.style.display = 'none';
             }
-            
-            // Mobile detection
-            function checkMobile() {
-                if (window.innerWidth <= 768) {
-                    noticeContent.style.animation = 'none';
-                } else {
-                    noticeContent.style.animation = 'scrollText 40s linear infinite';
-                }
-            }
-            
-            window.addEventListener('resize', checkMobile);
-            checkMobile();
             
             function pauseAnimation() {
-                if (window.innerWidth > 768) {
+                if (isDesktopAnimationActive) {
                     noticeContent.style.animationPlayState = 'paused';
                 }
             }
             
             function resumeAnimation() {
-                if (window.innerWidth > 768) {
+                if (isDesktopAnimationActive) {
                     noticeContent.style.animationPlayState = 'running';
                 }
+            }
+
+            if (noticeBar && noticeContent && closeBtn) {
+                noticeBar.addEventListener('mouseenter', pauseAnimation);
+                noticeBar.addEventListener('mouseleave', resumeAnimation);
+                // Toggle pause/play on click for accessibility or if mouseleave isn't triggered
+                noticeBar.addEventListener('click', function(e) {
+                    if (!e.target.closest('a') && !e.target.closest('button.notice-close')) { // Don't interfere with links or close button
+                        if (isDesktopAnimationActive) {
+                            if (noticeContent.style.animationPlayState === 'paused') {
+                                resumeAnimation();
+                            } else {
+                                pauseAnimation();
+                            }
+                        }
+                    }
+                });
+            
+                closeBtn.addEventListener('click', function(e) {
+                    e.stopPropagation(); // Prevent noticeBar click event
+                    noticeBar.style.display = 'none';
+                    document.cookie = "minilandNoticeClosed=true; max-age=" + (3 * 60 * 60) + "; path=/"; // Close for 3 hours
+                });
+            
+                if (document.cookie.includes('minilandNoticeClosed=true')) {
+                    noticeBar.style.display = 'none';
+                }
+
+                // Initial check and on resize
+                setNoticeAnimationState();
+                window.addEventListener('resize', setNoticeAnimationState);
+            } else {
+                console.warn("Notice bar elements not found. Skipping notice bar JS setup.");
             }
         });
     </script>
