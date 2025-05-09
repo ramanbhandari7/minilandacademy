@@ -220,7 +220,7 @@
         
         @keyframes scrollTextDesktop { 
             0% { transform: translateX(100%); } 
-            100% { transform: translateX(calc(-100% - 30px)); } /* Adjusted to scroll exactly one full section + gap */
+            100% { transform: translateX(calc(-100% - 30px)); } 
         } 
 
         /* --- Main Page Section Styling --- */
@@ -508,14 +508,14 @@
         /* --- Footer Bottom Text Color to White --- */
         .copyright p { 
             font-size: 14.5px; 
-            opacity: 1; /* Make fully opaque */
+            opacity: 1; 
             margin-bottom: 10px; 
-            color: white; /* Changed to white */
+            color: white; 
         }
         .developer p { 
             font-size: 14.5px; 
-            opacity: 1; /* Make fully opaque */
-            color: white; /* Changed to white */
+            opacity: 1; 
+            color: white; 
         }
         .developer a { 
             color: #a3c6ff; 
@@ -524,7 +524,7 @@
             font-weight:600; 
         }
         .developer a:hover { 
-            color: white; /* Changed hover color to white */
+            color: white; 
             text-decoration: underline;
         }
 
@@ -603,7 +603,6 @@
             .social-icon { width: 40px; height: 40px; font-size: 16px;}
             .social-icon::after { display: none !important; } 
             .footer-bottom { margin-top: 30px; padding-top: 20px;}
-             /* Ensure footer bottom text is white on mobile too */
             .copyright p, .developer p { font-size: 13.5px; color: white; opacity: 1;}
             .developer a { color: #a3c6ff;}
         }
@@ -659,7 +658,6 @@
             .social-links { gap: 12px; margin-top: 15px;}
             .social-icon { width: 35px; height: 35px; font-size: 15px;}
             .footer-bottom { margin-top: 25px; padding-top: 15px;}
-             /* Ensure footer bottom text is white on small mobile too */
             .copyright p, .developer p { font-size: 13px; color: white; opacity: 1;}
             .developer a { color: #a3c6ff;}
         }
@@ -991,7 +989,7 @@
                          link.classList.remove('active');
                          if (link.getAttribute('href').substring(1) === current) {
                              link.classList.add('active');
-                         } else if (current === '' && link.getAttribute('href') === '#home' && scrollY < sections[0].offsetTop - navHeight) {
+                         } else if (current === '' && link.getAttribute('href') === '#home' && scrollY < (sections[0] ? sections[0].offsetTop - navHeight : 0)) {
                              // Handle case where user scrolls above the first section
                               link.classList.add('active');
                          }
@@ -1158,7 +1156,6 @@
                 closeNoticeBtn.addEventListener('click', function() {
                     if (noticeBar) {
                         noticeBar.style.display = 'none';
-                        // Note: Persistence (localStorage) for closing is removed as discussed earlier.
                     }
                 });
             }
