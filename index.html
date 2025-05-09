@@ -224,6 +224,88 @@
         } 
 
         /* --- Main Page Section Styling --- */
+        /* About Section Styles */
+    .page-section {
+        position: relative;
+        padding: 60px 0;
+        background-color: #f9f9f9;
+    }
+    
+    .page-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('images/teachers.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.15; /* Adjust opacity as needed */
+        z-index: 0;
+    }
+    
+    .container {
+        position: relative;
+        z-index: 1;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .section-title {
+        text-align: center;
+        color: #1a5276;
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #eee;
+    }
+    
+    .section-card {
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .about-content h3 {
+        color: #2980b9;
+        margin: 20px 0 15px;
+        font-size: 1.5rem;
+    }
+    
+    .about-content p {
+        margin-bottom: 15px;
+        line-height: 1.6;
+        font-size: 1.1rem;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .page-section {
+            padding: 40px 0;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+        }
+        
+        .section-card {
+            padding: 20px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .section-title {
+            font-size: 1.8rem;
+        }
+        
+        .about-content p {
+            font-size: 1rem;
+        }
+    }
         .page-section {
             display: flex;
             flex-direction: column;
@@ -732,17 +814,18 @@
                 </div>
             </div>
         </section>
-        
         <section class="page-section" id="about">
-            <div class="container">
-                <h2 class="section-title">About Our School</h2>
-                <div class="section-card">
-                    <p>Miniland Academy English School, located in Kerabari 7, Dangi, Morang, is committed to providing quality education to students from Play Group to Class 9. Our school was established with the vision of creating a learning environment that nurtures young minds and prepares them for future challenges.</p>
-                    <p>We believe in holistic education that focuses on academic excellence as well as character building. Our experienced faculty members are dedicated to helping each student reach their full potential.</p>
-                    <h3>Our Mission</h3>
-                    <p>To provide a stimulating learning environment that promotes academic excellence, creativity, and moral values, preparing students to become responsible citizens and future leaders.</p>
-                </div>
+    <div class="container">
+        <h2 class="section-title">About Our School</h2>
+        <div class="section-card">
+            <div class="about-content">
+                <p>Miniland Academy English School, located in Kerabari 7, Dangi, Morang, is committed to providing quality education to students from Play Group to Class 9. Our school was established with the vision of creating a learning environment that nurtures young minds and prepares them for future challenges.</p>
+                <p>We believe in holistic education that focuses on academic excellence as well as character building. Our experienced faculty members are dedicated to helping each student reach their full potential.</p>
+                <h3>Our Mission</h3>
+                <p>To provide a stimulating learning environment that promotes academic excellence, creativity, and moral values, preparing students to become responsible citizens and future leaders.</p>
             </div>
+        </div>
+    </div>
         </section>
 
         <section class="page-section" id="programs">
