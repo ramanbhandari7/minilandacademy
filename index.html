@@ -287,44 +287,27 @@
     padding: 0;
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: flex-end; /* Changed from center to flex-end */
     justify-content: center;
     overflow: hidden;
-}
-
-.hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('images/hero.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    z-index: -1;
-    /* Fix for image distortion */
-    transform: none; /* Remove any transforms causing distortion */
-    object-fit: cover;
-    /* Preserve image aspect ratio */
-    aspect-ratio: 16/9; /* Adjust to match your image's aspect ratio */
+    padding-bottom: 15vh; /* Adds space at bottom */
 }
 
 .hero .hero-content-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end; /* Content starts from bottom */
     width: 100%;
-    padding: 40px 20px;
+    padding: 40px 20px 15vh; /* Added bottom padding */
     position: relative;
     z-index: 1;
     min-height: 100vh;
-    /* Clean overlay for readability */
     background: linear-gradient(
-        to bottom,
-        rgba(26, 82, 118, 0.3) 0%,
-        rgba(10, 34, 50, 0.5) 100%
+        to top, /* Gradient now emphasizes bottom */
+        rgba(26, 82, 118, 0.7) 0%,
+        rgba(26, 82, 118, 0.4) 40%,
+        transparent 100%
     );
 }
 
