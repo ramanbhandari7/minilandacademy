@@ -279,33 +279,17 @@
             /* background-color: #f9f9f9; is also set by the earlier .page-section rule */
         }
 
-       .page-section.hero {
-    min-height: calc(100vh - 80px);
-    padding: 0;
-    background-color: #1a5276;
-    color: white;
-    isolation: isolate;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* New: Prevent layout shift on hover */
-    overflow: hidden;
-}
+      /* Replace your existing hero section CSS with this */
 
-.hero .hero-content-wrapper {
+.page-section.hero {
+    min-height: 100vh; /* Full viewport height */
+    padding: 0;
+    color: white;
+    position: relative;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: calc(100vh - 80px);
-    width: 100%;
-    padding: 40px 20px;
-    position: relative;
-    z-index: 1;
-    /* New: Font smoothing for wrapper */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden; /* Prevent any cropping */
 }
 
 .hero-bg {
@@ -314,28 +298,31 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(rgba(26, 82, 118, 0.85), rgba(10, 34, 50, 0.98)), url('images/hero.jpg');
-    background-size: cover;
-    background-position: center center; /* Changed from center 40% */
+    background-image: url('images/hero.jpg'); /* Removed gradient overlay */
+    background-size: contain; /* Changed from 'cover' to show full image */
+    background-position: center center;
     background-repeat: no-repeat;
+    background-color: #1a5276; /* Fallback color */
     z-index: -1;
-    transition: transform 0.6s ease-out;
-    /* New: Optimized rendering */
-    backface-visibility: hidden;
-    transform: translateZ(0);
 }
 
-.hero:hover .hero-bg {
-    transform: scale(1.05);
+.hero .hero-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 40px 20px;
+    position: relative;
+    z-index: 1;
+    background-color: rgba(26, 82, 118, 0.6); /* Semi-transparent overlay for text readability */
+    min-height: 100vh; /* Match hero height */
 }
 
 .hero .hero-content {
     max-width: 900px;
     text-align: center;
-    /* Reduced text shadow */
-    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
-    animation: fadeInUp 0.9s ease-out;
-    /* New: Font smoothing */
+    text-shadow: none; /* Removed text shadow */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -346,17 +333,7 @@
     line-height: 1.2;
     font-weight: 800;
     color: white;
-    border-bottom: none;
-    text-align: center;
-    width: 100%;
-    /* New: Sharper text */
-    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-.hero h1.section-title::after {
-    display: none;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.3); /* Minimal shadow for readability */
 }
 
 .hero p {
@@ -364,12 +341,9 @@
     margin: 0 auto 45px;
     max-width: 750px;
     line-height: 1.8;
-    /* Changed from rgba to solid white */
     color: white;
-    /* New: Sharper text */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    font-weight: 500; /* Slightly bolder for clarity */
+    text-shadow: 0 1px 1px rgba(0,0,0,0.2);
 }
 
 .btn {
