@@ -281,7 +281,7 @@
 
       /* Replace your existing hero section CSS with this */
 
-/* HERO SECTION - FINAL FIX */
+/* PERFECTED HERO SECTION */
 .page-section.hero {
     min-height: 100vh;
     padding: 0;
@@ -294,17 +294,20 @@
 
 .hero-bg {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-image: url('images/hero.jpg');
-    background-size: 100% 100%; /* Full image coverage without cropping */
+    background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    transform: translate(-50%, -50%); /* Perfect centering */
     z-index: -1;
-    object-fit: contain; /* Ensures full image visibility */
+    /* Fix for image distortion */
+    transform: none; /* Remove any transforms causing distortion */
+    object-fit: cover;
+    /* Preserve image aspect ratio */
+    aspect-ratio: 16/9; /* Adjust to match your image's aspect ratio */
 }
 
 .hero .hero-content-wrapper {
@@ -317,16 +320,23 @@
     position: relative;
     z-index: 1;
     min-height: 100vh;
-    background-color: rgba(26, 82, 118, 0.4); /* Light overlay for readability */
+    /* Clean overlay for readability */
+    background: linear-gradient(
+        to bottom,
+        rgba(26, 82, 118, 0.3) 0%,
+        rgba(10, 34, 50, 0.5) 100%
+    );
 }
 
 .hero .hero-content {
     max-width: 900px;
     text-align: center;
+    /* Crystal clear text rendering */
+    text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(0); /* Explicitly remove any blur */
+    /* Minimal shadow for depth */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .hero h1.section-title {
@@ -335,8 +345,8 @@
     line-height: 1.2;
     font-weight: 800;
     color: white;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Explicit font stack */
+    /* Sharp text with subtle shadow */
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
 }
 
 .hero p {
@@ -346,22 +356,31 @@
     line-height: 1.8;
     color: white;
     font-weight: 500;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-/* MEDIA QUERIES FOR DIFFERENT SCREENS */
-@media (max-width: 1200px) {
-    .hero-bg {
-        background-size: cover; /* Switch to cover on smaller screens if needed */
-    }
+/* WhatsApp Button - Clear and prominent */
+.whatsapp-btn {
+    background-color: #25D366;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    /* Remove any transforms causing blur */
+    transform: none;
+    transition: all 0.3s ease;
 }
 
+/* MEDIA QUERIES */
 @media (max-width: 768px) {
-    .hero .hero-content-wrapper {
-        background-color: rgba(26, 82, 118, 0.6); /* Darker overlay on mobile */
+    .hero-bg {
+        aspect-ratio: 4/3; /* Better mobile aspect ratio */
     }
-    .hero h1.section-title {
-        font-size: clamp(32px, 8vw, 48px);
+    .hero .hero-content-wrapper {
+        background: rgba(26, 82, 118, 0.6); /* Stronger overlay on mobile */
     }
 }
 .btn {
