@@ -63,33 +63,44 @@
 
         /* --- Header --- */
         header {
-            background-color: #1a5276;
-            color: white;
-            padding: 15px 0;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-            position: relative;
-            z-index: 100;
-        }
-        .header-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            max-width: 1200px;
-            width: 100%;
-            padding: 0 15px;
-            margin: 0 auto;
-        }
-        .logo {
-            margin-right: 25px;
-            flex-shrink: 0;
-        }
-        .logo img {
-            height: 60px; width: 60px;
-            object-fit: contain;
-            border-radius: 50%;
-            border: 3px solid #ffffff;
-            box-shadow: 0 0 12px rgba(255,255,255,0.4);
-        }
+            header {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensures it stays on top of other elements */
+    background-color: #1a5276; /* Repeating the header background */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15); /* Keeps existing shadow */
+}
+       .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Moves flag to the left and logo to the right */
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.flag img {
+    height: 50px; /* Adjust as needed */
+    width: auto;
+    object-fit: contain;
+    border: 2px solid white; /* Optional styling */
+    border-radius: 5px; /* Optional styling */
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 3px solid #ffffff;
+    box-shadow: 0 0 12px rgba(255,255,255,0.4);
+}
+
+.school-name {
+    text-align: center;
+    flex-grow: 1; /* Ensures it takes the remaining space between the flag and logo */
+}
         .school-name { text-align: center; flex-grow: 1;}
         .school-name h1 {
             font-size: clamp(18px, 4vw, 24px);
@@ -763,8 +774,9 @@
     <header>
          <div class="header-container">
             <div class="logo">
-                <img src="images/school-logo.png" alt="Miniland Academy Logo">
-            </div>
+    <img src="images/Waving.Flag.jpg" alt="Waving Flag" class="flag">
+    <img src="images/school-logo.png" alt="Miniland Academy Logo">
+</div>
             <div class="school-name">
                 <h1>Miniland Academy English School</h1>
                 <p>Kerabari- 7 Dangi Morang (Morality, Discipline & Quality Education is Our Supreme Ambition)</p>
