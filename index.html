@@ -615,6 +615,27 @@
             .copyright p, .developer p { font-size: 13px; color: white; opacity: 1;}
             .developer a { color: #a3c6ff;}
         }
+        /* Map Container Styles */
+.map-container {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .map-container iframe {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .map-container iframe {
+        height: 200px;
+    }
+    .map-container p {
+        font-size: 13px;
+    }
+}
 
     </style>
 </head>
@@ -855,21 +876,26 @@
                             <div class="contact-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
                             <div class="contact-text"><strong>Address</strong> Kerabari 7, Dangi, Morang, Nepal</div>
                         </div>
+<!-- Add this inside your contact section, after the last contact-item div -->
 <div class="contact-item">
     <div class="contact-icon"><i class="fas fa-map-marked-alt" aria-hidden="true"></i></div>
     <div class="contact-text">
-        <strong>Location Map</strong>
-        <div class="map-container" style="margin-top:15px;">
+        <strong>Our Location</strong>
+        <div class="map-container">
             <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3566.123456789012!2d87.3762363!3d26.7552724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef6809816b3373%3A0x4500a66ed4d12d03!2sMiniland%20English%20Boarding!5e0!3m2!1sen!2snp!4v1718200000000!5m2!1sen!2snp&maptype=satellite&zoom=17" 
                 width="100%" 
                 height="300" 
-                style="border:0; border-radius:8px;" 
+                style="border:0; border-radius:8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" 
                 allowfullscreen="" 
                 loading="lazy"
-                aria-label="Map of Miniland English Boarding School location">
+                aria-label="Map of Miniland English Boarding School location in Kerabari-7, Dangi, Morang">
             </iframe>
-        </div>
+            <p style="margin-top:10px; font-size:14px; color:#666;">
+                <i class="fas fa-info-circle"></i> Kerabari-7, Dangi, Morang (Satellite View)
+            </p>
+    </div>
+</div>
     </div>
 </div>
                         <div class="contact-item">
