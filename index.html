@@ -31,7 +31,6 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-            /* General container rule, z-index will be added specifically where needed for stacking context */
         }
 
         /* --- Typography & General Elements --- */
@@ -69,70 +68,63 @@
             box-shadow: 0 3px 8px rgba(0,0,0,0.15);
             position: relative;
             z-index: 100;
+        }
+
+        /* *** MODIFIED HEADER CONTAINER *** */
         .header-container {
             display: flex;
             align-items: center;
-            /* Use space-between to push logo left and flag right */
-            justify-content: space-between;
+            /* REMOVED: justify-content: space-between; */
             max-width: 1200px;
             width: 100%;
             padding: 0 15px; /* Keep padding */
             margin: 0 auto;
-            gap: 15px; /* Add some gap */
+            gap: 15px; /* Spacing between items */
         }
 
         .logo {
-            /* Removed margin-right as space-between handles spacing */
-            flex-shrink: 0;
+            /* REMOVED: margin-right */
+            flex-shrink: 0; /* Prevent shrinking */
         }
-        /* Ensure school name doesn't prevent space-between */
+        .logo img {
+            height: 60px; width: 60px;
+            object-fit: contain;
+            border-radius: 50%;
+            border: 3px solid #ffffff;
+            box-shadow: 0 0 12px rgba(255,255,255,0.4);
+        }
+
         .school-name {
-             text-align: center;
-             flex-grow: 1; /* Allows it to take up space but space-between will position */
+            text-align: center;
+            flex-grow: 1; /* Allow name to take available space */
+        }
+        .school-name h1 {
+            font-size: clamp(18px, 4vw, 24px);
+            margin-bottom: 5px;
+            line-height: 1.2;
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        .school-name p {
+            font-size: clamp(12px, 2.5vw, 15px);
+            opacity: 0.9;
+            margin-bottom: 0;
+            color: #e9ecef;
         }
 
         /* **** START: Added Flag Styles **** */
         .header-flag {
             flex-shrink: 0; /* Prevent the flag container from shrinking */
-            line-height: 0; /* Helps remove extra space below image if display: inline-block is used */
+            line-height: 0; /* Helps remove extra space below image */
         }
-
         .header-flag img {
-            height: 55px; /* Adjust height as needed - slightly smaller than logo? */
+            height: 55px; /* Adjust height as needed */
             width: auto;  /* Maintain aspect ratio */
             display: block; /* Prevents potential bottom spacing */
         }
         /* **** END: Added Flag Styles **** */
 
 
-        /* --- Responsive Adjustments --- */
-        /* ... (keep existing responsive rules) ... */
-
-        /* Adjust header for flag in responsive views */
-        @media (max-width: 767.98px) {
-            .header-container {
-                flex-direction: column; /* Stack elements vertically */
-                justify-content: center; /* Center items vertically */
-                gap: 10px; /* Existing gap */
-            }
-            .school-name {
-                 order: -1; /* Optional: Move school name to the top on small screens */
-                 margin-bottom: 5px;
-            }
-            .header-flag {
-                order: 1; /* Ensure flag comes after logo in column layout */
-                /* You might want to center it too if needed */
-                /* align-self: center; */
-            }
-            .header-flag img {
-                height: 45px; /* Make flag smaller on medium screens */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .header-flag img {
-                height: 40px; /* Make flag even smaller on smallest screens */
-            }
         /* --- Navigation --- */
         nav {
             background-color: #2980b9;
@@ -253,189 +245,120 @@
         }
 
         /* --- Main Page Section Styling --- */
-        .page-section { /* Base style for all sections (padding, bg color, relative positioning for ::before) */
+        .page-section {
             position: relative;
-            padding: 60px 0; /* Default padding, can be overridden by more specific .page-section rule below */
-            background-color: #f9f9f9; /* Fallback background color */
-            isolation: isolate; /* Create a new stacking context for each section */
+            padding: 60px 0; /* Base padding */
+            background-color: #f9f9f9; /* Fallback */
+            isolation: isolate;
         }
 
-        /* Default background image for page sections (e.g., teachers.jpg) */
-        /* Applied to all .page-section elements EXCEPT .hero */
         .page-section:not(.hero)::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             background-image: url('images/teachers.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            opacity: 0.15; /* Adjust opacity as needed */
-            z-index: -1;   /* Placed behind the section's content */
+            background-size: cover; background-position: center; background-repeat: no-repeat;
+            opacity: 0.15;
+            z-index: -1;
             pointer-events: none;
         }
 
-        /* Styling for the container within sections to sit above the ::before pseudo-element */
-        .page-section .container { /* This ensures .container content is above the section's ::before */
+        .page-section .container {
             position: relative;
             z-index: 1;
         }
-        
-        /* Specific styling for #about if needed (e.g., different padding or bg, though bg is now handled generically) */
-        .page-section#about {
-            /* isolation: isolate; is inherited from .page-section */
-            /* background-image via .page-section:not(.hero)::before */
-            /* padding: 60px 0; is from the base .page-section rule above, if not overridden by the flex one below */
-        }
-        /* The .page-section#about::before rule is removed as it's now handled by .page-section:not(.hero)::before */
-        /* The .page-section#about .container rule for z-index is also handled by .page-section .container */
 
+        .page-section#about { } /* Specific overrides for #about if needed */
 
-        /* More specific .page-section rule for layout (flex, different padding) */
-        /* This rule will combine with or override parts of the .page-section rule at line ~207 */
-        .page-section {
+        .page-section { /* More specific layout rule */
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 80px 20px; /* This padding will likely override the 60px 0 from the earlier .page-section rule */
+            padding: 80px 20px; /* Overrides base padding */
             width: 100%;
             overflow-x: hidden;
-            /* position: relative; and isolation: isolate; are already set by the earlier .page-section rule */
-            /* background-color: #f9f9f9; is also set by the earlier .page-section rule */
         }
 
+        /* --- Hero Section --- */
         .page-section.hero {
-    min-height: 100vh;
-    height: 100vh; /* Ensures full viewport coverage */
-    padding: 0;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('images/hero.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    z-index: -1;
-    /* Mobile-first approach */
-    object-fit: cover;
-}
-
-.hero .hero-content-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 20px;
-    position: relative;
-    z-index: 1;
-    min-height: 100vh;
-    background: linear-gradient(
-        to bottom,
-        rgba(26, 82, 118, 0.6) 0%,
-        rgba(10, 34, 50, 0.8) 100%
-    );
-}
+            min-height: 100vh; height: 100vh;
+            padding: 0;
+            position: relative; display: flex; align-items: center; justify-content: center;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('images/hero.jpg');
+            background-size: cover; background-position: center center; background-repeat: no-repeat;
+            z-index: -1; object-fit: cover;
+            transition: transform 0.5s ease-out; /* Added transition for hover effect */
+        }
         .hero:hover .hero-bg { transform: scale(1.05); }
+        .hero .hero-content-wrapper {
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            width: 100%; padding: 20px; position: relative; z-index: 1; min-height: 100vh;
+            background: linear-gradient(to bottom, rgba(26, 82, 118, 0.6) 0%, rgba(10, 34, 50, 0.8) 100%);
+        }
         .hero .hero-content {
-            max-width: 900px;
-            text-align: center;
-            text-shadow: 0 3px 15px rgba(0,0,0,0.7);
+            max-width: 900px; text-align: center; text-shadow: 0 3px 15px rgba(0,0,0,0.7);
             animation: fadeInUp 0.9s ease-out;
         }
-
         .hero h1.section-title {
-            font-size: clamp(38px, 7vw, 60px);
-            margin-bottom: 30px;
-            line-height: 1.2;
-            font-weight: 800;
-            color: white;
-            border-bottom: none;
-            text-align: center;
-            width: 100%;
+            font-size: clamp(38px, 7vw, 60px); margin-bottom: 30px; line-height: 1.2; font-weight: 800;
+            color: white; border-bottom: none; text-align: center; width: 100%;
         }
         .hero h1.section-title::after { display:none; }
         .hero p {
-            font-size: clamp(17px, 3.5vw, 22px);
-            margin: 0 auto 45px;
-            max-width: 750px;
-            line-height: 1.8;
-            color: rgba(248,248,248,0.98);
+            font-size: clamp(17px, 3.5vw, 22px); margin: 0 auto 45px; max-width: 750px;
+            line-height: 1.8; color: rgba(248,248,248,0.98);
         }
         .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content:center;
-            gap: 12px;
-            padding: 18px 45px;
-            font-size: 18px;
-            font-weight:600;
-            border-radius: 50px;
+            display: inline-flex; align-items: center; justify-content:center; gap: 12px;
+            padding: 18px 45px; font-size: 18px; font-weight:600; border-radius: 50px;
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            text-decoration: none;
-            color: white;
-            letter-spacing: 0.8px;
-            border: none;
-            cursor: pointer;
+            text-decoration: none; color: white; letter-spacing: 0.8px; border: none; cursor: pointer;
         }
         .hero .whatsapp-btn {
-            background-color: #25D366;
-            box-shadow: 0 6px 22px rgba(37, 211, 102, 0.4);
+            background-color: #25D366; box-shadow: 0 6px 22px rgba(37, 211, 102, 0.4);
         }
         .hero .whatsapp-btn i { font-size: 24px; }
         .hero .whatsapp-btn:hover {
-            background-color: #1ea952;
-            transform: translateY(-5px) scale(1.03);
+            background-color: #1ea952; transform: translateY(-5px) scale(1.03);
             box-shadow: 0 12px 35px rgba(37, 211, 102, 0.55);
         }
 
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+
         /* --- Content Card Styling --- */
-        /* This .section-card is inside a .container, which is z-index: 1 relative to its .page-section */
         .section-card {
-            background: rgba(255, 255, 255, 0.9); /* Slightly transparent to show a hint of the ::before background */
-            padding: 40px 50px;
-            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px 50px; border-radius: 12px;
             box-shadow: 0 12px 40px rgba(40, 50, 70, 0.12);
             width: 100%;
             transition: transform 0.35s ease-out, box-shadow 0.35s ease-out;
-            /* position: relative; z-index: 1; /* Not strictly needed if parent .container has z-index:1 and section has isolation */
         }
         .page-section:not(.hero) .section-card:hover {
             transform: translateY(-12px);
             box-shadow: 0 20px 60px rgba(40, 50, 70, 0.18);
         }
-        
-        .about-content h3 { /* These styles were previously under a .section-card specific to about */
-            color: #2980b9; /* Was #2980b9 */
-            margin: 20px 0 15px;
-            font-size: 1.5rem; /* Was clamp(20px, 4vw, 26px) for generic h3 */
+        .about-content h3 {
+            color: #2980b9; margin: 20px 0 15px; font-size: 1.5rem;
+        }
+        .about-content p {
+            margin-bottom: 15px; line-height: 1.6; font-size: 1.1rem;
         }
 
-        .about-content p { /* These styles were previously under a .section-card specific to about */
-            margin-bottom: 15px;
-            line-height: 1.6; /* Was 1.8 for generic p */
-            font-size: 1.1rem; /* Was clamp(15px, 3vw, 17px) for generic p */
-        }
-
-
+        /* --- Programs --- */
         .program-list { list-style: none; margin-left: 0; padding-left: 0; margin-top: 15px;}
         .program-list li { margin-bottom: 18px; padding-left: 35px; position: relative; line-height: 1.7; font-size: clamp(15px, 3vw, 17px); color:#495057;}
         .program-list li::before { content: "✓"; color: #228B22; position: absolute; left: 5px; top:2px; font-weight: bold; font-size:20px; }
         .program-list li strong {color: #1a5276; font-weight: 600;}
 
+        /* --- Contact Info --- */
         .contact-info { margin-top: 30px; }
         .contact-item { margin-bottom: 25px; display: flex; align-items: flex-start; gap: 20px; }
         .contact-icon { color: #2980b9; font-size: 26px; flex-shrink: 0; width: 30px; text-align: center; padding-top: 3px; }
@@ -444,30 +367,16 @@
         .contact-text a { color: #2980b9; text-decoration: none; word-break: break-word; transition: color 0.3s;}
         .contact-text a:hover { text-decoration: underline; color: #1c6ca7;}
 
+        /* --- Payment Section --- */
         .payment-section-inner {
-            background: #eef2f5;
-            padding: 35px;
-            border-radius: 10px;
-            margin-top: 25px;
-            text-align: center;
-            border: 1px solid #d0d9e6;
-            box-shadow: inset 0 2px 8px rgba(0,0,0,0.05);
+            background: #eef2f5; padding: 35px; border-radius: 10px; margin-top: 25px;
+            text-align: center; border: 1px solid #d0d9e6; box-shadow: inset 0 2px 8px rgba(0,0,0,0.05);
         }
         .payment-options { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; margin-top: 30px; }
         .payment-button {
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 17px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            font-weight:600;
-            letter-spacing:0.5px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            color: white; border: none; padding: 15px 30px; font-size: 17px; border-radius: 8px;
+            cursor: pointer; transition: all 0.3s; display: inline-flex; align-items: center; gap: 12px;
+            font-weight:600; letter-spacing:0.5px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
         .khalti-button { background-color: #5C2D91; }
         .esewa-button { background-color: #55A74E; }
@@ -477,41 +386,28 @@
         .payment-button i { font-size: 20px; }
         .payment-note { margin-top: 25px; font-size:14px; color:#666; }
 
+        /* --- Teachers Section --- */
         .teachers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; margin-top: 30px; }
         .teacher-card { background-color: #fff; border: 1px solid #e8ebee; border-radius: 10px; padding: 30px; text-align: center; box-shadow: 0 8px 25px rgba(0,0,0,0.09); transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; justify-content: flex-start; }
         .teacher-card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.12); }
         .teacher-card img {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            object-fit: cover; /* Ensure image covers the circle */
-            margin-bottom: 20px;
-            border: 5px solid #2980b9;
-            align-self: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            width: 130px; height: 130px; border-radius: 50%; object-fit: cover; margin-bottom: 20px;
+            border: 5px solid #2980b9; align-self: center; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
         .teacher-card h3 { font-size: 20px; color: #1a5276; margin-bottom: 8px; font-weight: 600; }
         .teacher-card .qualification { font-size: 14.5px; color: #555; margin-bottom: 10px; line-height: 1.5; font-style: italic; min-height: 2.8em; }
         .teacher-card .role { font-size: 15.5px; color: #2980b9; margin-bottom: 0; font-weight: 600; margin-top: auto; padding-top:15px; border-top: 1px dashed #e1e5eb; }
 
-        /* Gallery Grid and Items (Already designed for equal alignment) */
+        /* --- Gallery Grid --- */
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 15px; margin-top: 30px; }
         .gallery-item {
-             border-radius: 8px;
-             overflow: hidden;
-             cursor: pointer;
-             position: relative;
-             aspect-ratio: 1 / 1; /* Makes the container a perfect square */
-             box-shadow: 0 6px 18px rgba(0,0,0,0.09);
-             transition: transform 0.35s, box-shadow 0.35s, opacity 0.35s;
-             opacity: 0.95;
+             border-radius: 8px; overflow: hidden; cursor: pointer; position: relative;
+             aspect-ratio: 1 / 1; box-shadow: 0 6px 18px rgba(0,0,0,0.09);
+             transition: transform 0.35s, box-shadow 0.35s, opacity 0.35s; opacity: 0.95;
          }
         .gallery-item:hover { transform: scale(1.06) rotate(1deg); box-shadow: 0 14px 30px rgba(0,0,0,0.18); opacity: 1;}
         .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Ensures image fills the square container without distortion */
-            display: block;
+            width: 100%; height: 100%; object-fit: cover; display: block;
         }
 
         /* --- Gallery Modal --- */
@@ -523,7 +419,7 @@
         .modal-close { position: absolute; top: 25px; right: 40px; color: #f0f0f0; font-size: 48px; font-weight: 300; transition: color 0.3s, transform 0.3s; cursor: pointer; z-index: 1002; text-shadow: 0 2px 4px rgba(0,0,0,0.4); }
         .modal-close:hover, .modal-close:focus { color: #ffffff; transform: scale(1.1); }
         .modal-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 55px; height: 55px; background-color: rgba(0,0,0,0.5); color: white; font-size: 32px; border: none; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background-color 0.3s, transform 0.2s; z-index: 1001; user-select: none; }
-        .modal-nav:hover { background-color: rgba(0,0,0,0.8); transform: translateY(-2px) scale(1.1); } /* Corrected transform */
+        .modal-nav:hover { background-color: rgba(0,0,0,0.8); transform: translateY(-50%) scale(1.1); } /* Corrected Y transform */
         .modal-prev { left: 30px; } .modal-next { right: 30px; }
         @media (max-width: 767px) {
             .modal-nav { width: 45px; height: 45px; font-size: 24px; }
@@ -534,31 +430,18 @@
 
         /* --- Footer --- */
         footer {
-            background-color: #1a5276;
-            color: #e9ecef;
-            padding: 60px 0 30px;
-            border-top: 6px solid #2980b9;
+            background-color: #1a5276; color: #e9ecef; padding: 60px 0 30px; border-top: 6px solid #2980b9;
         }
         .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 35px;
-            max-width:1200px;
-            margin:0 auto;
-            padding:0 20px;
-            text-align: left;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 35px;
+            max-width:1200px; margin:0 auto; padding:0 20px; text-align: left;
         }
          .footer-column p {color: #ced4da; line-height: 1.7;}
         .footer-column h3 {
-            color: white;
-            margin-bottom: 20px;
-            font-size: 21px;
-            border-bottom: 1px solid rgba(255,255,255,0.3);
-            padding-bottom: 10px;
-            font-weight:600;
-            letter-spacing:0.5px;
+            color: white; margin-bottom: 20px; font-size: 21px; border-bottom: 1px solid rgba(255,255,255,0.3);
+            padding-bottom: 10px; font-weight:600; letter-spacing:0.5px;
         }
-        .footer-column h3::after { display: none; } /* This was already here, ensuring it does not conflict with section-title's ::after */
+        .footer-column h3::after { display: none; }
         .footer-links { list-style: none; padding-left: 0; }
         .footer-links li { margin-bottom: 14px; display: flex; align-items: flex-start; gap: 12px; font-size:15px; line-height: 1.6;}
         .footer-links a { color: #ced4da; text-decoration: none; transition: color 0.3s, transform 0.2s; display: inline-block; word-break: break-word;}
@@ -566,110 +449,72 @@
         .footer-links i { flex-shrink: 0; width: 20px; text-align: center; color: #8ab4f8; padding-top: 3px; }
         .social-links { display: flex; gap: 20px; margin-top: 25px; justify-content: flex-start; flex-wrap: wrap; }
         .social-icon {
-            color: white;
-            background-color: rgba(255, 255, 255, 0.15);
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            font-size: 18px;
-            position: relative;
-            text-decoration: none;
-            border: 1px solid rgba(255,255,255,0.3);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            color: white; background-color: rgba(255, 255, 255, 0.15); width: 44px; height: 44px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); font-size: 18px;
+            position: relative; text-decoration: none; border: 1px solid rgba(255,255,255,0.3); box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         .social-icon:hover { transform: translateY(-5px) scale(1.1); box-shadow: 0 8px 20px rgba(0,0,0,0.2); border-color: white; }
         .facebook:hover { background-color: #3b5998; } .tiktok:hover { background-color: #000000; }
         .youtube:hover { background-color: #ff0000; } .whatsapp:hover { background-color: #25D366; }
         .social-icon::after {
-            content: attr(aria-label);
-            position: absolute;
-            bottom: 100%;
-            left: 50%;
-            transform: translateX(-50%) translateY(8px);
-            background: #124263;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 6px;
-            font-size: 13px;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-            pointer-events: none;
-            white-space: nowrap;
-            z-index: 10;
+            content: attr(aria-label); position: absolute; bottom: 100%; left: 50%;
+            transform: translateX(-50%) translateY(8px); background: #124263; color: white;
+            padding: 8px 15px; border-radius: 6px; font-size: 13px; opacity: 0; visibility: hidden;
+            transition: opacity 0.3s ease-out, transform 0.3s ease-out; pointer-events: none; white-space: nowrap; z-index: 10;
         }
         .social-icon:hover::after {
-            opacity: 1;
-            visibility: visible;
-            transform: translateX(-50%) translateY(-5px);
+            opacity: 1; visibility: visible; transform: translateX(-50%) translateY(-5px);
         }
         .footer-bottom { display: flex; flex-direction: column; align-items: center; text-align: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.25); max-width:1200px; margin-left:auto; margin-right:auto; }
-
-        .copyright p {
-            font-size: 14.5px;
-            opacity: 1;
-            margin-bottom: 10px;
-            color: white;
-        }
-        .developer p {
-            font-size: 14.5px;
-            opacity: 1;
-            color: white;
-        }
-        .developer a {
-            color: #a3c6ff;
-            text-decoration: none;
-            transition: color 0.3s;
-            font-weight:600;
-        }
-        .developer a:hover {
-            color: white;
-            text-decoration: underline;
-        }
+        .copyright p { font-size: 14.5px; opacity: 1; margin-bottom: 10px; color: white; }
+        .developer p { font-size: 14.5px; opacity: 1; color: white; }
+        .developer a { color: #a3c6ff; text-decoration: none; transition: color 0.3s; font-weight:600; }
+        .developer a:hover { color: white; text-decoration: underline; }
 
         /* --- Accessibility --- */
         .skip-link {
-            position: absolute;
-            top: -999px;
-            left: 0;
-            background: #e74c3c;
-            color: white;
-            padding: 10px 15px;
-            z-index: 1001;
-            transition: top 0.3s ease-in-out;
-            border-radius: 0 0 5px 0;
-            text-decoration: none;
+            position: absolute; top: -999px; left: 0; background: #e74c3c; color: white;
+            padding: 10px 15px; z-index: 1001; transition: top 0.3s ease-in-out; border-radius: 0 0 5px 0; text-decoration: none;
         }
         .skip-link:focus { top: 0; }
 
         /* --- Responsive Adjustments --- */
+        /* Adjust overall section padding */
         @media (max-width: 991.98px) {
-             /* .page-section padding adjusted by the more specific .page-section rule if it applies */
+            .page-section { padding: 70px 15px; } /* Adjusted padding */
             .section-card { padding: 35px 30px; }
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 30px;
-            }
-             .footer-column h3 { border-bottom: none; padding-bottom: 5px; margin-bottom: 15px;}
-             .footer-links li { justify-content: center; }
-             .social-links { justify-content: center; }
+            .footer-content { grid-template-columns: 1fr; text-align: center; gap: 30px; }
+            .footer-column h3 { border-bottom: none; padding-bottom: 5px; margin-bottom: 15px;}
+            .footer-links li { justify-content: center; }
+            .social-links { justify-content: center; }
         }
 
         @media (max-width: 767.98px) {
             html { scroll-padding-top: 75px; }
-            /* .page-section padding adjusted by the more specific .page-section rule if it applies, ensure this is not too small */
-            /* .page-section { padding: 50px 15px; min-height: auto; } */ /* This might conflict, check effective padding */
+            .page-section { padding: 50px 15px; min-height: auto; } /* Adjusted padding */
 
-
-            .header-container { flex-direction: column; gap: 10px; }
+            /* *** MODIFIED Responsive Header Container *** */
+            .header-container {
+                flex-direction: column; /* Stack elements vertically */
+                justify-content: center; /* Center items vertically */
+                gap: 10px; /* Existing gap */
+            }
             .logo { margin-right: 0; margin-bottom: 5px; }
             .logo img { height: 55px; width: 55px; }
-            .school-name { text-align: center; }
+            .school-name {
+                text-align: center;
+                order: -1; /* Optional: Move school name above logo/flag */
+                margin-bottom: 5px;
+            }
+             /* *** ADDED Responsive Flag Styles *** */
+            .header-flag {
+                order: 1; /* Ensure flag comes after logo in column layout */
+                /* align-self: center; */ /* Uncomment to center flag */
+            }
+            .header-flag img {
+                height: 45px; /* Make flag smaller on medium screens */
+            }
 
             nav .container ul { gap: 8px; justify-content: center; }
             nav ul li a { font-size: 13px; padding: 8px 12px; }
@@ -714,14 +559,18 @@
 
         @media (max-width: 480px) {
             html { scroll-padding-top: 70px;}
-            /* .page-section { padding: 40px 10px; } */ /* This might conflict, check effective padding */
-            .container { padding: 0 10px; } /* This padding is for the inner container, not the section itself */
+            .page-section { padding: 40px 10px; } /* Adjusted padding */
+            .container { padding: 0 10px; }
 
             header { padding: 10px 0;}
             .header-container { gap: 5px; }
             .logo img { height: 50px; width: 50px;}
             .school-name h1 { font-size: clamp(16px, 9vw, 20px); }
             .school-name p { font-size: clamp(11px, 3vw, 13px); }
+            /* *** ADDED Responsive Flag Styles *** */
+            .header-flag img {
+                height: 40px; /* Make flag even smaller */
+            }
 
             nav { padding: 8px 0;}
             nav .container ul { gap: 4px;}
@@ -766,29 +615,14 @@
             .copyright p, .developer p { font-size: 13px; color: white; opacity: 1;}
             .developer a { color: #a3c6ff;}
         }
-        /* Responsive adjustments for .page-section padding conflicts. */
-        /* The rule for .page-section around line ~242 sets padding: 80px 20px; */
-        /* This should be the primary padding for sections. */
-        /* We need to ensure responsive overrides target this effectively or are consistent. */
-
-        @media (max-width: 991.98px) {
-            .page-section { padding: 70px 15px; } /* This will override the 80px 20px */
-        }
-        @media (max-width: 767.98px) {
-            .page-section { padding: 50px 15px; min-height: auto; } /* This will override the 70px 15px */
-        }
-        @media (max-width: 480px) {
-            .page-section { padding: 40px 10px; } /* This will override the 50px 15px */
-        }
-        /* Hero section has its own padding: 0; so it's not affected by the above responsive .page-section paddings. */
 
     </style>
 </head>
 <body>
-    <!-- Your HTML body content remains the same -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header>
+         <!-- *** MODIFIED HTML HEADER *** -->
          <div class="header-container">
             <div class="logo">
                 <img src="images/school-logo.png" alt="Miniland Academy Logo">
@@ -797,14 +631,17 @@
                 <h1>Miniland Academy English School</h1>
                 <p>Kerabari- 7 Dangi Morang (Morality, Discipline & Quality Education is Our Supreme Ambition)</p>
             </div>
-            <!-- **** START: Added Flag Element **** -->
+            <!-- **** Added Flag Element **** -->
             <div class="header-flag">
                 <img src="images/WavingFlag.gif" alt="Waving Flag of Nepal">
             </div>
-            <!-- **** END: Added Flag Element **** -->
+            <!-- **** End Added Flag Element **** -->
         </div>
+         <!-- *** END MODIFIED HTML HEADER *** -->
     </header>
+
     <nav>
+        <!-- Navigation remains the same -->
         <div class="container">
             <ul>
                 <li><a href="#home" class="nav-link active">Home</a></li>
@@ -818,7 +655,9 @@
             </ul>
         </div>
     </nav>
+
     <div class="notice-bar" id="noticeBar">
+         <!-- Notice bar remains the same -->
         <div class="container">
             <div class="notice-content">
                 <div class="notice-section">
@@ -846,6 +685,7 @@
     </div>
 
     <main id="main-content" role="main">
+        <!-- All section content remains the same -->
         <section class="page-section hero" id="home">
             <div class="hero-bg"></div>
             <div class="hero-content-wrapper">
@@ -858,6 +698,7 @@
                 </div>
             </div>
         </section>
+
         <section class="page-section" id="about">
             <div class="container">
                 <h2 class="section-title">About Our School</h2>
@@ -937,7 +778,6 @@
         <section class="page-section" id="gallery">
             <div class="container">
                 <h2 class="section-title">School Photo Gallery</h2>
-                 <!-- Note: The CSS for .gallery-item and .gallery-item img already makes images equal squares in a responsive grid. -->
                 <div class="section-card">
                     <div class="gallery-grid">
                         <div class="gallery-item"><img src="images/gallery-placeholder1.jpg" alt="Students participating in an event" data-index="0"></div>
@@ -948,22 +788,22 @@
                         <div class="gallery-item"><img src="images/gallery-placeholder6.jpg" alt="Exterior view of the school building" data-index="5"></div>
                         <div class="gallery-item"><img src="images/gallery-placeholder7.jpg" alt="Cultural program" data-index="6"></div>
                         <div class="gallery-item"><img src="images/gallery-placeholder8.jpg" alt="Science fair" data-index="7"></div>
-                        <div class="gallery-item"><img src="images/gallery-placeholder9.jpg" alt="Activities" data-index="7"></div>
-                        <div class="gallery-item"><img src="images/gallery-placeholder10.jpg" alt="Activities" data-index="7"></div>
-                        <div class="gallery-item"><img src="images/gallery-placeholder11.jpg" alt="Activities" data-index="7"></div>
-                        <div class="gallery-item"><img src="images/gallery-placeholder12.jpg" alt="Activities" data-index="7"></div>
-                        <div class="gallery-item"><img src="images/gallery-placeholder13.jpg" alt="Activities" data-index="7"></div>
-                        <div class="gallery-item"><img src="images/gallery-placeholder14.jpg" alt="Activities" data-index="7"></div>
-                        <div class="gallery-item"><img src="images/gallery-placeholder15.jpg" alt="Activities" data-index="7"></div>
-                        <div class="gallery-item"><img src="images/gallery-placeholder16.jpg" alt="Activities" data-index="7"></div>
-                        <div class="gallery-item"><img src="images/gallery-placeholder17.jpg" alt="Activities" data-index="7"></div>
-                        <div class="gallery-item"><img src="images/gallery-placeholder18.jpg" alt="Activities" data-index="7"></div>
-                        <div class="gallery-item"><img src="images/gallery-placeholder19.jpg" alt="Activities" data-index="7"></div>
-                        <div class="gallery-item"><img src="images/gallery-placeholder20.jpg" alt="Activities" data-index="7"></div>
-                        <div class="gallery-item"><img src="images/gallery-placeholder21.jpg" alt="Activities" data-index="7"></div>
-                        <div class="gallery-item"><img src="images/gallery-placeholder22.jpg" alt="Activities" data-index="7"></div>
-                        <div class="gallery-item"><img src="images/gallery-placeholder23.jpg" alt="Activities" data-index="7"></div>
-                        <div class="gallery-item"><img src="images/gallery-placeholder24.jpg" alt="Activities" data-index="7"></div>
+                        <div class="gallery-item"><img src="images/gallery-placeholder9.jpg" alt="Activities" data-index="8"></div>
+                        <div class="gallery-item"><img src="images/gallery-placeholder10.jpg" alt="Activities" data-index="9"></div>
+                        <div class="gallery-item"><img src="images/gallery-placeholder11.jpg" alt="Activities" data-index="10"></div>
+                        <div class="gallery-item"><img src="images/gallery-placeholder12.jpg" alt="Activities" data-index="11"></div>
+                        <div class="gallery-item"><img src="images/gallery-placeholder13.jpg" alt="Activities" data-index="12"></div>
+                        <div class="gallery-item"><img src="images/gallery-placeholder14.jpg" alt="Activities" data-index="13"></div>
+                        <div class="gallery-item"><img src="images/gallery-placeholder15.jpg" alt="Activities" data-index="14"></div>
+                        <div class="gallery-item"><img src="images/gallery-placeholder16.jpg" alt="Activities" data-index="15"></div>
+                        <div class="gallery-item"><img src="images/gallery-placeholder17.jpg" alt="Activities" data-index="16"></div>
+                        <div class="gallery-item"><img src="images/gallery-placeholder18.jpg" alt="Activities" data-index="17"></div>
+                        <div class="gallery-item"><img src="images/gallery-placeholder19.jpg" alt="Activities" data-index="18"></div>
+                        <div class="gallery-item"><img src="images/gallery-placeholder20.jpg" alt="Activities" data-index="19"></div>
+                        <div class="gallery-item"><img src="images/gallery-placeholder21.jpg" alt="Activities" data-index="20"></div>
+                        <div class="gallery-item"><img src="images/gallery-placeholder22.jpg" alt="Activities" data-index="21"></div>
+                        <div class="gallery-item"><img src="images/gallery-placeholder23.jpg" alt="Activities" data-index="22"></div>
+                        <div class="gallery-item"><img src="images/gallery-placeholder24.jpg" alt="Activities" data-index="23"></div>
                     </div>
                 </div>
             </div>
@@ -1046,6 +886,7 @@
     </main>
 
     <div id="galleryModal" class="gallery-modal">
+        <!-- Gallery modal remains the same -->
         <div class="modal-content-wrapper">
             <button class="modal-nav modal-prev" id="modalPrev" aria-label="Previous image">❮</button>
             <img class="modal-image" id="modalImage" alt="Gallery image enlarged">
@@ -1055,6 +896,7 @@
     </div>
 
     <footer>
+        <!-- Footer remains the same -->
         <div class="footer-content">
             <div class="footer-column">
                 <h3>Miniland Academy</h3>
@@ -1091,11 +933,9 @@
         </div>
         <div class="footer-bottom">
             <div class="copyright">
-                 <!-- Color changed to white via CSS -->
                 <p>© 2025 Miniland Academy English School. All Rights Reserved.</p>
             </div>
             <div class="developer">
-                <!-- Color changed to white via CSS -->
                 <p>Designed & Developed By <a href="https://ramanbhandari.com.np/" target="_blank" rel="noopener noreferrer">Raman Bhandari</a> - Former Student</p>
             </div>
         </div>
@@ -1104,22 +944,22 @@
     <script src="https://khalti.s3.ap-south-1.amazonaws.com/KPG/dist/2020.12.17.0.0.0/khalti-checkout.iffe.js" defer></script>
 
     <script>
+        // All Javascript remains the same
         document.addEventListener('DOMContentLoaded', function() {
 
             // --- Smooth Scroll and Active Nav Link ---
             const navLinks = document.querySelectorAll('nav ul li a.nav-link');
             const sections = document.querySelectorAll('.page-section');
-            const nav = document.querySelector('nav'); // Get nav element
+            const nav = document.querySelector('nav');
 
-            // Add scroll listener for active state
             let scrollTimeout;
             window.addEventListener('scroll', () => {
                  clearTimeout(scrollTimeout);
                  scrollTimeout = setTimeout(() => {
                      let current = '';
-                     const navHeight = nav ? nav.offsetHeight : 80; // Default height if nav not found
+                     const navHeight = nav ? nav.offsetHeight : 80;
                      sections.forEach(section => {
-                         const sectionTop = section.offsetTop - navHeight - 20; // Adjust offset slightly
+                         const sectionTop = section.offsetTop - navHeight - 20;
                          const sectionHeight = section.offsetHeight;
                          if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
                              current = section.getAttribute('id');
@@ -1134,13 +974,10 @@
                               link.classList.add('active');
                          }
                      });
-                 }, 50); 
+                 }, 50);
             });
 
-            setTimeout(() => {
-                 window.dispatchEvent(new Event('scroll'));
-            }, 200);
-
+            setTimeout(() => { window.dispatchEvent(new Event('scroll')); }, 200);
 
              navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
@@ -1151,14 +988,9 @@
                         const targetElement = document.getElementById(targetId);
                         if (targetElement) {
                             const navHeight = nav ? nav.offsetHeight : 80;
-                            const targetPosition = targetElement.offsetTop - navHeight + 1; 
-
-                             window.scrollTo({
-                                 top: targetPosition,
-                                 behavior: 'smooth'
-                             });
-
-                            navLinks.forEach(navLink => navLink.classList.remove('active')); // Use a different variable name
+                            const targetPosition = targetElement.offsetTop - navHeight + 1;
+                             window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                            navLinks.forEach(navLink => navLink.classList.remove('active'));
                             this.classList.add('active');
                         }
                     }
@@ -1168,28 +1000,25 @@
             if (initialHash) {
                  const initialTarget = document.querySelector(`nav ul li a[href="${initialHash}"]`);
                  if (initialTarget) {
-                     navLinks.forEach(navLink => navLink.classList.remove('active')); // Use a different variable name
+                     navLinks.forEach(navLink => navLink.classList.remove('active'));
                      initialTarget.classList.add('active');
                      setTimeout(() => {
                          const targetElement = document.getElementById(initialHash.substring(1));
                          if (targetElement) {
                             const navHeight = nav ? nav.offsetHeight : 80;
                             const targetPosition = targetElement.offsetTop - navHeight + 1;
-                             window.scrollTo({
-                                 top: targetPosition,
-                                 behavior: 'smooth'
-                             });
+                             window.scrollTo({ top: targetPosition, behavior: 'smooth' });
                          }
-                     }, 200); 
+                     }, 200);
                  }
             } else {
                  const homeLink = document.querySelector('nav ul li a[href="#home"]');
                  if(homeLink) homeLink.classList.add('active');
             }
 
-
+            // --- Khalti Payment ---
             var khaltiConfig = {
-                "publicKey": "test_public_key_XXXXXXXXXXXXXXXXXXXX", 
+                "publicKey": "test_public_key_dc74e0fd57cb46cd93832aee0a390234", // Use your actual public key
                 "productIdentity": "Miniland_Academy_School_Fees",
                 "productName": "Miniland Academy School Fees",
                 "productUrl": window.location.href,
@@ -1198,6 +1027,7 @@
                     onSuccess (payload) {
                         console.log("Khalti Success:", payload);
                         alert("Khalti payment successful! Transaction ID: " + payload.idx);
+                        // *** Add server-side verification call here ***
                     },
                     onError (error) {
                         console.error("Khalti Error:", error);
@@ -1211,32 +1041,38 @@
                  const khaltiButton = document.getElementById("khalti-button");
                  if (khaltiButton) {
                      khaltiButton.addEventListener("click", function() {
-                          khaltiCheckout.show({amount: 100000});
+                          // Ideally, get amount from user input or pre-defined value
+                          let paymentAmount = 1000; // Example amount in paisa (NPR 10)
+                          khaltiCheckout.show({amount: paymentAmount * 100 }); // Amount in paisa
                      });
                  }
             } else {
                 console.error("Khalti script not loaded or KhaltiCheckout is not available.");
                  const khaltiButton = document.getElementById("khalti-button");
-                 if (khaltiButton) khaltiButton.disabled = true;
+                 if (khaltiButton) {
+                    khaltiButton.textContent = "Khalti Unavailable";
+                    khaltiButton.disabled = true;
+                 }
             }
 
-
+            // --- eSewa Payment ---
             function payWithEsewa() {
+                 // Ideally get amount from user input
+                 let paymentAmount = 10.00; // Example amount in NPR
                  var esewaParams = {
-                     amt: 1000,          
-                     psc: 0,            
-                     pdc: 0,            
-                     txAmt: 0,          
-                     tAmt: 1000,         
-                     pid: "miniland_fee_" + new Date().getTime(), 
-                     scd: "EPAYTEST",    
-                     su: window.location.origin + window.location.pathname + "?payment_status=esewa_success", 
-                     fu: window.location.origin + window.location.pathname + "?payment_status=esewa_failure"     
+                     amt: paymentAmount, // Amount
+                     psc: 0,             // Service Charge
+                     pdc: 0,             // Delivery Charge
+                     txAmt: 0,           // Tax Amount
+                     tAmt: paymentAmount,// Total Amount
+                     pid: "miniland_fee_" + new Date().getTime(), // Unique Product ID
+                     scd: "EPAYTEST",     // Merchant Code (Use your live code in production)
+                     su: window.location.origin + window.location.pathname + "?payment_status=esewa_success", // Success URL
+                     fu: window.location.origin + window.location.pathname + "?payment_status=esewa_failure" // Failure URL
                  };
                  var form = document.createElement("form");
                  form.setAttribute("method", "POST");
-                 form.setAttribute("action", "https://uat.esewa.com.np/epay/main"); 
-
+                 form.setAttribute("action", "https://uat.esewa.com.np/epay/main"); // Use https://esewa.com.np/epay/main for live
                  for(var key in esewaParams) {
                      var hiddenField = document.createElement("input");
                      hiddenField.setAttribute("type", "hidden");
@@ -1250,29 +1086,30 @@
             const esewaButton = document.getElementById("esewa-button");
             if(esewaButton) { esewaButton.addEventListener("click", payWithEsewa); }
 
+            // --- Handle eSewa Redirect ---
             const urlParams = new URLSearchParams(window.location.search);
             const paymentStatus = urlParams.get('payment_status');
-            const refId = urlParams.get('refId');
-            if (paymentStatus === 'esewa_success') {
-                alert('eSewa Payment Successful! Reference ID: ' + refId + '\n\n=== ACTION REQUIRED: Verify this payment on your server using refId before confirming the transaction. ===');
-                 if (history.replaceState) { history.replaceState(null, '', window.location.pathname); }
+            const refId = urlParams.get('refId'); // eSewa sends refId on success
+            if (paymentStatus === 'esewa_success' && refId) {
+                alert('eSewa Payment Potentially Successful! Reference ID: ' + refId + '\n\n=== ACTION REQUIRED: Verify this payment on your server using refId before confirming the transaction. ===');
+                 // *** Add server-side verification call here using refId ***
+                 if (history.replaceState) { history.replaceState(null, '', window.location.pathname); } // Clean URL
             }
             else if (paymentStatus === 'esewa_failure') {
-                alert('eSewa Payment Failed.');
-                if (history.replaceState) { history.replaceState(null, '', window.location.pathname); }
+                alert('eSewa Payment Failed or Canceled.');
+                if (history.replaceState) { history.replaceState(null, '', window.location.pathname); } // Clean URL
             }
 
+            // --- Notice Bar Close ---
             const noticeBar = document.getElementById('noticeBar');
             const closeNoticeBtn = noticeBar ? noticeBar.querySelector('.notice-close') : null;
-
             if (closeNoticeBtn) {
                 closeNoticeBtn.addEventListener('click', function() {
-                    if (noticeBar) {
-                        noticeBar.style.display = 'none';
-                    }
+                    if (noticeBar) { noticeBar.style.display = 'none'; }
                 });
             }
 
+            // --- Gallery Modal Logic ---
             const modal = document.getElementById('galleryModal');
             const modalImg = document.getElementById('modalImage');
             const galleryThumbnails = document.querySelectorAll('.gallery-item img');
@@ -1280,22 +1117,24 @@
             const prevBtn = document.getElementById('modalPrev');
             const nextBtn = document.getElementById('modalNext');
             let currentImageIndex = 0;
-            let galleryImageSources = []; 
+            let galleryImageSources = [];
 
             if (galleryThumbnails.length > 0) {
                  galleryThumbnails.forEach((thumbnail, index) => {
-                     galleryImageSources.push({ src: thumbnail.src, alt: thumbnail.alt });
+                     // Ensure data-index is correctly set if relying on it later
                      thumbnail.setAttribute('data-index', index);
+                     galleryImageSources.push({ src: thumbnail.src, alt: thumbnail.alt });
+
                      thumbnail.addEventListener('click', function() {
                          currentImageIndex = parseInt(this.getAttribute('data-index'));
                          updateModalImage();
                          if(modal) modal.classList.add('active');
-                         document.body.style.overflow = 'hidden';
+                         document.body.style.overflow = 'hidden'; // Prevent background scroll
                      });
                  });
             } else {
                 console.warn("No gallery images found.");
-                 if(modal) {
+                 if(modal) { // Disable buttons if no images
                      if(prevBtn) prevBtn.style.display = 'none';
                      if(nextBtn) nextBtn.style.display = 'none';
                  }
@@ -1318,37 +1157,31 @@
                 updateModalImage();
             }
 
+            function closeModal() {
+                if(modal) modal.classList.remove('active');
+                document.body.style.overflow = 'auto'; // Restore scroll
+            }
+
             if (nextBtn) nextBtn.addEventListener('click', showNextImage);
             if (prevBtn) prevBtn.addEventListener('click', showPrevImage);
+            if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
 
-            if (closeModalBtn) {
-                closeModalBtn.addEventListener('click', function() {
-                    if(modal) modal.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                });
-            }
-            if (modal) {
+            if (modal) { // Close modal if background is clicked
                 modal.addEventListener('click', function(e) {
                     if (e.target === modal || e.target.classList.contains('modal-content-wrapper')) {
-                         modal.classList.remove('active');
-                         document.body.style.overflow = 'auto';
+                         closeModal();
                     }
                 });
             }
 
+            // Keyboard navigation for modal
             window.addEventListener('keydown', function(e) {
                 if (modal && modal.classList.contains('active')) {
-                    if (e.key === 'Escape') {
-                        modal.classList.remove('active');
-                        document.body.style.overflow = 'auto';
-                    } else if (e.key === 'ArrowRight') {
-                        showNextImage();
-                    } else if (e.key === 'ArrowLeft') {
-                        showPrevImage();
-                    }
+                    if (e.key === 'Escape') { closeModal(); }
+                    else if (e.key === 'ArrowRight') { showNextImage(); }
+                    else if (e.key === 'ArrowLeft') { showPrevImage(); }
                 }
             });
-
         });
     </script>
 </body>
