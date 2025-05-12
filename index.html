@@ -69,42 +69,70 @@
             box-shadow: 0 3px 8px rgba(0,0,0,0.15);
             position: relative;
             z-index: 100;
-        }
         .header-container {
             display: flex;
             align-items: center;
-            justify-content: center;
+            /* Use space-between to push logo left and flag right */
+            justify-content: space-between;
             max-width: 1200px;
             width: 100%;
-            padding: 0 15px;
+            padding: 0 15px; /* Keep padding */
             margin: 0 auto;
-        }
-        .logo {
-            margin-right: 25px;
-            flex-shrink: 0;
-        }
-        .logo img {
-            height: 60px; width: 60px;
-            object-fit: contain;
-            border-radius: 50%;
-            border: 3px solid #ffffff;
-            box-shadow: 0 0 12px rgba(255,255,255,0.4);
-        }
-        .school-name { text-align: center; flex-grow: 1;}
-        .school-name h1 {
-            font-size: clamp(18px, 4vw, 24px);
-            margin-bottom: 5px;
-            line-height: 1.2;
-            font-weight: 700;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-        }
-        .school-name p {
-            font-size: clamp(12px, 2.5vw, 15px);
-            opacity: 0.9;
-            margin-bottom: 0;
-            color: #e9ecef;
+            gap: 15px; /* Add some gap */
         }
 
+        .logo {
+            /* Removed margin-right as space-between handles spacing */
+            flex-shrink: 0;
+        }
+        /* Ensure school name doesn't prevent space-between */
+        .school-name {
+             text-align: center;
+             flex-grow: 1; /* Allows it to take up space but space-between will position */
+        }
+
+        /* **** START: Added Flag Styles **** */
+        .header-flag {
+            flex-shrink: 0; /* Prevent the flag container from shrinking */
+            line-height: 0; /* Helps remove extra space below image if display: inline-block is used */
+        }
+
+        .header-flag img {
+            height: 55px; /* Adjust height as needed - slightly smaller than logo? */
+            width: auto;  /* Maintain aspect ratio */
+            display: block; /* Prevents potential bottom spacing */
+        }
+        /* **** END: Added Flag Styles **** */
+
+
+        /* --- Responsive Adjustments --- */
+        /* ... (keep existing responsive rules) ... */
+
+        /* Adjust header for flag in responsive views */
+        @media (max-width: 767.98px) {
+            .header-container {
+                flex-direction: column; /* Stack elements vertically */
+                justify-content: center; /* Center items vertically */
+                gap: 10px; /* Existing gap */
+            }
+            .school-name {
+                 order: -1; /* Optional: Move school name to the top on small screens */
+                 margin-bottom: 5px;
+            }
+            .header-flag {
+                order: 1; /* Ensure flag comes after logo in column layout */
+                /* You might want to center it too if needed */
+                /* align-self: center; */
+            }
+            .header-flag img {
+                height: 45px; /* Make flag smaller on medium screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-flag img {
+                height: 40px; /* Make flag even smaller on smallest screens */
+            }
         /* --- Navigation --- */
         nav {
             background-color: #2980b9;
@@ -769,6 +797,11 @@
                 <h1>Miniland Academy English School</h1>
                 <p>Kerabari- 7 Dangi Morang (Morality, Discipline & Quality Education is Our Supreme Ambition)</p>
             </div>
+            <!-- **** START: Added Flag Element **** -->
+            <div class="header-flag">
+                <img src="images/WavingFlag.gif" alt="Waving Flag of Nepal">
+            </div>
+            <!-- **** END: Added Flag Element **** -->
         </div>
     </header>
     <nav>
