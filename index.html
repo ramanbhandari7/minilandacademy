@@ -106,23 +106,41 @@
         }
 
         /* --- Navigation --- */
-        nav {
-            background-color: #2980b9;
-            padding: 12px 0;
-            position: sticky;
-            top: 0;
-            z-index: 99;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-        nav .container ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin: 0;
-            padding: 0;
-        }
+        /* Nepal Flag in Navbar */
+.nav-flag {
+    position: absolute;
+    right: 20px;
+    height: 30px;
+    animation: wave 3s ease-in-out infinite;
+    transform-origin: bottom center;
+    display: none; /* Hidden by default, shown on larger screens */
+}
+
+@keyframes wave {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+}
+
+@media (min-width: 768px) {
+    .nav-flag {
+        display: block;
+    }
+}
+        nav .container {
+    position: relative; /* Needed for absolute positioning of flag */
+    display: flex;
+    justify-content: center;
+}
+
+nav .container ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
         nav ul li a {
             color: white;
             text-decoration: none;
@@ -772,19 +790,20 @@
         </div>
     </header>
     <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About Us</a></li>
-                <li><a href="#programs" class="nav-link">Programs</a></li>
-                <li><a href="#teachers" class="nav-link">Teachers</a></li>
-                <li><a href="#gallery" class="nav-link">Gallery</a></li>
-                <li><a href="#admission" class="nav-link">Admission</a></li>
-                <li><a href="#payment" class="nav-link">Pay Fees</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="container">
+        <ul>
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About Us</a></li>
+            <li><a href="#programs" class="nav-link">Programs</a></li>
+            <li><a href="#teachers" class="nav-link">Teachers</a></li>
+            <li><a href="#gallery" class="nav-link">Gallery</a></li>
+            <li><a href="#admission" class="nav-link">Admission</a></li>
+            <li><a href="#payment" class="nav-link">Pay Fees</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <img src="images/nepal-flag.png" alt="Nepal Flag" class="nav-flag">
+    </div>
+</nav>
     <div class="notice-bar" id="noticeBar">
         <div class="container">
             <div class="notice-content">
