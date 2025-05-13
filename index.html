@@ -60,19 +60,27 @@ h2.section-title::after {
 }
 
 header {
-  background-color: #1a5276; /* Primary color */
-  color: white; /* High contrast text */
-  padding: 10px 0;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow */
-  position: relative;
-  z-index: 100; /* Layering for header visibility */
+  display: flex;
+  align-items: center; /* Align items vertically */
+  justify-content: space-between; /* Space between logo and nav */
+  padding: 10px 20px; /* Adjust padding for spacing */
+  background-color: #1a5276; /* Header background color */
+  color: white; /* Text color for contrast */
 }
 
-.header-container {
+header .header-container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row; /* Default layout */
+  align-items: center; /* Vertically align logo, name, and flag */
+  gap: 15px; /* Add spacing between elements */
+  flex-grow: 1; /* Allows header content to take space */
+}
+
+nav {
+  display: flex;
+  align-items: center; /* Align nav items vertically */
+  justify-content: flex-end; /* Align navigation to the right */
+  flex-shrink: 0; /* Prevent shrinking of nav */
+  gap: 20px; /* Add spacing between nav items */
 }
 
 .logo { flex-shrink: 0; }
@@ -621,32 +629,27 @@ footer {
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header>
-         <div class="header-container container"> <!-- Added .container for consistency if needed -->
-            <div class="logo">
-                <img src="images/school-logo.png" alt="Miniland Academy Logo"> <!-- Replace with your actual logo path -->
-            </div>
-            <div class="school-name">
-                <h1>Miniland Academy English School</h1>
-                <p class="school-motto">Kerabari- 7 Dangi Morang (Morality, Discipline & Quality Education is Our Supreme Ambition)</p>
-            </div>
-            <div class="header-flag">
-                <img src="images/WavingFlag.gif" alt="Waving Flag of Nepal"> <!-- Replace with your actual flag image path -->
-            </div>
-        </div>
-    </header>
-
-    <nav>
-        <div class="container nav-main-container">
-            <ul class="main-nav-links">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About Us</a></li>
-                <li><a href="#programs" class="nav-link">Programs</a></li>
-                <li><a href="#teachers" class="nav-link">Teachers</a></li>
-                <li><a href="#gallery" class="nav-link">Gallery</a></li>
-                <li><a href="#admission" class="nav-link">Admission</a></li>
-                <li><a href="#payment" class="nav-link">Pay Fees</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
+  <div class="header-container">
+    <div class="logo">
+      <img src="images/school-logo.png" alt="Miniland Academy Logo">
+    </div>
+    <div class="school-name">
+      <h1>Miniland Academy English School</h1>
+      <p class="school-motto">Kerabari-7 Dangi Morang</p>
+    </div>
+    <div class="header-flag">
+      <img src="images/WavingFlag.gif" alt="Waving Flag">
+    </div>
+  </div>
+  <nav>
+    <ul class="main-nav-links">
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#about" class="nav-link">About Us</a></li>
+      <li><a href="#programs" class="nav-link">Programs</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+</header>
             <div class="nav-actions">
                 <a href="#admission" class="btn enroll-now-btn-nav">Enroll Now</a>
                 <div class="language-selector-nav">
