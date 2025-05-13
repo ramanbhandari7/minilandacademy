@@ -51,37 +51,28 @@ h2.section-title {
     letter-spacing: 0.5px;
 }
 h2.section-title::after {
-    content: '';
-    display: block;
-    width: 70px;
-    height: 4px;
-    background-color: #e74c3c;
-    margin: 10px auto 0;
+  content: '';
+  display: block;
+  width: 70px;
+  height: 4px;
+  background-color: #e74c3c; /* Accent color */
+  margin: 10px auto 0;
 }
 
-h3 { color: #1a5276; margin: 25px 0 15px; font-size: clamp(20px, 4vw, 26px); font-weight: 500;}
-p { margin-bottom: 20px; color: #495057; font-size: clamp(15px, 3vw, 17px); line-height: 1.8;}
-
-/* --- Header --- */
 header {
-    background-color: #1a5276;
-    color: white;
-    padding: 10px 0;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-    position: relative;
-    z-index: 100;
+  background-color: #1a5276; /* Primary color */
+  color: white; /* High contrast text */
+  padding: 10px 0;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+  position: relative;
+  z-index: 100; /* Layering for header visibility */
 }
 
 .header-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row !important; /* Force row for single-line layout */
-    /* max-width: 1200px; /* This is now inherited if header-container has .container */
-    /* width: 100%; */
-    /* padding: 0 15px; */
-    /* margin: 0 auto; */ /* .container handles these */
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row; /* Default layout */
 }
 
 .logo { flex-shrink: 0; }
