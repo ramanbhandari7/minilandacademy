@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <style>
-</* --- CSS Reset --- */
+/* --- CSS Reset --- */
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 
 html {
@@ -120,42 +120,72 @@ nav {
     top: 0;
     z-index: 99;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-.nav-main-container { /* Direct child of nav > .container */
+/* In the nav section of CSS */
+.nav-main-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: nowrap; /* Default: nav links and actions on same line */
+    flex-wrap: nowrap;
+    white-space: nowrap; /* Add this to prevent wrapping */
+    overflow-x: auto; /* Allows horizontal scrolling if needed */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
 nav ul.main-nav-links {
     display: flex;
-    justify-content: flex-start;
     list-style: none;
-    flex-wrap: wrap; /* Allow wrapping for links if needed */
-    gap: 8px; margin: 0; padding: 0;
-    flex-grow: 1; /* Take available space */
+    margin: 0;
+    padding: 0;
+    gap: 8px;
+    flex-shrink: 0; /* Prevent shrinking */
 }
-nav ul li a.nav-link {
-    color: white; text-decoration: none; font-weight: 500;
-    padding: 8px 12px; border-radius: 20px;
-    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
-    font-size: clamp(12px, 2.2vw, 14px);
-    display: inline-block; text-align: center;
-    border: 1px solid transparent;
+@media (max-width: 767.98px) {
+    .nav-main-container {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 5px; /* Space for scrollbar */
+    }
+    
+    nav ul.main-nav-links {
+        flex-shrink: 0;
+    }
+    
+    .nav-actions {
+        flex-shrink: 0;
+    }
+    
+    /* Hide scrollbar but keep functionality */
+    .nav-main-container::-webkit-scrollbar {
+        display: none;
+    }
 }
-nav ul li a.nav-link:hover, nav ul li a.nav-link:focus, nav ul li a.nav-link.active {
-    background-color: #1c6ca7;
-    transform: translateY(-2px);
-    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-    border-color: rgba(255,255,255,0.3);
+    /* Focus states for better accessibility */
+a:focus, button:focus {
+    outline: 2px solid #1a5276;
+    outline-offset: 2px;
 }
 
+/* Add aria-current for active navigation */
+.nav-link.active {
+    position: relative;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    border-radius: 50%;
+}
 .nav-actions {
     display: flex;
     align-items: center;
     gap: 12px;
-    flex-shrink: 0; /* Don't shrink these items */
+    flex-shrink: 0; /* Prevent shrinking */
 }
 .enroll-now-btn-nav {
     background-color: #e74c3c; color: white !important;
@@ -955,7 +985,7 @@ footer {
         </div>
     </footer>
 <script src="https://khalti.s3.ap-south-1.amazonaws.com/KPG/dist/2020.12.17.0.0.0/khalti-checkout.iffe.js" defer></script>
-       <script <script document.addEventListener('DOMContentLoaded', function() {  </script>
+      <script <script document.addEventListener('DOMContentLoaded', function() {  </script>
     <script>
     // --- Smooth Scroll and Active Nav Link ---
     const navLinks = document.querySelectorAll('nav ul.main-nav-links li a.nav-link');
