@@ -631,8 +631,15 @@
             .footer-bottom { margin-top: 25px; padding-top: 15px;}
             .copyright p, .developer p { font-size: 13px; color: white; opacity: 1;}
             .developer a { color: #a3c6ff;}
-            /* YouTube Section Styles */
+  /* YouTube Section Styles */
+.youtube-section {
+    background-color: #f9fbfb;
+    padding: 60px 20px;
+}
+
 .youtube-content {
+    max-width: 900px;
+    margin: 0 auto;
     text-align: center;
 }
 
@@ -641,13 +648,15 @@
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    max-width: 800px;
+    max-width: 100%;
 }
 
 .youtube-embed iframe {
     width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    display: block;
     border: none;
-    aspect-ratio: 16/9;
 }
 
 .youtube-cta {
@@ -692,7 +701,6 @@
     }
 }
 
-        }
         /* Map Container Styles */
 .map-container {
     margin-top: 15px;
@@ -950,25 +958,27 @@
                 </div>
             </div>
         </section>
-<section class="youtube-content" id="gallery">
-  <h2>Gallery</h2>
-  <div class="youtube-embed">
-    <iframe 
-      src="https://www.youtube.com/embed/mm5vdhbIGnQ?si=JNWoGgaTIDbp4mHU" 
-      title="YouTube video player" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      allowfullscreen 
-      referrerpolicy="strict-origin-when-cross-origin">
-    </iframe>
-  </div>
+<section class="youtube-section" id="gallery">
+  <div class="youtube-content">
+    <h2>Gallery</h2>
 
-  <div class="youtube-cta">
-    <a href="https://www.youtube.com/channel/UCXXXXXXXXX" target="_blank" class="youtube-btn">
-      Watch More on YouTube
-    </a>
+    <div class="youtube-embed">
+      <iframe 
+        src="https://www.youtube.com/embed/mm5vdhbIGnQ?si=JNWoGgaTIDbp4mHU" 
+        title="YouTube video player" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen 
+        referrerpolicy="strict-origin-when-cross-origin">
+      </iframe>
+    </div>
+
+    <div class="youtube-cta">
+      <a href="https://www.youtube.com/channel/UCXXXXXXXXX" target="_blank" class="youtube-btn">
+        Watch More on YouTube
+      </a>
+    </div>
   </div>
 </section>
-
         <section class="page-section" id="admission">
             <div class="container">
                 <h2 class="section-title">Admission Process</h2>
