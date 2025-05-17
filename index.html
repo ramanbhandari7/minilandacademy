@@ -470,7 +470,142 @@
             border: none; /* Removes default iframe border */
         }
         /* --- END: CSS for YouTube Showcase Section --- */
+/* --- Founding Members Section --- */
+.members-grid {
+    display: grid; /* Default for larger screens */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
 
+.member-card {
+    background-color: #fff;
+    border: 1px solid #e8ebee;
+    border-radius: 10px;
+    padding: 25px; /* Default padding */
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content vertically */
+}
+.member-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+.member-card img {
+    width: 120px; /* Default image size */
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid #2980b9; /* Consistent with teacher card images */
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+.member-card h3 { /* Member Name */
+    font-size: clamp(18px, 3.5vw, 20px); /* Responsive font size */
+    color: #1a5276;
+    margin-bottom: 8px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+.member-card .member-role { /* Member Role/Title */
+    font-size: clamp(14px, 2.8vw, 15px);
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    font-style: italic;
+    min-height: 1.5em; /* To align text if roles have different line counts */
+}
+.member-card .member-description { /* Optional short description */
+    font-size: clamp(13px, 2.5vw, 14px);
+    color: #6c757d;
+    line-height: 1.6;
+    margin-top: 10px;
+    width: 100%;
+    padding-top: 10px;
+    border-top: 1px dashed #e0e0e0;
+}
+
+
+/* Responsive adjustments for Founding Members */
+@media (max-width: 991.98px) { /* Medium screens, may still be grid or 2 columns */
+    .members-grid {
+        /* If you want 2 columns here before switching to 1 row:
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        If only 3 members, grid might still show 3 if space. Flexbox ensures the row layout below more explicitly.
+        */
+        gap: 20px;
+    }
+     .member-card {
+        padding: 20px;
+     }
+}
+
+
+@media (max-width: 767.98px) { /* "Small times" - target for one-line display */
+    .members-grid {
+        display: flex; /* Switch to flex for single row */
+        flex-direction: row;
+        justify-content: space-around; /* Or space-between */
+        align-items: stretch; /* Makes cards same height */
+        gap: 15px; /* Adjust gap for tighter fit */
+    }
+    .member-card {
+        flex: 1 1 0; /* Each card will try to take equal width, important for one line */
+        padding: 15px; /* Reduced padding */
+        min-width: 0; /* Allow shrinking */
+    }
+    .member-card img {
+        width: 80px; /* Smaller image for one-line layout */
+        height: 80px;
+        margin-bottom: 12px;
+    }
+    .member-card h3 {
+        font-size: 16px; /* Smaller name */
+        margin-bottom: 6px;
+    }
+    .member-card .member-role {
+        font-size: 13px; /* Smaller role */
+        margin-bottom: 8px;
+        min-height: 0; /* Reset min-height if needed */
+    }
+    .member-card .member-description {
+        font-size: 12px; /* Smaller description */
+        margin-top: 8px;
+        padding-top: 8px;
+         /* display: none; /* Uncomment to hide description on small screens if too cluttered */
+    }
+}
+
+@media (max-width: 480px) { /* Extra small screens */
+    .members-grid {
+        gap: 10px; /* Even smaller gap */
+        /* If one line becomes too squished, you might consider stacking:
+        flex-direction: column;
+        align-items: center;
+        But sticking to "one line" requirement for now.
+        */
+    }
+    .member-card {
+        padding: 12px 8px; /* Further reduced padding */
+    }
+    .member-card img {
+        width: 65px; /* Even smaller image */
+        height: 65px;
+        margin-bottom: 8px;
+    }
+    .member-card h3 {
+        font-size: 14px;
+    }
+    .member-card .member-role {
+        font-size: 12px;
+    }
+    .member-card .member-description {
+        display: none; /* More likely to hide description here to maintain one line */
+    }
+}
 
         /* --- Footer --- */
         footer {
@@ -768,18 +903,16 @@
          <!-- *** END MODIFIED HTML HEADER *** -->
     </header>
 
-    <nav>
-        <!-- Navigation remains the same -->
+        <nav>
         <div class="container">
             <ul>
                 <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#about" class="nav-link">About Us</a></li>
                 <li><a href="#programs" class="nav-link">Programs</a></li>
                 <li><a href="#teachers" class="nav-link">Teachers</a></li>
+                <li><a href="#founding-members" class="nav-link">Founders</a></li> <!-- New Link -->
                 <li><a href="#gallery" class="nav-link">Gallery</a></li>
-                <!-- START: Consider adding a Nav Link for YouTube Showcase -->
-                <li><a href="#youtube-showcase" class="nav-link">YouTube</a></li> 
-                <!-- END: Consider adding a Nav Link -->
+                <li><a href="#youtube-showcase" class="nav-link">YouTube</a></li>
                 <li><a href="#admission" class="nav-link">Admission</a></li>
                 <li><a href="#payment" class="nav-link">Pay Fees</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -943,6 +1076,46 @@
         </div>
     </div>
 </section>
+                <!-- ... previous section (Teachers) ... -->
+        </section> <!-- Closing tag of the teachers section -->
+
+        <!-- START: Founding Members Section -->
+        <section class="page-section" id="founding-members">
+            <div class="container">
+                <h2 class="section-title">Our Top Voices: Founding Members</h2>
+                <div class="section-card">
+                    <div class="members-grid">
+                        
+                        <div class="member-card">
+                            <img src="https://via.placeholder.com/120x120/A9A9A9/FFFFFF?text=Founder+1" alt="Photo of Founding Member A">
+                            <h3>Mr. Aakash Sharma</h3>
+                            <p class="member-role">Lead Founder & Visionary</p>
+                            <p class="member-description">"Dedicated to fostering an environment of learning and growth from day one."</p>
+                        </div>
+
+                        <div class="member-card">
+                            <img src="https://via.placeholder.com/120x120/A9A9A9/FFFFFF?text=Founder+2" alt="Photo of Founding Member B">
+                            <h3>Ms. Bimala Rai</h3>
+                            <p class="member-role">Co-Founder & Education Director</p>
+                            <p class="member-description">"Passionate about curriculum development and quality teaching standards."</p>
+                        </div>
+
+                        <div class="member-card">
+                            <img src="https://via.placeholder.com/120x120/A9A9A9/FFFFFF?text=Founder+3" alt="Photo of Founding Member C">
+                            <h3>Mr. Chandra Karki</h3>
+                            <p class="member-role">Founding Patron & Community Liaison</p>
+                            <p class="member-description">"Instrumental in building community support and school infrastructure."</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END: Founding Members Section -->
+
+        <section class="page-section" id="gallery">
+            <!-- ... content of your gallery section ... -->
+        <!-- ... rest of your HTML content ... -->
         <section class="page-section" id="gallery"> <!-- This is your existing PHOTO Gallery -->
             <div class="container">
                 <h2 class="section-title">School Photo Gallery</h2>
