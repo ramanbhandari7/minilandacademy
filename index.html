@@ -631,98 +631,81 @@
             .footer-bottom { margin-top: 25px; padding-top: 15px;}
             .copyright p, .developer p { font-size: 13px; color: white; opacity: 1;}
             .developer a { color: #a3c6ff;}
-  /* YouTube Section Styles */
-.youtube-section {
-    background-color: #f9fbfb;
-    padding: 60px 20px;
-}
-
-.youtube-content {
-    max-width: 900px;
-    margin: 0 auto;
+  /* Gallery Header Styles */
+.gallery-header {
     text-align: center;
+    margin-bottom: 30px;
 }
 
-.youtube-embed {
-    margin: 30px auto;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    max-width: 100%;
+.gallery-subtitle {
+    font-size: 20px;
+    color: #1a5276;
+    margin-top: -15px;
+    margin-bottom: 25px;
+    font-weight: 500;
+    font-style: italic;
 }
 
-.youtube-embed iframe {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
-    display: block;
-    border: none;
+/* YouTube Link Styles */
+.youtube-link-container {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px dashed #ddd;
 }
 
-.youtube-cta {
-    margin-top: 20px;
-}
-
-.youtube-btn {
+.youtube-link {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 15px 30px;
+    padding: 12px 25px;
     background-color: #ff0000;
     color: white;
     text-decoration: none;
     border-radius: 50px;
     font-weight: 600;
     transition: all 0.3s;
-    box-shadow: 0 4px 15px rgba(255,0,0,0.3);
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
 }
 
-.youtube-btn:hover {
+.youtube-link:hover {
     background-color: #cc0000;
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(255,0,0,0.4);
+    box-shadow: 0 8px 25px rgba(255, 0, 0, 0.4);
+}
+
+.youtube-link i {
+    font-size: 20px;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 767px) {
-    .youtube-embed iframe {
-        height: 250px;
+    .gallery-subtitle {
+        font-size: 18px;
+        margin-top: -10px;
+        margin-bottom: 20px;
     }
-}
-
-@media (max-width: 480px) {
-    .youtube-embed iframe {
-        height: 200px;
-    }
-
-    .youtube-btn {
-        padding: 12px 25px;
+    
+    .youtube-link {
+        padding: 10px 20px;
         font-size: 15px;
     }
 }
 
-        /* Map Container Styles */
-.map-container {
-    margin-top: 15px;
-    margin-bottom: 20px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 767px) {
-    .map-container iframe {
-        height: 250px;
-    }
-}
-
 @media (max-width: 480px) {
-    .map-container iframe {
-        height: 200px;
+    .gallery-subtitle {
+        font-size: 16px;
     }
-    .map-container p {
-        font-size: 13px;
+    
+    .youtube-link {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    
+    .youtube-link i {
+        font-size: 16px;
     }
 }
-
     </style>
 </head>
 <body>
