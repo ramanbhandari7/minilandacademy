@@ -312,14 +312,18 @@
         .media-pane { flex: 1; min-width: 300px; background: rgba(255, 255, 255, 0.95); padding: 20px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.07); }
         .media-pane h3 { font-size: clamp(1.2rem, 4vw, 1.5rem); color: #1a5276; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #ddd; text-align: center; }
         .slideshow-container { position: relative; width: 100%; aspect-ratio: 16 / 10; overflow: hidden; background-color: #e9ecef; border-radius: 6px; box-shadow: inset 0 0 10px rgba(0,0,0,0.1); }
-        .slideshow-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block; opacity: 1; transition: opacity 0.1s ease-in-out; }
+        .slideshow-image { 
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+            object-fit: cover; display: block; opacity: 1; 
+            transition: opacity 0.5s ease-in-out; /* SLOWER FADE FOR SLOWER SLIDESHOW */
+        }
         .youtube-embed-responsive { /* For the YouTube iframe */
             position: relative; overflow: hidden; width: 100%; max-width: 800px; margin: 0 auto 25px auto;
             padding-top: 56.25%; /* 16:9 Aspect Ratio */ border-radius: 8px; box-shadow: 0 6px 18px rgba(0,0,0,0.12);
         }
         .youtube-embed-responsive iframe { position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height: 100%; border: none; }
-        .youtube-link-container { text-align: center; margin-top: 20px; /* You have specific styling for this if different than pane CTA */ }
-        .youtube-link { /* This class already exists with good styling in your overall CSS */
+        .youtube-link-container { text-align: center; margin-top: 20px; }
+        .youtube-link { 
             display: inline-flex; align-items: center; gap: 10px; padding: 12px 25px; background-color: #ff0000;
             color: white; text-decoration: none; border-radius: 50px; font-weight: 600; transition: all 0.3s;
             box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
@@ -483,7 +487,7 @@
             .social-icon { width: 35px; height: 35px; font-size: 15px;}
             .footer-bottom { margin-top: 25px; padding-top: 15px;}
             .copyright p, .developer p { font-size: 13px; color: white;} .developer a { color: #a3c6ff;}
-            .youtube-link { padding: 8px 16px; font-size: 14px; } /* Ensure YouTube link inside media showcase scales down */
+            .youtube-link { padding: 8px 16px; font-size: 14px; } 
             .youtube-link i { font-size: 16px; }
         }
 
@@ -492,17 +496,21 @@
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
+    <!-- ADD AUDIO ELEMENT HERE -->
+    <audio id="entrySound" src="sounds/short-entry-tune.mp3" preload="auto"></audio> 
+    <!-- Make sure 'sounds/short-entry-tune.mp3' exists -->
+
     <header>
          <div class="header-container">
             <div class="logo">
-                <img src="images/school-logo.png" alt="Miniland Academy Logo"> <!-- Ensure school-logo.png exists in images/ -->
+                <img src="images/school-logo.png" alt="Miniland Academy Logo"> 
             </div>
             <div class="school-name">
                 <h1>Miniland Academy English School</h1>
                 <p>Kerabari- 7 Dangi Morang (Morality, Discipline & Quality Education is Our Supreme Ambition)</p>
             </div>
             <div class="header-flag">
-                <img src="images/WavingFlag.gif" alt="Waving Flag of Nepal"> <!-- Ensure WavingFlag.gif exists in images/ -->
+                <img src="images/WavingFlag.gif" alt="Waving Flag of Nepal"> 
             </div>
         </div>
     </header>
@@ -515,7 +523,7 @@
                 <li><a href="#programs" class="nav-link">Programs</a></li>
                 <li><a href="#teachers" class="nav-link">Teachers</a></li>
                 <li><a href="#founding-members" class="nav-link">Founders</a></li>
-                <li><a href="#media-showcase" class="nav-link">Media Showcase</a></li> <!-- Updated Link -->
+                <li><a href="#media-showcase" class="nav-link">Media Showcase</a></li>
                 <li><a href="#admission" class="nav-link">Admission</a></li>
                 <li><a href="#payment" class="nav-link">Pay Fees</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -577,6 +585,33 @@
                 </div>
             </div>
         </section>
+        <section class="page-section" id="founding-members">
+            <div class="container">
+                <h2 class="section-title">Our Top Voices: Founding Members</h2>
+                <div class="section-card">
+                    <div class="members-grid">
+                        <div class="member-card">
+                            <img src="images/tul.jpg" alt="Photo of Tul B. Chhetri"> 
+                            <h3>Tul B. Chhetri</h3> 
+                            <p class="member-role">Lead Founder & Visionary</p>
+                            <p class="member-description">"Dedicated to fostering an environment of learning and growth from day one."</p>
+                        </div>
+                        <div class="member-card">
+                            <img src="images/chk.jpg" alt="Photo of Chandra K. Limbu"> 
+                            <h3>Chandra K. Limbu</h3> 
+                            <p class="member-role">Co-Founder & Education Director</p>
+                            <p class="member-description">"Passionate about curriculum development and quality teaching standards."</p>
+                        </div>
+                        <div class="member-card">
+                            <img src="images/founder3.jpg" alt="Photo of Rita Pandey"> <!-- **REPLACE images/founder3.jpg ** -->
+                            <h3>Rita Pandey</h3> 
+                            <p class="member-role">Founding Patron & Community Liaison</p>
+                            <p class="member-description">"Instrumental in building community support and school infrastructure."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <section class="page-section" id="programs">
             <div class="container">
@@ -593,37 +628,7 @@
                 </div>
             </div>
         </section>
-<!-- START: Founding Members Section -->
-        <section class="page-section" id="founding-members">
-            <div class="container">
-                <h2 class="section-title">Our Top Voices: Founding Members</h2>
-                <div class="section-card">
-                    <div class="members-grid">
-                        
-                        <div class="member-card">
-                            <img src="images/tul.jpg" alt="Photo of Founding Member Tularam Sijali Magar">
-                            <h3>Mr. Tularam Sijali Magar</h3>
-                            <p class="member-role">Lead Founder & Visionary</p>
-                            <p class="member-description">"Dedicated to fostering an environment of learning and growth from day one."</p>
-                        </div>
 
-                        <div class="member-card">
-                             <img src="images/chk.jpg" alt="Photo of Founding Member Chakra Bahadur Karki">
-                            <h3>Mr. Chakra Bahadur Karki</h3>
-                            <p class="member-role">Co-Founder & Education Director</p>
-                            <p class="member-description">"Passionate about curriculum development and quality teaching standards."</p>
-                        </div>
-                        <div class="member-card">
-                            <img src="images/thapa.jpg" alt="Photo of Founding Member Chakra Bahadur Karki">
-                            <h3>Mr. Thapa </h3>
-                            <p class="member-role">Chairman-School Development Committee</p>
-                            <p class="member-description">"Instrumental in building community support and school infrastructure."</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- END: Founding Members Section -->
         <section class="page-section" id="teachers">
             <div class="container">
                 <h2 class="section-title">Meet Our Dedicated Teachers</h2>
@@ -644,7 +649,7 @@
                     </div>
                 </div>
             </div>
-
+        </section>
         <section class="page-section" id="media-showcase">
             <div class="container">
                 <h2 class="section-title">School Media Showcase</h2>
@@ -771,7 +776,7 @@
         </section>
     </main>
 
-    <div id="galleryModal" class="gallery-modal"> <!-- This modal might not be used if old gallery items are removed -->
+    <div id="galleryModal" class="gallery-modal"> 
         <div class="modal-content-wrapper">
             <button class="modal-nav modal-prev" id="modalPrev" aria-label="Previous image">❮</button>
             <img class="modal-image" id="modalImage" alt="Gallery image enlarged">
@@ -800,7 +805,7 @@
                     <li><a href="#programs"><i class="fas fa-angle-right"></i> Programs</a></li>
                     <li><a href="#teachers"><i class="fas fa-angle-right"></i> Teachers</a></li>
                     <li><a href="#founding-members"><i class="fas fa-angle-right"></i> Founders</a></li>
-                    <li><a href="#media-showcase"><i class="fas fa-angle-right"></i> Media Showcase</a></li> <!-- Updated -->
+                    <li><a href="#media-showcase"><i class="fas fa-angle-right"></i> Media Showcase</a></li> 
                     <li><a href="#admission"><i class="fas fa-angle-right"></i> Admission</a></li>
                     <li><a href="#payment"><i class="fas fa-angle-right"></i> Pay Fees</a></li>
                     <li><a href="#contact"><i class="fas fa-angle-right"></i> Contact</a></li>
@@ -834,11 +839,25 @@
             const currentYearElem = document.getElementById('currentYear');
             if(currentYearElem) currentYearElem.textContent = new Date().getFullYear();
 
+            // --- Play Entry Sound ---
+            const entryAudio = document.getElementById('entrySound');
+            if (entryAudio) {
+                // Attempt to play sound after a slight delay (e.g., when hero animation might be finishing)
+                setTimeout(() => {
+                    entryAudio.play().catch(error => {
+                        // Autoplay was prevented.
+                        console.warn("Entry sound autoplay was prevented by the browser:", error);
+                        // You could offer a button for the user to click to play sound if essential.
+                    });
+                }, 1200); // Delay of 1.2 seconds, adjust as needed (hero animation is 0.9s)
+            }
+
+
             // --- Smooth Scroll and Active Nav Link ---
             const navLinks = document.querySelectorAll('nav ul li a.nav-link');
             const sections = document.querySelectorAll('.page-section');
             const nav = document.querySelector('nav');
-            const navHeight = nav ? nav.offsetHeight : 80; // Get nav height once
+            const navHeight = nav ? nav.offsetHeight : 80; 
 
             let scrollTimeout;
             window.addEventListener('scroll', () => {
@@ -846,33 +865,28 @@
                  scrollTimeout = setTimeout(() => {
                      let current = '';
                      sections.forEach(section => {
-                         const sectionTop = section.offsetTop - navHeight - 20; // Add some offset
-                         if (scrollY >= sectionTop) { // Simpler condition: if we've scrolled past its top
+                         const sectionTop = section.offsetTop - navHeight - 20; 
+                         if (scrollY >= sectionTop) { 
                              current = section.getAttribute('id');
                          }
                      });
-                     // Special case for reaching the bottom of the page
-                     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) { // 50px tolerance
+                     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) { 
                         const lastSection = sections[sections.length - 1];
                         if (lastSection) current = lastSection.getAttribute('id');
                      }
-                     
                      navLinks.forEach(link => {
                          link.classList.remove('active');
                          if (link.getAttribute('href').substring(1) === current) {
                              link.classList.add('active');
                          }
                      });
-                    // If no section is "current" (e.g. top of page), activate home
                     if (current === '' && scrollY < sections[0].offsetTop - navHeight) {
                         const homeLink = document.querySelector('nav ul li a[href="#home"]');
                         if (homeLink) homeLink.classList.add('active');
                     }
-
-                 }, 50); // Reduced timeout for faster response
+                 }, 50); 
             });
             
-            // Initial check on page load
             setTimeout(() => { window.dispatchEvent(new Event('scroll')); }, 100);
 
             navLinks.forEach(link => {
@@ -885,7 +899,6 @@
                         if (targetElement) {
                             const targetPosition = targetElement.offsetTop - navHeight + 1;
                             window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-                            // Active class will be set by scroll event, but for immediate feedback:
                             navLinks.forEach(navLink => navLink.classList.remove('active'));
                             this.classList.add('active');
                         }
@@ -893,17 +906,16 @@
                 });
             });
 
-            // Handle initial hash for direct links
             if (window.location.hash) {
                 const initialTarget = document.querySelector(`nav ul li a[href="${window.location.hash}"]`);
                 if (initialTarget) {
                     navLinks.forEach(l => l.classList.remove('active'));
                     initialTarget.classList.add('active');
-                     setTimeout(() => { // Scroll after a short delay for layout to settle
+                     setTimeout(() => { 
                         const targetElement = document.getElementById(window.location.hash.substring(1));
                         if(targetElement) {
                             const targetPosition = targetElement.offsetTop - navHeight + 1;
-                            window.scrollTo({ top: targetPosition, behavior: 'auto' }); // 'auto' for initial jump
+                            window.scrollTo({ top: targetPosition, behavior: 'auto' }); 
                         }
                     }, 100);
                 }
@@ -914,11 +926,9 @@
 
             // --- Khalti Payment ---
             var khaltiConfig = {
-                "publicKey": "test_public_key_dc74e0fd57cb46cd93832aee0a390234", // Use your actual public key
-                "productIdentity": "Miniland_Academy_School_Fees",
-                "productName": "Miniland Academy School Fees",
-                "productUrl": window.location.href,
-                "paymentPreference": ["KHALTI", "EBANKING", "MOBILE_BANKING", "CONNECT_IPS", "SCT"],
+                "publicKey": "test_public_key_dc74e0fd57cb46cd93832aee0a390234", 
+                "productIdentity": "Miniland_Academy_School_Fees", "productName": "Miniland Academy School Fees",
+                "productUrl": window.location.href, "paymentPreference": ["KHALTI", "EBANKING", "MOBILE_BANKING", "CONNECT_IPS", "SCT"],
                 "eventHandler": {
                     onSuccess (payload) { console.log("Khalti Success:", payload); alert("Khalti payment successful! Transaction ID: " + payload.idx); },
                     onError (error) { console.error("Khalti Error:", error); alert("Khalti payment failed: " + (error.message || "Unknown error")); },
@@ -929,9 +939,7 @@
                  var khaltiCheckout = new KhaltiCheckout(khaltiConfig);
                  const khaltiButton = document.getElementById("khalti-button");
                  if (khaltiButton) {
-                     khaltiButton.addEventListener("click", function() {
-                          khaltiCheckout.show({amount: 1000 * 100 }); // Example: NPR 1000 (amount in paisa)
-                     });
+                     khaltiButton.addEventListener("click", function() { khaltiCheckout.show({amount: 1000 * 100 }); });
                  }
             } else {
                 console.error("Khalti script not loaded.");
@@ -941,15 +949,15 @@
 
             // --- eSewa Payment ---
             function payWithEsewa() {
-                 let paymentAmount = 1000.00; // Example: NPR 1000
+                 let paymentAmount = 1000.00; 
                  var esewaParams = {
                      amt: paymentAmount, psc: 0, pdc: 0, txAmt: 0, tAmt: paymentAmount,
-                     pid: "miniland_fee_" + new Date().getTime(), scd: "EPAYTEST", // Use LIVE merchant code in production
+                     pid: "miniland_fee_" + new Date().getTime(), scd: "EPAYTEST", 
                      su: window.location.origin + window.location.pathname + "?payment_status=esewa_success",
                      fu: window.location.origin + window.location.pathname + "?payment_status=esewa_failure"
                  };
                  var form = document.createElement("form"); form.setAttribute("method", "POST");
-                 form.setAttribute("action", "https://uat.esewa.com.np/epay/main"); // Use https://esewa.com.np/epay/main for live
+                 form.setAttribute("action", "https://uat.esewa.com.np/epay/main"); 
                  for(var key in esewaParams) { var hiddenField = document.createElement("input"); hiddenField.setAttribute("type", "hidden"); hiddenField.setAttribute("name", key); hiddenField.setAttribute("value", esewaParams[key]); form.appendChild(hiddenField); }
                  document.body.appendChild(form); form.submit();
             }
@@ -988,13 +996,11 @@
                     { src: "images/gallery-placeholder6.jpg", alt: "School building exterior" },
                     { src: "images/gallery-placeholder7.jpg", alt: "Cultural program highlight" },
                     { src: "images/gallery-placeholder8.jpg", alt: "Science fair project" },
-                    // Add more images as needed. Example:
-                    // { src: "images/my-image-9.jpg", alt: "Description for image 9" },
-                    // { src: "images/photo10.png", alt: "A tenth photo" },
+                    // Add more images as needed for your slideshow
                 ];
                 let currentSlideIndex = 0;
-                const slideIntervalTime = 300; // 0.3 seconds
-                const fadeTransitionTime = 100; // Matches CSS opacity transition
+                const slideIntervalTime = 3000; // SLOWED DOWN: 3 seconds (3000 milliseconds)
+                const fadeTransitionTime = 500; // Matches CSS opacity transition (0.5s)
                 let slideshowIntervalId;
 
                 function showNextSlideAuto() {
@@ -1014,7 +1020,7 @@
                     slideshowImageElement.src = slideImageSources[currentSlideIndex].src;
                     slideshowImageElement.alt = slideImageSources[currentSlideIndex].alt;
                     slideshowImageElement.style.opacity = 1;
-                    slideshowIntervalId = setInterval(showNextSlideAuto, slideIntervalTime);
+                    slideshowIntervalId = setInterval(showNextSlideAuto, slideIntervalTime + fadeTransitionTime); // Add fade time to interval
                 } else {
                     const slideshowContainer = slideshowImageElement.closest('.slideshow-container');
                     if (slideshowContainer) {
@@ -1027,45 +1033,46 @@
             // --- Gallery Modal Logic (For OLD separate gallery - likely unused now) ---
             const modal = document.getElementById('galleryModal');
             const modalImg = document.getElementById('modalImage');
-            const galleryThumbnails = document.querySelectorAll('.gallery-item img'); // This will be an empty NodeList if old gallery items are removed
+            const galleryThumbnails = document.querySelectorAll('.gallery-item img'); 
             const closeModalBtn = document.getElementById('modalClose');
             const prevBtn = document.getElementById('modalPrev');
             const nextBtn = document.getElementById('modalNext');
-            let currentImageIndex = 0;
-            let galleryImageSources = [];
+            let modalCurrentImageIndex = 0; // Use a different index variable for the modal
+            let modalGalleryImageSources = [];
 
-            if (galleryThumbnails.length > 0 && modal && modalImg && closeModalBtn && prevBtn && nextBtn) { // Check all elements
+            if (galleryThumbnails.length > 0 && modal && modalImg && closeModalBtn && prevBtn && nextBtn) { 
                  galleryThumbnails.forEach((thumbnail, index) => {
-                     thumbnail.setAttribute('data-index', index); // Ensure data-index exists
-                     galleryImageSources.push({ src: thumbnail.src, alt: thumbnail.alt });
+                     thumbnail.setAttribute('data-index', index); 
+                     modalGalleryImageSources.push({ src: thumbnail.src, alt: thumbnail.alt });
                      thumbnail.addEventListener('click', function() {
-                         currentImageIndex = parseInt(this.getAttribute('data-index'));
+                         modalCurrentImageIndex = parseInt(this.getAttribute('data-index'));
                          updateModalImage();
                          modal.classList.add('active');
                          document.body.style.overflow = 'hidden';
                      });
                  });
                 function updateModalImage() {
-                    if (galleryImageSources.length > 0 && galleryImageSources[currentImageIndex]) {
-                        modalImg.src = galleryImageSources[currentImageIndex].src;
-                        modalImg.alt = galleryImageSources[currentImageIndex].alt;
+                    if (modalGalleryImageSources.length > 0 && modalGalleryImageSources[modalCurrentImageIndex]) {
+                        modalImg.src = modalGalleryImageSources[modalCurrentImageIndex].src;
+                        modalImg.alt = modalGalleryImageSources[modalCurrentImageIndex].alt;
                     }
                 }
-                function showNextImage() { if (galleryImageSources.length === 0) return; currentImageIndex = (currentImageIndex + 1) % galleryImageSources.length; updateModalImage(); }
-                function showPrevImage() { if (galleryImageSources.length === 0) return; currentImageIndex = (currentImageIndex - 1 + galleryImageSources.length) % galleryImageSources.length; updateModalImage(); }
+                function showNextModalImage() { if (modalGalleryImageSources.length === 0) return; modalCurrentImageIndex = (modalCurrentImageIndex + 1) % modalGalleryImageSources.length; updateModalImage(); }
+                function showPrevModalImage() { if (modalGalleryImageSources.length === 0) return; modalCurrentImageIndex = (modalCurrentImageIndex - 1 + modalGalleryImageSources.length) % modalGalleryImageSources.length; updateModalImage(); }
                 function closeModal() { modal.classList.remove('active'); document.body.style.overflow = 'auto'; }
-                nextBtn.addEventListener('click', showNextImage);
-                prevBtn.addEventListener('click', showPrevImage);
+                
+                nextBtn.addEventListener('click', showNextModalImage);
+                prevBtn.addEventListener('click', showPrevModalImage);
                 closeModalBtn.addEventListener('click', closeModal);
                 modal.addEventListener('click', function(e) { if (e.target === modal || e.target.classList.contains('modal-content-wrapper')) closeModal(); });
                 window.addEventListener('keydown', function(e) {
                     if (modal.classList.contains('active')) {
                         if (e.key === 'Escape') closeModal();
-                        else if (e.key === 'ArrowRight') showNextImage();
-                        else if (e.key === 'ArrowLeft') showPrevImage();
+                        else if (e.key === 'ArrowRight') showNextModalImage();
+                        else if (e.key === 'ArrowLeft') showPrevModalImage();
                     }
                 });
-            } else if (modal && prevBtn && nextBtn) { // Modal structure exists, but no old gallery items to control
+            } else if (modal && prevBtn && nextBtn) { 
                 prevBtn.style.display = 'none';
                 nextBtn.style.display = 'none';
             }
