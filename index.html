@@ -32,7 +32,7 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 85px; /* Adjust if nav height changes */
+            scroll-padding-top: 160px; /* ADJUST THIS VALUE: Should be the height of .site-sticky-header-wrapper */
         }
 
         body {
@@ -77,14 +77,25 @@
         h3 { color: #1a5276; margin: 25px 0 15px; font-size: clamp(20px, 4vw, 26px); font-weight: 500;}
         p { margin-bottom: 20px; color: #495057; font-size: clamp(15px, 3vw, 17px); line-height: 1.8;}
 
+        /* --- Sticky Header Wrapper --- */
+        .site-sticky-header-wrapper {
+            position: -webkit-sticky; /* For Safari */
+            position: sticky;
+            top: 0;
+            z-index: 1000; /* Ensure it stays on top of other content */
+            width: 100%;
+            /* This wrapper doesn't need its own background;
+               the header and nav inside it will keep theirs. */
+        }
+
         /* --- Header --- */
         header {
             background-color: #1a5276;
             color: white;
             padding: 15px 0;
             box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-            position: relative;
-            z-index: 100;
+            position: relative; /* z-index works on positioned elements */
+            z-index: 100; /* Keep it above nav if there was any overlap (though unlikely now) */
         }
         .header-container {
             display: flex;
@@ -134,9 +145,9 @@
         nav {
             background-color: #2980b9;
             padding: 12px 0;
-            position: sticky;
-            top: 0;
-            z-index: 99;
+            /* position: sticky; */  /* REMOVED - Parent .site-sticky-header-wrapper handles stickiness */
+            /* top: 0; */            /* REMOVED */
+            /* z-index: 99; */       /* REMOVED */
             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
         nav .container ul {
@@ -169,7 +180,7 @@
         /* --- Notice Bar --- */
         .notice-bar {
             background: linear-gradient(90deg, #e74c3c 0%, #c0392b 100%);
-            color: white; padding: 10px 0; overflow: hidden; position: relative; z-index: 98;
+            color: white; padding: 10px 0; overflow: hidden; position: relative; z-index: 98; /* Lower z-index than sticky header */
             box-shadow: 0 2px 8px rgba(0,0,0,0.15); font-size: 15px; font-weight: 500; line-height: 1.5;
         }
         .notice-bar .container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; }
@@ -383,6 +394,7 @@
 
         /* --- Responsive Adjustments --- */
         @media (max-width: 991.98px) { /* Medium screens / Tablets */
+            html { scroll-padding-top: 140px; } /* ADJUST THIS VALUE */
             .page-section { padding: 70px 15px; }
             .section-card { padding: 35px 30px; }
             .footer-content { grid-template-columns: 1fr; text-align: center; gap: 30px; }
@@ -395,7 +407,7 @@
         }
 
         @media (max-width: 767.98px) { /* Small screens / Mobile */
-            html { scroll-padding-top: 75px; }
+            html { scroll-padding-top: 130px; } /* ADJUST THIS VALUE */
             .page-section { padding: 50px 15px; min-height: auto; }
             .header-container { flex-direction: column; justify-content: center; gap: 10px; }
             .logo { margin-right: 0; margin-bottom: 5px; } .logo img { height: 55px; width: 55px; }
@@ -403,7 +415,7 @@
             .header-flag { order: 1; } .header-flag img { height: 45px; }
             nav .container ul { gap: 8px; justify-content: center; }
             nav ul li a { font-size: 13px; padding: 8px 12px; }
-            .hero .hero-content-wrapper { min-height: calc(100vh - 75px); }
+            .hero .hero-content-wrapper { min-height: calc(100vh - 130px); } /* ADJUST THIS VALUE (calc(100vh - STICKY_HEADER_HEIGHT)) */
             .hero .btn { padding: 15px 35px; font-size: 16px; gap: 10px; }
             .hero .whatsapp-btn i { font-size: 20px;}
             .hero h1.section-title { font-size: clamp(30px, 8vw, 40px); margin-bottom: 20px;}
@@ -430,6 +442,7 @@
             .payment-section-inner { padding: 30px;}
             .payment-options { gap: 20px; margin-top: 20px;}
             .payment-button { padding: 12px 25px; font-size: 15px; gap: 8px;} .payment-button i { font-size: 18px;}
+            .payment-note { margin-top: 25px; font-size:14px; color:#666; }
             .footer-content { text-align: center; gap: 25px; }
             .footer-column h3 { font-size: 20px; margin-bottom: 15px;}
             .footer-links li { justify-content: center; gap: 8px;} .footer-links i { width: auto;}
@@ -445,18 +458,17 @@
             .notice-close { margin-left: 0; margin-top: 10px; position: static; }
             .notice-section, .ad-section { flex-direction: column; align-items: center; gap: 15px; text-align: center; padding: 0;}
             .notice-text, .ad-text { margin-right: 0;}
-
         }
 
         @media (max-width: 480px) { /* Extra small screens */
-            html { scroll-padding-top: 70px;}
+            html { scroll-padding-top: 120px;} /* ADJUST THIS VALUE */
             .page-section { padding: 40px 10px; } .container { padding: 0 10px; }
             header { padding: 10px 0;} .header-container { gap: 5px; }
             .logo img { height: 50px; width: 50px;}
             .school-name h1 { font-size: clamp(16px, 9vw, 20px); } .school-name p { font-size: clamp(11px, 3vw, 13px); }
             .header-flag img { height: 40px; }
             nav { padding: 8px 0;} nav .container ul { gap: 4px;} nav ul li a { font-size: 11px; padding: 6px 8px;}
-            .hero .hero-content-wrapper { min-height: calc(100vh - 70px); }
+            .hero .hero-content-wrapper { min-height: calc(100vh - 120px); } /* ADJUST THIS VALUE (calc(100vh - STICKY_HEADER_HEIGHT)) */
             .hero h1.section-title { font-size: clamp(24px, 10vw, 30px); margin-bottom: 15px;}
             .hero p { font-size: clamp(14px, 5vw, 16px); margin-bottom: 25px;}
             .hero .btn { padding: 12px 25px; font-size: 14px; gap: 8px;} .hero .whatsapp-btn i { font-size: 18px;}
@@ -500,36 +512,40 @@
     <audio id="entrySound" src="sounds/short-entry-tune.mp3" preload="auto"></audio> 
     <!-- Make sure 'sounds/short-entry-tune.mp3' exists -->
 
-    <header>
-         <div class="header-container">
-            <div class="logo">
-                <img src="images/school-logo.png" alt="Miniland Academy Logo"> 
+    <!-- START: Sticky Header Wrapper -->
+    <div class="site-sticky-header-wrapper">
+        <header>
+             <div class="header-container">
+                <div class="logo">
+                    <img src="images/school-logo.png" alt="Miniland Academy Logo"> 
+                </div>
+                <div class="school-name">
+                    <h1>Miniland Academy English School</h1>
+                    <p>Kerabari- 7 Dangi Morang (Morality, Discipline & Quality Education is Our Supreme Ambition)</p>
+                </div>
+                <div class="header-flag">
+                    <img src="images/WavingFlag.gif" alt="Waving Flag of Nepal"> 
+                </div>
             </div>
-            <div class="school-name">
-                <h1>Miniland Academy English School</h1>
-                <p>Kerabari- 7 Dangi Morang (Morality, Discipline & Quality Education is Our Supreme Ambition)</p>
-            </div>
-            <div class="header-flag">
-                <img src="images/WavingFlag.gif" alt="Waving Flag of Nepal"> 
-            </div>
-        </div>
-    </header>
+        </header>
 
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About Us</a></li>
-                <li><a href="#programs" class="nav-link">Programs</a></li>
-                <li><a href="#teachers" class="nav-link">Teachers</a></li>
-                <li><a href="#founding-members" class="nav-link">Founders</a></li>
-                <li><a href="#media-showcase" class="nav-link">Media Showcase</a></li>
-                <li><a href="#admission" class="nav-link">Admission</a></li>
-                <li><a href="#payment" class="nav-link">Pay Fees</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+        <nav>
+            <div class="container">
+                <ul>
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About Us</a></li>
+                    <li><a href="#programs" class="nav-link">Programs</a></li>
+                    <li><a href="#teachers" class="nav-link">Teachers</a></li>
+                    <li><a href="#founding-members" class="nav-link">Founders</a></li>
+                    <li><a href="#media-showcase" class="nav-link">Media Showcase</a></li>
+                    <li><a href="#admission" class="nav-link">Admission</a></li>
+                    <li><a href="#payment" class="nav-link">Pay Fees</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!-- END: Sticky Header Wrapper -->
 
     <div class="notice-bar" id="noticeBar">
         <div class="container">
@@ -844,22 +860,19 @@
             // --- Play Entry Sound ---
             const entryAudio = document.getElementById('entrySound');
             if (entryAudio) {
-                // Attempt to play sound after a slight delay (e.g., when hero animation might be finishing)
                 setTimeout(() => {
                     entryAudio.play().catch(error => {
-                        // Autoplay was prevented.
                         console.warn("Entry sound autoplay was prevented by the browser:", error);
-                        // You could offer a button for the user to click to play sound if essential.
                     });
-                }, 1200); // Delay of 1.2 seconds, adjust as needed (hero animation is 0.9s)
+                }, 1200); 
             }
-
 
             // --- Smooth Scroll and Active Nav Link ---
             const navLinks = document.querySelectorAll('nav ul li a.nav-link');
             const sections = document.querySelectorAll('.page-section');
-            const nav = document.querySelector('nav');
-            const navHeight = nav ? nav.offsetHeight : 80; 
+            const stickyHeaderWrapper = document.querySelector('.site-sticky-header-wrapper'); // Get the new sticky wrapper
+            // ADJUST THIS FALLBACK VALUE: This should be the height of .site-sticky-header-wrapper
+            const stickyHeaderHeight = stickyHeaderWrapper ? stickyHeaderWrapper.offsetHeight : 160; 
 
             let scrollTimeout;
             window.addEventListener('scroll', () => {
@@ -867,7 +880,8 @@
                  scrollTimeout = setTimeout(() => {
                      let current = '';
                      sections.forEach(section => {
-                         const sectionTop = section.offsetTop - navHeight - 20; 
+                         // Use stickyHeaderHeight for calculation
+                         const sectionTop = section.offsetTop - stickyHeaderHeight - 20; // The -20 is a small buffer, adjust if needed
                          if (scrollY >= sectionTop) { 
                              current = section.getAttribute('id');
                          }
@@ -882,14 +896,15 @@
                              link.classList.add('active');
                          }
                      });
-                    if (current === '' && scrollY < sections[0].offsetTop - navHeight) {
+                    // Ensure home is active if scrolled to the very top
+                    if (current === '' && scrollY < sections[0].offsetTop - stickyHeaderHeight) {
                         const homeLink = document.querySelector('nav ul li a[href="#home"]');
                         if (homeLink) homeLink.classList.add('active');
                     }
                  }, 50); 
             });
             
-            setTimeout(() => { window.dispatchEvent(new Event('scroll')); }, 100);
+            setTimeout(() => { window.dispatchEvent(new Event('scroll')); }, 100); // Trigger scroll event once after load
 
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
@@ -899,8 +914,10 @@
                         const targetId = href.substring(1);
                         const targetElement = document.getElementById(targetId);
                         if (targetElement) {
-                            const targetPosition = targetElement.offsetTop - navHeight + 1;
+                            // Use stickyHeaderHeight for calculation
+                            const targetPosition = targetElement.offsetTop - stickyHeaderHeight + 1; 
                             window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                            // Update active class immediately on click
                             navLinks.forEach(navLink => navLink.classList.remove('active'));
                             this.classList.add('active');
                         }
@@ -908,20 +925,23 @@
                 });
             });
 
+            // Handle initial load with hash
             if (window.location.hash) {
-                const initialTarget = document.querySelector(`nav ul li a[href="${window.location.hash}"]`);
-                if (initialTarget) {
+                const initialTargetLink = document.querySelector(`nav ul li a[href="${window.location.hash}"]`);
+                if (initialTargetLink) {
                     navLinks.forEach(l => l.classList.remove('active'));
-                    initialTarget.classList.add('active');
+                    initialTargetLink.classList.add('active');
                      setTimeout(() => { 
                         const targetElement = document.getElementById(window.location.hash.substring(1));
                         if(targetElement) {
-                            const targetPosition = targetElement.offsetTop - navHeight + 1;
+                            // Use stickyHeaderHeight for calculation
+                            const targetPosition = targetElement.offsetTop - stickyHeaderHeight + 1;
                             window.scrollTo({ top: targetPosition, behavior: 'auto' }); 
                         }
                     }, 100);
                 }
             } else {
+                // Set home as active if no hash and at top
                 const homeLink = document.querySelector('nav ul li a[href="#home"]');
                 if (homeLink && scrollY === 0) homeLink.classList.add('active');
             }
@@ -989,7 +1009,6 @@
             const mediaShowcaseSection = document.getElementById('media-showcase'); 
             if (mediaShowcaseSection && slideshowImageElement) {
                 const slideImageSources = [
-                    // **IMPORTANT**: Add your image paths and alt text here!
                     { src: "images/gallery-placeholder1.jpg", alt: "Students participating in an event" },
                     { src: "images/gallery-placeholder2.jpg", alt: "Teachers guiding students" },
                     { src: "images/gallery-placeholder3.jpg", alt: "Sports day race" },
@@ -998,11 +1017,10 @@
                     { src: "images/gallery-placeholder6.jpg", alt: "School building exterior" },
                     { src: "images/gallery-placeholder7.jpg", alt: "Cultural program highlight" },
                     { src: "images/gallery-placeholder8.jpg", alt: "Science fair project" },
-                    // Add more images as needed for your slideshow
                 ];
                 let currentSlideIndex = 0;
-                const slideIntervalTime = 3000; // SLOWED DOWN: 3 seconds (3000 milliseconds)
-                const fadeTransitionTime = 500; // Matches CSS opacity transition (0.5s)
+                const slideIntervalTime = 3000; 
+                const fadeTransitionTime = 500; 
                 let slideshowIntervalId;
 
                 function showNextSlideAuto() {
@@ -1022,7 +1040,7 @@
                     slideshowImageElement.src = slideImageSources[currentSlideIndex].src;
                     slideshowImageElement.alt = slideImageSources[currentSlideIndex].alt;
                     slideshowImageElement.style.opacity = 1;
-                    slideshowIntervalId = setInterval(showNextSlideAuto, slideIntervalTime + fadeTransitionTime); // Add fade time to interval
+                    slideshowIntervalId = setInterval(showNextSlideAuto, slideIntervalTime + fadeTransitionTime); 
                 } else {
                     const slideshowContainer = slideshowImageElement.closest('.slideshow-container');
                     if (slideshowContainer) {
@@ -1039,7 +1057,7 @@
             const closeModalBtn = document.getElementById('modalClose');
             const prevBtn = document.getElementById('modalPrev');
             const nextBtn = document.getElementById('modalNext');
-            let modalCurrentImageIndex = 0; // Use a different index variable for the modal
+            let modalCurrentImageIndex = 0; 
             let modalGalleryImageSources = [];
 
             if (galleryThumbnails.length > 0 && modal && modalImg && closeModalBtn && prevBtn && nextBtn) { 
