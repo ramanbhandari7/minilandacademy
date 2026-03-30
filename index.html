@@ -3,1101 +3,303 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <title>Miniland Academy | PG to Class 9 | Kerabari-7 Morang</title>
+    
     <!-- Primary Meta Tags -->
-    <title>Miniland Academy English School - Kerabari 7 Dangi Morang</title>
-    <meta name="title" content="Miniland Academy English School - Kerabari 7 Dangi Morang">
-    <meta name="description" content="Providing quality education from Play Group to Class 9 in Morang, Nepal. Morality, Discipline & Quality Education is Our Supreme Ambition.">
+    <meta name="description" content="Miniland Academy English School - Providing quality education from Play Group to Class 9 in Morang, Nepal.">
 
-    <!-- Open Graph / Facebook (Used by WhatsApp, LinkedIn, etc.) -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://minilandacademy.edu.np/">
-    <meta property="og:title" content="Miniland Academy English School - Kerabari 7 Dangi Morang">
-    <meta property="og:description" content="Providing quality education from Play Group to Class 9 in Morang, Nepal.">
-    <meta property="og:image" content="https://minilandacademy.edu.np/images/social.jpg"> <!-- Replace with your actual social image -->
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://minilandacademy.edu.np/">
-    <meta property="twitter:title" content="Miniland Academy English School - Kerabari 7 Dangi Morang">
-    <meta property="twitter:description" content="Providing quality education from Play Group to Class 9 in Morang, Nepal.">
-    <meta property="twitter:image" content="https://minilandacademy.edu.np/images/social.jpg"> <!-- Replace with your actual social image -->
-
-    <!-- Favicon & Styles -->
-    <link rel="icon" href="images/favicon.png" type="image/png"> <!-- Make sure favicon.png exists in images/ -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Fonts (Morgan Style) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        /* --- CSS Reset --- */
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 160px; /* ADJUST THIS VALUE: Should be the height of .site-sticky-header-wrapper */
+        :root {
+            --morgan-blue: #002147;
+            --morgan-gold: #ffcc00;
+            --morgan-red: #d90429;
+            --text-gray: #444;
+            --light-bg: #f4f7f6;
         }
 
-        body {
-            line-height: 1.7;
-            color: #343a40;
-            background-color: #f4f7f6;
-            overflow-x: hidden;
-        }
+        /* --- Global Reset --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background-color: #fff; line-height: 1.6; color: var(--text-gray); }
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        /* --- Layout Container --- */
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+        /* --- Top Contact Bar --- */
+        .top-bar { background: var(--morgan-blue); color: #fff; padding: 10px 0; font-size: 13px; }
+        .top-bar-flex { display: flex; justify-content: space-between; align-items: center; }
+        .top-bar-info span { margin-right: 20px; }
+        .top-bar-info i { color: var(--morgan-gold); margin-right: 5px; }
 
-        /* --- Typography & General Elements --- */
-        h2.section-title {
-            color: #1a5276;
-            margin-bottom: 50px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #2980b9;
-            font-size: clamp(24px, 5vw, 36px);
-            font-weight: 600;
-            text-align: center;
-            position: relative;
-            width: fit-content;
-            margin-left: auto;
-            margin-right: auto;
-            letter-spacing: 0.5px;
-        }
-        h2.section-title::after {
-            content: '';
-            display: block;
-            width: 70px;
-            height: 4px;
-            background-color: #e74c3c;
-            margin: 10px auto 0;
-        }
+        /* --- Main Logo Header --- */
+        .main-header { padding: 20px 0; background: #fff; }
+        .header-flex { display: flex; align-items: center; gap: 20px; }
+        .logo img { height: 90px; width: auto; }
+        .school-info h1 { font-family: 'Oswald', sans-serif; font-size: 36px; color: var(--morgan-blue); text-transform: uppercase; margin: 0; }
+        .school-info p { color: var(--morgan-red); font-weight: 700; letter-spacing: 1px; font-size: 14px; }
 
-        h3 { color: #1a5276; margin: 25px 0 15px; font-size: clamp(20px, 4vw, 26px); font-weight: 500;}
-        p { margin-bottom: 20px; color: #495057; font-size: clamp(15px, 3vw, 17px); line-height: 1.8;}
+        /* --- NAVIGATION BAR (Perfect Alignment) --- */
+        nav { 
+            background: var(--morgan-blue); 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+            height: 60px; /* Fixed height for perfect vertical centering */
+        }
+        .nav-flex { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            height: 100%; 
+        }
+        nav ul { display: flex; list-style: none; height: 100%; align-items: center; }
+        nav ul li { height: 100%; }
+        nav ul li a { 
+            color: #fff; 
+            text-decoration: none; 
+            padding: 0 15px; 
+            height: 100%; 
+            display: flex; 
+            align-items: center; 
+            font-weight: 700; 
+            font-size: 13px; 
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+        nav ul li a:hover { background: var(--morgan-gold); color: var(--morgan-blue); }
 
-        /* --- Sticky Header Wrapper --- */
-        .site-sticky-header-wrapper {
-            position: -webkit-sticky; /* For Safari */
-            position: sticky;
-            top: 0;
-            z-index: 1000; /* Ensure it stays on top of other content */
-            width: 100%;
-            /* This wrapper doesn't need its own background;
-               the header and nav inside it will keep theirs. */
-        }
-
-        /* --- Header --- */
-        header {
-            background-color: #1a5276;
-            color: white;
-            padding: 15px 0;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-            position: relative; /* z-index works on positioned elements */
-            z-index: 100; /* Keep it above nav if there was any overlap (though unlikely now) */
-        }
-        .header-container {
-            display: flex;
-            align-items: center;
-            max-width: 1200px;
-            width: 100%;
-            padding: 0 15px;
-            margin: 0 auto;
-            gap: 15px;
-        }
-        .logo img {
-            height: 60px; width: 60px;
-            object-fit: contain;
-            border-radius: 50%;
-            border: 3px solid #ffffff;
-            box-shadow: 0 0 12px rgba(255,255,255,0.4);
-            flex-shrink: 0;
-        }
-        .school-name {
-            text-align: center;
-            flex-grow: 1;
-        }
-        .school-name h1 {
-            font-size: clamp(18px, 4vw, 24px);
-            margin-bottom: 5px;
-            line-height: 1.2;
-            font-weight: 700;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-        }
-        .school-name p {
-            font-size: clamp(12px, 2.5vw, 15px);
-            opacity: 0.9;
-            margin-bottom: 0;
-            color: #e9ecef;
-        }
-        .header-flag {
-            flex-shrink: 0;
-            line-height: 0;
-        }
-        .header-flag img {
-            height: 55px;
-            width: auto;
-            display: block;
-        }
-
-        /* --- Navigation --- */
-        nav {
-            background-color: #2980b9;
-            padding: 12px 0;
-            /* position: sticky; */  /* REMOVED - Parent .site-sticky-header-wrapper handles stickiness */
-            /* top: 0; */            /* REMOVED */
-            /* z-index: 99; */       /* REMOVED */
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-        nav .container ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin: 0; padding: 0;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 10px 20px;
-            border-radius: 25px;
-            transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
-            font-size: clamp(13px, 2.5vw, 15px);
-            display: inline-block;
-            text-align: center;
-            border: 1px solid transparent;
-        }
-        nav ul li a:hover, nav ul li a:focus, nav ul li a.active {
-            background-color: #1c6ca7;
-            transform: translateY(-2px);
-            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-            border-color: rgba(255,255,255,0.3);
-        }
-
-        /* --- Notice Bar --- */
-        .notice-bar {
-            background: linear-gradient(90deg, #e74c3c 0%, #c0392b 100%);
-            color: white; padding: 10px 0; overflow: hidden; position: relative; z-index: 98; /* Lower z-index than sticky header */
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15); font-size: 15px; font-weight: 500; line-height: 1.5;
-        }
-        .notice-bar .container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; }
-        .notice-content { display: flex; width: 100%; justify-content: center; flex-wrap: wrap; gap: 15px 30px; animation: scrollTextDesktop 40s linear infinite; }
-        .notice-text { margin-right: 0; font-weight: 600; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); }
-        .notice-actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
-        .notice-btn {
-            color: white; padding: 8px 18px; border-radius: 5px; font-size: 14px; font-weight: 500; display: inline-flex;
-            align-items: center; gap: 8px; text-decoration: none; transition: all 0.3s; white-space: nowrap;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.3);
-        }
-        .whatsapp-btn { background-color: #25D366; } .call-btn { background-color: #3498db; } .ad-btn { background-color: #f39c12; }
-        .notice-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.3); border-color: rgba(255,255,255,0.6);}
-        .notice-close {
-            position: static; margin-left: auto; background: rgba(255,255,255,0.25); border: none; color: white;
-            width: 30px; height: 30px; border-radius: 50%; cursor: pointer; font-size: 16px; transition: all 0.3s;
-            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-        }
-        .notice-close:hover { background: rgba(255,255,255,0.4); transform: rotate(90deg); }
-        @keyframes scrollTextDesktop { 0% { transform: translateX(100%); } 100% { transform: translateX(calc(-100% - 30px)); } }
-
-        /* --- Main Page Section Styling --- */
-        .page-section {
-            position: relative; padding: 60px 0; background-color: #f9f9f9; isolation: isolate;
-            display: flex; flex-direction: column; align-items: center; width: 100%; overflow-x: hidden;
-        }
-        .page-section:not(.hero)::before { /* Background image for sections */
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url('images/teachers.jpg'); /* Ensure this image exists or change it */
-            background-size: cover; background-position: center; background-repeat: no-repeat;
-            opacity: 0.10; z-index: -1; pointer-events: none;
-        }
-        .page-section .container { position: relative; z-index: 1; }
+        /* Flag Alignment */
+        .nav-flag { display: flex; align-items: center; height: 100%; padding: 5px 0; }
+        .nav-flag img { height: 45px; width: auto; filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3)); }
 
         /* --- Hero Section --- */
-        .page-section.hero {
-            min-height: 100vh; height: 100vh; padding: 0; display: flex; align-items: center; justify-content: center; overflow: hidden;
+        .hero { 
+            height: 70vh; 
+            background: linear-gradient(rgba(0,33,71,0.6), rgba(0,33,71,0.6)), url('images/hero.jpg') center/cover;
+            display: flex; align-items: center; color: #fff; 
         }
-        .hero-bg {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url('images/hero.jpg'); /* Ensure hero.jpg exists in images/ */
-            background-size: cover; background-position: center center; z-index: -1;
-            transition: transform 0.5s ease-out;
-        }
-        .hero:hover .hero-bg { transform: scale(1.05); }
-        .hero .hero-content-wrapper {
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-            width: 100%; padding: 20px; position: relative; z-index: 1; min-height: 100vh;
-            background: linear-gradient(to bottom, rgba(26, 82, 118, 0.6) 0%, rgba(10, 34, 50, 0.8) 100%);
-        }
-        .hero .hero-content { max-width: 900px; text-align: center; text-shadow: 0 3px 15px rgba(0,0,0,0.7); animation: fadeInUp 0.9s ease-out; }
-        .hero h1.section-title { font-size: clamp(38px, 7vw, 60px); margin-bottom: 30px; line-height: 1.2; font-weight: 800; color: white; border-bottom: none; width: 100%; }
-        .hero h1.section-title::after { display:none; }
-        .hero p { font-size: clamp(17px, 3.5vw, 22px); margin: 0 auto 45px; max-width: 750px; line-height: 1.8; color: rgba(248,248,248,0.98); }
-        .btn { /* General button style, used by hero CTA */
-            display: inline-flex; align-items: center; justify-content:center; gap: 12px; padding: 18px 45px; font-size: 18px;
-            font-weight:600; border-radius: 50px; transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            text-decoration: none; color: white; letter-spacing: 0.8px; border: none; cursor: pointer;
-        }
-        .hero .whatsapp-btn { background-color: #25D366; box-shadow: 0 6px 22px rgba(37, 211, 102, 0.4); }
-        .hero .whatsapp-btn i { font-size: 24px; }
-        .hero .whatsapp-btn:hover { background-color: #1ea952; transform: translateY(-5px) scale(1.03); box-shadow: 0 12px 35px rgba(37, 211, 102, 0.55); }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .hero-text h2 { font-family: 'Oswald', sans-serif; font-size: 55px; line-height: 1.1; margin-bottom: 20px; }
+        .hero-text p { font-size: 20px; border-left: 4px solid var(--morgan-gold); padding-left: 20px; margin-bottom: 30px; }
+        .btn-apply { background: var(--morgan-gold); color: var(--morgan-blue); padding: 15px 35px; text-decoration: none; font-weight: 900; border-radius: 4px; text-transform: uppercase; display: inline-block; }
 
-        /* --- Content Card Styling --- */
-        .section-card {
-            background: rgba(255, 255, 255, 0.9); padding: 40px 50px; border-radius: 12px;
-            box-shadow: 0 12px 40px rgba(40, 50, 70, 0.12); width: 100%;
-            transition: transform 0.35s ease-out, box-shadow 0.35s ease-out;
-        }
-        .page-section:not(.hero) .section-card:hover { transform: translateY(-12px); box-shadow: 0 20px 60px rgba(40, 50, 70, 0.18); }
-        .about-content h3 { color: #2980b9; margin: 20px 0 15px; font-size: 1.5rem; }
-        .about-content p { margin-bottom: 15px; line-height: 1.6; font-size: 1.1rem; }
+        /* --- Welcome / Principal --- */
+        .welcome { padding: 80px 0; }
+        .welcome-flex { display: flex; gap: 50px; align-items: center; flex-wrap: wrap; }
+        .welcome-img { flex: 1; min-width: 300px; position: relative; }
+        .welcome-img img { width: 100%; border-radius: 10px; border-bottom: 10px solid var(--morgan-gold); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .welcome-content { flex: 1.5; min-width: 300px; }
+        .welcome-content h3 { font-family: 'Oswald', sans-serif; color: var(--morgan-blue); font-size: 32px; margin-bottom: 20px; }
 
-        /* --- Programs List--- */
-        .program-list { list-style: none; margin-left: 0; padding-left: 0; margin-top: 15px;}
-        .program-list li { margin-bottom: 18px; padding-left: 35px; position: relative; line-height: 1.7; font-size: clamp(15px, 3vw, 17px); color:#495057;}
-        .program-list li::before { content: "✓"; color: #228B22; position: absolute; left: 5px; top:2px; font-weight: bold; font-size:20px; }
-        .program-list li strong {color: #1a5276; font-weight: 600;}
+        /* --- Facilities (Science Lab & Bus Focus) --- */
+        .facilities { background: var(--light-bg); padding: 80px 0; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-family: 'Oswald', sans-serif; font-size: 36px; color: var(--morgan-blue); }
+        .facility-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .f-card { background: #fff; padding: 40px 20px; text-align: center; border-radius: 8px; border-top: 4px solid var(--morgan-gold); transition: 0.3s; }
+        .f-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .f-card i { font-size: 50px; color: var(--morgan-blue); margin-bottom: 20px; }
+        .f-card h4 { margin-bottom: 15px; color: var(--morgan-blue); font-size: 20px; }
 
-        /* --- Contact Info --- */
-        .contact-info { margin-top: 30px; }
-        .contact-item { margin-bottom: 25px; display: flex; align-items: flex-start; gap: 20px; }
-        .contact-icon { color: #2980b9; font-size: 26px; flex-shrink: 0; width: 30px; text-align: center; padding-top: 3px; }
-        .contact-text { flex-grow: 1; font-size: clamp(15px, 3vw, 17px); line-height:1.6;}
-        .contact-text strong { display: block; margin-bottom: 8px; color:#1a5276; font-weight:600;}
-        .contact-text a { color: #2980b9; text-decoration: none; word-break: break-word; transition: color 0.3s;}
-        .contact-text a:hover { text-decoration: underline; color: #1c6ca7;}
-        .map-container iframe { border-radius:8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .map-container p { margin-top:10px; font-size:14px; color:#666; }
+        /* --- Teachers Grid --- */
+        .teachers { padding: 80px 0; }
+        .teacher-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .t-card { text-align: center; background: #fff; padding: 20px; border: 1px solid #eee; border-radius: 8px; }
+        .t-card img { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid var(--morgan-blue); }
+        .t-card h5 { color: var(--morgan-blue); font-size: 16px; margin-bottom: 5px; }
+        .t-card p { font-size: 13px; font-style: italic; color: #777; }
 
+        /* --- Sound Control --- */
+        .sound-toggle {
+            position: fixed; bottom: 30px; left: 30px; z-index: 2000;
+            background: var(--morgan-blue); color: #fff; width: 50px; height: 50px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            cursor: pointer; border: 2px solid var(--morgan-gold);
+        }
 
-        /* --- Payment Section --- */
-        .payment-section-inner {
-            background: #eef2f5; padding: 35px; border-radius: 10px; margin-top: 25px;
-            text-align: center; border: 1px solid #d0d9e6; box-shadow: inset 0 2px 8px rgba(0,0,0,0.05);
-        }
-        .payment-options { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; margin-top: 30px; }
-        .payment-button {
-            color: white; border: none; padding: 15px 30px; font-size: 17px; border-radius: 8px;
-            cursor: pointer; transition: all 0.3s; display: inline-flex; align-items: center; gap: 12px;
-            font-weight:600; letter-spacing:0.5px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        .khalti-button { background-color: #5C2D91; } .esewa-button { background-color: #55A74E; }
-        .payment-button:hover, .payment-button:focus { transform: translateY(-4px) scale(1.04); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
-        .khalti-button:hover, .khalti-button:focus { background-color: #4a2475; } .esewa-button:hover, .esewa-button:focus { background-color: #489142; }
-        .payment-button i { font-size: 20px; }
-        .payment-note { margin-top: 25px; font-size:14px; color:#666; }
-
-        /* --- Teachers Section --- */
-        .teachers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; margin-top: 30px; }
-        .teacher-card { background-color: #fff; border: 1px solid #e8ebee; border-radius: 10px; padding: 30px; text-align: center; box-shadow: 0 8px 25px rgba(0,0,0,0.09); transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; justify-content: flex-start; }
-        .teacher-card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.12); }
-        .teacher-card img {
-            width: 130px; height: 130px; border-radius: 50%; object-fit: cover; margin-bottom: 20px;
-            border: 5px solid #2980b9; align-self: center; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-        .teacher-card h3 { font-size: 20px; color: #1a5276; margin-bottom: 8px; font-weight: 600; }
-        .teacher-card .qualification { font-size: 14.5px; color: #555; margin-bottom: 10px; line-height: 1.5; font-style: italic; min-height: 2.8em; }
-        .teacher-card .role { font-size: 15.5px; color: #2980b9; margin-bottom: 0; font-weight: 600; margin-top: auto; padding-top:15px; border-top: 1px dashed #e1e5eb; }
-
-        /* --- Founding Members Section --- */
-        .members-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 30px; }
-        .member-card {
-            background-color: #fff; border: 1px solid #e8ebee; border-radius: 10px; padding: 25px; text-align: center;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s;
-            display: flex; flex-direction: column; align-items: center;
-        }
-        .member-card:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(0,0,0,0.1); }
-        .member-card img {
-            width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 20px;
-            border: 4px solid #2980b9; box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-        }
-        .member-card h3 { font-size: clamp(18px, 3.5vw, 20px); color: #1a5276; margin-bottom: 8px; font-weight: 600; line-height: 1.3; }
-        .member-card .member-role { font-size: clamp(14px, 2.8vw, 15px); color: #555; margin-bottom: 10px; line-height: 1.5; font-style: italic; min-height: 1.5em; }
-        .member-card .member-description { font-size: clamp(13px, 2.5vw, 14px); color: #6c757d; line-height: 1.6; margin-top: 10px; width: 100%; padding-top: 10px; border-top: 1px dashed #e0e0e0; }
-        
-        /* --- Media Showcase Section (Merged Gallery & YouTube) --- */
-        .media-flex-container { display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start; }
-        .media-pane { flex: 1; min-width: 300px; background: rgba(255, 255, 255, 0.95); padding: 20px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.07); }
-        .media-pane h3 { font-size: clamp(1.2rem, 4vw, 1.5rem); color: #1a5276; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #ddd; text-align: center; }
-        .slideshow-container { position: relative; width: 100%; aspect-ratio: 16 / 10; overflow: hidden; background-color: #e9ecef; border-radius: 6px; box-shadow: inset 0 0 10px rgba(0,0,0,0.1); }
-        .slideshow-image { 
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-            object-fit: cover; display: block; opacity: 1; 
-            transition: opacity 0.5s ease-in-out; /* SLOWER FADE FOR SLOWER SLIDESHOW */
-        }
-        .youtube-embed-responsive { /* For the YouTube iframe */
-            position: relative; overflow: hidden; width: 100%; max-width: 800px; margin: 0 auto 25px auto;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */ border-radius: 8px; box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-        }
-        .youtube-embed-responsive iframe { position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height: 100%; border: none; }
-        .youtube-link-container { text-align: center; margin-top: 20px; }
-        .youtube-link { 
-            display: inline-flex; align-items: center; gap: 10px; padding: 12px 25px; background-color: #ff0000;
-            color: white; text-decoration: none; border-radius: 50px; font-weight: 600; transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
-        }
-        .youtube-link:hover { background-color: #cc0000; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(255, 0, 0, 0.4); }
-        .youtube-link i { font-size: 20px; }
-
-        /* --- Gallery Modal (Used for OLD Gallery items, if any were kept) --- */
-        .gallery-modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: hidden; background-color: rgba(25,25,35,0.95); align-items: center; justify-content: center; }
-        .gallery-modal.active { display: flex; animation: fadeInModal 0.4s ease-out; }
-        @keyframes fadeInModal { from { opacity: 0; } to { opacity: 1; } }
-        .modal-content-wrapper { position: relative; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; }
-        .modal-image { display: block; max-width: 90vw; max-height: 90vh; animation: zoomInImage 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); object-fit: contain; border-radius:8px; box-shadow: 0 0 50px rgba(0,0,0,0.6);}
-        .modal-close { position: absolute; top: 25px; right: 40px; color: #f0f0f0; font-size: 48px; font-weight: 300; transition: color 0.3s, transform 0.3s; cursor: pointer; z-index: 1002; text-shadow: 0 2px 4px rgba(0,0,0,0.4); }
-        .modal-close:hover, .modal-close:focus { color: #ffffff; transform: scale(1.1); }
-        .modal-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 55px; height: 55px; background-color: rgba(0,0,0,0.5); color: white; font-size: 32px; border: none; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background-color 0.3s, transform 0.2s; z-index: 1001; user-select: none; }
-        .modal-nav:hover { background-color: rgba(0,0,0,0.8); transform: translateY(-50%) scale(1.1); }
-        .modal-prev { left: 30px; } .modal-next { right: 30px; }
-        @keyframes zoomInImage { from {transform: scale(0.6) rotate(-2deg); opacity: 0;} to {transform: scale(1) rotate(0deg); opacity: 1;} }
-
+        /* --- Admission Alert Bar --- */
+        .admission-bar { background: var(--morgan-red); color: #fff; padding: 12px 0; text-align: center; font-weight: 700; }
 
         /* --- Footer --- */
-        footer { background-color: #1a5276; color: #e9ecef; padding: 60px 0 30px; border-top: 6px solid #2980b9; }
-        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 35px; max-width:1200px; margin:0 auto; padding:0 20px; text-align: left; }
-        .footer-column p {color: #ced4da; line-height: 1.7;}
-        .footer-column h3 { color: white; margin-bottom: 20px; font-size: 21px; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 10px; font-weight:600; letter-spacing:0.5px; }
-        .footer-column h3::after { display: none; } /* Override global h3::after */
-        .footer-links { list-style: none; padding-left: 0; }
-        .footer-links li { margin-bottom: 14px; display: flex; align-items: flex-start; gap: 12px; font-size:15px; line-height: 1.6;}
-        .footer-links a { color: #ced4da; text-decoration: none; transition: color 0.3s, transform 0.2s; display: inline-block; word-break: break-word;}
-        .footer-links a:hover, .footer-links a:focus { color: white; transform: translateX(5px); }
-        .footer-links i { flex-shrink: 0; width: 20px; text-align: center; color: #8ab4f8; padding-top: 3px; }
-        .social-links { display: flex; gap: 20px; margin-top: 25px; justify-content: flex-start; flex-wrap: wrap; }
-        .social-icon {
-            color: white; background-color: rgba(255, 255, 255, 0.15); width: 44px; height: 44px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center; transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            font-size: 18px; position: relative; text-decoration: none; border: 1px solid rgba(255,255,255,0.3); box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .social-icon:hover { transform: translateY(-5px) scale(1.1); box-shadow: 0 8px 20px rgba(0,0,0,0.2); border-color: white; }
-        .facebook:hover { background-color: #3b5998; } .tiktok:hover { background-color: #000000; }
-        .youtube:hover { background-color: #ff0000; } .whatsapp:hover { background-color: #25D366; }
-        .social-icon::after {
-            content: attr(aria-label); position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%) translateY(8px);
-            background: #124263; color: white; padding: 8px 15px; border-radius: 6px; font-size: 13px;
-            opacity: 0; visibility: hidden; transition: opacity 0.3s ease-out, transform 0.3s ease-out; pointer-events: none; white-space: nowrap; z-index: 10;
-        }
-        .social-icon:hover::after { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(-5px); }
-        .footer-bottom { display: flex; flex-direction: column; align-items: center; text-align: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.25); max-width:1200px; margin-left:auto; margin-right:auto; }
-        .copyright p { font-size: 14.5px; margin-bottom: 10px; color: white; }
-        .developer p { font-size: 14.5px; color: white; }
-        .developer a { color: #a3c6ff; text-decoration: none; transition: color 0.3s; font-weight:600; }
-        .developer a:hover { color: white; text-decoration: underline; }
+        footer { background: #001c3d; color: #ccc; padding: 60px 0 20px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+        .footer-col h4 { color: #fff; margin-bottom: 25px; border-bottom: 2px solid var(--morgan-gold); display: inline-block; padding-bottom: 5px; }
+        .footer-col p { font-size: 14px; margin-bottom: 10px; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 50px; padding-top: 20px; text-align: center; font-size: 12px; }
 
-        /* --- Accessibility --- */
-        .skip-link { position: absolute; top: -999px; left: 0; background: #e74c3c; color: white; padding: 10px 15px; z-index: 1001; transition: top 0.3s ease-in-out; border-radius: 0 0 5px 0; text-decoration: none; }
-        .skip-link:focus { top: 0; }
-
-        /* --- Responsive Adjustments --- */
-        @media (max-width: 991.98px) { /* Medium screens / Tablets */
-            html { scroll-padding-top: 140px; } /* ADJUST THIS VALUE */
-            .page-section { padding: 70px 15px; }
-            .section-card { padding: 35px 30px; }
-            .footer-content { grid-template-columns: 1fr; text-align: center; gap: 30px; }
-            .footer-column h3 { border-bottom: none; padding-bottom: 5px; margin-bottom: 15px;}
-            .footer-links li { justify-content: center; }
-            .social-links { justify-content: center; }
-            .members-grid { gap: 20px; }
-            .member-card { padding: 20px; }
-            .media-pane { min-width: calc(50% - 15px); }
+        @media (max-width: 768px) {
+            .header-flex { flex-direction: column; text-align: center; }
+            .nav-flag { display: none; } /* Hide flag on mobile to save space */
+            nav ul { font-size: 11px; }
+            .hero-text h2 { font-size: 35px; }
         }
-
-        @media (max-width: 767.98px) { /* Small screens / Mobile */
-            html { scroll-padding-top: 130px; } /* ADJUST THIS VALUE */
-            .page-section { padding: 50px 15px; min-height: auto; }
-            .header-container { flex-direction: column; justify-content: center; gap: 10px; }
-            .logo { margin-right: 0; margin-bottom: 5px; } .logo img { height: 55px; width: 55px; }
-            .school-name { order: -1; margin-bottom: 5px; }
-            .header-flag { order: 1; } .header-flag img { height: 45px; }
-            nav .container ul { gap: 8px; justify-content: center; }
-            nav ul li a { font-size: 13px; padding: 8px 12px; }
-            .hero .hero-content-wrapper { min-height: calc(100vh - 130px); } /* ADJUST THIS VALUE (calc(100vh - STICKY_HEADER_HEIGHT)) */
-            .hero .btn { padding: 15px 35px; font-size: 16px; gap: 10px; }
-            .hero .whatsapp-btn i { font-size: 20px;}
-            .hero h1.section-title { font-size: clamp(30px, 8vw, 40px); margin-bottom: 20px;}
-            .hero p { font-size: clamp(15px, 4vw, 18px); margin-bottom: 30px;}
-            .section-card { padding: 30px 20px; }
-            h3 { font-size: clamp(18px, 4.5vw, 22px); margin: 20px 0 12px;}
-            p, .program-list li, .contact-text { font-size: clamp(14px, 3.5vw, 16px); line-height: 1.7;}
-            .program-list li { margin-bottom: 15px;}
-            .contact-item { margin-bottom: 20px; gap: 15px;} .contact-icon { font-size: 22px; width: 25px;}
-            .teachers-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;}
-            .teacher-card img { width: 110px; height: 110px; margin-bottom: 15px;}
-            .teacher-card h3 { font-size: 18px; margin-bottom: 5px;}
-            .teacher-card .qualification { font-size: 13.5px; margin-bottom: 8px;}
-            .teacher-card .role { font-size: 14px; padding-top: 10px;}
-            .members-grid { display: flex; flex-direction: row; justify-content: space-around; align-items: stretch; gap: 15px; }
-            .member-card { flex: 1 1 0; padding: 15px; min-width: 0; }
-            .member-card img { width: 80px; height: 80px; margin-bottom: 12px; }
-            .member-card h3 { font-size: 16px; margin-bottom: 6px; }
-            .member-card .member-role { font-size: 13px; margin-bottom: 8px; min-height: 0; }
-            .member-card .member-description { font-size: 12px; margin-top: 8px; padding-top: 8px; }
-            .media-flex-container { flex-direction: column; gap: 20px; }
-            .media-pane { min-width: 100%; }
-            .slideshow-container { aspect-ratio: 16 / 9; }
-            .payment-section-inner { padding: 30px;}
-            .payment-options { gap: 20px; margin-top: 20px;}
-            .payment-button { padding: 12px 25px; font-size: 15px; gap: 8px;} .payment-button i { font-size: 18px;}
-            .payment-note { margin-top: 25px; font-size:14px; color:#666; }
-            .footer-content { text-align: center; gap: 25px; }
-            .footer-column h3 { font-size: 20px; margin-bottom: 15px;}
-            .footer-links li { justify-content: center; gap: 8px;} .footer-links i { width: auto;}
-            .social-links { justify-content: center; gap: 15px; margin-top: 20px;}
-            .social-icon { width: 40px; height: 40px; font-size: 16px;} .social-icon::after { display: none !important; }
-            .footer-bottom { margin-top: 30px; padding-top: 20px;}
-            .copyright p, .developer p { font-size: 13.5px; color: white;} .developer a { color: #a3c6ff;}
-            .modal-nav { width: 45px; height: 45px; font-size: 24px; } /* Modal nav buttons */
-            .modal-prev { left: 15px; } .modal-next { right: 15px; }
-            .modal-close { top: 15px; right: 20px; font-size: 38px; } /* Modal close button */
-            .notice-content { animation: none !important; text-align: center; justify-content: center; }
-            .notice-bar .container { flex-direction: column; align-items: center; }
-            .notice-close { margin-left: 0; margin-top: 10px; position: static; }
-            .notice-section, .ad-section { flex-direction: column; align-items: center; gap: 15px; text-align: center; padding: 0;}
-            .notice-text, .ad-text { margin-right: 0;}
-        }
-
-        @media (max-width: 480px) { /* Extra small screens */
-            html { scroll-padding-top: 120px;} /* ADJUST THIS VALUE */
-            .page-section { padding: 40px 10px; } .container { padding: 0 10px; }
-            header { padding: 10px 0;} .header-container { gap: 5px; }
-            .logo img { height: 50px; width: 50px;}
-            .school-name h1 { font-size: clamp(16px, 9vw, 20px); } .school-name p { font-size: clamp(11px, 3vw, 13px); }
-            .header-flag img { height: 40px; }
-            nav { padding: 8px 0;} nav .container ul { gap: 4px;} nav ul li a { font-size: 11px; padding: 6px 8px;}
-            .hero .hero-content-wrapper { min-height: calc(100vh - 120px); } /* ADJUST THIS VALUE (calc(100vh - STICKY_HEADER_HEIGHT)) */
-            .hero h1.section-title { font-size: clamp(24px, 10vw, 30px); margin-bottom: 15px;}
-            .hero p { font-size: clamp(14px, 5vw, 16px); margin-bottom: 25px;}
-            .hero .btn { padding: 12px 25px; font-size: 14px; gap: 8px;} .hero .whatsapp-btn i { font-size: 18px;}
-            h2.section-title { font-size: clamp(20px, 6vw, 28px); margin-bottom: 25px;} .h2.section-title::after { width: 50px; margin: 8px auto 0;}
-            .section-card { padding: 25px 15px; }
-            h3 { font-size: clamp(17px, 5vw, 20px); margin: 18px 0 10px;}
-            p, .program-list li, .contact-text { font-size: clamp(13.5px, 4vw, 15px); line-height: 1.6;}
-            .program-list li { margin-bottom: 12px; padding-left: 30px;} .program-list li::before { font-size: 18px;}
-            .contact-item { margin-bottom: 18px; gap: 12px;} .contact-icon { font-size: 20px; width: 20px;}
-            .teachers-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px;}
-            .teacher-card img { width: 90px; height: 90px; margin-bottom: 12px;}
-            .teacher-card h3 { font-size: 17px; margin-bottom: 4px;}
-            .teacher-card .qualification { font-size: 13px; margin-bottom: 6px;} .teacher-card .role { font-size: 13px; padding-top: 8px;}
-            .members-grid { gap: 10px; }
-            .member-card { padding: 12px 8px; }
-            .member-card img { width: 65px; height: 65px; margin-bottom: 8px; }
-            .member-card h3 { font-size: 14px; }
-            .member-card .member-role { font-size: 12px; }
-            .member-card .member-description { display: none; } /* Hide description to save space */
-            .payment-section-inner { padding: 25px;}
-            .payment-options { gap: 15px; margin-top: 15px;}
-            .payment-button { padding: 10px 20px; font-size: 14px; gap: 6px;} .payment-button i { font-size: 16px;}
-            .payment-note { margin-top: 15px; font-size: 13px;}
-            .footer-content { gap: 20px; }
-            .footer-column h3 { font-size: 18px; margin-bottom: 12px;}
-            .footer-links li { font-size: 14px;}
-            .social-links { gap: 12px; margin-top: 15px;}
-            .social-icon { width: 35px; height: 35px; font-size: 15px;}
-            .footer-bottom { margin-top: 25px; padding-top: 15px;}
-            .copyright p, .developer p { font-size: 13px; color: white;} .developer a { color: #a3c6ff;}
-            .youtube-link { padding: 8px 16px; font-size: 14px; } 
-            .youtube-link i { font-size: 16px; }
-        }
-
     </style>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- ADD AUDIO ELEMENT HERE -->
-    <audio id="entrySound" src="sounds/short-entry-tune.mp3" preload="auto"></audio> 
-    <!-- Make sure 'sounds/short-entry-tune.mp3' exists -->
-
-    <!-- START: Sticky Header Wrapper -->
-    <div class="site-sticky-header-wrapper">
-        <header>
-             <div class="header-container">
-                <div class="logo">
-                    <img src="images/school-logo.png" alt="Miniland Academy Logo"> 
-                </div>
-                <div class="school-name">
-                    <h1>Miniland Academy English School</h1>
-                    <p>Kerabari- 7 Dangi Morang (Morality, Discipline & Quality Education is Our Supreme Ambition)</p>
-                </div>
-                <div class="header-flag">
-                    <img src="images/WavingFlag.gif" alt="Waving Flag of Nepal"> 
-                </div>
-            </div>
-        </header>
-
-        <nav>
-            <div class="container">
-                <ul>
-                    <li><a href="#home" class="nav-link active">Home</a></li>
-                    <li><a href="#about" class="nav-link">About Us</a></li>
-                    <li><a href="#programs" class="nav-link">Programs</a></li>
-                    <li><a href="#teachers" class="nav-link">Teachers</a></li>
-                    <li><a href="#founding-members" class="nav-link">Founders</a></li>
-                    <li><a href="#media-showcase" class="nav-link">Media Showcase</a></li>
-                    <li><a href="#admission" class="nav-link">Admission</a></li>
-                    <li><a href="#payment" class="nav-link">Pay Fees</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
+    <!-- Sound Feature -->
+    <div class="sound-toggle" onclick="toggleMusic()">
+        <i id="soundIcon" class="fas fa-volume-mute"></i>
     </div>
-    <!-- END: Sticky Header Wrapper -->
+    <audio id="bgMusic" loop>
+        <source src="sounds/school-ambient.mp3" type="audio/mpeg">
+    </audio>
 
-    <div class="notice-bar" id="noticeBar">
+    <div class="top-bar">
+        <div class="container top-bar-flex">
+            <div class="top-bar-info">
+                <span><i class="fas fa-phone"></i> +977 9816302747</span>
+                <span><i class="fas fa-envelope"></i> info.minilandacademy@gmail.com</span>
+            </div>
+            <div class="top-bar-socials">
+                <a href="#" style="color:#fff;"><i class="fab fa-facebook"></i></a>
+                <a href="#" style="color:#fff; margin-left: 15px;"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="container header-flex">
+            <div class="logo"><img src="images/school-logo.png" alt="Miniland Logo"></div>
+            <div class="school-info">
+                <h1>Miniland Academy</h1>
+                <p>Morality, Discipline & Quality Education is Our Supreme Ambition</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container nav-flex">
+            <!-- Left Side: Nav Links -->
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#facilities">Facilities</a></li>
+                <li><a href="#teachers">Teachers</a></li>
+                <li><a href="#admission">Admission</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <!-- Right Side: Perfectly Aligned Nepal Flag -->
+            <div class="nav-flag">
+                <img src="images/WavingFlag.gif" alt="Nepal Flag">
+            </div>
+        </div>
+    </nav>
+
+    <div class="admission-bar">
+        🔥 ADMISSION OPEN FOR SESSION 2081/82 | PLAYGROUP TO CLASS 9 🔥
+    </div>
+
+    <section class="hero">
         <div class="container">
-            <div class="notice-content">
-                <div class="notice-section">
-                    <span class="notice-text">🔥 भर्ना खुल्यो! भर्ना खुल्यो!! भर्ना खुल्यो!!!🔥</span>
-                    <span class="notice-actions">
-                        <a href="https://wa.me/9779816302747" class="notice-btn whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Send WhatsApp Message for Admission">
-                            <i class="fab fa-whatsapp"></i> Send WhatsApp Now
-                        </a>
-                        <a href="tel:+9779816302747" class="notice-btn call-btn" aria-label="Call Now for Admission">
-                            <i class="fas fa-phone"></i> Call Now
-                        </a>
-                    </span>
-                </div>
-                <div class="ad-section">
-                    <span class="ad-text">केरावारी–७,Dangi, मोरङ स्थित Miniland English Boarding School मा नयाँ शैक्षिक सत्रका लागि भर्ना सुरु...</span>
-                    <a href="#admission" class="notice-btn ad-btn" aria-label="Learn more about Admission">
-                        <i class="fas fa-gift"></i> Learn More
-                    </a>
-                </div>
+            <div class="hero-text">
+                <h2>Excellence in <br>Foundational Education</h2>
+                <p>Dedicated to PG - Class 9 students, fostering academic <br>brilliance and moral character in Morang.</p>
+                <a href="#contact" class="btn-apply">Admission Inquiry</a>
             </div>
-            <button class="notice-close" aria-label="Close notice bar">
-                <i class="fas fa-times"></i>
-            </button>
         </div>
-    </div>
+    </section>
 
-    <main id="main-content" role="main">
-        <section class="page-section hero" id="home">
-            <div class="hero-bg"></div>
-            <div class="hero-content-wrapper">
-                <div class="hero-content">
-                    <h1 class="section-title">Quality Education for Bright Futures</h1>
-                    <p>Miniland Academy provides excellent education from Play Group to Class 9 in a nurturing environment that fosters academic excellence and character development.</p>
-                    <a href="https://wa.me/9779816302747" class="btn whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Send WhatsApp Message to Miniland Academy">
-                        <i class="fab fa-whatsapp"></i> Send WhatsApp Message Now
-                    </a>
-                </div>
+    <!-- Principal Section -->
+    <section class="welcome" id="about">
+        <div class="container welcome-flex">
+            <div class="welcome-img">
+                <img src="images/dip.jpg" alt="Principal Mr. Dip Bahadur Rai">
             </div>
-        </section>
-
-        <section class="page-section" id="about">
-            <div class="container">
-                <h2 class="section-title">About Our School</h2>
-                <div class="section-card">
-                    <div class="about-content">
-                        <p>Miniland Academy English School, located in Kerabari 7, Dangi, Morang, is committed to providing quality education to students from Play Group to Class 9. Our school was established with the vision of creating a learning environment that nurtures young minds and prepares them for future challenges.</p>
-                        <p>We believe in holistic education that focuses on academic excellence as well as character building. Our experienced faculty members are dedicated to helping each student reach their full potential.</p>
-                        <h3>Our Mission</h3>
-                        <p>To provide a stimulating learning environment that promotes academic excellence, creativity, and moral values, preparing students to become responsible citizens and future leaders.</p>
-                    </div>
-                </div>
+            <div class="welcome-content">
+                <h3>Message from the Principal</h3>
+                <p>Welcome to Miniland Academy English School. We take pride in being a specialized institution for students from Playgroup to Class 9. Our focus is to provide a solid academic foundation during these crucial years.</p>
+                <p>We combine modern technology with traditional values to ensure every child reaches their potential. Our Science Lab and safe transport facilities are designed to make learning both exciting and accessible.</p>
+                <p style="font-weight:bold; color:var(--morgan-blue);">Mr. Dip Bahadur Rai<br>Principal (M.A.)</p>
             </div>
-        </section>
-
-        <section class="page-section" id="programs">
-            <div class="container">
-                <h2 class="section-title">Our Programs</h2>
-                <div class="section-card">
-                    <p>We offer comprehensive educational programs for different age groups:</p>
-                    <ul class="program-list">
-                        <li><strong>Early Childhood:</strong> Play Group and Nursery programs focusing on foundational learning through play</li>
-                        <li><strong>Primary Level:</strong> Classes 1-5 with balanced curriculum covering all core subjects</li>
-                        <li><strong>Lower Secondary:</strong> Classes 6-8 with more specialized subject teachers</li>
-                        <li><strong>Secondary:</strong> Class 9 preparing students for SEE in the future</li>
-                        <li><strong>Co-curricular Activities:</strong> Sports, arts, music, and various clubs</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="page-section" id="teachers">
-            <div class="container">
-                <h2 class="section-title">Meet Our Dedicated Teachers</h2>
-                <div class="section-card">
-                    <div class="teachers-grid">
-                        <div class="teacher-card"> <img src="images/dip.jpg" alt="Photo of Principal Dip Bahadur Rai"> <h3>Mr. Dip Bahadur Rai</h3> <p class="qualification">Master of Arts</p> <p class="role">Principal</p> </div>
-                        <div class="teacher-card"> <img src="images/gunu.jpg" alt="Photo of Teacher Gun Jatala Rai"> <h3>Ms. Gun Jatala Rai</h3> <p class="qualification">Master in English</p> <p class="role">English Teacher</p> </div>
-                        <div class="teacher-card"> <img src="images/gng.jpg" alt="Photo of Teacher Ganesh Niroula"> <h3>Ganesh Niroula</h3> <p class="qualification">B.ED</p> <p class="role">Math & Optional Math</p> </div>
-                        <div class="teacher-card"> <img src="images/prat.jpg" alt="Photo of Teacher Pratikshya Niroula"> <h3>Ms. Pratikshya Niroula</h3> <p class="qualification">Master in Nepali</p> <p class="role">Nepali Teacher</p> </div>
-                        <div class="teacher-card"> <img src="images/lali.jpg" alt="Photo of Teacher Lalita Rana"> <h3>Ms. Lalita Rana</h3> <p class="qualification">Diploma in Computer</p> <p class="role">Computer Teacher</p> </div>
-                        <div class="teacher-card"> <img src="images/sanjay.jpg" alt="Photo of Teacher Sanjaya Rai"> <h3>Mr. Sanjay Rai</h3> <p class="qualification">Bachelor of Science</p> <p class="role">Science Teacher</p> </div>
-                        <div class="teacher-card"> <img src="images/livi.jpg" alt="Photo of Teacher Livi Sunar"> <h3>Ms. Livi Sunar</h3> <p class="qualification">M. Arts</p> <p class="role">Arts / Social Studies Teacher</p> </div>
-                        <div class="teacher-card"> <img src="images/mary.jpg" alt="Photo of Teacher Mary Rai"> <h3>Ms. Mary Rai</h3> <p class="qualification">BE</p> <p class="role">English</p> </div>
-                        <div class="teacher-card"> <img src="images/lira.jpg" alt="Photo of Teacher Lira Bhandari"> <h3>Ms. Lira Bhandari</h3> <p class="role">Primary</p> </div>
-                        <div class="teacher-card"> <img src="images/manisha.jpg" alt="Photo of Teacher Manisha Bhandari"> <h3>Ms. Manisha Bhandari</h3> <p class="role">Primary</p> </div>
-                        <div class="teacher-card"> <img src="images/sharmila.jpg" alt="Photo of Teacher Sharmila Magar"> <h3>Ms. Sharmila Magar</h3> <p class="role">Primary</p> </div> 
-                        <div class="teacher-card"> <img src="images/januka.jpg" alt="Photo of Teacher Januka Bhandari"> <h3>Ms. Januka Bhandari</h3> <p class="role">Pre-Primary</p> </div>    
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="page-section" id="founding-members">
-            <div class="container">
-                <h2 class="section-title">Our Top Voices: Founding Members</h2>
-                <div class="section-card">
-                    <div class="members-grid">
-                        <div class="member-card">
-                            <img src="images/tul.jpg" alt="Photo of Tularam Sinjali Magar"> 
-                            <h3>Tularam Sinjali Magar</h3> 
-                            <p class="member-role">Lead Founder & Visionary</p>
-                            <p class="member-description">"Dedicated to fostering an environment of learning and growth from day one."</p>
-                        </div>
-                        <div class="member-card">
-                            <img src="images/chk.jpg" alt="Photo of Chakra Bahadur Karki"> 
-                            <h3>Chakra Bahadur Karki</h3> 
-                            <p class="member-role">Co-Founder & Education Director</p>
-                            <p class="member-description">"Passionate about curriculum development and quality teaching standards."</p>
-                        </div>
-                        <div class="member-card">
-                            <img src="images/thapa.jpg" alt="Tek Bahadur Thapa">
-                            <h3>Tek Bahadur Thapa</h3> 
-                            <p class="member-role">Founding Patron & Community Liaison</p>
-                            <p class="member-description">"Instrumental in building community support and school infrastructure."</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="page-section" id="media-showcase">
-            <div class="container">
-                <h2 class="section-title">School Media Showcase</h2>
-                <div class="section-card">
-                    <div class="media-flex-container">
-                        <div class="media-pane photo-slideshow-pane">
-                            <h3>Photo Highlights</h3>
-                            <div class="slideshow-container">
-                                <img src="images/gallery-placeholder1.jpg" alt="School activity" id="slideshowImage" class="slideshow-image">
-                            </div>
-                            <p style="font-size: 0.85em; text-align: center; margin-top: 10px; color: #666;">
-                                Our vibrant school life in a quick flash!
-                            </p>
-                        </div>
-                        <div class="media-pane youtube-video-pane">
-                            <h3>Watch Us In Action</h3>
-                            <div class="youtube-embed-responsive">
-                                <iframe 
-                                    src="https://www.youtube.com/embed/mm5vdhbIGnQ?si=JNWoGgaTIDbp4mHU" 
-                                    title="Miniland Academy School Activities on YouTube" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                    allowfullscreen 
-                                    referrerpolicy="strict-origin-when-cross-origin">
-                                </iframe>
-                            </div>
-                            <div class="youtube-link-container" style="border-top: none; padding-top: 0; margin-top: 20px;">
-                                <a href="https://www.youtube.com/@minilandacademy" target="_blank" rel="noopener noreferrer" class="youtube-link">
-                                    <i class="fab fa-youtube"></i> Watch More Videos
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="page-section" id="admission">
-            <div class="container">
-                <h2 class="section-title">Admission Process</h2>
-                <div class="section-card">
-                    <p>We welcome students throughout the year based on availability. Our admission process is simple and transparent:</p>
-                    <ul class="program-list">
-                        <li>Visit our school for a tour and information session.</li>
-                        <li>Obtain and submit the completed application form along with required documents.</li>
-                        <li>For students seeking admission to Grade 2 and above, a simple entrance assessment may be conducted.</li>
-                        <li>Upon successful completion of the process, complete the enrollment formalities.</li>
-                        <li>New academic session typically begins in Baisakh (mid-April).</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-      
-        <section class="page-section" id="payment">
-            <div class="container">
-                <h2 class="section-title">Online Fee Payment</h2>
-                <div class="section-card">
-                    <div class="payment-section-inner">
-                        <h3>Pay School Fees Online</h3>
-                        <p>Secure and convenient payment options available for your ease. You can pay using Khalti or eSewa.</p>
-                        <div class="payment-options">
-                            <button id="khalti-button" class="payment-button khalti-button">
-                                <i class="fas fa-wallet"></i> Pay Via Khalti
-                            </button>
-                            <button id="esewa-button" class="payment-button esewa-button">
-                                <i class="fas fa-mobile-alt"></i> Pay Via eSewa
-                            </button>
-                        </div>
-                        <p class="payment-note"><small>You will be redirected to a secure payment gateway. Please ensure you have the student's ID or details ready.</small></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="page-section" id="contact">
-            <div class="container">
-                <h2 class="section-title">Contact Us</h2>
-                <div class="section-card">
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <div class="contact-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
-                            <div class="contact-text"><strong>Address</strong> Kerabari 7, Dangi, Morang, Nepal</div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon"><i class="fas fa-map-marked-alt" aria-hidden="true"></i></div>
-                            <div class="contact-text">
-                                <strong>Our Location</strong>
-                                <div class="map-container">
-                                    <iframe 
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3566.123456789012!2d87.3762363!3d26.7552724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef6809816b3373%3A0x4500a66ed4d12d03!2sMiniland%20English%20Boarding!5e0!3m2!1sen!2snp!4v1718200000000!5m2!1sen!2snp&maptype=satellite&zoom=17" 
-                                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                                        aria-label="Map of Miniland English Boarding School location in Kerabari-7, Dangi, Morang">
-                                    </iframe>
-                                    <p><i class="fas fa-info-circle"></i> Kerabari-7, Dangi, Morang (Satellite View)</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon"><i class="fas fa-user-tie" aria-hidden="true"></i></div>
-                            <div class="contact-text"><strong>Principal</strong> Mr. Dip Bahadur Rai</div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon"><i class="fas fa-phone-alt" aria-hidden="true"></i></div>
-                            <div class="contact-text">
-                                <strong>Phone</strong>
-                                <a href="tel:+9779816302747">+977 981-6302747</a><br>
-                                <a href="tel:+9779826355288">+977 982-6355288</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
-                            <div class="contact-text">
-                                <strong>Email</strong>
-                                <a href="mailto:principal@minilandacademy.edu.np">principal@minilandacademy.edu.np</a> (Principal)<br>
-                                <a href="mailto:info.minilandacademy@gmail.com">info.minilandacademy@gmail.com</a> (General)
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon"><i class="fas fa-clock" aria-hidden="true"></i></div>
-                            <div class="contact-text"><strong>School Hours</strong> Sunday-Thursday: 10:00 AM - 4:00 PM<br>Friday: 10:00 AM - 1:00 PM (Half-Day)<br>Saturday: Off</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <div id="galleryModal" class="gallery-modal"> 
-        <div class="modal-content-wrapper">
-            <button class="modal-nav modal-prev" id="modalPrev" aria-label="Previous image">❮</button>
-            <img class="modal-image" id="modalImage" alt="Gallery image enlarged">
-            <button class="modal-nav modal-next" id="modalNext" aria-label="Next image">❯</button>
         </div>
-        <span class="modal-close" id="modalClose" aria-label="Close gallery modal">×</span>
-    </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section class="facilities" id="facilities">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our World-Class Facilities</h2>
+            </div>
+            <div class="facility-grid">
+                <div class="f-card">
+                    <i class="fas fa-microscope"></i>
+                    <h4>Advanced Science Lab</h4>
+                    <p>Hands-on learning with modern scientific apparatus for junior and secondary levels.</p>
+                </div>
+                <div class="f-card">
+                    <i class="fas fa-bus"></i>
+                    <h4>Safe School Buses</h4>
+                    <p>Reliable and safe transportation service covering all surrounding areas of Kerabari.</p>
+                </div>
+                <div class="f-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h4>Computer Education</h4>
+                    <p>Building digital literacy from an early age with our modern computer lab.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teacher Section (Using your image filenames) -->
+    <section class="teachers" id="teachers">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Dedicated Faculty</h2>
+            </div>
+            <div class="teacher-grid">
+                <div class="t-card"> <img src="images/dip.jpg" alt="Teacher"> <h5>Mr. Dip Bahadur Rai</h5> <p>Principal</p> </div>
+                <div class="t-card"> <img src="images/gunu.jpg" alt="Teacher"> <h5>Ms. Gun Jatala Rai</h5> <p>English HOD</p> </div>
+                <div class="t-card"> <img src="images/gng.jpg" alt="Teacher"> <h5>Mr. Ganesh Niroula</h5> <p>Math Department</p> </div>
+                <div class="t-card"> <img src="images/sanjay.jpg" alt="Teacher"> <h5>Mr. Sanjay Rai</h5> <p>Science Teacher</p> </div>
+                <div class="t-card"> <img src="images/prat.jpg" alt="Teacher"> <h5>Ms. Pratikshya Niroula</h5> <p>Nepali Teacher</p> </div>
+                <div class="t-card"> <img src="images/lali.jpg" alt="Teacher"> <h5>Ms. Lalita Rana</h5> <p>Computer Teacher</p> </div>
+            </div>
+        </div>
+    </section>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-column">
-                <h3>Miniland Academy</h3>
-                <p>Providing quality education from Play Group to Class 9 in a nurturing environment that fosters academic excellence and character development.</p>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/people/Miniland-Academy-English-School/61573570560067/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.tiktok.com/@minilandacademy" target="_blank" rel="noopener noreferrer" aria-label="TikTok Profile" class="social-icon tiktok"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://www.youtube.com/@minilandacademy" target="_blank" rel="noopener noreferrer" aria-label="YouTube Channel" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
-                    <a href="https://wa.me/9779816302747" target="_blank" rel="noopener noreferrer" aria-label="Contact via WhatsApp" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
-                </div>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>Reach Us</h4>
+                <p>Kerabari-7, Dangi, Morang</p>
+                <p>Phone: +977 9816302747</p>
+                <p>Email: info.minilandacademy@gmail.com</p>
             </div>
-            <div class="footer-column">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="#home"><i class="fas fa-angle-right"></i> Home</a></li>
-                    <li><a href="#about"><i class="fas fa-angle-right"></i> About Us</a></li>
-                    <li><a href="#programs"><i class="fas fa-angle-right"></i> Programs</a></li>
-                    <li><a href="#teachers"><i class="fas fa-angle-right"></i> Teachers</a></li>
-                    <li><a href="#founding-members"><i class="fas fa-angle-right"></i> Founders</a></li>
-                    <li><a href="#media-showcase"><i class="fas fa-angle-right"></i> Media Showcase</a></li> 
-                    <li><a href="#admission"><i class="fas fa-angle-right"></i> Admission</a></li>
-                    <li><a href="#payment"><i class="fas fa-angle-right"></i> Pay Fees</a></li>
-                    <li><a href="#contact"><i class="fas fa-angle-right"></i> Contact</a></li>
-                </ul>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <p><a href="#" style="color:#ccc;">Academic Programs</a></p>
+                <p><a href="#" style="color:#ccc;">Admission Policy</a></p>
+                <p><a href="#" style="color:#ccc;">School Calendar</a></p>
             </div>
-            <div class="footer-column">
-                <h3>Contact Info</h3>
-                <ul class="footer-links">
-                    <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Kerabari 7, Dangi, Morang</li>
-                    <li><i class="fas fa-phone-alt" aria-hidden="true"></i> <a href="tel:+9779816302747">+977 981-6302747</a></li>
-                    <li><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:info.minilandacademy@gmail.com">info.minilandacademy@gmail.com</a></li>
-                    <li><i class="fas fa-clock" aria-hidden="true"></i> Sun-Thur: 10 AM - 4 PM, Fri: 10 AM - 1 PM</li>
-                </ul>
+            <div class="footer-col">
+                <h4>Find Us</h4>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3566.1!2d87.376!3d26.755" width="100%" height="150" style="border:0; border-radius:5px;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
         <div class="footer-bottom">
-            <div class="copyright">
-                <p>© <span id="currentYear">2024</span> Miniland Academy English School. All Rights Reserved.</p>
-            </div>
-            <div class="developer">
-                <p>Designed & Developed By <a href="https://ramanbhandari.com.np/" target="_blank" rel="noopener noreferrer">Raman Bhandari</a> - Former Student</p>
-            </div>
+            <p>&copy; 2024 Miniland Academy English School. All Rights Reserved. | Developed by Raman Bhandari</p>
         </div>
     </footer>
 
-    <script src="https://khalti.s3.ap-south-1.amazonaws.com/KPG/dist/2020.12.17.0.0.0/khalti-checkout.iffe.js" defer></script>
-
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Set current year in footer
-            const currentYearElem = document.getElementById('currentYear');
-            if(currentYearElem) currentYearElem.textContent = new Date().getFullYear();
+        const audio = document.getElementById('bgMusic');
+        const icon = document.getElementById('soundIcon');
+        let playing = false;
 
-            // --- Play Entry Sound ---
-            const entryAudio = document.getElementById('entrySound');
-            if (entryAudio) {
-                setTimeout(() => {
-                    entryAudio.play().catch(error => {
-                        console.warn("Entry sound autoplay was prevented by the browser:", error);
-                    });
-                }, 1200); 
-            }
-
-            // --- Smooth Scroll and Active Nav Link ---
-            const navLinks = document.querySelectorAll('nav ul li a.nav-link');
-            const sections = document.querySelectorAll('.page-section');
-            const stickyHeaderWrapper = document.querySelector('.site-sticky-header-wrapper'); // Get the new sticky wrapper
-            // ADJUST THIS FALLBACK VALUE: This should be the height of .site-sticky-header-wrapper
-            const stickyHeaderHeight = stickyHeaderWrapper ? stickyHeaderWrapper.offsetHeight : 160; 
-
-            let scrollTimeout;
-            window.addEventListener('scroll', () => {
-                 clearTimeout(scrollTimeout);
-                 scrollTimeout = setTimeout(() => {
-                     let current = '';
-                     sections.forEach(section => {
-                         // Use stickyHeaderHeight for calculation
-                         const sectionTop = section.offsetTop - stickyHeaderHeight - 20; // The -20 is a small buffer, adjust if needed
-                         if (scrollY >= sectionTop) { 
-                             current = section.getAttribute('id');
-                         }
-                     });
-                     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) { 
-                        const lastSection = sections[sections.length - 1];
-                        if (lastSection) current = lastSection.getAttribute('id');
-                     }
-                     navLinks.forEach(link => {
-                         link.classList.remove('active');
-                         if (link.getAttribute('href').substring(1) === current) {
-                             link.classList.add('active');
-                         }
-                     });
-                    // Ensure home is active if scrolled to the very top
-                    if (current === '' && scrollY < sections[0].offsetTop - stickyHeaderHeight) {
-                        const homeLink = document.querySelector('nav ul li a[href="#home"]');
-                        if (homeLink) homeLink.classList.add('active');
-                    }
-                 }, 50); 
-            });
-            
-            setTimeout(() => { window.dispatchEvent(new Event('scroll')); }, 100); // Trigger scroll event once after load
-
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    const href = this.getAttribute('href');
-                    if (href.startsWith('#')) {
-                        e.preventDefault();
-                        const targetId = href.substring(1);
-                        const targetElement = document.getElementById(targetId);
-                        if (targetElement) {
-                            // Use stickyHeaderHeight for calculation
-                            const targetPosition = targetElement.offsetTop - stickyHeaderHeight + 1; 
-                            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-                            // Update active class immediately on click
-                            navLinks.forEach(navLink => navLink.classList.remove('active'));
-                            this.classList.add('active');
-                        }
-                    }
-                });
-            });
-
-            // Handle initial load with hash
-            if (window.location.hash) {
-                const initialTargetLink = document.querySelector(`nav ul li a[href="${window.location.hash}"]`);
-                if (initialTargetLink) {
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    initialTargetLink.classList.add('active');
-                     setTimeout(() => { 
-                        const targetElement = document.getElementById(window.location.hash.substring(1));
-                        if(targetElement) {
-                            // Use stickyHeaderHeight for calculation
-                            const targetPosition = targetElement.offsetTop - stickyHeaderHeight + 1;
-                            window.scrollTo({ top: targetPosition, behavior: 'auto' }); 
-                        }
-                    }, 100);
-                }
+        function toggleMusic() {
+            if (playing) {
+                audio.pause();
+                icon.className = "fas fa-volume-mute";
             } else {
-                // Set home as active if no hash and at top
-                const homeLink = document.querySelector('nav ul li a[href="#home"]');
-                if (homeLink && scrollY === 0) homeLink.classList.add('active');
+                audio.play();
+                icon.className = "fas fa-volume-up";
             }
-
-            // --- Khalti Payment ---
-            var khaltiConfig = {
-                "publicKey": "test_public_key_dc74e0fd57cb46cd93832aee0a390234", 
-                "productIdentity": "Miniland_Academy_School_Fees", "productName": "Miniland Academy School Fees",
-                "productUrl": window.location.href, "paymentPreference": ["KHALTI", "EBANKING", "MOBILE_BANKING", "CONNECT_IPS", "SCT"],
-                "eventHandler": {
-                    onSuccess (payload) { console.log("Khalti Success:", payload); alert("Khalti payment successful! Transaction ID: " + payload.idx); },
-                    onError (error) { console.error("Khalti Error:", error); alert("Khalti payment failed: " + (error.message || "Unknown error")); },
-                    onClose () { console.log('Khalti closed.'); }
-                }
-            };
-            if (typeof KhaltiCheckout !== 'undefined') {
-                 var khaltiCheckout = new KhaltiCheckout(khaltiConfig);
-                 const khaltiButton = document.getElementById("khalti-button");
-                 if (khaltiButton) {
-                     khaltiButton.addEventListener("click", function() { khaltiCheckout.show({amount: 1000 * 100 }); });
-                 }
-            } else {
-                console.error("Khalti script not loaded.");
-                 const khaltiButton = document.getElementById("khalti-button");
-                 if (khaltiButton) { khaltiButton.textContent = "Khalti Unavailable"; khaltiButton.disabled = true; }
-            }
-
-            // --- eSewa Payment ---
-            function payWithEsewa() {
-                 let paymentAmount = 1000.00; 
-                 var esewaParams = {
-                     amt: paymentAmount, psc: 0, pdc: 0, txAmt: 0, tAmt: paymentAmount,
-                     pid: "miniland_fee_" + new Date().getTime(), scd: "EPAYTEST", 
-                     su: window.location.origin + window.location.pathname + "?payment_status=esewa_success",
-                     fu: window.location.origin + window.location.pathname + "?payment_status=esewa_failure"
-                 };
-                 var form = document.createElement("form"); form.setAttribute("method", "POST");
-                 form.setAttribute("action", "https://uat.esewa.com.np/epay/main"); 
-                 for(var key in esewaParams) { var hiddenField = document.createElement("input"); hiddenField.setAttribute("type", "hidden"); hiddenField.setAttribute("name", key); hiddenField.setAttribute("value", esewaParams[key]); form.appendChild(hiddenField); }
-                 document.body.appendChild(form); form.submit();
-            }
-            const esewaButton = document.getElementById("esewa-button");
-            if(esewaButton) { esewaButton.addEventListener("click", payWithEsewa); }
-            
-            const urlParams = new URLSearchParams(window.location.search);
-            const paymentStatus = urlParams.get('payment_status');
-            const refId = urlParams.get('refId');
-            if (paymentStatus === 'esewa_success' && refId) {
-                alert('eSewa Payment Potentially Successful! Reference ID: ' + refId + '\n\nACTION REQUIRED: Verify this payment on your server.');
-                if (history.replaceState) { history.replaceState(null, '', window.location.pathname); }
-            } else if (paymentStatus === 'esewa_failure') {
-                alert('eSewa Payment Failed or Canceled.');
-                if (history.replaceState) { history.replaceState(null, '', window.location.pathname); }
-            }
-
-            // --- Notice Bar Close ---
-            const noticeBar = document.getElementById('noticeBar');
-            const closeNoticeBtn = noticeBar ? noticeBar.querySelector('.notice-close') : null;
-            if (closeNoticeBtn && noticeBar) {
-                closeNoticeBtn.addEventListener('click', function() { noticeBar.style.display = 'none'; });
-            }
-
-            // --- Merged Media Showcase Slideshow Logic ---
-            const slideshowImageElement = document.getElementById('slideshowImage');
-            const mediaShowcaseSection = document.getElementById('media-showcase'); 
-            if (mediaShowcaseSection && slideshowImageElement) {
-                const slideImageSources = [
-                    { src: "images/gallery-placeholder1.jpg", alt: "Students participating in an event" },
-                    { src: "images/gallery-placeholder2.jpg", alt: "Teachers guiding students" },
-                    { src: "images/gallery-placeholder3.jpg", alt: "Sports day race" },
-                    { src: "images/gallery-placeholder4.jpg", alt: "School function performance" },
-                    { src: "images/gallery-placeholder5.jpg", alt: "Learning activity" },
-                    { src: "images/gallery-placeholder6.jpg", alt: "School building exterior" },
-                    { src: "images/gallery-placeholder7.jpg", alt: "Cultural program highlight" },
-                    { src: "images/gallery-placeholder8.jpg", alt: "Science fair project" },
-                ];
-                let currentSlideIndex = 0;
-                const slideIntervalTime = 3000; 
-                const fadeTransitionTime = 500; 
-                let slideshowIntervalId;
-
-                function showNextSlideAuto() {
-                    if (!slideImageSources || slideImageSources.length === 0) {
-                        slideshowImageElement.alt = "No images available"; return;
-                    }
-                    currentSlideIndex = (currentSlideIndex + 1) % slideImageSources.length;
-                    slideshowImageElement.style.opacity = 0;
-                    setTimeout(() => {
-                        slideshowImageElement.src = slideImageSources[currentSlideIndex].src;
-                        slideshowImageElement.alt = slideImageSources[currentSlideIndex].alt;
-                        slideshowImageElement.style.opacity = 1;
-                    }, fadeTransitionTime); 
-                }
-
-                if (slideImageSources.length > 0) {
-                    slideshowImageElement.src = slideImageSources[currentSlideIndex].src;
-                    slideshowImageElement.alt = slideImageSources[currentSlideIndex].alt;
-                    slideshowImageElement.style.opacity = 1;
-                    slideshowIntervalId = setInterval(showNextSlideAuto, slideIntervalTime + fadeTransitionTime); 
-                } else {
-                    const slideshowContainer = slideshowImageElement.closest('.slideshow-container');
-                    if (slideshowContainer) {
-                        slideshowContainer.innerHTML = '<p style="padding:20px; text-align:center; color:#555;">Slideshow images are currently unavailable.</p>';
-                        Object.assign(slideshowContainer.style, {display: 'flex', alignItems: 'center', justifyContent: 'center'});
-                    }
-                }
-            }
-
-            // --- Gallery Modal Logic (For OLD separate gallery - likely unused now) ---
-            const modal = document.getElementById('galleryModal');
-            const modalImg = document.getElementById('modalImage');
-            const galleryThumbnails = document.querySelectorAll('.gallery-item img'); 
-            const closeModalBtn = document.getElementById('modalClose');
-            const prevBtn = document.getElementById('modalPrev');
-            const nextBtn = document.getElementById('modalNext');
-            let modalCurrentImageIndex = 0; 
-            let modalGalleryImageSources = [];
-
-            if (galleryThumbnails.length > 0 && modal && modalImg && closeModalBtn && prevBtn && nextBtn) { 
-                 galleryThumbnails.forEach((thumbnail, index) => {
-                     thumbnail.setAttribute('data-index', index); 
-                     modalGalleryImageSources.push({ src: thumbnail.src, alt: thumbnail.alt });
-                     thumbnail.addEventListener('click', function() {
-                         modalCurrentImageIndex = parseInt(this.getAttribute('data-index'));
-                         updateModalImage();
-                         modal.classList.add('active');
-                         document.body.style.overflow = 'hidden';
-                     });
-                 });
-                function updateModalImage() {
-                    if (modalGalleryImageSources.length > 0 && modalGalleryImageSources[modalCurrentImageIndex]) {
-                        modalImg.src = modalGalleryImageSources[modalCurrentImageIndex].src;
-                        modalImg.alt = modalGalleryImageSources[modalCurrentImageIndex].alt;
-                    }
-                }
-                function showNextModalImage() { if (modalGalleryImageSources.length === 0) return; modalCurrentImageIndex = (modalCurrentImageIndex + 1) % modalGalleryImageSources.length; updateModalImage(); }
-                function showPrevModalImage() { if (modalGalleryImageSources.length === 0) return; modalCurrentImageIndex = (modalCurrentImageIndex - 1 + modalGalleryImageSources.length) % modalGalleryImageSources.length; updateModalImage(); }
-                function closeModal() { modal.classList.remove('active'); document.body.style.overflow = 'auto'; }
-                
-                nextBtn.addEventListener('click', showNextModalImage);
-                prevBtn.addEventListener('click', showPrevModalImage);
-                closeModalBtn.addEventListener('click', closeModal);
-                modal.addEventListener('click', function(e) { if (e.target === modal || e.target.classList.contains('modal-content-wrapper')) closeModal(); });
-                window.addEventListener('keydown', function(e) {
-                    if (modal.classList.contains('active')) {
-                        if (e.key === 'Escape') closeModal();
-                        else if (e.key === 'ArrowRight') showNextModalImage();
-                        else if (e.key === 'ArrowLeft') showPrevModalImage();
-                    }
-                });
-            } else if (modal && prevBtn && nextBtn) { 
-                prevBtn.style.display = 'none';
-                nextBtn.style.display = 'none';
-            }
-
-        }); // End of DOMContentLoaded
+            playing = !playing;
+        }
     </script>
 </body>
 </html>
