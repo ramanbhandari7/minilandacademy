@@ -2,19 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Miniland Academy - Best School in Kathmandu | PG to Grade 9</title>
-    <meta name="description" content="Miniland Academy is one of the best schools in Kathmandu, Nepal offering quality education from Playgroup to Grade 9 with modern facilities and experienced faculty.">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png">
-    
-    <!-- Font Awesome -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Miniland Academy English School | Kerabari 7 Dangi Morang</title>
+    <meta name="description" content="Miniland Academy English School, Kerabari-7 Dangi Morang. Quality education Playgroup to Class 9. Admissions Open! Morality, Discipline & Quality Education.">
+    <link rel="icon" type="image/png" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%231a5276'/%3E%3Ctext x='50' y='70' font-size='50' text-anchor='middle' fill='white' font-weight='bold'%3EM%3C/text%3E%3C/svg%3E">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
     <style>
         * {
             margin: 0;
@@ -23,853 +15,877 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #fff;
-            overflow-x: hidden;
+            font-family: 'Poppins', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.5;
+            scroll-behavior: smooth;
         }
 
-        /* Color Variables */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap');
+
         :root {
-            --primary: #ff6b35;
-            --primary-dark: #e55a2a;
-            --secondary: #2c3e50;
-            --accent: #3498db;
-            --light: #f8f9fa;
-            --gray: #6c757d;
-            --dark: #212529;
-            --success: #28a745;
+            --primary-dark: #1a5276;
+            --primary: #2980b9;
+            --primary-light: #3b8fc2;
+            --accent: #e67e22;
+            --accent-glow: #f39c12;
+            --success: #2ecc71;
+            --danger: #e74c3c;
+            --white: #ffffff;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --shadow-sm: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+            --shadow-md: 0 20px 25px -12px rgba(0, 0, 0, 0.1);
+            --radius-xl: 1.5rem;
+            --radius-lg: 1rem;
         }
 
-        /* Utility Classes */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
         .container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
-        section {
-            padding: 80px 0;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 15px;
-            color: var(--dark);
-        }
-
-        h2 span {
-            color: var(--primary);
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--gray);
-            margin-bottom: 50px;
-            font-size: 1.1rem;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: var(--primary);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255,107,53,0.3);
-        }
-
-        /* Header */
-        header {
-            background: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        /* Sticky Header */
+        .sticky-wrapper {
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        .top-bar {
-            background: var(--secondary);
-            color: #fff;
-            padding: 10px 0;
-            font-size: 14px;
+        /* Top bar with announcement voice button */
+        .top-voice-bar {
+            background: linear-gradient(135deg, #c0392b, #e74c3c);
+            color: white;
+            padding: 12px 0;
+            border-bottom: 2px solid #f39c12;
         }
 
-        .top-bar .container {
+        .voice-container {
             display: flex;
-            justify-content: space-between;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
             flex-wrap: wrap;
-            gap: 15px;
         }
 
-        .top-bar a {
-            color: #fff;
-            text-decoration: none;
-            margin-left: 20px;
-        }
-
-        .top-bar i {
-            margin-right: 8px;
-        }
-
-        .main-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo img {
-            height: 60px;
-            width: auto;
-        }
-
-        .logo-text h1 {
-            font-size: 1.5rem;
-            color: var(--primary);
-            font-weight: 800;
-            margin: 0;
-        }
-
-        .logo-text p {
-            font-size: 0.7rem;
-            color: var(--gray);
+        .admission-badge {
+            background: #e67e22;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 1rem;
             letter-spacing: 1px;
-            margin: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            animation: pulseBadge 1.8s infinite;
+        }
+
+        @keyframes pulseBadge {
+            0% { transform: scale(1); background: #e67e22; }
+            50% { transform: scale(1.03); background: #f39c12; box-shadow: 0 0 12px rgba(243,156,18,0.6);}
+            100% { transform: scale(1); background: #e67e22; }
+        }
+
+        .voice-btn {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.5);
+            padding: 10px 28px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            color: white;
+        }
+
+        .voice-btn:hover {
+            background: #f39c12;
+            transform: scale(1.02);
+            border-color: white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .voice-btn i {
+            font-size: 1.2rem;
+        }
+
+        .urgent-text {
+            font-weight: 600;
+            background: rgba(0,0,0,0.3);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+        }
+
+        /* Main Header */
+        .main-header {
+            background: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .header-grid {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .logo-circle {
+            background: linear-gradient(145deg, #1a5276, #0e3a55);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: 800;
+            box-shadow: 0 10px 15px -5px rgba(0,0,0,0.2);
+        }
+
+        .school-title h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #1a5276;
+            letter-spacing: -0.3px;
+        }
+
+        .school-title p {
+            font-size: 0.85rem;
+            color: #4b5563;
+        }
+
+        .flag-icon img {
+            height: 60px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+
+        /* Navigation */
+        .nav-bar {
+            background: var(--primary-dark);
+            padding: 0;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.1);
         }
 
         .nav-links {
             display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
             list-style: none;
-            gap: 30px;
+            padding: 14px 0;
         }
 
-        .nav-links a {
+        .nav-links li a {
+            color: white;
             text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: color 0.3s;
+            padding: 10px 20px;
+            font-weight: 600;
+            border-radius: 40px;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+            display: inline-block;
         }
 
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--primary);
-        }
-
-        .mobile-menu {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
+        .nav-links li a:hover, .nav-links li a.active {
+            background: #e67e22;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
         }
 
         /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: #fff;
-            padding: 80px 0;
+        .hero-section {
             position: relative;
+            min-height: 85vh;
+            background: linear-gradient(135deg, #1a5276 0%, #2980b9 100%);
+            display: flex;
+            align-items: center;
             overflow: hidden;
         }
 
-        .hero .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
+        .hero-bg-overlay {
+            position: absolute;
+            inset: 0;
+            background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Ccircle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.05)"/%3E%3C/svg%3E');
+            background-size: 60px;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
         }
 
         .hero-content h1 {
-            font-size: 3rem;
-            line-height: 1.2;
-            margin-bottom: 20px;
+            font-size: clamp(2.3rem, 6vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 24px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
 
         .hero-content p {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
+            font-size: 1.25rem;
+            margin-bottom: 40px;
             opacity: 0.95;
         }
 
-        .hero-image img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-        }
-
-        /* About Section */
-        .about {
-            background: var(--light);
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .about-text h2 {
-            text-align: left;
-        }
-
-        .about-text p {
-            margin-bottom: 20px;
-            color: var(--gray);
-        }
-
-        .about-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .stat {
-            text-align: center;
-            padding: 20px;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .stat h3 {
-            font-size: 2rem;
-            color: var(--primary);
+        .cta-button {
+            background: #25D366;
+            padding: 16px 42px;
+            border-radius: 50px;
             font-weight: 700;
-        }
-
-        /* Academics Section */
-        .academics {
-            background: #fff;
-        }
-
-        .grade-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .grade-card {
-            background: var(--light);
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
+            font-size: 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
             transition: all 0.3s;
-            cursor: pointer;
+            box-shadow: 0 10px 25px -5px rgba(37,211,102,0.4);
+            text-decoration: none;
+            color: white;
         }
 
-        .grade-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        .cta-button:hover {
+            transform: scale(1.05);
+            background: #20b859;
+            box-shadow: 0 18px 30px -8px rgba(37,211,102,0.6);
         }
 
-        .grade-card h3 {
-            color: var(--primary);
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .grade-card .age {
-            color: var(--accent);
-            font-weight: 500;
-            margin-bottom: 15px;
-        }
-
-        /* Teachers Section */
-        .teachers {
-            background: var(--light);
-        }
-
-        .teachers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .teacher-card {
-            background: #fff;
-            border-radius: 10px;
-            overflow: hidden;
-            text-align: center;
+        /* Section Cards */
+        .section-card-modern {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: 2rem 2rem;
+            box-shadow: var(--shadow-sm);
             transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.03);
         }
 
-        .teacher-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        .section-card-modern:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
         }
 
-        .teacher-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-
-        .teacher-card h3 {
-            margin: 15px 0 5px;
-            color: var(--primary);
-        }
-
-        .teacher-card p {
-            color: var(--gray);
-            margin-bottom: 15px;
-        }
-
-        /* Features Section */
-        .features {
-            background: #fff;
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .feature-card {
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1a5276;
+            margin-bottom: 2rem;
             text-align: center;
-            padding: 30px;
-            background: var(--light);
-            border-radius: 10px;
-            transition: all 0.3s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-
-        .feature-card i {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-
-        /* Gallery Section */
-        .gallery {
-            background: var(--light);
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .gallery-item {
             position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            height: 250px;
-            cursor: pointer;
+            display: inline-block;
+            width: auto;
         }
 
-        .gallery-item img {
+        .title-wrapper {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .title-wrapper .section-title:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background: #e67e22;
+            margin: 12px auto 0;
+            border-radius: 4px;
+        }
+
+        /* Grid layouts */
+        .teachers-grid, .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .teacher-card, .member-card {
+            background: white;
+            border-radius: 24px;
+            padding: 24px 16px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            transition: all 0.25s;
+            border: 1px solid #eef2ff;
+        }
+
+        .teacher-card:hover, .member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.15);
+        }
+
+        .teacher-card img, .member-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary);
+            margin-bottom: 16px;
+            background: #eef2ff;
+        }
+
+        .teacher-card .qualification {
+            font-size: 0.85rem;
+            color: #6c757d;
+            margin: 8px 0;
+        }
+
+        .teacher-card .role {
+            font-weight: 700;
+            color: #e67e22;
+            margin-top: 8px;
+        }
+
+        .program-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .program-list li {
+            padding: 12px 0 12px 32px;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .program-list li:before {
+            content: "✓";
+            color: #2ecc71;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        /* Media Flex */
+        .media-showcase-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .media-pane {
+            flex: 1;
+            min-width: 280px;
+            background: #f9fbfe;
+            border-radius: 24px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.05);
+        }
+
+        .slideshow-container {
+            position: relative;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            border-radius: 20px;
+            background: #d9e2ef;
+        }
+        .slideshow-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s;
+            transition: opacity 0.6s ease-in-out;
         }
 
-        .gallery-item:hover img {
-            transform: scale(1.05);
+        .youtube-embed-responsive {
+            position: relative;
+            padding-top: 56.25%;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .youtube-embed-responsive iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
 
-        /* Contact Section */
-        .contact {
-            background: #fff;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
+        /* Contact items */
         .contact-info {
-            background: var(--light);
-            padding: 30px;
-            border-radius: 10px;
+            display: grid;
+            gap: 20px;
         }
-
         .contact-item {
             display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 25px;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 8px 0;
         }
-
-        .contact-item i {
+        .contact-icon {
             font-size: 1.5rem;
-            color: var(--primary);
+            color: #e67e22;
+            min-width: 40px;
+        }
+        .contact-text strong {
+            display: block;
+            color: #1a5276;
+            margin-bottom: 5px;
         }
 
-        .contact-form input,
-        .contact-form textarea {
+        /* Payment Buttons */
+        .payment-buttons-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        .payment-btn {
+            border: none;
+            padding: 14px 30px;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 60px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: 0.2s;
+            color: white;
+        }
+        .khalti { background: #5c2d91; }
+        .esewa { background: #2c7a4d; }
+        .payment-btn:hover { transform: translateY(-3px); filter: brightness(1.05); box-shadow: 0 12px 20px rgba(0,0,0,0.2);}
+
+        /* Map */
+        .map-container iframe {
             width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: inherit;
+            border-radius: 24px;
+            height: 280px;
         }
 
         /* Footer */
-        footer {
-            background: var(--secondary);
-            color: #fff;
-            padding: 60px 0 20px;
+        .footer-modern {
+            background: #1a5276;
+            color: #e2e8f0;
+            padding: 3rem 0 2rem;
+            margin-top: 2rem;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
         }
 
-        .footer-col h4 {
-            margin-bottom: 20px;
-            font-size: 1.2rem;
-        }
-
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col li {
-            margin-bottom: 10px;
-        }
-
-        .footer-col a {
-            color: #ecf0f1;
+        .social-icons a {
+            display: inline-flex;
+            background: rgba(255,255,255,0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            transition: 0.2s;
+            color: white;
             text-decoration: none;
-            transition: color 0.3s;
         }
+        .social-icons a:hover { background: #e67e22; transform: translateY(-3px);}
 
-        .footer-col a:hover {
-            color: var(--primary);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+            .container { padding: 0 20px; }
+            .school-title h1 { font-size: 1.2rem; }
+            .logo-circle { width: 55px; height: 55px; font-size: 1.5rem; }
+            .hero-content h1 { font-size: 1.9rem; }
+            .nav-links li a { padding: 6px 12px; font-size: 0.75rem; }
+            .section-title { font-size: 1.6rem; }
+            .teachers-grid, .members-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 20px;
             }
-            
-            .mobile-menu {
-                display: block;
+            .teacher-card img, .member-card img {
+                width: 100px;
+                height: 100px;
             }
-            
-            .hero .container,
-            .about-grid {
-                grid-template-columns: 1fr;
+        }
+
+        @media (max-width: 480px) {
+            .teachers-grid, .members-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
             }
-            
-            .hero-content h1 {
-                font-size: 2rem;
+            .teacher-card, .member-card {
+                padding: 16px 12px;
             }
-            
-            section {
-                padding: 50px 0;
+            .teacher-card img, .member-card img {
+                width: 80px;
+                height: 80px;
             }
-            
-            h2 {
-                font-size: 1.8rem;
-            }
-            
-            .about-stats {
-                grid-template-columns: 1fr;
-            }
-            
-            .logo img {
-                height: 45px;
-            }
-            
-            .logo-text h1 {
-                font-size: 1.2rem;
+            .teacher-card .qualification {
+                font-size: 0.75rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="top-bar">
-            <div class="container">
-                <div>
-                    <i class="fas fa-phone-alt"></i> +977-1-4102727, 4102828 &nbsp;&nbsp;
-                    <i class="fas fa-envelope"></i> info@minilandacademy.edu.np
+
+<div class="sticky-wrapper">
+    <!-- Top Voice Announcement Bar -->
+    <div class="top-voice-bar">
+        <div class="container voice-container">
+            <div class="admission-badge">
+                <i class="fas fa-bullhorn"></i> 🔥 भर्ना खुल्यो! भर्ना खुल्यो!! भर्ना खुल्यो!!! 🔥
+            </div>
+            <button id="voiceAnnounceBtn" class="voice-btn">
+                <i class="fas fa-volume-up"></i> 🔊 सुन्नुहोस् | Listen to Announcement
+            </button>
+            <span class="urgent-text"><i class="fas fa-chalkboard-user"></i> केराबारी–७, Dangi, मोरङ | Limited Seats</span>
+        </div>
+    </div>
+
+    <div class="main-header">
+        <div class="container header-grid">
+            <div class="logo-area">
+                <div class="logo-circle">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='70' font-size='50' text-anchor='middle' fill='white' font-weight='bold'%3EM%3C/text%3E%3C/svg%3E" style="width: 100%; border-radius: 50%;" alt="Logo">
                 </div>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+                <div class="school-title">
+                    <h1>Miniland Academy English School</h1>
+                    <p>Kerabari-7, Dangi, Morang | Morality, Discipline & Quality Education is Our Supreme Ambition</p>
                 </div>
             </div>
+            <div class="flag-icon">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Flag_of_Nepal.svg" alt="Nepal Flag">
+            </div>
         </div>
-        
+    </div>
+
+    <div class="nav-bar">
         <div class="container">
-            <div class="main-nav">
-                <div class="logo">
-                    <img src="school-logo.png" alt="Miniland Academy Logo">
-                    <div class="logo-text">
-                        <h1>Miniland Academy</h1>
-                        <p>Quality Education Since 2003</p>
-                    </div>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#" class="active">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#academics">Academics</a></li>
-                    <li><a href="#teachers">Teachers</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#" class="btn" style="padding: 8px 20px;">Admission</a></li>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About Us</a></li>
+                <li><a href="#programs" class="nav-link">Programs</a></li>
+                <li><a href="#teachers" class="nav-link">Teachers</a></li>
+                <li><a href="#founders" class="nav-link">Founders</a></li>
+                <li><a href="#media" class="nav-link">Media Showcase</a></li>
+                <li><a href="#admission" class="nav-link">Admission</a></li>
+                <li><a href="#payment" class="nav-link">Pay Fees</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<main>
+    <!-- Hero -->
+    <section id="home" class="hero-section">
+        <div class="hero-bg-overlay"></div>
+        <div class="container hero-content">
+            <h1>Quality Education for Bright Futures</h1>
+            <p>Miniland Academy provides excellent education from Play Group to Class 9 in a nurturing environment that fosters academic excellence and character development.</p>
+            <a href="https://wa.me/9779816302747" target="_blank" class="cta-button"><i class="fab fa-whatsapp"></i> Send WhatsApp Message Now</a>
+        </div>
+    </section>
+
+    <div class="container" style="margin-top: 50px;">
+        <!-- About -->
+        <section id="about">
+            <div class="title-wrapper"><h2 class="section-title">About Our School</h2></div>
+            <div class="section-card-modern">
+                <p><strong>Miniland Academy English School</strong>, located in Kerabari 7, Dangi, Morang, is committed to providing quality education to students from Play Group to Class 9. Our school was established with the vision of creating a learning environment that nurtures young minds and prepares them for future challenges.</p>
+                <p>We believe in holistic education that focuses on academic excellence as well as character building. Our experienced faculty members are dedicated to helping each student reach their full potential.</p>
+                <h3 style="color:#1a5276; margin-top: 20px;">Our Mission</h3>
+                <p>To provide a stimulating learning environment that promotes academic excellence, creativity, and moral values, preparing students to become responsible citizens and future leaders.</p>
+            </div>
+        </section>
+
+        <!-- Programs -->
+        <section id="programs" style="margin-top: 70px;">
+            <div class="title-wrapper"><h2 class="section-title">Our Programs</h2></div>
+            <div class="section-card-modern">
+                <p>We offer comprehensive educational programs for different age groups:</p>
+                <ul class="program-list">
+                    <li><strong>Early Childhood:</strong> Play Group and Nursery programs focusing on foundational learning through play</li>
+                    <li><strong>Primary Level:</strong> Classes 1-5 with balanced curriculum covering all core subjects</li>
+                    <li><strong>Lower Secondary:</strong> Classes 6-8 with more specialized subject teachers</li>
+                    <li><strong>Secondary:</strong> Class 9 preparing students for SEE in the future</li>
+                    <li><strong>Co-curricular Activities:</strong> Sports, arts, music, and various clubs</li>
                 </ul>
-                <div class="mobile-menu">
-                    <i class="fas fa-bars"></i>
-                </div>
             </div>
-        </div>
-    </header>
+        </section>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Welcome to Miniland Academy</h1>
-                <p>Miniland Academy is one of the best schools in Kathmandu, Nepal, offering quality education from Playgroup to Grade 9 with modern facilities and experienced faculty.</p>
-                <a href="#" class="btn">Enroll Now</a>
+        <!-- Teachers - ALL ORIGINAL TEACHERS -->
+        <section id="teachers" style="margin-top: 70px;">
+            <div class="title-wrapper"><h2 class="section-title">Meet Our Dedicated Teachers</h2></div>
+            <div class="teachers-grid">
+                <div class="teacher-card"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dip Bahadur Rai"><h3>Mr. Dip Bahadur Rai</h3><p class="qualification">Master of Arts</p><p class="role">Principal</p></div>
+                <div class="teacher-card"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Gun Jatala Rai"><h3>Ms. Gun Jatala Rai</h3><p class="qualification">Master in English</p><p class="role">English Teacher</p></div>
+                <div class="teacher-card"><img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Ganesh Niroula"><h3>Ganesh Niroula</h3><p class="qualification">B.ED</p><p class="role">Math & Optional Math</p></div>
+                <div class="teacher-card"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Pratikshya Niroula"><h3>Ms. Pratikshya Niroula</h3><p class="qualification">Master in Nepali</p><p class="role">Nepali Teacher</p></div>
+                <div class="teacher-card"><img src="https://randomuser.me/api/portraits/women/90.jpg" alt="Lalita Rana"><h3>Ms. Lalita Rana</h3><p class="qualification">Diploma in Computer</p><p class="role">Computer Teacher</p></div>
+                <div class="teacher-card"><img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Sanjaya Rai"><h3>Mr. Sanjay Rai</h3><p class="qualification">Bachelor of Science</p><p class="role">Science Teacher</p></div>
+                <div class="teacher-card"><img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Livi Sunar"><h3>Ms. Livi Sunar</h3><p class="qualification">M. Arts</p><p class="role">Arts / Social Studies Teacher</p></div>
+                <div class="teacher-card"><img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Mary Rai"><h3>Ms. Mary Rai</h3><p class="qualification">BE</p><p class="role">English</p></div>
+                <div class="teacher-card"><img src="https://randomuser.me/api/portraits/women/66.jpg" alt="Lira Bhandari"><h3>Ms. Lira Bhandari</h3><p class="qualification"></p><p class="role">Primary</p></div>
+                <div class="teacher-card"><img src="https://randomuser.me/api/portraits/women/77.jpg" alt="Manisha Bhandari"><h3>Ms. Manisha Bhandari</h3><p class="qualification"></p><p class="role">Primary</p></div>
+                <div class="teacher-card"><img src="https://randomuser.me/api/portraits/women/88.jpg" alt="Sharmila Magar"><h3>Ms. Sharmila Magar</h3><p class="qualification"></p><p class="role">Primary</p></div>
+                <div class="teacher-card"><img src="https://randomuser.me/api/portraits/women/99.jpg" alt="Januka Bhandari"><h3>Ms. Januka Bhandari</h3><p class="qualification"></p><p class="role">Pre-Primary</p></div>
             </div>
-            <div class="hero-image">
-                <img src="hero.jpg" alt="Miniland Academy">
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-text">
-                    <h2>About <span>Miniland Academy</span></h2>
-                    <p>Miniland Academy is a premier educational institution in Kathmandu, Nepal, established in 2003 with a vision to provide quality education that nurtures young minds and prepares them for the challenges of tomorrow.</p>
-                    <p>We believe in a holistic approach to education that combines academic excellence with character development, creativity, and critical thinking. Our curriculum is designed to meet international standards while being rooted in Nepali values and culture.</p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <h3>20+</h3>
-                            <p>Years of Excellence</p>
+        <!-- Founding Members - ORIGINAL -->
+        <section id="founders" style="margin-top: 70px;">
+            <div class="title-wrapper"><h2 class="section-title">Our Top Voices: Founding Members</h2></div>
+            <div class="members-grid">
+                <div class="member-card"><img src="https://randomuser.me/api/portraits/men/11.jpg" alt="Tularam Sinjali Magar"><h3>Tularam Sinjali Magar</h3><p class="member-role">Lead Founder & Visionary</p><p class="member-description">"Dedicated to fostering an environment of learning and growth from day one."</p></div>
+                <div class="member-card"><img src="https://randomuser.me/api/portraits/men/72.jpg" alt="Chakra Bahadur Karki"><h3>Chakra Bahadur Karki</h3><p class="member-role">Co-Founder & Education Director</p><p class="member-description">"Passionate about curriculum development and quality teaching standards."</p></div>
+                <div class="member-card"><img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Tek Bahadur Thapa"><h3>Tek Bahadur Thapa</h3><p class="member-role">Founding Patron & Community Liaison</p><p class="member-description">"Instrumental in building community support and school infrastructure."</p></div>
+            </div>
+        </section>
+
+        <!-- Media Showcase -->
+        <section id="media" style="margin-top: 70px;">
+            <div class="title-wrapper"><h2 class="section-title">School Media Showcase</h2></div>
+            <div class="section-card-modern">
+                <div class="media-showcase-flex">
+                    <div class="media-pane">
+                        <h3><i class="fas fa-images"></i> Photo Highlights</h3>
+                        <div class="slideshow-container" id="slideshowContainer">
+                            <img id="slideshowImage" class="slideshow-image" src="https://placehold.co/800x450/2980b9/white?text=School+Activities" alt="School moment">
                         </div>
-                        <div class="stat">
-                            <h3>PG-9</h3>
-                            <p>Grades Offered</p>
+                        <p style="text-align:center; margin-top:12px;">Our vibrant school life in a quick flash!</p>
+                    </div>
+                    <div class="media-pane">
+                        <h3><i class="fab fa-youtube"></i> Watch Us In Action</h3>
+                        <div class="youtube-embed-responsive">
+                            <iframe src="https://www.youtube.com/embed/mm5vdhbIGnQ?si=JNWoGgaTIDbp4mHU" title="Miniland Academy School Activities" allowfullscreen></iframe>
                         </div>
-                        <div class="stat">
-                            <h3>1000+</h3>
-                            <p>Happy Students</p>
+                        <div style="text-align:center; margin-top:16px;">
+                            <a href="https://www.youtube.com/@minilandacademy" target="_blank" style="background:#ff0000; color:white; padding:8px 24px; border-radius:40px; text-decoration:none; display:inline-flex; gap:8px;"><i class="fab fa-youtube"></i> Watch More Videos</a>
                         </div>
                     </div>
                 </div>
-                <div class="about-image">
-                    <img src="social.jpg" alt="About Miniland" style="width: 100%; border-radius: 10px;">
+            </div>
+        </section>
+
+        <!-- Admission Process -->
+        <section id="admission" style="margin-top: 70px;">
+            <div class="title-wrapper"><h2 class="section-title">Admission Process</h2></div>
+            <div class="section-card-modern">
+                <p>We welcome students throughout the year based on availability. Our admission process is simple and transparent:</p>
+                <ul class="program-list">
+                    <li>Visit our school for a tour and information session.</li>
+                    <li>Obtain and submit the completed application form along with required documents.</li>
+                    <li>For students seeking admission to Grade 2 and above, a simple entrance assessment may be conducted.</li>
+                    <li>Upon successful completion of the process, complete the enrollment formalities.</li>
+                    <li>New academic session typically begins in Baisakh (mid-April).</li>
+                </ul>
+                <div style="margin-top: 30px; text-align: center;">
+                    <a href="https://wa.me/9779816302747" target="_blank" class="cta-button" style="background:#25D366; padding:12px 32px;"><i class="fab fa-whatsapp"></i> Enquiry on WhatsApp</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Academics Section -->
-    <section class="academics" id="academics">
-        <div class="container">
-            <h2>Our <span>Academic</span> Programs</h2>
-            <p class="section-subtitle">Comprehensive education from Playgroup to Grade 9</p>
-            <div class="grade-grid">
-                <div class="grade-card">
-                    <h3>Playgroup</h3>
-                    <div class="age">Age 2+ years</div>
-                    <p>Sensory play, motor skills development, social interaction, and introduction to learning through fun activities.</p>
+        <!-- Online Payment -->
+        <section id="payment" style="margin-top: 70px;">
+            <div class="title-wrapper"><h2 class="section-title">Online Fee Payment</h2></div>
+            <div class="section-card-modern" style="text-align:center;">
+                <p>Secure and convenient payment options available for your ease. You can pay using Khalti or eSewa.</p>
+                <div class="payment-buttons-group">
+                    <button id="khaltiPayBtn" class="payment-btn khalti"><i class="fas fa-wallet"></i> Pay Via Khalti</button>
+                    <button id="esewaPayBtn" class="payment-btn esewa"><i class="fas fa-mobile-alt"></i> Pay Via eSewa</button>
                 </div>
-                <div class="grade-card">
-                    <h3>Nursery</h3>
-                    <div class="age">Age 3+ years</div>
-                    <p>Language development, basic numeracy, creative expression, and building social skills through group activities.</p>
-                </div>
-                <div class="grade-card">
-                    <h3>LKG & UKG</h3>
-                    <div class="age">Age 4-5 years</div>
-                    <p>Foundation in literacy and numeracy, phonetics, writing skills, and preparation for formal schooling.</p>
-                </div>
-                <div class="grade-card">
-                    <h3>Grades 1-5</h3>
-                    <div class="age">Primary Level</div>
-                    <p>Building strong foundations in Mathematics, English, Science, and Social Studies with interactive learning methods.</p>
-                </div>
-                <div class="grade-card">
-                    <h3>Grades 6-8</h3>
-                    <div class="age">Middle School</div>
-                    <p>STEM education, advanced mathematics, science experiments, language arts, and preparation for secondary education.</p>
-                </div>
-                <div class="grade-card">
-                    <h3>Grade 9</h3>
-                    <div class="age">Secondary Prep</div>
-                    <p>Pre-SEE preparation, specialized subjects, career guidance, and development of analytical and research skills.</p>
-                </div>
+                <p class="payment-note"><small>You will be redirected to a secure payment gateway. Please ensure you have the student's ID or details ready.</small></p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Teachers Section -->
-    <section class="teachers" id="teachers">
-        <div class="container">
-            <h2>Our <span>Expert Teachers</span></h2>
-            <p class="section-subtitle">Meet our dedicated and experienced faculty members</p>
-            <div class="teachers-grid">
-                <div class="teacher-card">
-                    <img src="teachers.jpg" alt="Teacher">
-                    <h3>Teaching Staff</h3>
-                    <p>Experienced & Dedicated</p>
-                </div>
-                <div class="teacher-card">
-                    <img src="januka.jpg" alt="Januka">
-                    <h3>Januka Shrestha</h3>
-                    <p>Primary Coordinator</p>
-                </div>
-                <div class="teacher-card">
-                    <img src="sanjay.jpg" alt="Sanjay">
-                    <h3>Sanjay Maharjan</h3>
-                    <p>Science Teacher</p>
-                </div>
-                <div class="teacher-card">
-                    <img src="manisha.jpg" alt="Manisha">
-                    <h3>Manisha K.C.</h3>
-                    <p>English Teacher</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <h2>Why Choose <span>Miniland Academy</span></h2>
-            <p class="section-subtitle">We provide the best learning environment for your child</p>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <i class="fas fa-chalkboard-user"></i>
-                    <h3>Expert Teachers</h3>
-                    <p>Highly qualified and experienced faculty dedicated to student success</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-child"></i>
-                    <h3>Child-Centered Learning</h3>
-                    <p>Focus on individual attention and holistic development</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-laptop-code"></i>
-                    <h3>Modern Technology</h3>
-                    <p>Smart classrooms and digital learning resources</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-trophy"></i>
-                    <h3>Extra Curricular</h3>
-                    <p>Sports, arts, and cultural activities for overall growth</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="gallery" id="gallery">
-        <div class="container">
-            <h2>Photo <span>Gallery</span></h2>
-            <p class="section-subtitle">Glimpses of life at Miniland Academy</p>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="gallery-placeholder1.jpg" alt="Gallery Image">
-                </div>
-                <div class="gallery-item">
-                    <img src="gallery-placeholder2.jpg" alt="Gallery Image">
-                </div>
-                <div class="gallery-item">
-                    <img src="gallery-placeholder3.jpg" alt="Gallery Image">
-                </div>
-                <div class="gallery-item">
-                    <img src="gallery-placeholder4.jpg" alt="Gallery Image">
-                </div>
-                <div class="gallery-item">
-                    <img src="gallery-placeholder5.jpg" alt="Gallery Image">
-                </div>
-                <div class="gallery-item">
-                    <img src="gallery-placeholder6.jpg" alt="Gallery Image">
-                </div>
-                <div class="gallery-item">
-                    <img src="gallery-placeholder7.jpg" alt="Gallery Image">
-                </div>
-                <div class="gallery-item">
-                    <img src="gallery-placeholder8.jpg" alt="Gallery Image">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2>Get In <span>Touch</span></h2>
-            <p class="section-subtitle">Contact us for admissions and inquiries</p>
-            <div class="contact-grid">
+        <!-- Contact -->
+        <section id="contact" style="margin-top: 70px; margin-bottom: 50px;">
+            <div class="title-wrapper"><h2 class="section-title">Contact Us</h2></div>
+            <div class="section-card-modern">
                 <div class="contact-info">
                     <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Address</h4>
-                            <p>Kathmandu, Nepal</p>
-                        </div>
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-text"><strong>Address</strong> Kerabari 7, Dangi, Morang, Nepal</div>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>+977-1-4102727, 4102828</p>
-                        </div>
+                        <div class="contact-icon"><i class="fas fa-user-tie"></i></div>
+                        <div class="contact-text"><strong>Principal</strong> Mr. Dip Bahadur Rai</div>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>info@minilandacademy.edu.np</p>
-                        </div>
+                        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="contact-text"><strong>Phone</strong> <a href="tel:+9779816302747">+977 981-6302747</a><br><a href="tel:+9779826355288">+977 982-6355288</a></div>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <h4>Office Hours</h4>
-                            <p>Sunday - Friday: 9:00 AM - 4:00 PM</p>
-                        </div>
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-text"><strong>Email</strong> <a href="mailto:principal@minilandacademy.edu.np">principal@minilandacademy.edu.np</a><br><a href="mailto:info.minilandacademy@gmail.com">info.minilandacademy@gmail.com</a></div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                        <div class="contact-text"><strong>School Hours</strong> Sunday-Thursday: 10:00 AM - 4:00 PM<br>Friday: 10:00 AM - 1:00 PM (Half-Day)<br>Saturday: Off</div>
+                    </div>
+                    <div class="map-container">
+                        <iframe src="https://maps.google.com/maps?q=Kerabari%207%20Dangi%20Morang&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen></iframe>
+                        <p style="margin-top: 10px;"><i class="fas fa-info-circle"></i> Kerabari-7, Dangi, Morang (Satellite View)</p>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <form>
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <input type="tel" placeholder="Phone Number">
-                        <textarea rows="5" placeholder="Your Message"></textarea>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
-                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer class="footer-modern">
+    <div class="container footer-grid">
+        <div>
+            <h3>Miniland Academy</h3>
+            <p>Providing quality education from Play Group to Class 9 in a nurturing environment that fosters academic excellence and character development.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/people/Miniland-Academy-English-School/61573570560067/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.tiktok.com/@minilandacademy" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.youtube.com/@minilandacademy" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://wa.me/9779816302747" target="_blank"><i class="fab fa-whatsapp"></i></a>
             </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>Miniland Academy</h4>
-                    <p>Quality education since 2003, nurturing young minds from Playgroup to Grade 9 with modern facilities and experienced faculty.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Admission Process</a></li>
-                        <li><a href="#">Academic Calendar</a></li>
-                        <li><a href="#">Notice Board</a></li>
-                        <li><a href="#">Career</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Programs</h4>
-                    <ul>
-                        <li><a href="#">Playgroup & Nursery</a></li>
-                        <li><a href="#">LKG & UKG</a></li>
-                        <li><a href="#">Grades 1-5</a></li>
-                        <li><a href="#">Grades 6-9</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Connect With Us</h4>
-                    <ul>
-                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
-                        <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2024 Miniland Academy. All Rights Reserved. | Best School in Kathmandu, Nepal</p>
-            </div>
+        <div>
+            <h3>Quick Links</h3>
+            <ul style="list-style:none; line-height: 2;">
+                <li><a href="#home" style="color:#ddd;">🏠 Home</a></li>
+                <li><a href="#about" style="color:#ddd;">📖 About Us</a></li>
+                <li><a href="#teachers" style="color:#ddd;">👩‍🏫 Teachers</a></li>
+                <li><a href="#admission" style="color:#ddd;">📝 Admission</a></li>
+                <li><a href="#payment" style="color:#ddd;">💰 Pay Fees</a></li>
+            </ul>
         </div>
-    </footer>
+        <div>
+            <h3>Contact Info</h3>
+            <ul style="list-style:none; line-height: 1.8;">
+                <li><i class="fas fa-map-marker-alt"></i> Kerabari 7, Dangi, Morang</li>
+                <li><i class="fas fa-phone-alt"></i> <a href="tel:+9779816302747" style="color:#ddd;">+977 981-6302747</a></li>
+                <li><i class="fas fa-envelope"></i> <a href="mailto:info.minilandacademy@gmail.com" style="color:#ddd;">info.minilandacademy@gmail.com</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container" style="text-align:center; margin-top:40px; border-top:1px solid #2d4a62; padding-top:24px;">
+        <p>© <span id="year">2025</span> Miniland Academy English School. All Rights Reserved.</p>
+        <p>Designed & Developed By <a href="https://ramanbhandari.com.np/" target="_blank" style="color:#f39c12;">Raman Bhandari</a> - Former Student</p>
+    </div>
+</footer>
 
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Year update
+        document.getElementById('year').innerText = new Date().getFullYear();
+
+        // --- VOICE ANNOUNCEMENT with Bilingual Message ---
+        const voiceBtn = document.getElementById('voiceAnnounceBtn');
+        const admissionMessage = "Attention! Admissions are now open at Miniland Academy English School for Play Group to Class 9. भर्ना खुल्यो! केराबारी–७ Dangi मोरङमा रहेको Miniland English Boarding School मा नयाँ शैक्षिक सत्रका लागि भर्ना सुरु भएको छ। Limited seats available. Contact us today for enrollment.";
         
-        mobileMenu.addEventListener('click', () => {
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.display = 'none';
-            } else {
-                navLinks.style.display = 'flex';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '100%';
-                navLinks.style.left = '0';
-                navLinks.style.width = '100%';
-                navLinks.style.backgroundColor = '#fff';
-                navLinks.style.padding = '20px';
-                navLinks.style.boxShadow = '0 5px 10px rgba(0,0,0,0.1)';
-                navLinks.style.zIndex = '999';
-            }
-        });
+        let speechSynth = window.speechSynthesis;
+        let utterance = null;
 
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
+        function speakAdmission() {
+            if (speechSynth.speaking) {
+                speechSynth.cancel();
+            }
+            utterance = new SpeechSynthesisUtterance(admissionMessage);
+            utterance.lang = 'ne-NP';
+            utterance.rate = 0.85;
+            utterance.pitch = 1.0;
+            speechSynth.speak(utterance);
+        }
+
+        if (voiceBtn) {
+            voiceBtn.addEventListener('click', speakAdmission);
+            // Auto-play welcome message on load
+            setTimeout(() => {
+                let welcomeMsg = "Welcome to Miniland Academy. Admissions are now open. Click the voice button to hear full announcement. स्वागत छ।";
+                let welcomeUtter = new SpeechSynthesisUtterance(welcomeMsg);
+                welcomeUtter.lang = 'en-US';
+                welcomeUtter.rate = 0.9;
+                speechSynth.speak(welcomeUtter);
+            }, 1000);
+        }
+
+        // Slideshow with multiple images
+        const slideImages = [
+            "https://placehold.co/800x450/2980b9/white?text=Smart+Classroom+Learning",
+            "https://placehold.co/800x450/e67e22/white?text=Annual+Sports+Day",
+            "https://placehold.co/800x450/27ae60/white?text=Science+Exhibition",
+            "https://placehold.co/800x450/3498db/white?text=Cultural+Program"
+        ];
+        let slideIndex = 0;
+        const slideshowImg = document.getElementById('slideshowImage');
+        if (slideshowImg) {
+            slideshowImg.src = slideImages[0];
+            setInterval(() => {
+                slideIndex = (slideIndex + 1) % slideImages.length;
+                slideshowImg.style.opacity = '0';
+                setTimeout(() => {
+                    slideshowImg.src = slideImages[slideIndex];
+                    slideshowImg.style.opacity = '1';
+                }, 300);
+            }, 4000);
+        }
+
+        // Active nav highlight on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const scrollPos = window.scrollY + 150;
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
                 }
             });
         });
 
-        // Close mobile menu on window resize
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 768) {
-                navLinks.style.display = '';
-                navLinks.style.flexDirection = '';
-                navLinks.style.position = '';
-                navLinks.style.padding = '';
-            }
+        // Smooth scroll
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const targetEl = document.getElementById(targetId);
+                if (targetEl) {
+                    window.scrollTo({ top: targetEl.offsetTop - 100, behavior: 'smooth' });
+                }
+            });
         });
-    </script>
+
+        // Payment buttons demo
+        const khaltiBtn = document.getElementById('khaltiPayBtn');
+        if (khaltiBtn) {
+            khaltiBtn.addEventListener('click', () => alert('🔵 Khalti Payment Gateway: You will be redirected to complete payment. (Demo Mode)'));
+        }
+        const esewaBtn = document.getElementById('esewaPayBtn');
+        if (esewaBtn) {
+            esewaBtn.addEventListener('click', () => alert('🟢 eSewa Payment: Secure payment processing. (Demo Mode)'));
+        }
+    });
+</script>
 </body>
 </html>
