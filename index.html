@@ -2,304 +2,874 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Miniland Academy | PG to Class 9 | Kerabari-7 Morang</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Miniland Academy - Best School in Kathmandu | PG to Grade 9</title>
+    <meta name="description" content="Miniland Academy is one of the best schools in Kathmandu, Nepal offering quality education from Playgroup to Grade 9 with modern facilities and experienced faculty.">
     
-    <!-- Primary Meta Tags -->
-    <meta name="description" content="Miniland Academy English School - Providing quality education from Play Group to Class 9 in Morang, Nepal.">
-
-    <!-- Fonts (Morgan Style) -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Color Variables */
         :root {
-            --morgan-blue: #002147;
-            --morgan-gold: #ffcc00;
-            --morgan-red: #d90429;
-            --text-gray: #444;
-            --light-bg: #f4f7f6;
+            --primary: #ff6b35;
+            --primary-dark: #e55a2a;
+            --secondary: #2c3e50;
+            --accent: #3498db;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --dark: #212529;
+            --success: #28a745;
         }
 
-        /* --- Global Reset --- */
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
-        html { scroll-behavior: smooth; }
-        body { background-color: #fff; line-height: 1.6; color: var(--text-gray); }
-        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-        /* --- Top Contact Bar --- */
-        .top-bar { background: var(--morgan-blue); color: #fff; padding: 10px 0; font-size: 13px; }
-        .top-bar-flex { display: flex; justify-content: space-between; align-items: center; }
-        .top-bar-info span { margin-right: 20px; }
-        .top-bar-info i { color: var(--morgan-gold); margin-right: 5px; }
-
-        /* --- Main Logo Header --- */
-        .main-header { padding: 20px 0; background: #fff; }
-        .header-flex { display: flex; align-items: center; gap: 20px; }
-        .logo img { height: 90px; width: auto; }
-        .school-info h1 { font-family: 'Oswald', sans-serif; font-size: 36px; color: var(--morgan-blue); text-transform: uppercase; margin: 0; }
-        .school-info p { color: var(--morgan-red); font-weight: 700; letter-spacing: 1px; font-size: 14px; }
-
-        /* --- NAVIGATION BAR (Perfect Alignment) --- */
-        nav { 
-            background: var(--morgan-blue); 
-            position: sticky; 
-            top: 0; 
-            z-index: 1000; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
-            height: 60px; /* Fixed height for perfect vertical centering */
-        }
-        .nav-flex { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            height: 100%; 
-        }
-        nav ul { display: flex; list-style: none; height: 100%; align-items: center; }
-        nav ul li { height: 100%; }
-        nav ul li a { 
-            color: #fff; 
-            text-decoration: none; 
-            padding: 0 15px; 
-            height: 100%; 
-            display: flex; 
-            align-items: center; 
-            font-weight: 700; 
-            font-size: 13px; 
-            text-transform: uppercase;
-            transition: 0.3s;
-        }
-        nav ul li a:hover { background: var(--morgan-gold); color: var(--morgan-blue); }
-
-        /* Flag Alignment */
-        .nav-flag { display: flex; align-items: center; height: 100%; padding: 5px 0; }
-        .nav-flag img { height: 45px; width: auto; filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3)); }
-
-        /* --- Hero Section --- */
-        .hero { 
-            height: 70vh; 
-            background: linear-gradient(rgba(0,33,71,0.6), rgba(0,33,71,0.6)), url('images/hero.jpg') center/cover;
-            display: flex; align-items: center; color: #fff; 
-        }
-        .hero-text h2 { font-family: 'Oswald', sans-serif; font-size: 55px; line-height: 1.1; margin-bottom: 20px; }
-        .hero-text p { font-size: 20px; border-left: 4px solid var(--morgan-gold); padding-left: 20px; margin-bottom: 30px; }
-        .btn-apply { background: var(--morgan-gold); color: var(--morgan-blue); padding: 15px 35px; text-decoration: none; font-weight: 900; border-radius: 4px; text-transform: uppercase; display: inline-block; }
-
-        /* --- Welcome / Principal --- */
-        .welcome { padding: 80px 0; }
-        .welcome-flex { display: flex; gap: 50px; align-items: center; flex-wrap: wrap; }
-        .welcome-img { flex: 1; min-width: 300px; position: relative; }
-        .welcome-img img { width: 100%; border-radius: 10px; border-bottom: 10px solid var(--morgan-gold); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .welcome-content { flex: 1.5; min-width: 300px; }
-        .welcome-content h3 { font-family: 'Oswald', sans-serif; color: var(--morgan-blue); font-size: 32px; margin-bottom: 20px; }
-
-        /* --- Facilities (Science Lab & Bus Focus) --- */
-        .facilities { background: var(--light-bg); padding: 80px 0; }
-        .section-title { text-align: center; margin-bottom: 50px; }
-        .section-title h2 { font-family: 'Oswald', sans-serif; font-size: 36px; color: var(--morgan-blue); }
-        .facility-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .f-card { background: #fff; padding: 40px 20px; text-align: center; border-radius: 8px; border-top: 4px solid var(--morgan-gold); transition: 0.3s; }
-        .f-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-        .f-card i { font-size: 50px; color: var(--morgan-blue); margin-bottom: 20px; }
-        .f-card h4 { margin-bottom: 15px; color: var(--morgan-blue); font-size: 20px; }
-
-        /* --- Teachers Grid --- */
-        .teachers { padding: 80px 0; }
-        .teacher-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-        .t-card { text-align: center; background: #fff; padding: 20px; border: 1px solid #eee; border-radius: 8px; }
-        .t-card img { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid var(--morgan-blue); }
-        .t-card h5 { color: var(--morgan-blue); font-size: 16px; margin-bottom: 5px; }
-        .t-card p { font-size: 13px; font-style: italic; color: #777; }
-
-        /* --- Sound Control --- */
-        .sound-toggle {
-            position: fixed; bottom: 30px; left: 30px; z-index: 2000;
-            background: var(--morgan-blue); color: #fff; width: 50px; height: 50px;
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            cursor: pointer; border: 2px solid var(--morgan-gold);
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        /* --- Admission Alert Bar --- */
-        .admission-bar { background: var(--morgan-red); color: #fff; padding: 12px 0; text-align: center; font-weight: 700; }
+        section {
+            padding: 80px 0;
+        }
 
-        /* --- Footer --- */
-        footer { background: #001c3d; color: #ccc; padding: 60px 0 20px; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
-        .footer-col h4 { color: #fff; margin-bottom: 25px; border-bottom: 2px solid var(--morgan-gold); display: inline-block; padding-bottom: 5px; }
-        .footer-col p { font-size: 14px; margin-bottom: 10px; }
-        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 50px; padding-top: 20px; text-align: center; font-size: 12px; }
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
 
+        h2 span {
+            color: var(--primary);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 50px;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,107,53,0.3);
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .top-bar {
+            background: var(--secondary);
+            color: #fff;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .top-bar a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .top-bar i {
+            margin-right: 8px;
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .logo-text h1 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: 800;
+            margin: 0;
+        }
+
+        .logo-text p {
+            font-size: 0.7rem;
+            color: var(--gray);
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: #fff;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        /* About Section */
+        .about {
+            background: var(--light);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            text-align: left;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .stat h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* Academics Section */
+        .academics {
+            background: #fff;
+        }
+
+        .grade-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .grade-card {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .grade-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .grade-card h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .grade-card .age {
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        /* Teachers Section */
+        .teachers {
+            background: var(--light);
+        }
+
+        .teachers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .teacher-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .teacher-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .teacher-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .teacher-card h3 {
+            margin: 15px 0 5px;
+            color: var(--primary);
+        }
+
+        .teacher-card p {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+
+        /* Features Section */
+        .features {
+            background: #fff;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+            background: var(--light);
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .feature-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background: var(--light);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #fff;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-info {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: #fff;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .header-flex { flex-direction: column; text-align: center; }
-            .nav-flag { display: none; } /* Hide flag on mobile to save space */
-            nav ul { font-size: 11px; }
-            .hero-text h2 { font-size: 35px; }
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero .container,
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            section {
+                padding: 50px 0;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo img {
+                height: 45px;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
 <body>
-
-    <!-- Sound Feature -->
-    <div class="sound-toggle" onclick="toggleMusic()">
-        <i id="soundIcon" class="fas fa-volume-mute"></i>
-    </div>
-    <audio id="bgMusic" loop>
-        <source src="sounds/school-ambient.mp3" type="audio/mpeg">
-    </audio>
-
-    <div class="top-bar">
-        <div class="container top-bar-flex">
-            <div class="top-bar-info">
-                <span><i class="fas fa-phone"></i> +977 9816302747</span>
-                <span><i class="fas fa-envelope"></i> info.minilandacademy@gmail.com</span>
-            </div>
-            <div class="top-bar-socials">
-                <a href="#" style="color:#fff;"><i class="fab fa-facebook"></i></a>
-                <a href="#" style="color:#fff; margin-left: 15px;"><i class="fab fa-tiktok"></i></a>
+    <!-- Header -->
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div>
+                    <i class="fas fa-phone-alt"></i> +977-1-4102727, 4102828 &nbsp;&nbsp;
+                    <i class="fas fa-envelope"></i> info@minilandacademy.edu.np
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
             </div>
         </div>
-    </div>
-
-    <header class="main-header">
-        <div class="container header-flex">
-            <div class="logo"><img src="images/school-logo.png" alt="Miniland Logo"></div>
-            <div class="school-info">
-                <h1>Miniland Academy</h1>
-                <p>Morality, Discipline & Quality Education is Our Supreme Ambition</p>
+        
+        <div class="container">
+            <div class="main-nav">
+                <div class="logo">
+                    <img src="school-logo.png" alt="Miniland Academy Logo">
+                    <div class="logo-text">
+                        <h1>Miniland Academy</h1>
+                        <p>Quality Education Since 2003</p>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#academics">Academics</a></li>
+                    <li><a href="#teachers">Teachers</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" class="btn" style="padding: 8px 20px;">Admission</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
             </div>
         </div>
     </header>
 
-    <nav>
-        <div class="container nav-flex">
-            <!-- Left Side: Nav Links -->
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#facilities">Facilities</a></li>
-                <li><a href="#teachers">Teachers</a></li>
-                <li><a href="#admission">Admission</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-
-            <!-- Right Side: Perfectly Aligned Nepal Flag -->
-            <div class="nav-flag">
-                <img src="images/WavingFlag.gif" alt="Nepal Flag">
-            </div>
-        </div>
-    </nav>
-
-    <div class="admission-bar">
-        🔥 ADMISSION OPEN FOR SESSION 2081/82 | PLAYGROUP TO CLASS 9 🔥
-    </div>
-
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="hero-text">
-                <h2>Excellence in <br>Foundational Education</h2>
-                <p>Dedicated to PG - Class 9 students, fostering academic <br>brilliance and moral character in Morang.</p>
-                <a href="#contact" class="btn-apply">Admission Inquiry</a>
+            <div class="hero-content">
+                <h1>Welcome to Miniland Academy</h1>
+                <p>Miniland Academy is one of the best schools in Kathmandu, Nepal, offering quality education from Playgroup to Grade 9 with modern facilities and experienced faculty.</p>
+                <a href="#" class="btn">Enroll Now</a>
+            </div>
+            <div class="hero-image">
+                <img src="hero.jpg" alt="Miniland Academy">
             </div>
         </div>
     </section>
 
-    <!-- Principal Section -->
-    <section class="welcome" id="about">
-        <div class="container welcome-flex">
-            <div class="welcome-img">
-                <img src="images/dip.jpg" alt="Principal Mr. Dip Bahadur Rai">
-            </div>
-            <div class="welcome-content">
-                <h3>Message from the Principal</h3>
-                <p>Welcome to Miniland Academy English School. We take pride in being a specialized institution for students from Playgroup to Class 9. Our focus is to provide a solid academic foundation during these crucial years.</p>
-                <p>We combine modern technology with traditional values to ensure every child reaches their potential. Our Science Lab and safe transport facilities are designed to make learning both exciting and accessible.</p>
-                <p style="font-weight:bold; color:var(--morgan-blue);">Mr. Dip Bahadur Rai<br>Principal (M.A.)</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Facilities Section -->
-    <section class="facilities" id="facilities">
+    <!-- About Section -->
+    <section class="about" id="about">
         <div class="container">
-            <div class="section-title">
-                <h2>Our World-Class Facilities</h2>
-            </div>
-            <div class="facility-grid">
-                <div class="f-card">
-                    <i class="fas fa-microscope"></i>
-                    <h4>Advanced Science Lab</h4>
-                    <p>Hands-on learning with modern scientific apparatus for junior and secondary levels.</p>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>About <span>Miniland Academy</span></h2>
+                    <p>Miniland Academy is a premier educational institution in Kathmandu, Nepal, established in 2003 with a vision to provide quality education that nurtures young minds and prepares them for the challenges of tomorrow.</p>
+                    <p>We believe in a holistic approach to education that combines academic excellence with character development, creativity, and critical thinking. Our curriculum is designed to meet international standards while being rooted in Nepali values and culture.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>20+</h3>
+                            <p>Years of Excellence</p>
+                        </div>
+                        <div class="stat">
+                            <h3>PG-9</h3>
+                            <p>Grades Offered</p>
+                        </div>
+                        <div class="stat">
+                            <h3>1000+</h3>
+                            <p>Happy Students</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="f-card">
-                    <i class="fas fa-bus"></i>
-                    <h4>Safe School Buses</h4>
-                    <p>Reliable and safe transportation service covering all surrounding areas of Kerabari.</p>
-                </div>
-                <div class="f-card">
-                    <i class="fas fa-laptop-code"></i>
-                    <h4>Computer Education</h4>
-                    <p>Building digital literacy from an early age with our modern computer lab.</p>
+                <div class="about-image">
+                    <img src="social.jpg" alt="About Miniland" style="width: 100%; border-radius: 10px;">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Teacher Section (Using your image filenames) -->
+    <!-- Academics Section -->
+    <section class="academics" id="academics">
+        <div class="container">
+            <h2>Our <span>Academic</span> Programs</h2>
+            <p class="section-subtitle">Comprehensive education from Playgroup to Grade 9</p>
+            <div class="grade-grid">
+                <div class="grade-card">
+                    <h3>Playgroup</h3>
+                    <div class="age">Age 2+ years</div>
+                    <p>Sensory play, motor skills development, social interaction, and introduction to learning through fun activities.</p>
+                </div>
+                <div class="grade-card">
+                    <h3>Nursery</h3>
+                    <div class="age">Age 3+ years</div>
+                    <p>Language development, basic numeracy, creative expression, and building social skills through group activities.</p>
+                </div>
+                <div class="grade-card">
+                    <h3>LKG & UKG</h3>
+                    <div class="age">Age 4-5 years</div>
+                    <p>Foundation in literacy and numeracy, phonetics, writing skills, and preparation for formal schooling.</p>
+                </div>
+                <div class="grade-card">
+                    <h3>Grades 1-5</h3>
+                    <div class="age">Primary Level</div>
+                    <p>Building strong foundations in Mathematics, English, Science, and Social Studies with interactive learning methods.</p>
+                </div>
+                <div class="grade-card">
+                    <h3>Grades 6-8</h3>
+                    <div class="age">Middle School</div>
+                    <p>STEM education, advanced mathematics, science experiments, language arts, and preparation for secondary education.</p>
+                </div>
+                <div class="grade-card">
+                    <h3>Grade 9</h3>
+                    <div class="age">Secondary Prep</div>
+                    <p>Pre-SEE preparation, specialized subjects, career guidance, and development of analytical and research skills.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teachers Section -->
     <section class="teachers" id="teachers">
         <div class="container">
-            <div class="section-title">
-                <h2>Our Dedicated Faculty</h2>
-            </div>
-            <div class="teacher-grid">
-                <div class="t-card"> <img src="images/dip.jpg" alt="Teacher"> <h5>Mr. Dip Bahadur Rai</h5> <p>Principal</p> </div>
-                <div class="t-card"> <img src="images/gunu.jpg" alt="Teacher"> <h5>Ms. Gun Jatala Rai</h5> <p>English HOD</p> </div>
-                <div class="t-card"> <img src="images/gng.jpg" alt="Teacher"> <h5>Mr. Ganesh Niroula</h5> <p>Math Department</p> </div>
-                <div class="t-card"> <img src="images/sanjay.jpg" alt="Teacher"> <h5>Mr. Sanjay Rai</h5> <p>Science Teacher</p> </div>
-                <div class="t-card"> <img src="images/prat.jpg" alt="Teacher"> <h5>Ms. Pratikshya Niroula</h5> <p>Nepali Teacher</p> </div>
-                <div class="t-card"> <img src="images/lali.jpg" alt="Teacher"> <h5>Ms. Lalita Rana</h5> <p>Computer Teacher</p> </div>
+            <h2>Our <span>Expert Teachers</span></h2>
+            <p class="section-subtitle">Meet our dedicated and experienced faculty members</p>
+            <div class="teachers-grid">
+                <div class="teacher-card">
+                    <img src="teachers.jpg" alt="Teacher">
+                    <h3>Teaching Staff</h3>
+                    <p>Experienced & Dedicated</p>
+                </div>
+                <div class="teacher-card">
+                    <img src="januka.jpg" alt="Januka">
+                    <h3>Januka Shrestha</h3>
+                    <p>Primary Coordinator</p>
+                </div>
+                <div class="teacher-card">
+                    <img src="sanjay.jpg" alt="Sanjay">
+                    <h3>Sanjay Maharjan</h3>
+                    <p>Science Teacher</p>
+                </div>
+                <div class="teacher-card">
+                    <img src="manisha.jpg" alt="Manisha">
+                    <h3>Manisha K.C.</h3>
+                    <p>English Teacher</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container footer-grid">
-            <div class="footer-col">
-                <h4>Reach Us</h4>
-                <p>Kerabari-7, Dangi, Morang</p>
-                <p>Phone: +977 9816302747</p>
-                <p>Email: info.minilandacademy@gmail.com</p>
-            </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <p><a href="#" style="color:#ccc;">Academic Programs</a></p>
-                <p><a href="#" style="color:#ccc;">Admission Policy</a></p>
-                <p><a href="#" style="color:#ccc;">School Calendar</a></p>
-            </div>
-            <div class="footer-col">
-                <h4>Find Us</h4>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3566.1!2d87.376!3d26.755" width="100%" height="150" style="border:0; border-radius:5px;" allowfullscreen="" loading="lazy"></iframe>
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Why Choose <span>Miniland Academy</span></h2>
+            <p class="section-subtitle">We provide the best learning environment for your child</p>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-chalkboard-user"></i>
+                    <h3>Expert Teachers</h3>
+                    <p>Highly qualified and experienced faculty dedicated to student success</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-child"></i>
+                    <h3>Child-Centered Learning</h3>
+                    <p>Focus on individual attention and holistic development</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Modern Technology</h3>
+                    <p>Smart classrooms and digital learning resources</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Extra Curricular</h3>
+                    <p>Sports, arts, and cultural activities for overall growth</p>
+                </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Miniland Academy English School. All Rights Reserved. | Developed by Raman Bhandari</p>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2>Photo <span>Gallery</span></h2>
+            <p class="section-subtitle">Glimpses of life at Miniland Academy</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="gallery-placeholder1.jpg" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-placeholder2.jpg" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-placeholder3.jpg" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-placeholder4.jpg" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-placeholder5.jpg" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-placeholder6.jpg" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-placeholder7.jpg" alt="Gallery Image">
+                </div>
+                <div class="gallery-item">
+                    <img src="gallery-placeholder8.jpg" alt="Gallery Image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Get In <span>Touch</span></h2>
+            <p class="section-subtitle">Contact us for admissions and inquiries</p>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>Kathmandu, Nepal</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+977-1-4102727, 4102828</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@minilandacademy.edu.np</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Office Hours</h4>
+                            <p>Sunday - Friday: 9:00 AM - 4:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="tel" placeholder="Phone Number">
+                        <textarea rows="5" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Miniland Academy</h4>
+                    <p>Quality education since 2003, nurturing young minds from Playgroup to Grade 9 with modern facilities and experienced faculty.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Admission Process</a></li>
+                        <li><a href="#">Academic Calendar</a></li>
+                        <li><a href="#">Notice Board</a></li>
+                        <li><a href="#">Career</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Programs</h4>
+                    <ul>
+                        <li><a href="#">Playgroup & Nursery</a></li>
+                        <li><a href="#">LKG & UKG</a></li>
+                        <li><a href="#">Grades 1-5</a></li>
+                        <li><a href="#">Grades 6-9</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect With Us</h4>
+                    <ul>
+                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Miniland Academy. All Rights Reserved. | Best School in Kathmandu, Nepal</p>
+            </div>
         </div>
     </footer>
 
     <script>
-        const audio = document.getElementById('bgMusic');
-        const icon = document.getElementById('soundIcon');
-        let playing = false;
-
-        function toggleMusic() {
-            if (playing) {
-                audio.pause();
-                icon.className = "fas fa-volume-mute";
+        // Mobile Menu Toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenu.addEventListener('click', () => {
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
             } else {
-                audio.play();
-                icon.className = "fas fa-volume-up";
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '100%';
+                navLinks.style.left = '0';
+                navLinks.style.width = '100%';
+                navLinks.style.backgroundColor = '#fff';
+                navLinks.style.padding = '20px';
+                navLinks.style.boxShadow = '0 5px 10px rgba(0,0,0,0.1)';
+                navLinks.style.zIndex = '999';
             }
-            playing = !playing;
-        }
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Close mobile menu on window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navLinks.style.display = '';
+                navLinks.style.flexDirection = '';
+                navLinks.style.position = '';
+                navLinks.style.padding = '';
+            }
+        });
     </script>
 </body>
 </html>
